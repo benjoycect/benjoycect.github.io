@@ -1,0 +1,12 @@
+# Site settings
+name: Ben's writings
+title: Another place to look at
+description: Writings about how things work in the corporate world. Might be about the web or process. Might be about the stuff I do in my free time.
+baseurl: /benjoycect # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: BenJoyceCT
+github_username:  BenJoyceCT
+
+# Build settings
+markdown: redcarpet
+pygments: true
