@@ -11,8 +11,24 @@ nav {
   a {
     color: #fff;
     margin-left: 5%;
+    transition: color 0.25s ease;
     &:first-of-type {
       margin-left: 0;
     }
   }
+}
+
+.nav--icon {
+  fill: #fff;
+  height: 2rem;
+  transition: fill 0.25s ease;
+  width: auto;
+}
+
+a:hover > .nav--icon {
+  fill: #a0cde3;
+}
+
+a:active > .nav--icon {
+  fill: #961212;
 }
