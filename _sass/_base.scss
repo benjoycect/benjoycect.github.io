@@ -14,16 +14,26 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
+    background-color: $background-color;
+    color: $text-color;
     font-family: $base-font-family;
     font-size: $base-font-size;
-    line-height: $base-line-height;
     font-weight: 300;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
+    line-height: $base-line-height;
 }
 
-
+.section--main {
+    background-color: #fff;
+    border-bottom: 5px solid darken(#fff, 5%);
+    border-radius: 0 0 8px 8px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80rem;
+    padding-top: 2rem;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2rem;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -33,16 +43,6 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
-}
-
-
-
-/**
- * Images
- */
-img {
-    max-width: 100%;
-    vertical-align: middle;
 }
 
 
@@ -76,31 +76,6 @@ li {
 
 
 
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-}
-
-
-
-/**
- * Links
- */
-a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
-}
 
 
 
@@ -148,27 +123,6 @@ pre {
     }
 }
 
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
-}
 
 
 

@@ -1,0 +1,18 @@
+nav {
+  background-color: $red;
+  background-image: $red-radial-gradient;
+  border-bottom: 2px dashed #fff;
+  box-shadow: 0 5px 0 0 $red;
+  margin-bottom: 5px;
+  padding-top: 1rem;
+  padding-right: 5%;
+  padding-bottom: 1rem;
+  text-align: right;
+  a {
+    color: #fff;
+    margin-left: 5%;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
