@@ -10,7 +10,7 @@ permalink: /about/
 
 Hi, I'm Ben. I'm a guy from the Hartford, Connecticut area in the United States. Most of my days are spent looking at and designing processes. Most of my nights are spent learning and practicing design and development. I am looking to further both my design and development skills. If you have a small project you would like to collaborate on, get in touch!
 
-I have a few other things going on too. First, I'm working toward my MBA at <a href="http://www.ccsu.edu/">Central Connecticut State University</a>. My other responsibility is on the board of the directors for the <a href="ctuxpa.org">CT UXPA</a>. Join us if you live in Connecticut (it's a blast).
+I have a few other things going on too. First, I'm working toward my MBA at <a href="http://www.ccsu.edu/">Central Connecticut State University</a>. My other responsibility is on the board of the directors for the <a href="http://www.ctuxpa.org">CT UXPA</a>. Join us if you live in Connecticut (it's a blast).
 
 You can view my <a href="/files/resume.pdf" data-size="37 KB">resume</a> if you'd like.
 
