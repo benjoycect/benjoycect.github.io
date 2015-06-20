@@ -6,13 +6,28 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Dec 2014 22:43:44 -0500</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 22:43:44 -0500</lastBuildDate>
+    <pubDate>Sat, 20 Jun 2015 15:43:18 -0400</pubDate>
+    <lastBuildDate>Sat, 20 Jun 2015 15:43:18 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
+        <title>Test Post</title>
+        <description>&lt;p&gt;Test yo. This is a test.&lt;/p&gt;
+
+&lt;p&gt;This is a second paragraph.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 20 Jun 2015 17:07:36 -0400</pubDate>
+        <link>http://yourdomain.com/test/2015/06/20/oh-a-name.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/test/2015/06/20/oh-a-name.html</guid>
+        
+        
+        <category>test</category>
+        
+      </item>
+    
+      <item>
         <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <description>&lt;p&gt;Hi find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 

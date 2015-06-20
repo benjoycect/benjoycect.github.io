@@ -1,5 +1,0 @@
-/* Add " (PDF)" text after links that go to PDFs */
-a[href$=".pdf"]:after { content: " (PDF)"; }
-
-/* If file size specified as data attribute, use that too */
-a[href$=".pdf"][data-size]:after { content: " (PDF, " attr(data-size) ")"; }

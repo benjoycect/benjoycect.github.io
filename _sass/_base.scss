@@ -1,158 +1,24 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
-}
-
-
-
-/**
- * Basic styling
- */
 body {
-    background-color: $background-color;
-    color: $text-color;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    font-weight: 300;
-    line-height: $base-line-height;
+  background-color: $body-color;
+  color: $text-color;
+  font-family: $primary-font;
+  @media #{$mq-papabear} {
+    font-size: 1.5em;
+  }
 }
-
-.section--main {
-    background-color: #fff;
-    border-bottom: 5px solid darken(#fff, 5%);
-    border-radius: 0 0 8px 8px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 80rem;
-    padding-top: 2rem;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 2rem;
+a {
+  color: $blue;
+  transition: color 0.25s;
+  &:hover {
+    color: darken($blue, 25%);
+  }
+  &:focus {
+    color: lighten($blue, 25%);
+  }
 }
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
-}
-
-
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
-ul, ol {
-    margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
-}
-
-
-
-
-
-
-/**
- * Blockquotes
- */
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
-}
-
-code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: scroll;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
-
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
+section {
+  max-width: $max-width;
+  margin: 1em auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }

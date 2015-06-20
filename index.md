@@ -1,9 +1,15 @@
 ---
 layout: default
 title: Home
-permalink: /home/
+permalink: /
 ---
 
-<h1>Home</h1>
-
-Thanks for stopping by. I'll have some things for you to read and look at soon.
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+      {{ post.excerpt }}
+    </li>
+    <hr/>
+  {% endfor %}
+</ul>
