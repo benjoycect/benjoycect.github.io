@@ -6,19 +6,31 @@
   font-size: 1em;
   font-weight: 300;
 }
-
 .article__title {
   flex-grow: 1;
   font-size: 2.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   @media #{$mq-babybear} {
     font-size: 4em;
   }
 }
-
 .article__date {
-  font-size: .75em;
+  font-size: 0.75em;
   text-transform: uppercase;
   @media #{$mq-babybear} {
     font-size: 1em;
   }
+}
+.article--teaser {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: lighten($blue, 25%);
+  }
+}
+.article__list {
+  list-style: none;
 }

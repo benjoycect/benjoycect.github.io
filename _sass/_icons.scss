@@ -1,0 +1,24 @@
+.site-logo {
+  background-color: transparent;
+  height: 2em;
+  margin-bottom: 1em;
+  transition: transform 0.25s linear;
+  width: 2em;
+  &:hover {
+    transform: scale(1.5);
+  }
+  @media #{$mq-babybear} {
+    margin-bottom: 0;
+  }
+}
+.site-icon {
+  height: 2em;
+  width: 2em;
+  transition: transform 0.25s linear;
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+.site-icon--codepen {
+  fill: #fff;
+}

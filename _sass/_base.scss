@@ -1,10 +1,13 @@
+.hide {
+  display: none;
+}
+
 body {
   background-color: $body-color;
   color: $text-color;
   font-family: $primary-font;
-  @media #{$mq-papabear} {
-    font-size: 1.5em;
-  }
+  font-size: 1em;
+  line-height: $line-height;
 }
 a {
   color: $blue;
@@ -18,7 +21,7 @@ a {
 }
 section {
   max-width: $max-width;
-  margin: 1em auto;
+  margin: 2em auto;
   padding-left: 5%;
   padding-right: 5%;
 }

@@ -10,18 +10,3 @@ header {
     flex-direction: row;
   }
 }
-
-.site-logo {
-  background-color: #000;
-  border-radius: 50%;
-  margin-bottom: 1em;
-  transition: transform 0.25s linear, background-color 0.25s linear;
-  width: 3em;
-  &:hover {
-    background-color: $blue;
-    transform: scale(1.5);
-  }
-  @media #{$mq-babybear} {
-    margin-bottom: 0;
-  }
-}
