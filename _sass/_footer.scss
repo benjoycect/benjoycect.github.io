@@ -1,11 +1,16 @@
 footer {
-  align-items: baseline;
+  align-items: center;
   background-color: #333;
   border-top: 0.5em solid darken($body-color, 25%);
   color: #fff;
   display: flex;
-  height: 5em;
-  justify-content: space-between;
-  padding-right: 5%;
-  padding-left: 5%;
+  flex-direction: row;
+  padding: 1em 5%;
+}
+
+.colophon {
+  color: #fff;
+  &:hover {
+    color: darken(#fff, 25%);
+  }
 }

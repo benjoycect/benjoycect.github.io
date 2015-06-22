@@ -1,21 +1,47 @@
 ---
-layout: default
+layout: post
 title: About
 permalink: /about/
+date: 2015-06-21T21:07:36.000Z
 ---
-<img class="standalone" src="/img/about-ben--small.jpg" srcset="/img/about-ben--medium.jpg 1000w, /img/about-ben--large.jpg 2000w" alt="A photo of Ben Joyce">
+I'm Ben Joyce. I'm a designer and developer from Connecticut. I like to run, play music, and mess around on <a href="http://codepen.io/benjoyce/">CodePen</a>.
 
+I spend a lot of time on the web. Here are some of my favorite sites to visit. I'll add more as I think of them:
 
-# About Me
+* [CSS-Tricks](https://css-tricks.com/)
+* [Hacker News](https://news.ycombinator.com/)
+* [Designer News](https://www.designernews.co/)
+* [Vice](http://www.vice.com/en_us)
+* [LetsRun](http://www.letsrun.com/)
+* [theguardian](http://www.theguardian.com/)
 
-Hi, I'm Ben. I'm a guy from the Hartford, Connecticut area in the United States. Most of my days are spent looking at and designing processes. Most of my nights are spent learning and practicing design and development. I am looking to further both my design and development skills. If you have a small project you would like to collaborate on, get in touch!
+I also like podcasts. Here are some of my favorites:
 
-I have a few other things going on too. First, I'm working toward my MBA at <a href="http://www.ccsu.edu/">Central Connecticut State University</a>. My other responsibility is on the board of the directors for the <a href="http://www.ctuxpa.org">CT UXPA</a>. Join us if you live in Connecticut (it's a blast).
+* [This American Life](http://www.thisamericanlife.org/)
+* [Shop Talk Show](http://shoptalkshow.com/)
+* [Snap Judgement](http://snapjudgment.org/)
+* [Radiolab](http://www.radiolab.org/)
+* [The Big Web Show](http://5by5.tv/bigwebshow)
+* [99 Percent Invisible](http://99percentinvisible.org/)
+* [Freakonomics Radio](http://freakonomics.com/radio/)
+* [A UX Advantage Podcast](https://www.uie.com/brainsparks/topics/podcasts/)
+* [Unfinished.bz](http://www.unfinished.bz/)
+* [Arming the Donkeys](http://danariely.com/tag/arming-the-donkeys/)
+* [CodePen Radio](https://blog.codepen.io/radio/)
+* [Boagworld Web Show](https://boagworld.com/show/)
+* [Song Exploder](http://songexploder.net/)
+* [You Are Not So Smart](http://youarenotsosmart.com/)
+* [Stuff You Should Know](http://www.stuffyoushouldknow.com/)
+* [Treehouse Show](http://teamtreehouse.com/library/the-treehouse-show)
+* [Wits](http://www.witsradio.org/listen/)
+* [Judge John Hodgman](http://www.maximumfun.org/shows/judge-john-hodgman)
+* [Nerdist](http://nerdist.com/)
+* [Comedy Bang Bang](http://www.comedybangbang.com/)
+* [Reply All](http://gimletmedia.com/show/reply-all/)
+* [Spontaneanation](http://www.earwolf.com/show/spontaneanation-with-paul-f-tompkins/)
+* [Upvoted](https://www.reddit.com/r/upvoted)
+* [With Special Guest Lauren Lapkus](http://www.earwolf.com/show/with-special-guest-lauren-lapkus/)
+* [Mystery Show](http://gimletmedia.com/show/mystery-show/)
+* [Lore](http://www.lorepodcast.com/)
 
-You can view my <a href="/files/resume.pdf" data-size="37 KB">resume</a> if you'd like.
-
-## Contact
-
-The best place to keep in touch is on Twitter <a href="https://twitter.com/BenJoyceCT">@BenJoyceCT</a>.
-
-I'll have a form on here soon that will send me an email.
+</article>

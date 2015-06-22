@@ -1,4 +1,9 @@
-.social {
+.social-links {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-grow: 1;
   a {
     &:not(:last-of-type) {
       margin-right: 5%;

@@ -1,3 +1,9 @@
+
+.icon {
+  height: 2em;
+  width: 2em;
+}
+
 .site-logo {
   background-color: transparent;
   height: 2em;
@@ -11,14 +17,7 @@
     margin-bottom: 0;
   }
 }
-.site-icon {
-  height: 2em;
-  width: 2em;
-  transition: transform 0.25s linear;
-  &:hover {
-    transform: scale(1.5);
-  }
-}
+
 .site-icon--codepen {
   fill: #fff;
 }

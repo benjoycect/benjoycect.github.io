@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-
     sass: { // Task
       dist: { // Target
         options: { // Target options
@@ -14,23 +13,33 @@ module.exports = function(grunt) {
     },
     svgstore: {
       options: {
-        prefix : 'shape-', // This will prefix each <g> ID
+        prefix: 'shape-', // This will prefix each <g> ID
       },
-      default : {
+      default: {
         files: {
           'img/svgs/svg-defs.svg': ['img/svg-src/*.svg'],
         }
       }
     },
+
+    autoprefixer: {
+      dist: {
+        files: {
+          'css/build/main.css': 'css/main.css'
+        }
+      }
+    },
+
     watch: {
-      files: ['img/svg-src/*svg','_sass/*'],
-      tasks: ['svgstore','sass']
+      files: ['img/svg-src/*svg', '_sass/*'],
+      tasks: ['svgstore', 'sass', 'autoprefixer']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-svgstore');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass', 'autoprefixer']);
 };
