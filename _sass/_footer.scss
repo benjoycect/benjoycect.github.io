@@ -4,8 +4,11 @@ footer {
   border-top: 0.5em solid darken($body-color, 25%);
   color: #fff;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 1em 5%;
+  @media #{$mq-babybear} {
+    flex-direction: row;
+  }
 }
 
 .colophon {

@@ -1,0 +1,9 @@
+html{ box-sizing: border-box; }
+*{ box-sizing: inherit; }
+body{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; }
+.hide{ display: none; }
+body{ background-color: rgb(246, 246, 246); color: rgb(85, 85, 85); font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 1.25em; line-height: 1.75em; }
+.site-logo{ background-color: transparent; height: 2em; margin-bottom: 1em; -webkit-transition-property: -webkit-transform; -webkit-transition-duration: 0.25s; -webkit-transition-timing-function: linear; -webkit-transition-delay: initial; width: 2em; }
+@media (min-width: 80em){
+.site-logo{ margin-bottom: 0px; }
+}

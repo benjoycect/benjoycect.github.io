@@ -5,19 +5,30 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 21 Jun 2015 23:07:13 -0400</pubDate>
-    <lastBuildDate>Sun, 21 Jun 2015 23:07:13 -0400</lastBuildDate>
+    <pubDate>Tue, 23 Jun 2015 18:21:21 -0400</pubDate>
+    <lastBuildDate>Tue, 23 Jun 2015 18:21:21 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
-        <title>Hello, benjaminjoyce.com</title>
-        <description>&lt;p&gt;It&amp;#39;s 2015. It&amp;#39;s getting late and I have work tomorrow. Yet, I&amp;#39;m taking this time to launch a blog. Mine won&amp;#39;t be much different than the millions of others already on the internet. However, it&amp;#39;s a special moment for &lt;strong&gt;me&lt;/strong&gt;. It&amp;#39;s not the first time I have launched a personal website. I first launched something back in 2010. However, that site, it&amp;#39;s content, and snapshot of that time is gone.&lt;/p&gt;
+        <title>Everything is Gone</title>
+        <description>&lt;p&gt;Pro-tip: Be super careful when using Git for the first time. Just felt the classic pain of deleting about 3 hours of work on this site.&lt;/p&gt;
 
-&lt;p&gt;Those forgotten memories is why I write again today. I don&amp;#39;t want to forget. I want to look back at how bad of a writer I am. I want to see when I learned what I learned. It is my hope that this blog will have everything from CSS tips to personal achievements and failures. It is at this time that I am taking an oath not to delete my posts due to embarrassment, pressure, or other forces. Benjaminjoyce.com is a reflection of me, at the time of each post.&lt;/p&gt;
+&lt;p&gt;The patient person in me says it&amp;#39;s a learning experience. The patient person better get the hell out of this room.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com//2015/06/22/everything-is-gone.html</link>
+        <guid isPermaLink="true">http://yourdomain.com//2015/06/22/everything-is-gone.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Hello, benjaminjoyce.com</title>
+        <description>&lt;p&gt;It&amp;#39;s 2015. It&amp;#39;s getting late and I have work tomorrow. Yet, I&amp;#39;m taking this time to launch a blog. Mine won&amp;#39;t be much different than the millions of others already on the internet. Yet, it&amp;#39;s a special moment for me. It&amp;#39;s not the first time I have launched a personal website. I first launched something back in 2010. That site, it&amp;#39;s content, and snapshot of that time is gone.&lt;/p&gt;
+
+&lt;p&gt;Those forgotten memories is why I write again today. I don&amp;#39;t want to forget. I want to look back at how bad of a writer I am. I want to see when I learned what I learned. This blog will have everything from CSS tips to personal achievements and failures. I am taking an oath not to delete my posts due to embarrassment, pressure, or other forces. Benjaminjoyce.com is a reflection of me, at the time of each post.&lt;/p&gt;
 
 &lt;p&gt;That&amp;#39;s all I have for now.&lt;/p&gt;
-
-&lt;p&gt;-Ben&lt;/p&gt;
 </description>
         <pubDate>Sun, 21 Jun 2015 00:00:00 -0400</pubDate>
         <link>http://yourdomain.com//2015/06/21/hello-benjaminjoycedotcom.html</link>

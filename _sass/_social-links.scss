@@ -2,11 +2,20 @@
   align-items: center;
   display: flex;
   justify-content: flex-end;
-  flex-direction: row;
+  flex-direction: column;
   flex-grow: 1;
+  @media #{$mq-babybear} {
+    flex-direction: row;
+  }
   a {
     &:not(:last-of-type) {
       margin-right: 5%;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      @media #{$mq-babybear} {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

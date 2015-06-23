@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     sass: { // Task
       dist: { // Target
         options: { // Target options
-          style: 'expanded'
+          style: 'compressed'
         },
         files: { // Dictionary of files
           'css/main.css': '_sass/main.scss' // 'destination': 'source'
@@ -29,10 +29,25 @@ module.exports = function(grunt) {
         }
       }
     },
+    criticalcss: {
+      custom: {
+        options: {
+          url: "http://127.0.0.1:4000",
+          width: 3000,
+          height: 2000,
+          outputfile: "css/build/critical.css",
+          filename: "css/build/main.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+          buffer: 800 * 1024,
+          ignoreConsole: false
+        }
+      }
+    },
+
+
 
     watch: {
       files: ['img/svg-src/*svg', '_sass/*'],
-      tasks: ['svgstore', 'sass', 'autoprefixer']
+      tasks: ['svgstore', 'sass', 'autoprefixer', 'criticalcss']
     }
   });
 
@@ -40,6 +55,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-criticalcss');
 
-  grunt.registerTask('default', ['sass', 'autoprefixer']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'criticalcss']);
 };

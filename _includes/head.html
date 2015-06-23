@@ -3,10 +3,89 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/css/build/main.css">
-  <script>
+
+  <script id="loadcss">
+    /*!
+          loadCSS: load a CSS file asynchronously.
+          [c]2014 @scottjehl, Filament Group, Inc.
+          Licensed MIT
+          */
+
+    /* exported loadCSS */
+    function loadCSS(href, before, media, callback) {
+      "use strict";
+      // Arguments explained:
+      // `href` is the URL for your CSS file.
+      // `before` optionally defines the element we'll use as a reference for injecting our <link>
+      // By default, `before` uses the first <script> element in the page.
+      // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+      // If so, pass a different reference element to the `before` argument and it'll insert before that instead
+      // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+      var ss = window.document.createElement("link");
+      var ref = before || window.document.getElementsByTagName("script")[0];
+      var sheets = window.document.styleSheets;
+      ss.rel = "stylesheet";
+      ss.href = href;
+      // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+      ss.media = "only x";
+      // DEPRECATED
+      if (callback) {
+        ss.onload = callback;
+      }
+
+      // inject link
+      ref.parentNode.insertBefore(ss, ref);
+      // This function sets the link's media back to `all` so that the stylesheet applies once it loads
+      // It is designed to poll until document.styleSheets includes the new sheet.
+      ss.onloadcssdefined = function(cb) {
+        var defined;
+        for (var i = 0; i < sheets.length; i++) {
+          if (sheets[i].href && sheets[i].href === ss.href) {
+            defined = true;
+          }
+        }
+        if (defined) {
+          cb();
+        } else {
+          setTimeout(function() {
+            ss.onloadcssdefined(cb);
+          });
+        }
+      };
+      ss.onloadcssdefined(function() {
+        ss.media = media || "all";
+      });
+      return ss;
+    }
+    loadCSS("/css/build/main.css");
   </script>
+  <style>
+  html{box-sizing:border-box}*{box-sizing:inherit}body{margin:0;padding:0}h1,h2,h3,h4,h5,h6{margin-top:0}img{max-width:100%;height:auto}.hide{display:none}body{background-color:#f6f6f6;color:#555;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-size:1.25em;line-height:1.75em}a{color:#3498db;-webkit-transition:color 0.25s;transition:color 0.25s}a:hover{color:#16527a}a:focus{color:#a0cfee}section{max-width:50em;margin:2em auto;padding-left:5%;padding-right:5%}header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#fff;box-shadow:0 0.25em 1em rgba(0,0,0,0.25);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}nav{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}@media (min-width: 80em){nav{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}}nav a:not(:last-of-type){margin-bottom:1em}@media (min-width: 80em){nav a:not(:last-of-type){margin-bottom:0;margin-right:5%}}.article__title-card{-webkit-box-align:baseline;-webkit-align-items:baseline;-ms-flex-align:baseline;align-items:baseline;border-bottom:1px dashed #d4d4d4;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:1em;font-weight:300;line-height:1.25}.article__title{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;font-size:2.5em;margin-top:0.5em;margin-bottom:0.5em}@media (min-width: 80em){.article__title{font-size:4em}}.article__date{font-size:1em;text-transform:uppercase}@media (min-width: 80em){.article__date{font-size:1em}}.article--teaser{padding-top:1em;padding-right:2%;padding-bottom:1em;padding-left:2%;-webkit-transition:background-color 0.5s ease;transition:background-color 0.5s ease}.article--teaser a{color:inherit;text-decoration:none}.article--teaser:hover{background-color:#a0cfee}.article__list{list-style:none}blockquote{background-color:#e9e9e9;border-right:0.5em solid #fe9700;border-bottom:1px solid #d4d4d4;border-left:1px solid #d4d4d4;padding:1em 5%;position:relative}blockquote::before{color:#fe9700;content:open-quote;font-size:3em;position:absolute;left:0;top:0}footer{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#333;border-top:0.5em solid #b6b6b6;color:#fff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.colophon{color:#fff}.colophon:hover{color:#bfbfbf}.social-links{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}@media (min-width: 80em){.social-links{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.social-links a:not(:last-of-type){margin-right:5%;margin-top:1.5em;margin-bottom:1.5em}@media (min-width: 80em){.social-links a:not(:last-of-type){margin-top:0;margin-bottom:0}}.icon{height:2em;width:2em}.site-logo{background-color:transparent;height:2em;margin-bottom:1em;-webkit-transition:-webkit-transform 0.25s linear;transition:transform 0.25s linear;width:2em}.site-logo:hover{-webkit-transform:scale(1.5);-ms-transform:scale(1.5);transform:scale(1.5)}@media (min-width: 80em){.site-logo{margin-bottom:0}}.site-icon--codepen{fill:#fff}
+  </style>
+  <noscript>
+    <link rel="stylesheet" href="/css/build/main.css">
+  </noscript>
 </head>
 
 <body>
