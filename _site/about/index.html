@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title>About</title>
+
+  <script id="loadcss">
+    /*!
+          loadCSS: load a CSS file asynchronously.
+          [c]2014 @scottjehl, Filament Group, Inc.
+          Licensed MIT
+          */
+
+    /* exported loadCSS */
+    function loadCSS(href, before, media, callback) {
+      "use strict";
+      // Arguments explained:
+      // `href` is the URL for your CSS file.
+      // `before` optionally defines the element we'll use as a reference for injecting our <link>
+      // By default, `before` uses the first <script> element in the page.
+      // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+      // If so, pass a different reference element to the `before` argument and it'll insert before that instead
+      // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+      var ss = window.document.createElement("link");
+      var ref = before || window.document.getElementsByTagName("script")[0];
+      var sheets = window.document.styleSheets;
+      ss.rel = "stylesheet";
+      ss.href = href;
+      // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+      ss.media = "only x";
+      // DEPRECATED
+      if (callback) {
+        ss.onload = callback;
+      }
+
+      // inject link
+      ref.parentNode.insertBefore(ss, ref);
+      // This function sets the link's media back to `all` so that the stylesheet applies once it loads
+      // It is designed to poll until document.styleSheets includes the new sheet.
+      ss.onloadcssdefined = function(cb) {
+        var defined;
+        for (var i = 0; i < sheets.length; i++) {
+          if (sheets[i].href && sheets[i].href === ss.href) {
+            defined = true;
+          }
+        }
+        if (defined) {
+          cb();
+        } else {
+          setTimeout(function() {
+            ss.onloadcssdefined(cb);
+          });
+        }
+      };
+      ss.onloadcssdefined(function() {
+        ss.media = media || "all";
+      });
+      return ss;
+    }
+    loadCSS("/css/build/main.css");
+  </script>
+  <style>
+  html{box-sizing:border-box}*{box-sizing:inherit}body{margin:0;padding:0}h1,h2,h3,h4,h5,h6{margin-top:0}img{max-width:100%;height:auto}.hide{display:none}body{background-color:#f6f6f6;color:#555;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-size:1.25em;line-height:1.75em}a{color:#3498db;-webkit-transition:color 0.25s;transition:color 0.25s}a:hover{color:#16527a}a:focus{color:#a0cfee}section{max-width:50em;margin:2em auto;padding-left:5%;padding-right:5%}header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#fff;box-shadow:0 0.25em 1em rgba(0,0,0,0.25);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}nav{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}@media (min-width: 80em){nav{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}}nav a:not(:last-of-type){margin-bottom:1em}@media (min-width: 80em){nav a:not(:last-of-type){margin-bottom:0;margin-right:5%}}.article__title-card{-webkit-box-align:baseline;-webkit-align-items:baseline;-ms-flex-align:baseline;align-items:baseline;border-bottom:1px dashed #d4d4d4;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:1em;font-weight:300;line-height:1.25}.article__title{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;font-size:2.5em;margin-top:0.5em;margin-bottom:0.5em}@media (min-width: 80em){.article__title{font-size:4em}}.article__date{font-size:1em;text-transform:uppercase}@media (min-width: 80em){.article__date{font-size:1em}}.article--teaser{padding-top:1em;padding-right:2%;padding-bottom:1em;padding-left:2%;-webkit-transition:background-color 0.5s ease;transition:background-color 0.5s ease}.article--teaser a{color:inherit;text-decoration:none}.article--teaser:hover{background-color:#a0cfee}.article__list{list-style:none}blockquote{background-color:#e9e9e9;border-right:0.5em solid #fe9700;border-bottom:1px solid #d4d4d4;border-left:1px solid #d4d4d4;padding:1em 5%;position:relative}blockquote::before{color:#fe9700;content:open-quote;font-size:3em;position:absolute;left:0;top:0}footer{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#333;border-top:0.5em solid #b6b6b6;color:#fff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.colophon{color:#fff}.colophon:hover{color:#bfbfbf}.social-links{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}@media (min-width: 80em){.social-links{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.social-links a:not(:last-of-type){margin-right:5%;margin-top:1.5em;margin-bottom:1.5em}@media (min-width: 80em){.social-links a:not(:last-of-type){margin-top:0;margin-bottom:0}}.icon{height:2em;width:2em}.site-logo{background-color:transparent;height:2em;margin-bottom:1em;-webkit-transition:-webkit-transform 0.25s linear;transition:transform 0.25s linear;width:2em}.site-logo:hover{-webkit-transform:scale(1.5);-ms-transform:scale(1.5);transform:scale(1.5)}@media (min-width: 80em){.site-logo{margin-bottom:0}}.site-icon--codepen{fill:#fff}
+  </style>
+  <noscript>
+    <link rel="stylesheet" href="/css/build/main.css">
+  </noscript>
+</head>
+
+<body>
+  <svg class="hide" xmlns="http://www.w3.org/2000/svg"><symbol viewBox="0 0 900 900" id="shape-codepen-logo"><title>codepen-logo</title> <path d="M450.6,3C203.4,3,3,203.4,3,450.6s200.4,447.5,447.6,447.5c247.2,0,447.5-200.4,447.5-447.5 S697.7,3,450.6,3z M450.6,824.6c-206.3,0-374-167.8-374-374s167.8-374,374-374c206.2,0,374,167.8,374,374S656.8,824.6,450.6,824.6z " fill="#fff"/> <path d="M184.3,346.5c0,0-10.5,5.1-10.5,19.7v168.6c0,0-0.5,8.7,10.6,19.8l252.9,168.6c13.2,8.4,26.4,0,26.4,0 l252.9-168.6c0,0,10.6-5.4,10.6-19.8l0,0V366.2c0-14.3-10.6-19.8-10.6-19.8L463.7,177.8c-8-5.3-18.4-5.3-26.4,0L184.4,346.5 M184.3,346.5
+    M474.3,242l186.3,124.2l-83.2,55.7l-103.1-69V242z M426.8,242V353l-103.1,69l-83.2-55.7L426.8,242z M221.4,410.8 l59.5,39.8l-59.5,39.8V410.8z M426.8,659.1L240.4,534.8l83.2-55.7l103.1,69V659.1z M450.6,506.8l-84.1-56.3l84.1-56.3l84.1,56.3 L450.6,506.8z
+    M474.3,659.1V548.1l103.1-69l83.2,55.7L474.3,659.1z M679.7,490.4l-59.5-39.8l59.5-39.8V490.4z" fill="#fff"/> </symbol><symbol viewBox="0 0 900 900" class="site-logo" id="shape-logo"><title>logo</title> <polygon fill="#FE9700" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="450,183.6 515,179.8 633.8,111.1
+		702.6,9 778.7,118.6 737.8,261.5 737.8,632.9 450,891.1 162.2,632.9 162.2,261.5 121.3,118.6 197.4,9 266.2,111.1 385,179.8 	"/> <polygon fill="#65BEEF" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="162.2,261.5 450,417.5
+		162.2,417.5 	"/> <line fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="178" y1="647.1" x2="303.9" y2="521.2"/> <line fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="210.3" y1="676.1" x2="339.6" y2="546.7"/> <polyline fill="#CE7805" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="152.9,122.3 193.7,51.7 216,87
+		"/> <polygon fill="#65BEEF" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="737.8,261.5 450,417.5
+		737.8,417.5 	"/> <line fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="722" y1="647.1" x2="596.1" y2="521.2"/> <line fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="689.7" y1="676.1" x2="560.4" y2="546.7"/> <polyline fill="#CE7805" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="747.1,122.3 706.3,51.7 684,87
+		"/> <polyline fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="306.1,696.1 383.1,762 450,762 	"/> <polygon fill="#D12A2A" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="450,478.8 412.9,521.2
+		412.9,560.5 450,595.8 487.1,559.3 487.1,521.2 	"/> <line fill="#C6A96A" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="162.2" y1="478.8" x2="241" y2="478.8"/> <line fill="#C6A96A" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="162.2" y1="510.4" x2="241" y2="510.4"/> <line fill="#C6A96A" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="659" y1="478.8" x2="737.8" y2="478.8"/> <line fill="#C6A96A" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" x1="659" y1="510.4" x2="737.8" y2="510.4"/> <polyline fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="432.3,182.5 432.3,220.7
+		389.6,263.3 	"/> <polyline fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="389.6,182.5 389.6,220.7
+		346.9,263.3 	"/> <polyline fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="467.7,182.5 467.7,220.7
+		510.4,263.3 	"/> <polyline fill="none" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="510.4,182.5 510.4,220.7
+		553.1,263.3 	"/> <polyline opacity="0.15" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="450,183.6 515,179.8 633.8,111.1
+	702.6,9 778.7,118.6 737.8,261.5 737.8,632.9 450,891.1 "/> </symbol><symbol viewBox="0 0 900 900" id="shape-twitter-logo"><title>twitter-logo</title> <path fill="#2AA9E0" d="M900,170.9c-33.1,14.7-68.7,24.6-106,29.1
+	c38.1-22.9,67.4-59,81.2-102.2c-35.7,21.2-75.2,36.5-117.3,44.8c-33.7-35.9-81.7-58.3-134.8-58.3c-102,0-184.6,82.7-184.6,184.6
+	c0,14.5,1.6,28.6,4.8,42.1c-153.5-7.7-289.5-81.2-380.6-192.9c-15.9,27.3-25,59-25,92.8c0,64.1,32.6,120.6,82.1,153.7
+	c-30.3-1-58.7-9.3-83.6-23.1c0,0.8,0,1.5,0,2.3c0,89.5,63.6,164.1,148.1,181.1c-15.5,4.2-31.8,6.5-48.6,6.5
+	c-11.9,0-23.5-1.2-34.7-3.3c23.5,73.4,91.7,126.7,172.5,128.2c-63.2,49.5-142.8,79-229.3,79c-14.9,0-29.6-0.9-44-2.6
+	c81.7,52.4,178.8,83,283,83c339.6,0,525.3-281.3,525.3-525.3c0-8-0.2-16-0.5-23.9C843.9,240.4,875.2,207.9,900,170.9L900,170.9z"/> </symbol></svg>
+
+  <header>
+    <a href="/">
+      <svg class="icon site-logo">
+        <use xlink:href="#shape-logo"></use>
+      </svg>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+  <section>
+
+<article>
+	<h2 class="article__title-card">
+		<span class="article__title">About</span>
+		<span class="article__date">Published on Jun 21, 2015
+	</h2>
+	  <p>I&#39;m Ben Joyce. I&#39;m a designer and developer from Connecticut. I like to run, play music, and mess around on <a href="http://codepen.io/benjoyce/">CodePen</a>.</p>
+
+<p>I spend a lot of time on the web. Here are some of my favorite sites to visit. I&#39;ll add more as I think of them:</p>
+
+<ul>
+<li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+<li><a href="https://news.ycombinator.com/">Hacker News</a></li>
+<li><a href="https://www.designernews.co/">Designer News</a></li>
+<li><a href="http://www.vice.com/en_us">Vice</a></li>
+<li><a href="http://www.letsrun.com/">LetsRun</a></li>
+<li><a href="http://www.theguardian.com/">theguardian</a></li>
+</ul>
+
+<p>I also like podcasts. Here are some of my favorites:</p>
+
+<ul>
+<li><a href="http://www.thisamericanlife.org/">This American Life</a></li>
+<li><a href="http://shoptalkshow.com/">Shop Talk Show</a></li>
+<li><a href="http://snapjudgment.org/">Snap Judgement</a></li>
+<li><a href="http://www.radiolab.org/">Radiolab</a></li>
+<li><a href="http://5by5.tv/bigwebshow">The Big Web Show</a></li>
+<li><a href="http://99percentinvisible.org/">99 Percent Invisible</a></li>
+<li><a href="http://freakonomics.com/radio/">Freakonomics Radio</a></li>
+<li><a href="https://www.uie.com/brainsparks/topics/podcasts/">A UX Advantage Podcast</a></li>
+<li><a href="http://www.unfinished.bz/">Unfinished.bz</a></li>
+<li><a href="http://danariely.com/tag/arming-the-donkeys/">Arming the Donkeys</a></li>
+<li><a href="https://blog.codepen.io/radio/">CodePen Radio</a></li>
+<li><a href="https://boagworld.com/show/">Boagworld Web Show</a></li>
+<li><a href="http://songexploder.net/">Song Exploder</a></li>
+<li><a href="http://youarenotsosmart.com/">You Are Not So Smart</a></li>
+<li><a href="http://www.stuffyoushouldknow.com/">Stuff You Should Know</a></li>
+<li><a href="http://teamtreehouse.com/library/the-treehouse-show">Treehouse Show</a></li>
+<li><a href="http://www.witsradio.org/listen/">Wits</a></li>
+<li><a href="http://www.maximumfun.org/shows/judge-john-hodgman">Judge John Hodgman</a></li>
+<li><a href="http://nerdist.com/">Nerdist</a></li>
+<li><a href="http://www.comedybangbang.com/">Comedy Bang Bang</a></li>
+<li><a href="http://gimletmedia.com/show/reply-all/">Reply All</a></li>
+<li><a href="http://www.earwolf.com/show/spontaneanation-with-paul-f-tompkins/">Spontaneanation</a></li>
+<li><a href="https://www.reddit.com/r/upvoted">Upvoted</a></li>
+<li><a href="http://www.earwolf.com/show/with-special-guest-lauren-lapkus/">With Special Guest Lauren Lapkus</a></li>
+<li><a href="http://gimletmedia.com/show/mystery-show/">Mystery Show</a></li>
+<li><a href="http://www.lorepodcast.com/">Lore</a></li>
+</ul>
+
+<p></article></p>
+
+</article>
+</section>
+<footer>
+  <a class="colophon" href="/2015/06/21/hello-benjaminjoycedotcom.html">
+    First published in 2015
+  </a>
+  <div class="social-links">
+    <a href="https://twitter.com/BenJoyceCT">
+      <svg class="icon site-icon--twitter">
+        <use xlink:href="#shape-twitter-logo"></use>
+      </svg>
+    </a>
+    <a href="http://codepen.io/benjoyce/">
+      <svg class="icon site-icon--codepen">
+        <use xlink:href="#shape-codepen-logo"></use>
+      </svg>
+    </a>
+  </div>
+</footer>
+   </body>
+</html>
+

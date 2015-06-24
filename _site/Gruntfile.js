@@ -43,8 +43,6 @@ module.exports = function(grunt) {
       }
     },
 
-
-
     watch: {
       files: ['img/svg-src/*svg', '_sass/*'],
       tasks: ['svgstore', 'sass', 'autoprefixer', 'criticalcss']
