@@ -5,9 +5,34 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Jun 2015 07:16:38 -0400</pubDate>
-    <lastBuildDate>Fri, 26 Jun 2015 07:16:38 -0400</lastBuildDate>
+    <pubDate>Fri, 26 Jun 2015 19:12:49 -0400</pubDate>
+    <lastBuildDate>Fri, 26 Jun 2015 19:12:49 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Fridays Are For Starting</title>
+        <description>&lt;blockquote&gt;[I]t&#39;s like coming home on Friday night and doing your homework right away so that your Saturday night is free to just party.
+
+&lt;p class=&quot;blockquote__author&quot;&gt;Mike Meyers as Wayne Campbell, Wayne&#39;s World 2&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;I don&amp;#39;t know if I fully subscribe to getting everything done on a Friday. A little procrastination feels so nice after a long week. It&amp;#39;s good to get started on Friday. Like the tell-tale-heart, the post I started today won&amp;#39;t be off my mind until I &lt;code&gt;git push&lt;/code&gt; later this weekend. Starting the post will not make me anxious or stressed. It will just keep me honest.&lt;/p&gt;
+
+&lt;p&gt;Writing every day is going to be hard. I have about one and a half hours a day to write. Writing will fill the short time between running, work, running, and a social life. I think this site will be something I enjoy though. It feels like illustrating, coding, or playing music. The feeling can&amp;#39;t really be described. You can find the emotion somewhere between excitement and happiness. Energy, maybe? I&amp;#39;m not sure. &lt;a href=&quot;http://austinkleon.com/&quot;&gt;Austin Kleon&lt;/a&gt; wrote one of my favorite quotes about this subject.&lt;/p&gt;
+
+&lt;blockquote&gt;Inertia is the death of creativity. You have to stay in the groove. When you get out of the groove, you start to dread the work, because you know it’s going to suck for a while—it’s going to suck until you get back into the flow.
+
+&lt;p class=&quot;blockquote__author&quot;&gt;Austin Kleon. &lt;a href=&quot;http://www.amazon.com/Steal-Like-Artist-Things-Creative/dp/0761169253&quot;&gt;Steal Like an Artist&lt;/a&gt;.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;I think you have to stay busy to be good. Think about lazy Sundays. To me, that is the worst. Nothing is getting done after your legs start to atrophy and brain turns to mush. I was able to crank out half of a decent post and this quick rant in the two hours I had between work and hanging out with friends. I don&amp;#39;t think I&amp;#39;ll produce nearly that much when I&amp;#39;m not busy.&lt;/p&gt;
+
+&lt;p&gt;Okay, get something started, then have fun. Enjoy your weekend.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 26 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com//2015/06/26/fridays-are-for-starting.html</link>
+        <guid isPermaLink="true">http://yourdomain.com//2015/06/26/fridays-are-for-starting.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>My Gruntfile</title>
