@@ -1,4 +1,8 @@
---- layout: title: Home permalink: /404.html ---
+---
+layout: none
+title: Home
+permalink: /404.html
+---
 <!DOCTYPE html>
 <html>
 
@@ -206,64 +210,17 @@
 
     .fourohfour__message {
       position: absolute;
-      font-size: 5em;
+      font-size: 2em;
       background-color: rgba(0, 0, 0, 0.5);
-      top: 0;
-      padding: 5vh 5vw;
+      bottom: 0;
+      padding: 5vh 5%;
+      width: 100%;
       line-height: 1.45;
       color: #fff;
-      -webkit-animation: message-rise 5s ease forwards;
-      animation: message-rise 5s ease forwards;
     }
 
     .fourohfour__message a {
       color: #e6e6e6;
-    }
-
-    @-webkit-keyframes message-rise {
-      0% {
-        -webkit-transform: translate(0, 100%) rotate(0);
-        transform: translate(0, 100%) rotate(0);
-      }
-      49% {
-        -webkit-transform: translate(0, 1%) rotate(0);
-        transform: translate(0, 1%) rotate(0);
-      }
-      50% {
-        -webkit-transform: translate(0, 0) rotate(0);
-        transform: translate(0, 0) rotate(0);
-      }
-      99% {
-        -webkit-transform: translate(0, 75%) rotate(180deg);
-        transform: translate(0, 75%) rotate(180deg);
-      }
-      100% {
-        -webkit-transform: translate(0, 76%) rotate(180deg);
-        transform: translate(0, 76%) rotate(180deg);
-      }
-    }
-
-    @keyframes message-rise {
-      0% {
-        -webkit-transform: translate(0, 100%) rotate(0);
-        transform: translate(0, 100%) rotate(0);
-      }
-      49% {
-        -webkit-transform: translate(0, 1%) rotate(0);
-        transform: translate(0, 1%) rotate(0);
-      }
-      50% {
-        -webkit-transform: translate(0, 0) rotate(0);
-        transform: translate(0, 0) rotate(0);
-      }
-      99% {
-        -webkit-transform: translate(0, 125%) rotate(180deg);
-        transform: translate(0, 125%) rotate(180deg);
-      }
-      100% {
-        -webkit-transform: translate(0, 126%) rotate(180deg);
-        transform: translate(0, 126%) rotate(180deg);
-      }
     }
   </style>
 
