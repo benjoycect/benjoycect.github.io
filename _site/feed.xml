@@ -5,12 +5,12 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 25 Jun 2015 20:35:39 -0400</pubDate>
-    <lastBuildDate>Thu, 25 Jun 2015 20:35:39 -0400</lastBuildDate>
+    <pubDate>Thu, 25 Jun 2015 21:00:08 -0400</pubDate>
+    <lastBuildDate>Thu, 25 Jun 2015 21:00:08 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
-        <title>My Grunt File</title>
+        <title>My Gruntfile</title>
         <description>&lt;p&gt;I&amp;#39;m using some &lt;a href=&quot;http://gruntjs.com/&quot; title=&quot;Grunt&quot;&gt;Grunt&lt;/a&gt; tasks that have helped me get this site running. They have also made my life way easier. A few caveats before we get started. One, I know Grunt isn&amp;#39;t the super cool task runner it was when it was first released. &lt;a href=&quot;http://gulpjs.com/&quot; title=&quot;Gulp&quot;&gt;Gulp&lt;/a&gt; has earned that distinction from most developers I talk to now. &lt;a href=&quot;https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4&quot;&gt;Enough&lt;/a&gt; has been &lt;a href=&quot;http://www.hongkiat.com/blog/gulp-vs-grunt/&quot;&gt;written&lt;/a&gt; about &lt;a href=&quot;http://sixrevisions.com/web-development/grunt-vs-gulp/&quot;&gt;Grunt versus Gulp&lt;/a&gt; that I don&amp;#39;t need to go into that. I&amp;#39;ve tried both. I started with Grunt, thanks to Chris Coyier&amp;#39;s awesome 24 Ways &lt;a href=&quot;http://24ways.org/2013/grunt-is-not-weird-and-hard/&quot;&gt;article&lt;/a&gt;. I like it and I&amp;#39;m staying with it for a while. Another quick note, I have an extremely basic website right now. I haven&amp;#39;t added any images (yet) and there is basically no interactivity. Finally, I&amp;#39;m not going to teach you how to use Grunt. The previously mentioned article by Chris Coyier does it better than I ever could.&lt;/p&gt;
 
 &lt;p&gt;Okay? Good? Let&amp;#39;s see that &lt;code&gt;Gruntfile.js&lt;/code&gt;!

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  My Grunt File
+title:  My Gruntfile
 date:   2015-06-25
 categories:
 ---
