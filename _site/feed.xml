@@ -5,9 +5,119 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Jun 2015 22:37:27 -0400</pubDate>
-    <lastBuildDate>Wed, 24 Jun 2015 22:37:27 -0400</lastBuildDate>
+    <pubDate>Thu, 25 Jun 2015 20:35:39 -0400</pubDate>
+    <lastBuildDate>Thu, 25 Jun 2015 20:35:39 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>My Grunt File</title>
+        <description>&lt;p&gt;I&amp;#39;m using some &lt;a href=&quot;http://gruntjs.com/&quot; title=&quot;Grunt&quot;&gt;Grunt&lt;/a&gt; tasks that have helped me get this site running. They have also made my life way easier. A few caveats before we get started. One, I know Grunt isn&amp;#39;t the super cool task runner it was when it was first released. &lt;a href=&quot;http://gulpjs.com/&quot; title=&quot;Gulp&quot;&gt;Gulp&lt;/a&gt; has earned that distinction from most developers I talk to now. &lt;a href=&quot;https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4&quot;&gt;Enough&lt;/a&gt; has been &lt;a href=&quot;http://www.hongkiat.com/blog/gulp-vs-grunt/&quot;&gt;written&lt;/a&gt; about &lt;a href=&quot;http://sixrevisions.com/web-development/grunt-vs-gulp/&quot;&gt;Grunt versus Gulp&lt;/a&gt; that I don&amp;#39;t need to go into that. I&amp;#39;ve tried both. I started with Grunt, thanks to Chris Coyier&amp;#39;s awesome 24 Ways &lt;a href=&quot;http://24ways.org/2013/grunt-is-not-weird-and-hard/&quot;&gt;article&lt;/a&gt;. I like it and I&amp;#39;m staying with it for a while. Another quick note, I have an extremely basic website right now. I haven&amp;#39;t added any images (yet) and there is basically no interactivity. Finally, I&amp;#39;m not going to teach you how to use Grunt. The previously mentioned article by Chris Coyier does it better than I ever could.&lt;/p&gt;
+
+&lt;p&gt;Okay? Good? Let&amp;#39;s see that &lt;code&gt;Gruntfile.js&lt;/code&gt;!
+&lt;pre&gt;&lt;code&gt;
+module.exports = function(grunt) {
+    grunt.initConfig({
+      sass: { // Task
+        dist: { // Target
+          options: { // Target options
+            style: &amp;#39;compressed&amp;#39;
+          },
+          files: { // Dictionary of files
+            &amp;#39;css/main.css&amp;#39;: &amp;#39;sass/main.scss&amp;#39; // &amp;#39;destination&amp;#39;: &amp;#39;source&amp;#39;
+          }
+        }
+      },
+      svgstore: {
+        options: {
+          prefix: &amp;#39;shape-&amp;#39;, // This will prefix each &lt;g&gt; ID
+        },
+        default: {
+          files: {
+            &amp;#39;img/svgs/svg-defs.svg&amp;#39;: [&amp;#39;img/svg-src/[an asterisk goes here].svg&amp;#39;],
+          }
+        }
+      },
+      autoprefixer: {
+        dist: {
+          files: {
+            &amp;#39;css/build/main.css&amp;#39;: &amp;#39;css/main.css&amp;#39;
+          }
+        }
+      },
+      criticalcss: {
+        custom: {
+          options: {
+            url: &amp;quot;http://127.0.0.1:4000&amp;quot;,
+            width: 3000,
+            height: 2000,
+            outputfile: &amp;quot;css/build/critical.css&amp;quot;,
+            filename: &amp;quot;css/build/main.css&amp;quot;, // Using path.resolve( path.join( ... ) ) is a good idea here
+            buffer: 800 * 1024,
+            ignoreConsole: false
+          }
+        }
+      },
+      watch: {
+        files: [&amp;#39;img/svg-src/[an asterisk goes here].svg&amp;#39;, &amp;#39;sass/[an asterisk goes here]&amp;#39;],
+        tasks: [&amp;#39;svgstore&amp;#39;, &amp;#39;sass&amp;#39;, &amp;#39;autoprefixer&amp;#39;, &amp;#39;criticalcss&amp;#39;]
+      }
+    });
+    grunt.loadNpmTasks(&amp;#39;grunt-contrib-sass&amp;#39;);
+    grunt.loadNpmTasks(&amp;#39;grunt-contrib-watch&amp;#39;);
+    grunt.loadNpmTasks(&amp;#39;grunt-svgstore&amp;#39;);
+    grunt.loadNpmTasks(&amp;#39;grunt-autoprefixer&amp;#39;);
+    grunt.loadNpmTasks(&amp;#39;grunt-criticalcss&amp;#39;);
+    grunt.registerTask(&amp;#39;default&amp;#39;, [&amp;#39;sass&amp;#39;, &amp;#39;autoprefixer&amp;#39;, &amp;#39;criticalcss&amp;#39;]);
+    };
+&lt;/code&gt;&lt;/pre&gt;
+So you&amp;#39;ll notice pretty quickly that I&amp;#39;m using five tasks. I&amp;#39;ll talk about each one and the settings that got me confused.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://github.com/gruntjs/grunt-contrib-sass&quot;&gt;grunt-contrib-sass&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;I have been writing all my style code in &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; for about two years. If you&amp;#39;re writing your stylesheets in CSS, stop and learn Sass. It will save you a ton of time and your code will be much easier to read. I&amp;#39;m not going to go into the intricacies of Sass. I recommend the courses on &lt;a href=&quot;https://teamtreehouse.com&quot;&gt;Treehouse&lt;/a&gt; if you want to learn Sass.&lt;/p&gt;
+
+&lt;p&gt;Sass is a preprocessor for CSS. Preprocessors introduce a level of abstraction that makes CSS way easier to write.&lt;/p&gt;
+
+&lt;p&gt;Having the abstraction comes at a bit of a cost though because you have to compile it to code that the browser can read. Having a task runner makes compiling the code super easy. After installing grunt-contrib-sass, I went to the &lt;code&gt;files&lt;/code&gt; block and set &lt;code&gt;&amp;#39;css/main.css&amp;#39;: &amp;#39;sass/main.scss&amp;#39;&lt;/code&gt; &lt;code&gt;&amp;#39;css/main.css&amp;#39;&lt;/code&gt; is the final stylesheet that my site uses and &lt;code&gt;&amp;#39;sass/main.scss&amp;#39;&lt;/code&gt;&lt;/pre&gt; is the location of the &lt;code&gt;.scss&lt;/code&gt; file that contains all of the necessary &lt;code&gt;@import&lt;/code&gt; declarations for my Sass partials. Now, this pattern of &lt;code&gt;destination : source&lt;/code&gt; is one I find a little weird, but see in many tasks. I remember by thinking &amp;quot;this thing works by getting stuff from : this thing.&amp;quot; I&amp;#39;m sure there is a good reason for the pattern, but I have no idea.&lt;/p&gt;
+
+&lt;p&gt;The other piece of grunt-contrib-sass that is important is the &lt;code&gt;style&lt;/code&gt; declaration. I started looking all &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt; for a good CSS minifyier until I finally realized the Sass task does it for you. Just make the style &lt;code&gt;compressed&lt;/code&gt; and you&amp;#39;re all set. You should minify. No one needs to look at your production stylesheet and it reduces file size a pretty significant amount.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://github.com/FWeinb/grunt-svgstore&quot;&gt;grunt-svgstore&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;This method is another Chris Coyier special. Go check out the article about this method, &lt;a href=&quot;https://css-tricks.com/svg-sprites-use-better-icon-fonts/&quot;&gt;Icon System with SVG Sprites&lt;/a&gt;. The article explains about all you need to know. I&amp;#39;ve liked working with this approach. But, I have noticed it&amp;#39;s a little weird to add classes to specific parts of one of the SVGs in the sprite.&lt;/p&gt;
+
+&lt;p&gt;Just be sure to plan ahead before you combine the files into one. You&amp;#39;re production SVG file will be overwritten every time you add a new file. Make sure those classes and animations live in the individual file, pre-combination.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://github.com/nDmitry/grunt-autoprefixer&quot;&gt;grunt-autoprefixer&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;The first thing you notice when you get to the page for Autoprefixer is a message to use PostCSS instead. I&amp;#39;ve heard good things about PostCSS, but I haven&amp;#39;t explored it too much yet. It&amp;#39;s on my list of tools to learn more about, but here is what I know: Autoprefixer works.&lt;/p&gt;
+
+&lt;p&gt;Autoprefixer is crucial to making sure my site works on a bunch of different browsers. It uses information from &lt;a href=&quot;http://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt; to determine when to add &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix&quot;&gt;vendor prefixes&lt;/a&gt; to different CSS properties. Use this tool if you want your site to look reasonable in other browsers. It takes almost no extra work (besides testing, you should still be testing).&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://github.com/filamentgroup/grunt-criticalcss&quot;&gt;grunt-criticalcss&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;I strongly recommend you read &lt;a href=&quot;https://www.filamentgroup.com/lab/performance-rwd.html&quot;&gt;How we make RWD sites load fast as heck&lt;/a&gt; written by Scott Jehl. It has been about a year since that article came out and I still use many of the ideas from it today. Thinking about critical CSS is one of those ideas.&lt;/p&gt;
+
+&lt;p&gt;Right now, my site is tiny. I&amp;#39;m able to inline my whole style sheet, besides the request for the font files from Google. Still, my the home page still gets delivered in less than 6kb (gzip). I don&amp;#39;t really need to worry about critical CSS right now. Soon my site and stylesheet will get into territory that makes it more than one http request. I have this task running in preparation for that day.&lt;/p&gt;
+
+&lt;p&gt;I do have a few things to say about grunt-criticalcss. It&amp;#39;s not perfect. I set the &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; declarations to some pretty massive values. Still, the page still looked super broken on first paint. I recommend using this task as a starting point and then taking a bit of time to use your brain to figure out what else needs to be included inline.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://github.com/gruntjs/grunt-contrib-watch&quot;&gt;grunt-contrib-watch&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Having something watch your files is pretty necessary for any task runner. Having Watch running will allow you to not have to worry about typing &lt;code&gt;grunt&lt;/code&gt; every time you want to preview your site.&lt;/p&gt;
+
+&lt;h3&gt;Final Thoughts&lt;/h3&gt;
+
+&lt;p&gt;There are many easier options to get a website up and running. But there is something special about crafting something from nothing and making it yours. Task runners make the process of creating a site &amp;quot;from scratch&amp;quot; much smoother. This is my approach to Grunt and it&amp;#39;s not perfect. Keep an eye on the site for updates about my Grunt process, deeper dives into the reasons for each task, and inevitably, my switch to Gulp.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions or feedback, shoot me a tweet &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com//2015/06/25/my-grunt-file.html</link>
+        <guid isPermaLink="true">http://yourdomain.com//2015/06/25/my-grunt-file.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Listen to &amp;quot;The Memory Palace&amp;quot;</title>

@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-
   grunt.initConfig({
     sass: { // Task
       dist: { // Target
@@ -21,7 +20,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
     autoprefixer: {
       dist: {
         files: {
@@ -42,13 +40,11 @@ module.exports = function(grunt) {
         }
       }
     },
-
     watch: {
       files: ['img/svg-src/*svg', '_sass/*'],
       tasks: ['svgstore', 'sass', 'autoprefixer', 'criticalcss']
     }
   });
-
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-svgstore');
