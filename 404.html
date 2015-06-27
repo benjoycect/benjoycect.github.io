@@ -7,224 +7,213 @@ permalink: /404.html
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>404: Page Not Found</title>
+  <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
   <meta name=viewport content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+
+  <script id="loadcss">
+    /*!
+              loadCSS: load a CSS file asynchronously.
+              [c]2014 @scottjehl, Filament Group, Inc.
+              Licensed MIT
+              */
+
+    /* exported loadCSS */
+    function loadCSS(href, before, media, callback) {
+      "use strict";
+      // Arguments explained:
+      // `href` is the URL for your CSS file.
+      // `before` optionally defines the element we'll use as a reference for injecting our <link>
+      // By default, `before` uses the first <script> element in the page.
+      // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+      // If so, pass a different reference element to the `before` argument and it'll insert before that instead
+      // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+      var ss = window.document.createElement("link");
+      var ref = before || window.document.getElementsByTagName("script")[0];
+      var sheets = window.document.styleSheets;
+      ss.rel = "stylesheet";
+      ss.href = href;
+      // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+      ss.media = "only x";
+      // DEPRECATED
+      if (callback) {
+        ss.onload = callback;
+      }
+
+      // inject link
+      ref.parentNode.insertBefore(ss, ref);
+      // This function sets the link's media back to `all` so that the stylesheet applies once it loads
+      // It is designed to poll until document.styleSheets includes the new sheet.
+      ss.onloadcssdefined = function(cb) {
+        var defined;
+        for (var i = 0; i < sheets.length; i++) {
+          if (sheets[i].href && sheets[i].href === ss.href) {
+            defined = true;
+          }
+        }
+        if (defined) {
+          cb();
+        } else {
+          setTimeout(function() {
+            ss.onloadcssdefined(cb);
+          });
+        }
+      };
+      ss.onloadcssdefined(function() {
+        ss.media = media || "all";
+      });
+      return ss;
+    }
+    loadCSS("/css/build/main.css");
+  </script>
   <style>
-    html {
-      box-sizing: border-box;
-    }
+    html{box-sizing:border-box}*{box-sizing:inherit}body{margin:0;padding:0}h1,h2,h3,h4,h5,h6{margin-top:0}img{max-width:100%;height:auto}.hide{display:none}body{background-color:#f6f6f6;color:#555;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-size:1.25em;line-height:1.75em}a{color:#3498db;-webkit-transition:color 0.25s;transition:color 0.25s}a:hover{color:#16527a}a:focus{color:#a0cfee}section{max-width:50em;margin:2em auto;padding-left:5%;padding-right:5%}header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#fff;box-shadow:0 0.25em 1em rgba(0,0,0,0.25);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}nav{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}@media (min-width: 80em){nav{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}}nav a:not(:last-of-type){margin-bottom:1em}@media (min-width: 80em){nav a:not(:last-of-type){margin-bottom:0;margin-right:5%}}.article__title-card{-webkit-box-align:baseline;-webkit-align-items:baseline;-ms-flex-align:baseline;align-items:baseline;border-bottom:1px dashed #d4d4d4;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:1em;font-weight:300;line-height:1.25;word-wrap:break-word}.article__title{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;font-size:2.5em;margin-top:0.5em;margin-bottom:0.5em}@media (min-width: 80em){.article__title{font-size:4em}}.article__date{font-size:1em;text-transform:uppercase}@media (min-width: 80em){.article__date{font-size:1em}}.article--teaser{padding-top:1em;padding-bottom:1em;-webkit-transition:background-color 0.5s ease;transition:background-color 0.5s ease}.article--teaser a{color:inherit;text-decoration:none}.article--teaser:hover{background-color:#a0cfee}.article__list{list-style:none;padding-left:0}blockquote{background-color:#e9e9e9;border-right:0.5em solid #fe9700;border-bottom:1px solid #d4d4d4;border-left:1px solid #d4d4d4;padding:1em 5%;position:relative}footer{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#333;border-top:0.5em solid #b6b6b6;color:#fff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.colophon{color:#fff}.colophon:hover{color:#bfbfbf}.social-links{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}@media (min-width: 80em){.social-links{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.social-links a:not(:last-of-type){margin-right:5%;margin-top:1.5em;margin-bottom:1.5em}@media (min-width: 80em){.social-links a:not(:last-of-type){margin-top:0;margin-bottom:0}}.icon{height:2em;width:2em}.site-logo{background-color:transparent;height:2em;margin-bottom:1em;-webkit-transition:-webkit-transform 0.25s linear;transition:transform 0.25s linear;width:2em}.site-logo:hover{-webkit-transform:scale(1.5);-ms-transform:scale(1.5);transform:scale(1.5)}@media (min-width: 80em){.site-logo{margin-bottom:0}}.site-icon--codepen{fill:#fff}
 
-    * {
-      box-sizing: inherit;
-    }
 
-    body {
-      margin: 0;
-      padding: 0;
-    }
+    .error-text {
+    text-align: center;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-top: 0;
-    }
+  .bubble {
+    -webkit-animation: pop 2s ease infinite;
+            animation: pop 2s ease infinite;
+    -webkit-transform: translateY(5em);
+        -ms-transform: translateY(5em);
+            transform: translateY(5em);
+  }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+  .bubble:nth-child(1) {
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+  }
 
-    body {
-      background-color: #242e47;
-      overflow: hidden;
-      font-family: 'Helvetica', 'Arial', sans-serif;
-      font-weight: 300;
-    }
+  .bubble:nth-child(2) {
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+  }
 
-    .beaker {
-      display: block;
-      margin: 0 auto;
-      width: 20rem;
-    }
+  .bubble:nth-child(3) {
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
+  }
 
-    .test-tube {
-      position: absolute;
-      top: 25rem;
-      left: 30%;
-      width: 5rem;
+  @-webkit-keyframes pop {
+    0% {
+      -webkit-transform: translateY(5em);
+              transform: translateY(5em);
+      opacity: 1;
     }
-
-    .table {
-      background-color: #efefef;
-      height: 3rem;
-      width: 100%;
-    }
-
-    .table-bottom {
-      background-color: #afafaf;
-      background-image: -webkit-linear-gradient(0deg, #969696 25%, #afafaf 25%, #afafaf 50%, #afafaf 75%, #969696 75%, #969696 100%);
-      background-image: linear-gradient(90deg #969696 0, #969696 25%, #afafaf 25%, #afafaf 50%, #afafaf 75%, #969696 75%, #969696 100%);
-      display: block;
-      height: 25rem;
-      width: 100%;
-    }
-
-    .bubble {
-      -webkit-animation: pop 3s ease infinite;
-      animation: pop 3s ease infinite;
-    }
-
-    .bubble:nth-child(3) {
-      -webkit-transform: translateY(-2rem);
-      -ms-transform: translateY(-2rem);
-      transform: translateY(-2rem);
-    }
-
-    .bubble:nth-child(1) {
-      -webkit-animation-delay: 2s;
-      animation-delay: 2s;
-    }
-
-    .bubble:nth-child(2) {
-      -webkit-animation-delay: 3s;
-      animation-delay: 3s;
-    }
-
-    .bubble:nth-child(3) {
-      -webkit-animation-delay: 4s;
-      animation-delay: 4s;
-    }
-
-    @-webkit-keyframes pop {
-      0% {
-        -webkit-transform: translateY(5rem);
-        transform: translateY(5rem);
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes pop {
-      0% {
-        -webkit-transform: translateY(5rem);
-        transform: translateY(5rem);
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    .explosion {
-      -webkit-animation: bang 2s ease alternate 1;
-      animation: bang 2s ease alternate 1;
-      position: absolute;
-      top: 0;
+    100% {
+      -webkit-transform: translateY(-200%);
+              transform: translateY(-200%);
       opacity: 0;
     }
+  }
 
-    @-webkit-keyframes bang {
-      0% {
-        opacity: 1;
-        -webkit-transform: rotate(200deg) scale(0);
-        transform: rotate(200deg) scale(0);
-      }
+  @keyframes pop {
+    0% {
+      -webkit-transform: translateY(5em);
+              transform: translateY(5em);
+      opacity: 1;
     }
+    100% {
+      -webkit-transform: translateY(-200%);
+              transform: translateY(-200%);
+      opacity: 0;
+    }
+  }
+  .explosion {
+    -webkit-animation: bang 2s ease alternate 1;
+            animation: bang 2s ease alternate 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+  }
 
-    @keyframes bang {
-      0% {
-        opacity: 1;
-        -webkit-transform: rotate(200deg) scale(0);
-        transform: rotate(200deg) scale(0);
-      }
+  @-webkit-keyframes bang {
+    0% {
+      opacity: 1;
+      -webkit-transform: rotate(200deg) scale(0);
+              transform: rotate(200deg) scale(0);
     }
+  }
 
-    .glass-ball {
-      left: 65%;
-      position: absolute;
-      top: 20rem;
-      width: 15rem;
+  @keyframes bang {
+    0% {
+      opacity: 1;
+      -webkit-transform: rotate(200deg) scale(0);
+              transform: rotate(200deg) scale(0);
     }
+  }
+  .buzz {
+    -webkit-animation: buzzbuzz 5s linear infinite;
+            animation: buzzbuzz 5s linear infinite;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+  }
 
-    .buzz {
-      -webkit-animation: buzzbuzz 5s linear infinite;
-      animation: buzzbuzz 5s linear infinite;
-      -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-      transform-origin: center;
+  @-webkit-keyframes buzzbuzz {
+    0% {
+      -webkit-transform: scale(0.5) rotate(0deg);
+              transform: scale(0.5) rotate(0deg);
     }
+    50% {
+      -webkit-transform: scale(1) rotate(180deg);
+              transform: scale(1) rotate(180deg);
+    }
+    100% {
+      -webkit-transform: scale(0.5) rotate(360deg);
+              transform: scale(0.5) rotate(360deg);
+    }
+  }
 
-    @-webkit-keyframes buzzbuzz {
-      0% {
-        -webkit-transform: scale(0.5) rotate(0deg);
-        transform: scale(0.5) rotate(0deg);
-      }
-      50% {
-        -webkit-transform: scale(1) rotate(180deg);
-        transform: scale(1) rotate(180deg);
-      }
-      100% {
-        -webkit-transform: scale(0.5) rotate(360deg);
-        transform: scale(0.5) rotate(360deg);
-      }
+  @keyframes buzzbuzz {
+    0% {
+      -webkit-transform: scale(0.5) rotate(0deg);
+              transform: scale(0.5) rotate(0deg);
     }
+    50% {
+      -webkit-transform: scale(1) rotate(180deg);
+              transform: scale(1) rotate(180deg);
+    }
+    100% {
+      -webkit-transform: scale(0.5) rotate(360deg);
+              transform: scale(0.5) rotate(360deg);
+    }
+  }
 
-    @keyframes buzzbuzz {
-      0% {
-        -webkit-transform: scale(0.5) rotate(0deg);
-        transform: scale(0.5) rotate(0deg);
-      }
-      50% {
-        -webkit-transform: scale(1) rotate(180deg);
-        transform: scale(1) rotate(180deg);
-      }
-      100% {
-        -webkit-transform: scale(0.5) rotate(360deg);
-        transform: scale(0.5) rotate(360deg);
-      }
-    }
+body { overflow: hidden;}
 
-    .picture {
-      left: 10%;
-      position: absolute;
-      top: 2rem;
-      width: 15rem;
-      z-index: -1;
-    }
 
-    .fourohfour {
-      position: absolute;
-      top: 5vh;
-      width: 50em;
-      left: 0;
-      font-family: sans-serif;
-      color: #fff;
-      z-index: -2;
-    }
 
-    .fourohfour__message {
-      position: absolute;
-      font-size: 2em;
-      background-color: rgba(0, 0, 0, 0.5);
-      bottom: 0;
-      padding: 5vh 5%;
-      width: 100%;
-      line-height: 1.45;
-      color: #fff;
-    }
 
-    .fourohfour__message a {
-      color: #e6e6e6;
-    }
   </style>
-
-
+  <noscript>
+    <link rel="stylesheet" href="/css/build/main.css">
+  </noscript>
   <script>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
@@ -244,242 +233,300 @@ permalink: /404.html
 </head>
 
 <body>
-<a href="http://benjaminjoyce.com">
-  <svg class="beaker" viewBox="0 0 229 453.1">
-    <polygon opacity="0.5" points="180.9,94.1 201.7,94.1 183.9,110.4 155,138.6 155,347.1 156.3,347.1 155.2,392.9 102.4,453
-	47.5,392.9 46.4,347.1 48,347.1 48,137.7 9.7,55 37,96.8 33.4,65.8 39.5,80.9 33.7,35.6 51,65.8 51,21 72,87.1 72,48.2 86.2,89.8
-	97.1,0 102.3,96.9 116.8,53.3 120.8,89.8 171.1,7.1 150.6,69.3 179.1,47.1 160.2,85.4 205.8,69.2 " />
-    <rect x="60.3" y="128" fill="#FCD4D4" width="108.5" height="219.6" />
-    <polygon opacity="3.000000e-02" points="84.7,347.6 114.3,238.3 59,180.4 59,347.5 " />
-    <path fill="#423636" d="M168.8,325.9c0,1.1,0,2.1,0,3.2c-1.2-38.7-24.7-41.7-53.5-41.7c-28.8,0-52.2,3-53.5,41.7c0-1.1,0-2.1,0-3.2
-                        c0-40.2,24-72.8,53.5-72.8C144.8,253.1,168.8,285.7,168.8,325.9z;">
-      <animate attributeName="d" dur="500ms" repeatCount="1" values="M168.8,325.9c0,1.1,0,2.1,0,3.2c-1.2-38.7-24.7-65.1-53.5-65.1c-28.8,0-52.2,26.4-53.5,65.1
-	c0-1.1,0-2.1,0-3.2c0-40.2,24-72.8,53.5-72.8C144.8,253.1,168.8,285.7,168.8,325.9z;M168.8,325.9c0,1.1,0,2.1,0,3.2c-1.2-38.7-24.7-41.7-53.5-41.7c-28.8,0-52.2,3-53.5,41.7c0-1.1,0-2.1,0-3.2
-                        c0-40.2,24-72.8,53.5-72.8C144.8,253.1,168.8,285.7,168.8,325.9z;" />
-    </path>
-    <circle fill="#FF9B48" cx="115.2" cy="238.4" r="33.1" />
-    <circle fill="#FDFBFF" cx="143.7" cy="184.4" r="29.3" />
-    <circle cx="143.7" cy="189.8" r="10.1" />
-    <circle fill="#FDFBFF" cx="85.4" cy="184.4" r="29.3" />
-    <circle cx="85.4" cy="189.8" r="10.1" />
-    <polyline fill="#FA3F00" points="60.6,138.4 22.2,55 49.7,96.8 46.1,65.8 52.3,80.9 46.6,35.6 64,65.8 64,21 85,87.1 85,48.2
-	99.1,89.8 109.9,0 115.2,96.9 129.6,53.3 133.6,89.8 183.9,7.1 163.4,69.3 191.9,47.1 173,85.4 218.6,69.2 193.7,94.1 214.5,94.1
-	197.2,110.4 168.8,138.5 " />
-    <path opacity="2.000000e-02" d="M114.7,184.4c0,16.2-13.1,29.3-29.3,29.3c-16.2,0-29.3-13.1-29.3-29.3c0-1.4,0.1-2.7,0.3-4
-	c2,14.3,14.2,25.3,29,25.3c14.8,0,27.1-11,29-25.3C114.6,181.7,114.7,183,114.7,184.4z" />
-    <path opacity="2.000000e-02" d="M172.3,184.4c0,16.2-13.1,29.3-29.3,29.3c-16.2,0-29.3-13.1-29.3-29.3c0-1.4,0.1-2.7,0.3-4
-	c2,14.3,14.2,25.3,29,25.3c14.8,0,27.1-11,29-25.3C172.2,181.7,172.3,183,172.3,184.4z" />
-    <path opacity="0.1" d="M148.3,238.4c0,18.3-14.8,33.1-33.1,33.1c-18.3,0-33.1-14.8-33.1-33.1c0-3.6,0.6-7.1,1.7-10.4
-	c4.4,13.2,16.8,22.7,31.4,22.7c14.6,0,27-9.5,31.4-22.7C147.7,231.3,148.3,234.8,148.3,238.4z" />
-    <polyline fill="#C4DBC1" points="168,452.1 169.1,347.1 59.2,347.1 60.3,452 " />
-    <polygon opacity="0.1" fill="#242E47" points="84.5,347.1 99.9,384.1 125.5,384.1 142.2,347.1 " />
-    <polygon fill="#CFEDCC" points="59.2,347.1 60.3,392.7 95.4,347.1 " />
-    <polygon fill="#CFEDCC" points="169.1,347.1 168,392.7 132.8,347.1 " />
-    <polygon fill="#242E47" points="123.2,377.7 139.8,453.1 115.2,453.1 92.8,453.1 102.4,377.7 89.9,347.1 136.8,347.1 " />
-    <path fill="#F9F9F9" d="M60.3,393.1" />
-    <path fill="#F9F9F9" d="M198.5,385.4c0,0,30.5,11.7,30.5,37.7c0,26,0,30,0,30h-99l39.7-87.2L198.5,385.4z" />
-    <path fill="#F9F9F9" d="M30.6,385.4c0,0-30.6,11.7-30.6,37.7c0,26,0,30,0,30h99.2l-39.8-87.2L30.6,385.4z" />
-  </svg>
+  {% include svg-defs.html %}
+  <header>
+    <a href="/">
+      <svg class="icon site-logo">
+        <use xlink:href="#shape-logo"></use>
+      </svg>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+  <section>
 
 
-  <svg class="test-tube" viewBox="0 0 60.8 193">
-    <path fill="#26F757" d="M44,142.2c0,7.7-6.2,14-14,14c-7.7,0-14-6.3-14-14" />
-    <polygon fill="#26F757" points="44,91.8 44,142.1 16.1,142.1 16.1,91.8 " />
-    <circle class="bubble" fill="#26F757" cx="40.8" cy="24.5" r="3.5" />
-    <circle class="bubble" fill="#26F757" cx="23.8" cy="38.5" r="3.5" />
-    <circle class="bubble" fill="#26F757" cx="27.8" cy="3.5" r="3.5" />
-    <path opacity="0.5" fill="#FFFFFF" d="M48.7,54.5c0,1.5-0.6,3-1.6,4c-0.8,0.8-1.9,1.4-3,1.6L44,142.1c0,7.7-6.2,14-14,14
-    c-7.7,0-14-6.2-14-14v-82c-2.3-0.7-4-2.8-4-5.4c0-1.5,0.6-3.1,1.6-4.1s2.4-1.8,3.9-1.8h25.5C46.2,48.8,48.7,51.5,48.7,54.5z" />
-    <path fill="#EFEFEF" d="M45.1,133.5c0,4-6.6,7.3-14.7,7.3c-8.1,0-14.7-3.3-14.7-7.3c0-0.5,0.1-1,0.3-1.5c1.4,3.3,7.3,5.8,14.4,5.8
-    c7.1,0,13-2.5,14.4-5.8C45,132.5,45.1,133,45.1,133.5z" />
-    <line fill="none" stroke="#EFEFEF" stroke-width="2" stroke-miterlimit="10" x1="30" y1="139.5" x2="30.4" y2="193" />
-    <line fill="none" stroke="#EFEFEF" stroke-width="2" stroke-miterlimit="10" x1="19.8" y1="137.7" x2="0.9" y2="187.8" />
-    <line fill="none" stroke="#EFEFEF" stroke-width="2" stroke-miterlimit="10" x1="40.9" y1="137.7" x2="59.8" y2="187.8" />
-  </svg>
+  <div class="error-text">
+      <h1>404</h1>
+      <p>Sorry, no page here. Go back to <a href="http://benjaminjoyce.com">benjaminjoyce.com</a> and try going somewhere else.</p>
+    </div>
+    <svg class="fourohfour" viewBox="0 0 1378 1169">
+      <defs>
+      </defs>
+      <rect x="24" y="9.3" fill="#242E47" width="1314" height="1136.7" />
+      <g>
+        <path fill="#FFFFFF" d="M1069.6,557c1,2.6,1.5,5.5,1.5,8.4c0,15.3-14.1,27.8-31.6,27.8c-4,0-7.8-0.7-11.3-1.8
+  		c-5.7,3.4-12.7,5.4-20.3,5.4c-11.3,0-21.3-4.4-27.7-11.2c-2.9,1.5-6.2,2.4-9.7,2.4c-2,0-3.8-0.3-5.6-0.8
+  		c-4.8,5.9-11.8,9.6-19.5,9.6c-14.6,0-26.4-13.2-26.4-29.5c0-9.6,4-18.1,10.3-23.4c-2.6-3.1-4.2-6.6-4.2-10.3
+  		c0-11.8,15.1-21.3,33.6-21.3c3.5,0,6.8,0.3,9.9,1c4.1-13.3,17.1-23.1,32.5-23.1c18.7,0,33.8,14.3,33.8,31.9c0,0.8,0,1.6-0.1,2.4
+  		c2-0.2,4-0.4,6.1-0.4c18.3,0,33.1,9.8,33.1,21.9C1074.2,550,1072.5,553.8,1069.6,557z" />
+        <path fill="#FFFFFF" d="M826.5,578.8c1,2.2,1.6,4.6,1.7,7.1c0.9,13.2-10.6,24.7-25.5,25.6c-3.4,0.2-6.7-0.1-9.8-0.9
+  		c-4.7,3.2-10.6,5.3-17.1,5.8c-9.7,0.6-18.5-2.6-24.5-8.1c-2.4,1.5-5.2,2.4-8.2,2.6c-1.7,0.1-3.3,0-4.9-0.4
+  		c-3.8,5.3-9.6,8.9-16.2,9.4c-12.5,0.8-23.4-9.8-24.3-23.9c-0.5-8.2,2.4-15.7,7.5-20.7c-2.4-2.5-3.9-5.4-4.2-8.6
+  		c-0.7-10.1,11.7-19.2,27.7-20.3c3-0.2,5.8-0.1,8.6,0.3c2.7-11.7,13.3-20.8,26.6-21.7c16-1.1,29.9,10.4,30.9,25.5
+  		c0,0.7,0.1,1.4,0,2.1c1.7-0.3,3.4-0.6,5.2-0.7c15.7-1,29,6.5,29.7,16.9C830,572.4,828.8,575.8,826.5,578.8z" />
+        <path fill="#C4C2C2" d="M805.8,581.6c0.4,6.2-11.4,12-26.3,13c-4.4,0.3-8.6,0.1-12.3-0.4c-1.3,7.3-6.9,12.9-14,13.4
+  		c-8.5,0.6-15.9-6.5-16.5-15.8c-0.3-4.5,1-8.7,3.5-11.9c-6.4-0.8-11.4-4.9-11.8-10.3c-0.4-6.2,5.8-11.7,13.8-12.3
+  		c5.6-0.4,10.6,1.7,13.3,5.1c1.4-0.7,2.8-1.3,4.5-1.7c1.1-8.5,6.6-15.2,13.5-15.6c8.3-0.6,15.6,7.8,16.3,18.5c0.2,3.1-0.2,6-0.9,8.7
+  		C798.6,573.5,805.5,577,805.8,581.6z" />
+        <polygon fill="#FA3F00" points="794.6,632.6 698.8,607.6 750.4,632.6 710.9,627.1 735.1,656.2 710.9,664.1 752.5,667.3
+  		741.3,689.3 774.9,667.3 770.7,701.1 790.6,675.4 778.3,753.5 790.6,730.2 790.6,743.8 816,696.1 837,730.2 829.4,667.3
+  		878.9,686.5 855.2,662.8 895.1,662 859.4,658.7 874.1,651.6 859.8,651.6 886,616.9 850.3,637.6 855.2,602.3 844.8,627.1
+  		838.5,574.7 814.7,612.5 811,582.3 802.8,606.2 764.4,574.7 	" />
+        <path fill="#C4C2C2" d="M1045.4,558.8c0,7.2-14.1,13.1-31.5,13.1c-5.1,0-10-0.5-14.2-1.4c-2.1,8.3-9,14.4-17.3,14.4
+  		c-9.9,0-17.9-8.8-17.9-19.6c0-5.3,1.9-10,4.9-13.5c-7.4-1.4-12.8-6.6-12.8-12.8c0-7.3,7.6-13.2,17-13.2c6.5,0,12.1,2.8,15,7
+  		c1.6-0.7,3.4-1.3,5.3-1.6c2-9.8,8.8-17.1,16.9-17.1c9.6,0,17.4,10.2,17.4,22.7c0,3.6-0.7,7-1.8,10
+  		C1037.6,548.8,1045.4,553.4,1045.4,558.8z" />
+        <polygon fill="#FFE922" points="1007.5,604.8 1025.7,534.7 1007.5,572.5 1011.5,543.6 990.2,561.3 984.4,543.6 982.1,574
+  		966,565.8 982.1,590.4 957.4,587.3 976.2,601.9 919.1,592.9 936.1,601.9 926.2,601.9 961,620.5 936.1,635.8 982.1,630.2
+  		968.1,666.4 985.4,649.1 985.9,678.2 988.4,652.2 993.6,662.9 993.6,652.4 1019,671.6 1003.8,645.5 1029.6,649.1 1011.5,641.5
+  		1049.8,636.9 1022.2,619.5 1044.2,616.8 1026.8,610.8 1049.8,582.7 	" />
+        <g>
+          <path fill="#FFFFFF" d="M820.2,740.8h-36.5V720l34.5-104.8h23.6V720h10.9v20.7h-10.9v34.9h-21.6V740.8z M803.8,720h16.4v-55h-1.3
+  			l-1.3,4.8L803.8,720z" />
+          <path fill="#FFFFFF" d="M924.1,742.7c-0.2,6.5-1.5,12.4-3.9,17.5c-2,4.4-5,8.5-9.4,11.8c-4.4,3.5-10.3,5.5-18.1,5.5
+  			c-7.9,0-14-2-18.3-5.5c-4.4-3.3-7.2-7.4-9.2-11.8c-2.4-5-3.7-10.9-3.9-17.5v-94.5c0.2-6.3,1.5-12.2,3.9-17.2c2-4.4,4.8-8.7,9.2-12
+  			c4.4-3.3,10.5-5.5,18.3-5.5c7.9,0,13.8,2.2,18.1,5.5c4.4,3.3,7.4,7.6,9.4,12c2.4,5,3.7,10.9,3.9,17.2V742.7z M900.5,648.2
+  			c0-4.4-0.9-7.4-3.1-10c-1.1-1.1-2.8-1.7-4.8-1.7c-4.1,0-6.1,3.1-7,5.9c-0.7,1.7-0.9,3.7-0.9,5.9v94.5c0,4.6,1.1,7.6,3.3,10
+  			c1.1,1.1,2.6,1.7,4.6,1.7c4.1,0,6.1-2.6,7-5.9c0.7-1.5,0.9-3.5,0.9-5.9V648.2z" />
+          <path fill="#FFFFFF" d="M970.4,740.8h-36.5V720l34.5-104.8H992V720h10.9v20.7H992v34.9h-21.6V740.8z M954,720h16.4v-55h-1.3
+  			l-1.3,4.8L954,720z" />
+        </g>
+        <polygon fill="#FA3F00" points="987.1,625.3 1012.1,660.7 1001.8,637.8 1013.5,650.7 1013.6,634.2 1023.9,638.3 1010.9,625.6
+  		1020.9,621.4 1003.4,619.2 1014.4,609.1 1000.4,612.2 1026.5,589.4 1015.9,593.8 1019.7,589.2 997.7,598 1000.3,580.7 985.2,603.9
+  		974,583.5 975.3,598.2 961.7,587.2 972.7,598.4 965.8,596.6 970.6,600.6 952.1,604.9 969.8,608 958.2,618.4 968.7,613 956.1,632.3
+  		974.7,626.4 967.4,637.6 976.9,631.9 980.9,653.3 	" />
+        <polygon fill="#FFE922" points="822.6,660.5 871.1,626.3 839.7,640.3 857.4,624.3 834.8,624.2 840.5,610 823.1,627.9 817.3,614.2
+  		814.4,638.1 800.5,623.2 804.7,642.2 773.6,606.5 779.6,621.1 773.3,615.8 785.3,645.9 761.6,642.3 793.4,663.1 765.5,678.4
+  		785.5,676.6 770.6,695.2 785.9,680.2 783.4,689.6 788.9,683 794.8,708.4 799,684.2 813.2,700 805.9,685.6 832.3,702.9 824.2,677.4
+  		839.4,687.4 831.7,674.4 860.9,669 	" />
+        <polygon opacity="0.25" points="783.7,720 794.1,714.2 794.1,696.8 798.1,689.4 802.5,674.3 810.5,669 804,669 812.8,657.4
+  		808.6,655.6 818.2,643 815.1,633.4 819.6,622.7 823.1,627.9 826.1,619.8 836.2,620.7 829.8,626.6 833.8,632.3 829.8,641.5
+  		836.2,638 836.2,655.2 838.4,650.6 835.3,667.8 838.4,672 834.2,683.8 838.4,681.6 832.8,695.5 838.4,693.8 835.1,714.2 841.8,720
+  		841.8,615.2 818.2,615.2 	" />
+        <polygon opacity="0.25" points="933.9,720 944.3,714.2 944.3,696.8 948.3,689.4 952.7,674.3 960.7,669 954.2,669 963,657.4
+  		958.8,655.6 968.4,643 965.3,633.4 969.8,622.7 973.3,627.9 976.3,619.8 986.4,620.7 980,626.6 984,632.3 980,641.5 986.4,638
+  		986.4,655.2 988.6,650.6 985.5,667.8 988.6,672 984.4,683.8 988.6,681.6 983,695.5 988.6,693.8 985.3,714.2 992,720 992,615.2
+  		968.4,615.2 	" />
+      </g>
+      <g>
+        <polygon opacity="0.5" enable-background="new    " points="779.1,305.2 816,305.2 784.4,334.1 733.2,384.1 733.2,754 735.5,754
+  		733.5,835.2 639.9,941.9 542.5,835.2 540.5,754 543.4,754 543.4,382.5 475.4,235.8 523.9,310 517.5,255 528.3,281.8 518,201.4
+  		548.7,255 548.7,175.5 585.9,292.8 585.9,223.8 611.1,297.6 630.5,138.3 639.7,310.2 665.4,232.8 672.5,297.6 761.7,150.9
+  		725.4,261.2 775.9,221.8 742.4,289.8 823.3,261 	" />
+        <rect x="565.2" y="365.3" fill="#FCD4D4" width="192.5" height="389.5" />
+        <polygon opacity="3.000000e-02" enable-background="new    " points="608.5,754.9 661,561 562.9,458.3 562.9,754.7 	" />
+        <path fill="#423636" d="M757.7,716.4c0,2,0,3.7,0,5.7c-2.1-68.6-47.2-63.9-98.3-63.9c-51.1,0-89.2-5-91.4,63.9c0-2,0-3.7,0-5.7
+  		c0-71.3,42.6-129.1,94.9-129.1C715.1,587.3,757.7,645.1,757.7,716.4z;">
+          <animate attributeName="d" dur="500ms" repeatCount="1" values="M757.7,716.4c0,2,0,3.7,0,5.7c-2.1-68.6-44.6-113.2-95.7-113.2c-51.1,0-91.8,44.4-93.9,113.2
+  		c0-2,0-3.7,0-5.7c0-71.3,42.6-129.1,94.9-129.1C715.1,587.3,757.7,645.1,757.7,716.4z;
 
-  <div class="table"></div>
-  <div class="table-bottom"></div>
-
-
-
-  <svg class="explosion" viewBox="0 0 452 311">
-    <path fill="#FFFFFF" d="M438.7,195.3c2.8,7.7,4.3,16,4.3,24.5c0,44.7-41.2,80.9-92,80.9c-11.6,0-22.7-1.9-32.9-5.3
-	C301.4,305.2,281,311,259,311c-32.8,0-62-12.8-80.8-32.7c-8.5,4.5-18,7-28.2,7c-5.7,0-11.2-0.8-16.4-2.3c-14.1,17.2-34.3,28-56.8,28
-	C34.4,311,0,272.5,0,224.9c0-27.9,11.8-52.6,30.1-68.3c-7.7-8.9-12.1-19.1-12.1-30c0-34.3,43.9-62.2,98-62.2c10.1,0,19.7,1,28.9,2.8
-	C156.7,28.4,194.6,0,239.5,0C293.9,0,338,41.7,338,93.1c0,2.3-0.1,4.7-0.3,7c5.8-0.7,11.7-1.1,17.8-1.1c53.3,0,96.5,28.6,96.5,63.9
-	C452,174.7,447.2,185.8,438.7,195.3z" />
-    <path fill="#C4C2C2" d="M341,185.1c0,15.5-30.3,28.1-67.8,28.1c-11,0-21.4-1.1-30.6-3c-4.5,17.9-19.4,31-37.2,31
-	c-21.3,0-38.5-18.9-38.5-42.1c0-11.3,4-21.5,10.6-29.1c-15.9-3.1-27.6-14.2-27.6-27.5c0-15.6,16.3-28.3,36.5-28.3
-	c13.9,0,26.1,6.1,32.2,15c3.5-1.6,7.3-2.8,11.5-3.5C234.3,104.6,249,89,266.5,89c20.7,0,37.5,21.9,37.5,48.9c0,7.7-1.4,15-3.8,21.5
-	C324.2,163.6,341,173.6,341,185.1z" />
-    <polygon fill="#FA3F00" points="229.8,153.9 138.4,130 187.7,153.9 150,148.7 173.1,176.4 150,184 189.7,187 179,208 211,187
-	207,219.3 226,194.7 214.3,269.3 226,247 226,260 250.3,214.5 270.3,247 263,187 310.3,205.2 287.7,182.7 325.7,182 291.7,178.7
-	305.7,172 292,172 317,138.9 283,158.7 287.7,125 277.7,148.7 271.7,98.7 249,134.7 245.5,105.9 237.7,128.7 201,98.7 " />
-    <polygon fill="#FFE922" points="256.6,180.5 302.8,147.8 272.9,161.2 289.8,146 268.2,145.9 273.6,132.4 257,149.4 251.5,136.4
-	248.7,159.1 235.5,144.9 239.5,163.1 209.8,129 215.5,142.9 209.5,137.9 221,166.6 198.4,163.2 228.7,183 202.1,197.6 221.2,195.9
-	206.9,213.6 221.5,199.3 219.2,208.3 224.4,202 230,226.2 234,203 247.6,218.2 240.6,204.5 265.8,221 258.1,196.7 272.6,206.2
-	265.2,193.8 293.1,188.6 " />
-  </svg>
-
-
-  <svg class="glass-ball" viewBox="0 0 251.6 342.4">
-    <rect x="75.1" y="241" fill="#3F3F3F" width="101.4" height="101.4" />
-    <circle opacity="0.15" fill="#E637EF" cx="125.8" cy="125.8" r="125.8" />
-    <g class="buzz">
-      <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="249.2,101.5 235.6,102 206.6,131 186.6,100 165.6,116
-		160.6,99 125.8,125.8 111.2,97 133.6,76 111.2,56 125.8,26 110.3,0.9 	" />
-      <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="34.6,70.5 73.3,70.5 73.6,92.5 91.6,92.5 125.7,126.8
-		151.1,81.5 151.1,55 179.8,61 174.3,26 196.1,50 196.1,34 	" />
-      <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="131.9,130 97.5,120 64.1,135 64.1,108 40.3,120 18.2,98
-		0.4,116.5 	" />
-      <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="223.6,173.5 227.6,143.3 187.6,146 175.6,125.9
-		160.6,143.2 125.8,127.1 110.3,149.7 119.1,180 99.2,190 125.8,223 110.3,241 	" />
-      <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="28.6,211 34.5,201 28.6,180 58.3,188 73.3,184 63.6,159.5
-		94.6,159.5 89.6,137.2 125.8,126 133.6,158.5 167.6,158.5 163.6,180.5 183.1,180.5 183.1,213 209.6,219.7 	" />
-    </g>
-    <path fill="#F42727" d="M197.4,291.7H54.2c-6.6,0-12-5.4-12-12v0c0-6.6,5.4-12,12-12h143.2c6.6,0,12,5.4,12,12v0
-	C209.4,286.3,204,291.7,197.4,291.7z" />
-    <path opacity="0.25" fill="#3F3F3F" d="M209.4,279.7L209.4,279.7c0,6.6-5.4,12-12,12H54.2c-6.6,0-12-5.4-12-12v0" />
-  </svg>
-
-
-  <svg class="picture" viewBox="0 0 312 412">
-    <defs>
-    </defs>
-    <polyline fill="none" stroke="#353130" stroke-miterlimit="10" points="55.1,100.6 156,10.6 257,100.6 " />
-    <circle fill="#353130" cx="155.8" cy="13.4" r="13.4" />
-    <polyline fill="#42C3FC" points="33.9,378.5 33.9,134.1 278.2,134.1 278.2,378.5 " />
-    <path fill="#E3D464" d="M140.3,262.8c0,0,6.1-7.8,8-0.7c2,7.1,4.2,21-3.3,18.3" />
-    <g>
-      <polygon opacity="0.5" points="253.2,171 265.2,171 254.8,180.5 238,196.8 238,317 239,317 238.4,343.4 208,378 176.4,343.3
-		175.7,317 177,317 177,196.2 154.8,148.6 170.4,172.7 168.3,154.8 171.8,163.5 168.2,137.4 178,154.8 178,129 190,167.1 190,144.7
-		198.4,168.7 204.8,116.9 207.9,172.8 216.3,147.6 218.6,168.7 247.6,121 235.8,156.8 252.2,144.1 241.3,166.1 267.6,156.7 	" />
-      <rect x="183.7" y="190.7" fill="#FCD4D4" width="62.5" height="126.5" />
-      <polygon opacity="3.000000e-02" points="197.8,317.2 214.9,254.2 183,220.8 183,317.1 	" />
-      <path fill="#423636" d="M246.2,304.7c0,0.6,0,1.2,0,1.8c-0.7-22.3-14.2-37.5-30.8-37.5c-16.6,0-30.1,15.2-30.8,37.5
-		c0-0.6,0-1.2,0-1.8c0-23.2,13.8-42,30.8-42C232.4,262.7,246.2,281.5,246.2,304.7z" />
-      <circle fill="#FF9B48" cx="215.4" cy="254.3" r="19.1" />
-      <circle fill="#FDFBFF" cx="231.8" cy="223.1" r="16.9" />
-      <circle cx="231.8" cy="226.3" r="5.8" />
-      <circle fill="#FDFBFF" cx="198.2" cy="223.1" r="16.9" />
-      <circle cx="198.2" cy="226.3" r="5.8" />
-      <polyline fill="#FA3F00" points="183.9,196.7 161.8,148.6 177.6,172.7 175.6,154.8 179.1,163.5 175.9,137.4 186,154.8 186,129
-		198,167.1 198,144.7 206.1,168.7 212.3,116.9 215.4,172.8 223.7,147.7 226,168.7 254.9,121 243.2,156.8 259.6,144.1 248.7,166.1
-		274.9,156.7 260.6,171 272.6,171 262.6,180.5 246.2,196.7 	" />
-      <path opacity="2.000000e-02" d="M215.1,223.1c0,9.3-7.6,16.9-16.9,16.9c-9.3,0-16.9-7.6-16.9-16.9c0-0.8,0.1-1.5,0.2-2.3
-		c1.1,8.2,8.2,14.6,16.7,14.6c8.5,0,15.6-6.3,16.7-14.6C215,221.6,215.1,222.4,215.1,223.1z" />
-      <path opacity="2.000000e-02" d="M248.3,223.1c0,9.3-7.6,16.9-16.9,16.9c-9.3,0-16.9-7.6-16.9-16.9c0-0.8,0.1-1.5,0.2-2.3
-		c1.1,8.2,8.2,14.6,16.7,14.6c8.5,0,15.6-6.3,16.7-14.6C248.2,221.6,248.3,222.4,248.3,223.1z" />
-      <path opacity="0.1" d="M234.5,254.3c0,10.5-8.5,19.1-19.1,19.1c-10.5,0-19.1-8.5-19.1-19.1c0-2.1,0.3-4.1,1-6
-		c2.5,7.6,9.7,13.1,18.1,13.1c8.4,0,15.6-5.5,18.1-13.1C234.1,250.2,234.5,252.2,234.5,254.3z" />
-      <polyline fill="#C4DBC1" points="245.8,377.5 246.4,317 183.1,317 183.7,377.4 	" />
-      <polygon opacity="0.1" fill="#242E47" points="197.7,317 206.6,338 221.3,338 230.9,317 	" />
-      <polygon fill="#CFEDCC" points="183.1,317 183.7,343.3 204,317 	" />
-      <polygon fill="#CFEDCC" points="246.4,317 245.8,343.3 225.5,317 	" />
-      <polygon fill="#242E47" points="220,334.6 229.5,378 215.4,378 202.5,378 208,334.6 200.8,317 227.8,317 	" />
-      <path fill="#F9F9F9" d="M183.7,343.4" />
-      <path fill="#F9F9F9" d="M263.4,339c0,0,17.6,6.8,17.6,21.7c0,15,0,17.3,0,17.3h-57.1l22.9-50.3L263.4,339z" />
-      <path fill="#F9F9F9" d="M166.6,339c0,0-17.6,6.8-17.6,21.7c0,15,0,17.3,0,17.3h57.2l-22.9-50.3L166.6,339z" />
-    </g>
-    <g>
-      <path opacity="0.5" d="M54.6,319.1L54.6,319.1l-0.8-0.8l0,0l0,0l0,0c-1,0.1-22.7,3.5-20.1,59.8h114.7c2.5-54.3-17.5-59.4-19.9-59.8
-		l-0.2,0.2l-0.2,0.2l0.2-0.4c0,0,0.1,0,0.2,0l0,0l-3.1-2.7l-2.5,1.2c10.7-8.9,17.6-22.2,17.6-37.2c0-1.2,0-2.3-0.1-3.4l0.1,0.5
-		c7.8,2.8,5.4-11.6,3.4-19c-2-7.4-8.3,0.8-8.3,0.8c-8-16.2-24.9-27.4-44.4-27.4c-19.1,0-35.7,10.7-43.9,26.4c-2.5-1.9-7.3-4-9,6.4
-		c-2.4,14.3,4.1,8.6,4.1,8.6l0-0.1c-0.4,2.4-0.6,4.8-0.6,7.3c0,14.9,6.8,28.3,17.6,37.2l-2.5-1.2l-3.1,2.7l0,0c0,0,0,0,0,0" />
-      <polygon fill="#F2F2F2" points="86.7,323 81.6,342.8 94.8,358.2 108.2,342.8 103.2,323 	" />
-      <path fill="#D6C561" d="M52.6,258.7c0,0-8.2-9.4-10.6,4.9c-2.4,14.3,4.1,8.6,4.1,8.6" />
-      <ellipse fill="#E3D464" cx="94.9" cy="279.5" rx="49.4" ry="48.6" />
-      <path fill="#242E47" d="M113.4,250c-7.8,0-14.3,4-15,12h-7.1c-0.7-8-7.1-12-15-12c-8.3,0-15,5.5-15,12.5c0,7,6.7,12.7,15,12.7
-		c7.7,0,14-5.2,14.9-11.2h7.2c0.9,6,7.2,11.1,14.9,11.1c8.3,0,15-5.5,15-12.5C128.5,255.6,121.7,250,113.4,250z M76.4,272.3
-		c-6.8,0-12.4-4.5-12.4-10c0-5.5,5.5-10,12.4-10c6.8,0,12.3,4.5,12.3,10C88.7,267.8,83.2,272.3,76.4,272.3z M113.4,272.3
-		c-6.8,0-12.4-4.5-12.4-10c0-5.5,5.5-10,12.4-10c6.8,0,12.3,4.5,12.3,10C125.8,267.8,120.2,272.3,113.4,272.3z" />
-      <path fill="#242E47" d="M104,287.9c0,3-4.1,5.4-9.1,5.4c-5,0-9.1-2.4-9.1-5.4c0-0.2,0-0.5,0.1-0.7c0,0,0,0,0,0c0,0,0,0.1,0,0.1
-		c0.7,2.6,4.5,4.6,9,4.6c4.6,0,8.3-2,9-4.6c0,0,0-0.1,0-0.1c0,0,0,0,0,0C104,287.4,104,287.6,104,287.9z" />
-      <path fill="#242E47" d="M79.8,291.2C79.8,291.2,79.8,291.2,79.8,291.2L79.8,291.2C79.8,291.3,79.8,291.2,79.8,291.2
-		C79.8,291.2,79.8,291.2,79.8,291.2z" />
-      <path fill="#242E47" d="M97.9,291.2C97.9,291.2,97.9,291.3,97.9,291.2L97.9,291.2C97.8,291.2,97.9,291.2,97.9,291.2
-		C97.9,291.2,97.9,291.2,97.9,291.2z" />
-      <path opacity="0.1" fill="#242E47" d="M90.7,275.2c0,0-0.3,5.4,4.7,7.6c5.1,2.2-8.1,5.1-7.8,1.1C88,279.9,85.6,272.2,90.7,275.2z" />
-      <path opacity="0.1" fill="#242E47" d="M109.8,299c0,6.3-6.7,11.3-14.9,11.3S80,305.3,80,299c0-0.5,0-1,0.1-1.5
-		c1,5.5,7.2,9.8,14.7,9.8s13.8-4.3,14.7-9.8C109.7,298,109.8,298.5,109.8,299z" />
-      <path opacity="5.000000e-02" fill="#242E47" d="M122.8,319.5c-0.7,0.5-1.4,0.9-2.1,1.3l-8-34.8l1.8,0.3L122.8,319.5z" />
-      <polygon fill="#F9F9F9" points="81.6,342.8 86.7,327.7 60.6,315.4 57.5,318.2 	" />
-      <polygon fill="#F9F9F9" points="108.2,342.8 103.2,327.7 129.2,315.4 132.3,318.2 	" />
-      <polygon fill="#3F3F3F" points="57.6,318.2 94.6,358.2 121,329.1 121,378 69.2,378 	" />
-      <polygon fill="#F42727" points="100.2,337.5 103.2,348.7 94.8,358.2 85.8,347.8 87.4,337.5 86.5,328 103.2,328 	" />
-      <circle fill="#242E47" cx="95.3" cy="364.6" r="2.3" />
-      <circle fill="#242E47" cx="95.3" cy="371.7" r="2.3" />
-      <path fill="#E5F4F9" d="M57.6,318.2c0,0-22.8,2.2-20.1,59.8c31.8,0,42.4,0,42.4,0L57.6,318.2z" />
-      <polygon fill="#D0E4EA" points="57.6,318.2 50.1,337.8 62.1,353.7 63.8,378 79.9,378 69.2,330 	" />
-      <path fill="#E5F4F9" d="M132,318.2c0,0,22.8,2.2,20.1,59.8c-31.8,0-42.4,0-42.4,0L132,318.2z" />
-      <polygon fill="#D0E4EA" points="132,318.2 139.5,337.8 127.5,353.7 125.8,378 109.7,378 120.4,330 	" />
-    </g>
-    <path fill="#D67554" d="M0,101v311h312V101H0z M278,378H34V134h244V378z" />
-  </svg>
+                M757.7,716.4c0,2,0,3.7,0,5.7c-2.1-68.6-47.2-63.9-98.3-63.9c-51.1,0-89.2-5-91.4,63.9c0-2,0-3.7,0-5.7
+  		c0-71.3,42.6-129.1,94.9-129.1C715.1,587.3,757.7,645.1,757.7,716.4z;
 
 
-  <svg class="fourohfour" version="1.1" viewBox="0 0 985.8 752.7">
-    <path fill="#FFFFFF" d="M973.8,175.5c2.5,6.9,3.9,14.4,3.9,22c0,40.2-37,72.7-82.7,72.7c-10.4,0-20.4-1.7-29.6-4.8
-	c-15,8.8-33.3,14-53.1,14c-29.5,0-55.7-11.5-72.6-29.4c-7.6,4-16.2,6.3-25.3,6.3c-5.1,0-10.1-0.7-14.7-2.1
-	c-12.7,15.5-30.8,25.2-51,25.2c-38.1,0-69-34.6-69-77.4c0-25.1,10.6-47.3,27-61.4c-6.9-8-10.9-17.2-10.9-27
-	c0-30.8,39.5-55.9,88.1-55.9c9.1,0,17.7,0.9,26,2.5C720.5,25.5,754.5,0,794.8,0c48.9,0,88.5,37.5,88.5,83.7c0,2.1-0.1,4.2-0.3,6.3
-	c5.2-0.6,10.5-1,16-1c47.9,0,86.7,25.7,86.7,57.4C985.8,157,981.5,167,973.8,175.5z" />
-    <path fill="#FFFFFF" d="M337.3,232.4c2.6,5.8,4.1,12.1,4.6,18.7c2.3,34.5-27.6,64.6-66.9,67.2c-9,0.6-17.6-0.3-25.7-2.4
-	c-12.4,8.4-27.8,13.9-44.8,15.1c-25.3,1.7-48.5-6.7-64-21.1c-6.3,3.9-13.5,6.3-21.4,6.9c-4.4,0.3-8.7,0-12.8-0.9
-	c-10,14-25,23.4-42.4,24.5c-32.7,2.2-61.3-25.8-63.7-62.5c-1.4-21.5,6.4-41.2,19.7-54.3C13.5,217.1,9.6,209.4,9,201
-	c-1.8-26.5,30.7-50.3,72.4-53c7.8-0.5,15.3-0.2,22.5,0.7c7.2-30.6,34.9-54.4,69.6-56.7c42-2.8,78.2,27.1,80.8,66.8
-	c0.1,1.8,0.2,3.6,0.1,5.4c4.4-0.8,9-1.5,13.7-1.8c41.1-2.7,76,17.1,77.8,44.4C346.5,215.8,343.3,224.6,337.3,232.4z" />
-    <path fill="#C4C2C2" d="M283.1,239.9c1.1,16.2-29.7,31.5-69,34.1c-11.5,0.8-22.5,0.3-32.2-1c-3.5,19-18.1,33.8-36.8,35
-	c-22.3,1.5-41.6-17.1-43.2-41.4c-0.8-11.8,2.7-22.8,9.1-31.2c-16.8-2.1-29.9-12.9-30.8-26.8c-1.1-16.3,15.1-30.7,36.2-32.1
-	c14.5-1,27.7,4.6,34.7,13.4c3.6-1.9,7.4-3.4,11.8-4.5c2.9-22.4,17.2-39.7,35.4-40.9c21.7-1.4,40.8,20.3,42.6,48.5
-	c0.5,8.1-0.4,15.8-2.5,22.8C264.1,218.7,282.3,227.9,283.1,239.9z" />
-    <polygon fill="#FA3F00" points="253.6,373.3 2.7,308 138,373.3 34.5,359.1 97.9,435.1 34.5,456 143.5,464.2 114.1,521.9 202,464.2
-	191,552.9 243.1,485.3 211,690.1 243.1,628.9 243.1,664.6 309.8,539.7 364.7,628.9 344.7,464.2 474.5,514.4 412.5,452.4
-	516.8,450.5 423.5,441.7 461.9,423 424.3,423 492.9,332.2 399.6,386.5 412.5,294 385,359.1 368.6,221.8 306.3,320.6 296.7,241.6
-	275.3,304.2 174.5,221.8 " />
-    <path fill="#C4C2C2" d="M910.5,180c0,18.9-36.9,34.2-82.6,34.2c-13.4,0-26.1-1.3-37.3-3.7c-5.5,21.8-23.6,37.8-45.3,37.8
-	c-25.9,0-46.9-23-46.9-51.3c0-13.8,4.9-26.2,12.9-35.4c-19.4-3.8-33.6-17.3-33.6-33.5c0-19,19.9-34.5,44.5-34.5
-	c16.9,0,31.8,7.4,39.2,18.3c4.3-1.9,8.9-3.4,14-4.3c5.1-25.7,23-44.7,44.2-44.7c25.2,0,45.7,26.7,45.7,59.6c0,9.4-1.7,18.3-4.6,26.2
-	C890.1,154,910.5,166,910.5,180z" />
-    <polygon fill="#FFE922" points="811.1,300.5 858.9,117.1 811.1,216 821.6,140.4 766,186.7 750.7,140.4 744.7,220 702.6,198.6
-	744.7,262.8 679.9,254.7 729.3,292.9 579.6,269.4 624.3,292.9 598.3,292.9 689.5,341.6 624.3,381.7 744.7,367.1 708,462
-	753.3,416.7 754.8,492.9 761.2,424.7 774.8,452.8 774.8,425.3 841.2,475.4 801.5,407.2 869.1,416.7 821.6,396.6 921.9,384.6
-	849.7,339 907.4,332 861.7,316.3 921.9,242.7 " />
-    <g>
-      <path fill="#FFFFFF" d="M320.6,656.6h-95.5v-54.3l90.3-274.4h61.7v274.4h28.6v54.3h-28.6v91.5h-56.6V656.6z M277.7,602.3h42.9
-		V458.3h-3.4l-3.4,12.6L277.7,602.3z" />
-      <path fill="#FFFFFF" d="M592.8,661.8c-0.6,17.2-4,32.6-10.3,45.7c-5.1,11.4-13.2,22.3-24.6,30.9c-11.4,9.1-26.9,14.3-47.5,14.3
-		c-20.6,0-36.6-5.1-48-14.3c-11.4-8.6-18.9-19.4-24-30.9c-6.3-13.1-9.7-28.6-10.3-45.7V414.2c0.6-16.6,4-32,10.3-45.2
-		c5.1-11.4,12.6-22.9,24-31.4c11.4-8.6,27.4-14.3,48-14.3c20.6,0,36,5.7,47.5,14.3c11.4,8.6,19.4,20,24.6,31.4
-		c6.3,13.1,9.7,28.6,10.3,45.2V661.8z M531,414.2c0-11.4-2.3-19.4-8-26.3c-2.9-2.9-7.4-4.6-12.6-4.6c-10.9,0-16,8-18.3,15.4
-		c-1.7,4.6-2.3,9.7-2.3,15.4v247.6c0,12,2.9,20,8.6,26.3c2.9,2.9,6.9,4.6,12,4.6c10.9,0,16-6.9,18.3-15.4c1.7-4,2.3-9.1,2.3-15.4
-		V414.2z" />
-      <path fill="#FFFFFF" d="M714,656.6h-95.5v-54.3l90.3-274.4h61.7v274.4h28.6v54.3h-28.6v91.5H714V656.6z M671.1,602.3H714V458.3
-		h-3.4l-3.4,12.6L671.1,602.3z" />
-    </g>
-    <polygon fill="#FA3F00" points="757.8,354.3 823.2,447 796.3,387 827,420.9 827.2,377.5 854.3,388.4 820.2,355.1 846.2,344
-	800.5,338.4 829.2,311.9 792.7,319.9 861.1,260.4 833.2,271.8 843.2,259.8 785.7,282.8 792.5,237.5 752.7,298.3 723.5,244.9
-	726.9,283.2 691.4,254.5 720,283.8 702,279.2 714.6,289.7 666.1,300.9 712.4,308.9 682.1,336.2 709.6,322.2 676.5,372.7
-	725.3,357.3 706.2,386.4 731.1,371.5 741.5,427.5 " />
-    <polygon fill="#FFE922" points="327.1,446.4 453.9,356.9 371.9,393.7 418.3,351.7 359,351.4 373.8,314.3 328.2,361 313.1,325.3
-	305.4,387.9 269.2,348.6 280.2,398.6 198.7,305 214.3,343.2 197.8,329.4 229.4,408.2 167.4,398.9 250.5,453.2 177.5,493.3
-	230,488.6 190.7,537.2 230.8,498 224.5,522.7 238.7,505.4 254.1,571.8 265.1,508.4 302.4,549.8 283.2,512.2 352.4,557.5
-	331.2,490.8 371,516.9 350.7,482.9 427.3,468.6 " />
-    <polygon opacity="0.25" points="225.1,602.3 252.3,587 252.3,541.6 262.7,522.1 274.3,482.6 295.3,468.6 278.3,468.6 301.3,438.4
-	290.3,433.6 315.5,400.6 307.3,375.6 319.3,347.6 328.2,361 336.3,339.9 362.6,342.2 345.9,357.6 356.3,372.6 345.9,396.6
-	362.6,387.6 362.6,432.6 368.3,420.6 360.3,465.6 368.3,476.6 357.3,507.6 368.3,501.6 353.7,538 368.3,533.6 359.6,587
-	377.2,602.3 377.2,327.9 315.5,327.9 " />
-    <polygon opacity="0.25" points="618.5,602.3 645.6,587 645.6,541.6 656.1,522.1 667.6,482.6 688.6,468.6 671.6,468.6 694.6,438.4
-	683.6,433.6 708.8,400.6 700.6,375.6 712.6,347.6 721.6,361 729.6,339.9 756,342.2 739.3,357.6 749.6,372.6 739.3,396.6 756,387.6
-	756,432.6 761.6,420.6 753.6,465.6 761.6,476.6 750.6,507.6 761.6,501.6 747,538 761.6,533.6 753,587 770.6,602.3 770.6,327.9
-	708.8,327.9 " />
-  </svg>
-</a>
-  <p class="fourohfour__message">Sorry, it looks like this page doesn't exist. Go back to <a href="http://benjaminjoyce.com">benjaminjoyce.com</a> and try again.</p>
+              M757.7,716.4c0,2,0,3.7,0,5.7c-2.1-68.6-47.2-63.9-98.3-63.9c-51.1,0-89.2-5-91.4,63.9c0-2,0-3.7,0-5.7
+  		c0-71.3,42.6-129.1,94.9-129.1C715.1,587.3,757.7,645.1,757.7,716.4z;" />
 
+        </path>
+        <circle fill="#FF9B48" cx="662.6" cy="561.2" r="58.7" />
+        <circle fill="#FDFBFF" cx="713.1" cy="465.4" r="52" />
+        <circle cx="713.1" cy="475" r="17.9" />
+        <circle fill="#FDFBFF" cx="609.7" cy="465.4" r="52" />
+        <circle cx="609.7" cy="475" r="17.9" />
+        <polyline fill="#FA3F00" points="565.7,383.8 497.6,235.8 546.4,310 540,255 551,281.8 540.9,201.4 571.8,255 571.8,175.5
+  		609,292.8 609,223.8 634,297.6 653.2,138.3 662.6,310.2 688.1,232.8 695.2,297.6 784.4,150.9 748.1,261.2 798.6,221.8 765.1,289.8
+  		846,261 801.8,305.2 838.7,305.2 808,334.1 757.7,384 	" />
+        <path opacity="2.000000e-02" enable-background="new    " d="M661.7,465.4c0,28.7-23.2,52-52,52c-28.7,0-52-23.2-52-52
+  		c0-2.5,0.2-4.8,0.5-7.1c3.5,25.4,25.2,44.9,51.4,44.9c26.3,0,48.1-19.5,51.4-44.9C661.5,460.6,661.7,462.9,661.7,465.4z" />
+        <path opacity="2.000000e-02" enable-background="new    " d="M763.9,465.4c0,28.7-23.2,52-52,52c-28.7,0-52-23.2-52-52
+  		c0-2.5,0.2-4.8,0.5-7.1c3.5,25.4,25.2,44.9,51.4,44.9c26.3,0,48.1-19.5,51.4-44.9C763.7,460.6,763.9,462.9,763.9,465.4z" />
+        <path opacity="0.1" enable-background="new    " d="M721.3,561.2c0,32.5-26.3,58.7-58.7,58.7s-58.7-26.3-58.7-58.7
+  		c0-6.4,1.1-12.6,3-18.4c7.8,23.4,29.8,40.3,55.7,40.3c25.9,0,47.9-16.9,55.7-40.3C720.2,548.6,721.3,554.8,721.3,561.2z" />
+        <polyline fill="#C4DBC1" points="756.2,940.3 758.2,754 563.2,754 565.2,940.1 	" />
+        <polygon opacity="0.1" fill="#242E47" enable-background="new    " points="608.1,754 635.4,819.6 680.9,819.6 710.5,754 	" />
+        <polygon fill="#CFEDCC" points="563.2,754 565.2,834.9 627.5,754 	" />
+        <polygon fill="#CFEDCC" points="758.2,754 756.2,834.9 693.8,754 	" />
+        <polygon fill="#242E47" points="676.8,808.3 706.2,942 662.6,942 622.8,942 639.9,808.3 617.7,754 700.9,754 	" />
+        <path fill="#F9F9F9" d="M565.2,835.6" />
+        <path fill="#F9F9F9" d="M810.3,821.9c0,0,54.1,20.8,54.1,66.9c0,46.1,0,53.2,0,53.2H688.8l70.4-154.7L810.3,821.9z" />
+        <path fill="#F9F9F9" d="M512.5,821.9c0,0-54.3,20.8-54.3,66.9c0,46.1,0,53.2,0,53.2h176l-70.6-154.7L512.5,821.9z" />
+      </g>
+      <g>
+        <path fill="#26F757" d="M880.5,729.2c0,8.5-6.8,15.4-15.4,15.4s-15.4-6.9-15.4-15.4" />
+        <polygon fill="#26F757" points="880.6,673.8 880.5,729.1 849.8,729.2 849.8,673.8 	" />
+        <circle fill="#26F757" cx="865.2" cy="677.1" r="8.5" />
+        <path opacity="0.5" fill="#FFFFFF" enable-background="new    " d="M885.7,632.9c0,1.6-0.7,3.3-1.8,4.4c-0.9,0.9-2.1,1.5-3.3,1.8
+  		l-0.1,90.1c0,8.5-6.8,15.4-15.4,15.4s-15.4-6.8-15.4-15.4V639c-2.5-0.8-4.4-3.1-4.4-5.9c0-1.6,0.7-3.4,1.8-4.5c1.1-1.1,2.6-2,4.3-2
+  		h28C883,626.5,885.7,629.5,885.7,632.9z" />
+        <path fill="#EFEFEF" d="M881.7,719.7c0,4.4-7.3,8-16.2,8c-8.9,0-16.2-3.6-16.2-8c0-0.5,0.1-1.1,0.3-1.6c1.5,3.6,8,6.4,15.8,6.4
+  		c7.8,0,14.3-2.7,15.8-6.4C881.6,718.6,881.7,719.1,881.7,719.7z" />
+        <line fill="none" stroke="#EFEFEF" stroke-width="5.0065" stroke-miterlimit="10" x1="865.2" y1="726.4" x2="865.5" y2="785.2" />
+        <g>
+          <line fill="none" stroke="#EFEFEF" stroke-width="5.0065" stroke-miterlimit="10" x1="854" y1="724.4" x2="833.2" y2="779.4" />
+          <line fill="none" stroke="#EFEFEF" stroke-width="5.0065" stroke-miterlimit="10" x1="877.2" y1="724.4" x2="897.9" y2="779.4" />
+        </g>
+        <g>
+          <circle class="bubble" fill="#26F757" cx="877.1" cy="599.9" r="3.8" />
+          <circle class="bubble" fill="#26F757" cx="858.4" cy="615.3" r="3.8" />
+          <circle class="bubble" fill="#26F757" cx="862.8" cy="576.8" r="3.8" />
+        </g>
+      </g>
+      <g>
+        <polyline fill="none" stroke="#353130" stroke-width="1.4566" stroke-miterlimit="10" points="309.8,334.5 374.4,276.9 439,334.5
+  		" />
+        <polyline fill="#42C3FC" points="296.3,512.3 296.3,356 452.6,356 452.6,512.3 	" />
+        <path fill="#E3D464" d="M364.3,438.3c0,0,3.9-5,5.1-0.4c1.3,4.5,2.7,13.4-2.1,11.7" />
+        <g>
+          <polygon opacity="0.5" enable-background="new    " points="436.6,379.6 444.2,379.6 437.6,385.6 426.8,396.1 426.8,473
+  			427.5,473 427.1,489.9 407.7,512 387.4,489.8 387,473 387.8,473 387.8,395.7 373.6,365.2 383.6,380.6 382.3,369.2 384.5,374.8
+  			382.2,358.1 388.5,369.2 388.5,352.7 396.1,377.1 396.1,362.7 401.5,378.1 405.6,344.9 407.6,380.7 413,364.7 414.4,378.1
+  			433,347.6 425.4,370.5 435.9,362.3 429,376.4 445.8,370.5 		" />
+          <rect x="392.1" y="392.2" fill="#FCD4D4" width="40" height="80.9" />
+          <polygon opacity="3.000000e-02" enable-background="new    " points="401.1,473.1 412.1,432.9 391.7,411.4 391.7,473 		" />
+          <path fill="#423636" d="M432.1,465.1c0,0.4,0,0.8,0,1.2c-0.4-14.3-9.1-24-19.7-24s-19.3,9.7-19.7,24c0-0.4,0-0.8,0-1.2
+  			c0-14.8,8.8-26.9,19.7-26.9C423.3,438.2,432.1,450.3,432.1,465.1z" />
+          <circle fill="#FF9B48" cx="412.4" cy="432.9" r="12.2" />
+          <circle fill="#FDFBFF" cx="422.9" cy="413" r="10.8" />
+          <circle cx="422.9" cy="414.9" r="3.7" />
+          <circle fill="#FDFBFF" cx="401.4" cy="413" r="10.8" />
+          <circle cx="401.4" cy="414.9" r="3.7" />
+          <polyline fill="#FA3F00" points="392.2,396 378.1,365.2 388.2,380.6 386.9,369.2 389.2,374.8 387.1,358.1 393.6,369.2
+  			393.6,352.7 401.3,377.1 401.3,362.7 406.4,378.1 410.4,344.9 412.4,380.7 417.7,364.7 419.2,378.1 437.7,347.6 430.2,370.5
+  			440.7,362.3 433.7,376.4 450.5,370.4 441.3,379.6 449,379.6 442.6,385.6 432.1,396 		" />
+          <path opacity="2.000000e-02" enable-background="new    " d="M412.2,413c0,6-4.9,10.8-10.8,10.8s-10.8-4.9-10.8-10.8
+  			c0-0.5,0.1-1,0.1-1.5c0.7,5.2,5.2,9.3,10.7,9.3c5.4,0,10-4,10.7-9.3C412.1,411.9,412.2,412.4,412.2,413z" />
+          <path opacity="2.000000e-02" enable-background="new    " d="M433.4,413c0,6-4.9,10.8-10.8,10.8c-6,0-10.8-4.9-10.8-10.8
+  			c0-0.5,0.1-1,0.1-1.5c0.7,5.2,5.2,9.3,10.7,9.3s10-4,10.7-9.3C433.4,411.9,433.4,412.4,433.4,413z" />
+          <path opacity="0.1" enable-background="new    " d="M424.6,432.9c0,6.7-5.4,12.2-12.2,12.2c-6.7,0-12.2-5.4-12.2-12.2
+  			c0-1.3,0.2-2.6,0.6-3.8c1.6,4.9,6.2,8.4,11.6,8.4c5.4,0,10-3.5,11.6-8.4C424.4,430.2,424.6,431.5,424.6,432.9z" />
+          <polyline fill="#C4DBC1" points="431.8,511.7 432.2,473 391.7,473 392.1,511.6 		" />
+          <polygon opacity="0.1" fill="#242E47" enable-background="new    " points="401.1,473 406.8,486.4 416.2,486.4 422.3,473 		" />
+          <polygon fill="#CFEDCC" points="391.7,473 392.1,489.8 405.1,473 		" />
+          <polygon fill="#CFEDCC" points="432.2,473 431.8,489.8 418.9,473 		" />
+          <polygon fill="#242E47" points="415.3,484.2 421.4,512 412.4,512 404.1,512 407.7,484.2 403,473 420.3,473 		" />
+          <path fill="#F9F9F9" d="M392.1,489.9" />
+          <path fill="#F9F9F9" d="M443.1,487c0,0,11.3,4.4,11.3,13.9c0,9.5,0,11.1,0,11.1h-36.5l14.7-32.2L443.1,487z" />
+          <path fill="#F9F9F9" d="M381.2,487c0,0-11.3,4.4-11.3,13.9c0,9.5,0,11.1,0,11.1h36.6l-14.7-32.2L381.2,487z" />
+        </g>
+        <g>
+          <path opacity="0.5" enable-background="new    " d="M309.5,474.3L309.5,474.3l-0.5-0.5l0,0l0,0l0,0c-0.6,0.1-14.5,2.2-12.9,38.3
+  			h73.4c1.6-34.7-11.2-38-12.7-38.3l-0.1,0.1l-0.1,0.1l0.1-0.3c0,0,0.1,0,0.1,0l0,0l-2-1.7l-1.6,0.8c6.8-5.7,11.3-14.2,11.3-23.8
+  			c0-0.8,0-1.5-0.1-2.2l0.1,0.3c5,1.8,3.5-7.4,2.2-12.2s-5.3,0.5-5.3,0.5c-5.1-10.4-15.9-17.5-28.4-17.5c-12.2,0-22.8,6.8-28.1,16.9
+  			c-1.6-1.2-4.7-2.6-5.8,4.1c-1.5,9.1,2.6,5.5,2.6,5.5v-0.1c-0.3,1.5-0.4,3.1-0.4,4.7c0,9.5,4.4,18.1,11.3,23.8l-1.6-0.8l-2,1.7l0,0
+  			l0,0" />
+          <polygon fill="#F2F2F2" points="330,476.8 326.8,489.5 335.2,499.3 343.8,489.5 340.6,476.8 		" />
+          <path fill="#D6C561" d="M308.2,435.7c0,0-5.2-6-6.8,3.1c-1.5,9.1,2.6,5.5,2.6,5.5" />
+          <ellipse fill="#E3D464" cx="335.3" cy="449" rx="31.6" ry="31.1" />
+          <path fill="#242E47" d="M347.1,430.2c-5,0-9.1,2.6-9.6,7.7H333c-0.4-5.1-4.5-7.7-9.6-7.7c-5.3,0-9.6,3.5-9.6,8
+  			c0,4.5,4.3,8.1,9.6,8.1c4.9,0,9-3.3,9.5-7.2h4.6c0.6,3.8,4.6,7.1,9.5,7.1c5.3,0,9.6-3.5,9.6-8
+  			C356.7,433.7,352.4,430.2,347.1,430.2z M323.5,444.4c-4.4,0-7.9-2.9-7.9-6.4c0-3.5,3.5-6.4,7.9-6.4c4.4,0,7.9,2.9,7.9,6.4
+  			C331.3,441.5,327.8,444.4,323.5,444.4z M347.1,444.4c-4.4,0-7.9-2.9-7.9-6.4c0-3.5,3.5-6.4,7.9-6.4c4.4,0,7.9,2.9,7.9,6.4
+  			C355.1,441.5,351.5,444.4,347.1,444.4z" />
+          <path fill="#242E47" d="M341.1,454.3c0,1.9-2.6,3.5-5.8,3.5c-3.2,0-5.8-1.5-5.8-3.5c0-0.1,0-0.3,0.1-0.4l0,0v0.1
+  			c0.4,1.7,2.9,2.9,5.8,2.9c2.9,0,5.3-1.3,5.8-2.9v-0.1l0,0C341.1,454,341.1,454.2,341.1,454.3z" />
+          <path fill="#242E47" d="M325.6,456.5C325.6,456.5,325.6,456.5,325.6,456.5L325.6,456.5C325.6,456.5,325.6,456.5,325.6,456.5
+  			L325.6,456.5z" />
+          <path fill="#242E47" d="M337.2,456.5C337.2,456.5,337.2,456.5,337.2,456.5L337.2,456.5C337.1,456.5,337.2,456.5,337.2,456.5
+  			L337.2,456.5z" />
+          <path opacity="0.1" fill="#242E47" enable-background="new    " d="M332.6,446.2c0,0-0.2,3.5,3,4.9c3.3,1.4-5.2,3.3-5,0.7
+  			S329.3,444.3,332.6,446.2z" />
+          <path opacity="0.1" fill="#242E47" enable-background="new    " d="M344.8,461.5c0,4-4.3,7.2-9.5,7.2c-5.2,0-9.5-3.3-9.5-7.2
+  			c0-0.3,0-0.6,0.1-1c0.6,3.5,4.6,6.3,9.4,6.3s8.8-2.8,9.4-6.3C344.8,460.8,344.8,461.1,344.8,461.5z" />
+          <path opacity="5.000000e-02" fill="#242E47" enable-background="new    " d="M353.1,474.6c-0.4,0.3-0.9,0.6-1.3,0.8l-5.1-22.3
+  			l1.2,0.2L353.1,474.6z" />
+          <polygon fill="#F9F9F9" points="326.8,489.5 330,479.8 313.3,472 311.4,473.7 		" />
+          <polygon fill="#F9F9F9" points="343.8,489.5 340.6,479.8 357.2,472 359.2,473.7 		" />
+          <polygon fill="#3F3F3F" points="311.4,473.7 335.1,499.3 352,480.8 352,512 318.9,512 		" />
+          <polygon fill="#F42727" points="338.7,486.1 340.6,493.2 335.2,499.3 329.5,492.7 330.5,486.1 329.9,480 340.6,480 		" />
+          <circle fill="#242E47" cx="335.6" cy="503.4" r="1.5" />
+          <circle fill="#242E47" cx="335.6" cy="508" r="1.5" />
+          <path fill="#E5F4F9" d="M311.4,473.7c0,0-14.6,1.4-12.9,38.3c20.3,0,27.1,0,27.1,0L311.4,473.7z" />
+          <polygon fill="#D0E4EA" points="311.4,473.7 306.6,486.3 314.3,496.4 315.4,512 325.7,512 318.9,481.3 		" />
+          <path fill="#E5F4F9" d="M359,473.7c0,0,14.6,1.4,12.9,38.3c-20.3,0-27.1,0-27.1,0L359,473.7z" />
+          <polygon fill="#D0E4EA" points="359,473.7 363.8,486.3 356.2,496.4 355.1,512 344.8,512 351.6,481.3 		" />
+        </g>
+        <path fill="#D67554" d="M274.6,334.8v199h199.6v-199H274.6z M452.4,512H296.3V355.9h156.1V512z" />
+      </g>
+      <rect x="732.5" y="807.6" fill="#F2F2F2" width="212.5" height="133.4" />
+      <rect x="214.4" y="727.7" fill="#E0E0E0" width="212.5" height="166.9" />
+      <rect x="719.3" y="777.6" fill="#D8D8D8" width="357.2" height="30" />
+      <rect x="214.4" y="701.5" fill="#C4C4C4" width="225.7" height="26.1" />
+      <g>
+        <path fill="#F6F6F6" d="M0,0v1169h1378V0H0z M639,937l-21-16l-28,10l-4-39.5L485,916l14-48l-87,15l24-32l-44,3l4-24l-51-1l20-27
+  		l-72.6-12.4L316,760l-41-14l34-19l-92-94l68.5-54L258,552l19-6l-17-17l25.5-5L217,461l93,8l-13-150l58-27l18-91.5l24,38.5l5-25
+  		l11,14l93-92l51,64.5l24-42.5l21,27l10.5-15l10.5,17l58-43l8,52l68-48l36,85l6.5-27.2L806,221l37-14l-1,61l68-14l-14,60l30-21
+  		l-1,16l21,1l-30,35l52,25l-28,26l50,35l-31,20l28,7l-10.5,17l38.8,55.6L974,603l32,62l-49,14l25,47l-29,2l8,17l-49,36l22,53l-91-4
+  		l-18,67l-18.3-22.4L798,887l-12.7-14L737,935l-37-43.5L639,937z" />
+        <path fill="#A5A5A5" d="M1138.3,977h-16.9l-7.6-14.2l-81.2-28.7l-7.2-48h-40.2l-30.8-51.1l-0.4,0.2L927,791l49.5-46l-9.5-12h29
+  		l-28-51l53-11l-34-62l42-82l-31-67.4l16-8.6l-19-5l24-10l-56-50l24-18l-53-31l26-36l-25-5v-18l-27,19l16-56l-74,14v-51.3l42-9.5
+  		v-42.8l73.8-11.2l36.4,30.2l52.6-51.5l-5.6-5.7l-47.4,46.5l-33.6-27.8L884,144.6v43.2l-34,7.7V194l-45,16l-6-23l-7,29l-31-83
+  		l-71,47v-54l-74,36l-6-14l-8,24l-21-31l-24,39l-53-59l-104,84l-7-19v29l-21.2-26.8l-1.4-1.8l-0.4-0.3l-38.1-24.8l9.1-25l-75.3,7.6
+  		l0.8,8l62.7-6.4l-6.9,19l45.7,29.7l0.4-0.7L348,283l-62.5,31l10.9,145.6L196,453l54,74l-21-1l21,20h-17l26,32l-63,60l89.5,92
+  		L260,748l38,18l-28,34l3.8,0.4L251.2,825h-53.8l-29.6,63.3L138,907.8V919l-31,15l-9.6,19.2l7.2,3.6L113,940l33-16v-11.9l28.1-18.4
+  		l28.4-60.7h52.2l29-31.5L352,809l-26,29h63l-6,25l39-2l-26,30.5l94-11.5l-27,51l121-21v33l31-12l24,24l63-47l39,47l46-71l12,13
+  		l8-17l21,39l19-80l103.9,5.5l29.9,49.5h37.8l6.9,46l82.8,29.3l8.4,15.8h15.1l4.4,21.8l7.8-1.6L1138.3,977z M843,830l-18,67
+  		l-18.3-22.4L798,887l-12.7-14L737,935l-37-43.5L639,937l-21-16l-28,10l-4-39.5L485,916l14-48l-87,15l24-32l-44,3l4-24l-51-1l20-27
+  		l-72.6-12.4L316,760l-41-14l34-19l-92-94l68.5-54L258,552l19-6l-17-17l25.5-5L217,461l93,8l-13-150l58-27l18-91.5l24,38.5l5-25
+  		l11,14l93-92l51,64.5l24-42.5l21,27l10.5-15l10.5,17l58-43l8,52l68-48l36,85l6.5-27.2L806,221l37-14l-1,61l68-14l-14,60l30-21
+  		l-1,16l21,1l-30,35l52,25l-28,26l50,35l-31,20l28,7l-10.5,17l38.8,55.6L974,603l32,62l-49,14l25,47l-29,2l8,17l-49,36l22,53
+  		L843,830z" />
+      </g>
+      <rect x="380.7" y="657.2" fill="#3F3F3F" width="44.5" height="44.5" />
+      <circle opacity="0.15" fill="#E637EF" enable-background="new    " cx="403" cy="606.6" r="55.3" />
+      <g class="buzz">
+        <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="457.2,595.9 451.2,596.1 438.5,608.9 429.7,595.3
+  		420.5,602.3 418.3,594.8 403,606.6 396.6,594 406.4,584.7 396.6,575.9 403,562.8 396.2,551.8 	" />
+        <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="362.9,582.3 380,582.3 380,592 387.9,592 402.9,607
+  		414.1,587.1 414.1,575.5 426.7,578.1 424.3,562.8 433.9,573.3 433.9,566.3 	" />
+        <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="405.7,608.4 390.5,604.1 375.9,610.6 375.9,598.8
+  		365.4,604.1 355.7,594.4 347.9,602.5 	" />
+        <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="445.9,627.6 447.7,614.3 430.1,615.5 424.8,606.6
+  		418.3,614.2 403,607.2 396.2,617.1 400,630.4 391.3,634.8 403,649.3 396.2,657.2 	" />
+        <polyline fill="none" stroke="#E637EF" stroke-miterlimit="10" points="360.3,644 362.9,639.6 360.3,630.4 373.3,633.9 380,632.2
+  		375.7,621.4 389.3,621.4 387.1,611.7 403,606.7 406.4,621 421.3,621 419.6,630.6 428.1,630.6 428.1,644.9 439.8,647.8 	" />
+      </g>
+      <path fill="#F42727" d="M434.4,679.5h-62.9c-2.9,0-5.3-2.4-5.3-5.3l0,0c0-2.9,2.4-5.3,5.3-5.3h62.9c2.9,0,5.3,2.4,5.3,5.3l0,0
+  	C439.7,677.1,437.3,679.5,434.4,679.5z" />
+      <path opacity="0.25" fill="#3F3F3F" enable-background="new    " d="M439.7,674.2L439.7,674.2c0,2.9-2.4,5.3-5.3,5.3h-62.9
+  	c-2.9,0-5.3-2.4-5.3-5.3l0,0" />
+    </svg>
+    <svg class="explosion" viewBox="0 0 452 311">
+      <path fill="#FFFFFF" d="M438.7,195.3c2.8,7.7,4.3,16,4.3,24.5c0,44.7-41.2,80.9-92,80.9c-11.6,0-22.7-1.9-32.9-5.3
+      C301.4,305.2,281,311,259,311c-32.8,0-62-12.8-80.8-32.7c-8.5,4.5-18,7-28.2,7c-5.7,0-11.2-0.8-16.4-2.3c-14.1,17.2-34.3,28-56.8,28
+      C34.4,311,0,272.5,0,224.9c0-27.9,11.8-52.6,30.1-68.3c-7.7-8.9-12.1-19.1-12.1-30c0-34.3,43.9-62.2,98-62.2c10.1,0,19.7,1,28.9,2.8
+      C156.7,28.4,194.6,0,239.5,0C293.9,0,338,41.7,338,93.1c0,2.3-0.1,4.7-0.3,7c5.8-0.7,11.7-1.1,17.8-1.1c53.3,0,96.5,28.6,96.5,63.9
+      C452,174.7,447.2,185.8,438.7,195.3z" />
+      <path fill="#C4C2C2" d="M341,185.1c0,15.5-30.3,28.1-67.8,28.1c-11,0-21.4-1.1-30.6-3c-4.5,17.9-19.4,31-37.2,31
+      c-21.3,0-38.5-18.9-38.5-42.1c0-11.3,4-21.5,10.6-29.1c-15.9-3.1-27.6-14.2-27.6-27.5c0-15.6,16.3-28.3,36.5-28.3
+      c13.9,0,26.1,6.1,32.2,15c3.5-1.6,7.3-2.8,11.5-3.5C234.3,104.6,249,89,266.5,89c20.7,0,37.5,21.9,37.5,48.9c0,7.7-1.4,15-3.8,21.5
+      C324.2,163.6,341,173.6,341,185.1z" />
+      <polygon fill="#FA3F00" points="229.8,153.9 138.4,130 187.7,153.9 150,148.7 173.1,176.4 150,184 189.7,187 179,208 211,187
+      207,219.3 226,194.7 214.3,269.3 226,247 226,260 250.3,214.5 270.3,247 263,187 310.3,205.2 287.7,182.7 325.7,182 291.7,178.7
+      305.7,172 292,172 317,138.9 283,158.7 287.7,125 277.7,148.7 271.7,98.7 249,134.7 245.5,105.9 237.7,128.7 201,98.7 " />
+      <polygon fill="#FFE922" points="256.6,180.5 302.8,147.8 272.9,161.2 289.8,146 268.2,145.9 273.6,132.4 257,149.4 251.5,136.4
+      248.7,159.1 235.5,144.9 239.5,163.1 209.8,129 215.5,142.9 209.5,137.9 221,166.6 198.4,163.2 228.7,183 202.1,197.6 221.2,195.9
+      206.9,213.6 221.5,199.3 219.2,208.3 224.4,202 230,226.2 234,203 247.6,218.2 240.6,204.5 265.8,221 258.1,196.7 272.6,206.2
+      265.2,193.8 293.1,188.6 " />
+    </svg>
 
-
-
-</body>
-
-</html>
+    </section>
+    <footer>
+      <a class="colophon" href="/2015/06/21/hello-benjaminjoycedotcom.html">
+        First published in 2015
+      </a>
+      <div class="social-links">
+        <a href="https://twitter.com/BenJoyceCT">
+          <svg class="icon site-icon--twitter">
+            <use xlink:href="#shape-twitter-logo"></use>
+          </svg>
+        </a>
+        <a href="http://codepen.io/benjoyce/">
+          <svg class="icon site-icon--codepen">
+            <use xlink:href="#shape-codepen-logo"></use>
+          </svg>
+        </a>
+      </div>
+    </footer>
