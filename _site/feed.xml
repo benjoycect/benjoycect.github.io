@@ -5,9 +5,46 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 Jun 2015 14:46:29 -0400</pubDate>
-    <lastBuildDate>Sat, 27 Jun 2015 14:46:29 -0400</lastBuildDate>
+    <pubDate>Sat, 27 Jun 2015 22:43:10 -0400</pubDate>
+    <lastBuildDate>Sat, 27 Jun 2015 22:43:10 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Four Hundred Four</title>
+        <description>&lt;p&gt;The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn&amp;#39;t exist. I wanted to create a 404 page that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.&lt;/p&gt;
+
+&lt;p&gt;First, I found the official &lt;a href=&quot;https://help.github.com/articles/custom-404-pages/&quot;&gt;documentation&lt;/a&gt; on GitHub. I got the page running locally and started to think about what I wanted to put up. There was an old &lt;a href=&quot;http://codepen.io/benjoyce/pen/myqxad&quot;&gt;pen&lt;/a&gt; that featured an SVG illustration I did of Beaker from the Muppets.&lt;/p&gt;
+
+&lt;p data-height=&quot;673&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;myqxad&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/myqxad/&#39;&gt;Beaker&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;I wrote a &lt;a href=&quot;http://codepen.io/benjoyce/blog/quick-smil-animation-tip&quot;&gt;post&lt;/a&gt; on my &lt;a href=&quot;http://codepen.io/benjoyce/blog/&quot;&gt;CodePen blog&lt;/a&gt; about the specifics of creating the animations in the pen. You should read that if you&amp;#39;ve never used SMIL before.&lt;/p&gt;
+
+&lt;p&gt;I thought re-purposing that work would be perfect for the 404 page. It is a fun showcase of what is possible with SVG and was a good reflection of my personality. Unfortunately, taking the pen and jamming it onto my site wouldn&amp;#39;t work. The image didn&amp;#39;t look anything like the rest of my site. It also didn&amp;#39;t provide an easy way to include text that would bring the user back to a relevant page. Still, I tried something.&lt;/p&gt;
+
+&lt;p data-height=&quot;674&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;839684737b2e43f6bf64ce133becf63f&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/839684737b2e43f6bf64ce133becf63f/&#39;&gt;Beaker Fork&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;I pushed that version and realized quickly that it was weird and would not work. My guess is that most people are going to view my site on a small device. This giant image and overlay text worked, but looked pretty junky.&lt;/p&gt;
+
+&lt;p&gt;The imagine had to be scaled down and fit inside the page. Making the change was a bit of a pain due to my approach to the original build. Each component was its own SVG. I did this so that I could manipulate the position and size with CSS. The new design required the whole scene to scale together. I could have gone through and set everything to get my desired result, but that would have been more effort than just recreating the scene as one SVG.&lt;/p&gt;
+
+&lt;p&gt;So that&amp;#39;s what I did. I do all my SVG illustration in Illustrator. I fired open the program and got to work. After putting the illustration together I exported it over to a pen on CodePen. Seeing changes is helpful to me when working with animations. However, it&amp;#39;s still not ideal. I haven&amp;#39;t come across an easy way to navigate through large SVGs. Figuring out which &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;circle&amp;gt;&lt;/code&gt; I should be adding a class to is painful. If you&amp;#39;re working with a large SVG file I think you just have to deal with it. Knowing what the color is for the fill or stroke of the elements within the SVG is the most helpful way to navigate.&lt;/p&gt;
+
+&lt;p&gt;The animations I used were the same as the original pen. I had to make Beaker&amp;#39;s mouth open again, but this time I knew how. One piece I&amp;#39;m still working on is the initial explosion. I left that as a separate SVG. I haven&amp;#39;t fully determined how I want that to look. Right now it explodes in the middle of the screen on some devices and a random place on others. I made sure to set &lt;code&gt;pointer-events: none&lt;/code&gt; on the explosion so the links to the home and about page still worked. Be sure to set your pointer event to none if there is something that takes up the full screen.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m pretty happy with the final result. I think 404 pages should be unique, but feel cohesive with the rest of the site.&lt;/p&gt;
+
+&lt;p&gt;Let me know if you&amp;#39;ve done something interesting with your 404 page. The best place to get in touch is tweeting me &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com//2015/06/27/four-hundred-four.html</link>
+        <guid isPermaLink="true">http://yourdomain.com//2015/06/27/four-hundred-four.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Fridays Are For Starting</title>
