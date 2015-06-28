@@ -5,13 +5,13 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 Jun 2015 22:43:10 -0400</pubDate>
-    <lastBuildDate>Sat, 27 Jun 2015 22:43:10 -0400</lastBuildDate>
+    <pubDate>Sat, 27 Jun 2015 22:54:06 -0400</pubDate>
+    <lastBuildDate>Sat, 27 Jun 2015 22:54:06 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
         <title>Four Hundred Four</title>
-        <description>&lt;p&gt;The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn&amp;#39;t exist. I wanted to create a 404 page that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.&lt;/p&gt;
+        <description>&lt;p&gt;The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn&amp;#39;t exist. I wanted to create a &lt;a href=&quot;http://benjaminjoyce.com/404&quot;&gt;404 page&lt;/a&gt; that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.&lt;/p&gt;
 
 &lt;p&gt;First, I found the official &lt;a href=&quot;https://help.github.com/articles/custom-404-pages/&quot;&gt;documentation&lt;/a&gt; on GitHub. I got the page running locally and started to think about what I wanted to put up. There was an old &lt;a href=&quot;http://codepen.io/benjoyce/pen/myqxad&quot;&gt;pen&lt;/a&gt; that featured an SVG illustration I did of Beaker from the Muppets.&lt;/p&gt;
 
@@ -35,7 +35,7 @@
 
 &lt;p&gt;The animations I used were the same as the original pen. I had to make Beaker&amp;#39;s mouth open again, but this time I knew how. One piece I&amp;#39;m still working on is the initial explosion. I left that as a separate SVG. I haven&amp;#39;t fully determined how I want that to look. Right now it explodes in the middle of the screen on some devices and a random place on others. I made sure to set &lt;code&gt;pointer-events: none&lt;/code&gt; on the explosion so the links to the home and about page still worked. Be sure to set your pointer event to none if there is something that takes up the full screen.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#39;m pretty happy with the final result. I think 404 pages should be unique, but feel cohesive with the rest of the site.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m pretty happy with the &lt;a href=&quot;http://benjaminjoyce.com/404&quot;&gt;final result&lt;/a&gt;. I think 404 pages should be unique, but feel cohesive with the rest of the site.&lt;/p&gt;
 
 &lt;p&gt;Let me know if you&amp;#39;ve done something interesting with your 404 page. The best place to get in touch is tweeting me &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>

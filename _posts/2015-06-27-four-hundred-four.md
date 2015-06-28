@@ -4,7 +4,7 @@ title:  "Four Hundred Four"
 date:   2015-06-27
 categories:
 ---
-The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn't exist. I wanted to create a 404 page that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.
+The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn't exist. I wanted to create a [404 page](http://benjaminjoyce.com/404) that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.
 
 First, I found the official [documentation](https://help.github.com/articles/custom-404-pages/) on GitHub. I got the page running locally and started to think about what I wanted to put up. There was an old [pen](http://codepen.io/benjoyce/pen/myqxad) that featured an SVG illustration I did of Beaker from the Muppets.
 
@@ -26,6 +26,6 @@ So that's what I did. I do all my SVG illustration in Illustrator. I fired open 
 
 The animations I used were the same as the original pen. I had to make Beaker's mouth open again, but this time I knew how. One piece I'm still working on is the initial explosion. I left that as a separate SVG. I haven't fully determined how I want that to look. Right now it explodes in the middle of the screen on some devices and a random place on others. I made sure to set <code>pointer-events: none</code> on the explosion so the links to the home and about page still worked. Be sure to set your pointer event to none if there is something that takes up the full screen.
 
-I'm pretty happy with the final result. I think 404 pages should be unique, but feel cohesive with the rest of the site.
+I'm pretty happy with the [final result](http://benjaminjoyce.com/404). I think 404 pages should be unique, but feel cohesive with the rest of the site.
 
 Let me know if you've done something interesting with your 404 page. The best place to get in touch is tweeting me [@BenJoyceCT](https://twitter.com/BenJoyceCT).
