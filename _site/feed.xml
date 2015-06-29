@@ -5,8 +5,8 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 28 Jun 2015 23:08:59 -0400</pubDate>
-    <lastBuildDate>Sun, 28 Jun 2015 23:08:59 -0400</lastBuildDate>
+    <pubDate>Sun, 28 Jun 2015 23:10:50 -0400</pubDate>
+    <lastBuildDate>Sun, 28 Jun 2015 23:10:50 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -23,7 +23,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;An intranet built on an old CMS no one has heard of but each &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; has in-lined styles&lt;/li&gt;
-&lt;li&gt;An separate &amp;quot;web portal&amp;quot; for legal, finance, marketing, operations, etc. (times five for the different product lines) all built on different platforms&lt;/li&gt;
+&lt;li&gt;A separate &amp;quot;web portal&amp;quot; for legal, finance, marketing, operations, etc. (times five for the different product lines) all built on different platforms&lt;/li&gt;
 &lt;li&gt;A public internet site with 20 separate sites for customers to service one thing or another&lt;/li&gt;
 &lt;li&gt;Microsoft SharePoint&lt;/li&gt;
 &lt;/ul&gt;

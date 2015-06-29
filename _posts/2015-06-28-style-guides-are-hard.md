@@ -15,7 +15,7 @@ So far the bad, but obvious news is that we can't build a style guide for a text
 Let's take a quick inventory of the previously mentioned hypothetical companies web properties:
 
 * An intranet built on an old CMS no one has heard of but each <code>&lt;div></code> has in-lined styles
-* An separate "web portal" for legal, finance, marketing, operations, etc. (times five for the different product lines) all built on different platforms
+* A separate "web portal" for legal, finance, marketing, operations, etc. (times five for the different product lines) all built on different platforms
 * A public internet site with 20 separate sites for customers to service one thing or another
 * Microsoft SharePoint
 
