@@ -27,13 +27,16 @@
 .article--teaser {
   padding-top: 1em;
   padding-bottom: 1em;
-  transition: background-color 0.5s ease;
+  transition: color 0.5s ease, background-color 0.5s ease;
   a {
     color: inherit;
     text-decoration: none;
   }
   &:hover {
     background-color: lighten($blue, 25%);
+    .article__title {
+      color: #fff;
+    }
   }
 }
 .article__list {

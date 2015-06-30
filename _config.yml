@@ -3,7 +3,7 @@ name: Benjamin Joyce's blog
 title: Benjamin Joyce's blog
 description: Posts about the web, business, and other stuff I do in my free time.
 baseurl: / # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://benjaminjoyce.com" # the base hostname & protocol for your site
 twitter_username: BenJoyceCT
 github_username:  BenJoyceCT
 
