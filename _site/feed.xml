@@ -5,9 +5,115 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Jul 2015 08:33:57 -0400</pubDate>
-    <lastBuildDate>Sat, 04 Jul 2015 08:33:57 -0400</lastBuildDate>
+    <pubDate>Sun, 05 Jul 2015 22:08:37 -0400</pubDate>
+    <lastBuildDate>Sun, 05 Jul 2015 22:08:37 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>How I Built It: Fourth of July</title>
+        <description>&lt;p&gt;This is the first of my planned &amp;quot;walk through&amp;quot; posts. Today I&amp;#39;m writing about the process I went through to create the pen I made for the Fourth of July.&lt;/p&gt;
+
+&lt;p&gt;I learned a few key points during this exercise. You can skip ahead to one of them if you&amp;#39;re interested.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#design&quot;&gt;Picking colors and a design&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#fill&quot;&gt;SVG fill&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#loop&quot;&gt;Sass loops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#shadow&quot;&gt;filter: drop-shadow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Before we dive in, here is the final:
+&lt;p data-height=&quot;809&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpvzNK&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/gpvzNK/&#39;&gt;Fourth of July&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Okay, cool. Go America! Let&amp;#39;s learn something.&lt;/p&gt;
+
+&lt;h3 id=&quot;design&quot;&gt;Picking colors and a design&lt;/h3&gt;
+
+&lt;p&gt;Inspiration for this pen came from a question asked at trivia last week. The final question asked us to list 11 of the 13 original US colonies. We were able to do it, but I struggled more than I thought I would. So I decided my next SVG exercise would also be a history lesson.&lt;/p&gt;
+
+&lt;p&gt;I started by finding a &lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Blank_US_Map.svg&quot;&gt;US map&lt;/a&gt;. The &lt;a href=&quot;https://commons.wikimedia.org/wiki/Main_Page&quot;&gt;Wikipedia Commons&lt;/a&gt; has a ton of SVG files. Although they are a good starting point, most of them are not optimized. This particular file is massive. 79kb for one SVG probably means that there are a ton of points. The computer has to calculate and display each point. More calculations means more tax on your processor. Going to production with a file this large may result in a negative experience for your users. &lt;a href=&quot;https://css-tricks.com/video-screencasts/137-svg-is-for-everybody/&quot;&gt;SVG is for everybody&lt;/a&gt;, but be careful.&lt;/p&gt;
+
+&lt;p&gt;Once I had the map I had to figure out what I wanted to do with it. I dropped it in CodePen and started messing around. For these types of fun exercises I often go to  &lt;a href=&quot;https://dribbble.com/&quot;&gt;Dribbble&lt;/a&gt; and look for inspiration. I typed &amp;quot;USA&amp;quot; into the search bar on Dribbble and started flipping through examples. I lifted the red in my example from &lt;a href=&quot;https://dribbble.com/zgraham&quot;&gt;Zach Grahm&amp;#39;s&lt;/a&gt; shot, &lt;a href=&quot;https://dribbble.com/shots/973557-That-One-Place&quot;&gt;That One Place&lt;/a&gt;. I tried filling the background with red, but that looked pretty junky with the map on top. I held onto the red until I knew exactly what I was doing with the map.&lt;/p&gt;
+
+&lt;p&gt;I couldn&amp;#39;t find anything on the web that gave me inspiration for how to fill the states. I decided that the stars from the flag would look cool. I created a small SVG file containing a star on a blue background. I played with the colors I had chosen in Illustrator to make sure that they would work well together. From there I had to figure out how to get the stars into the states.&lt;/p&gt;
+
+&lt;h3 id=&quot;fill&quot;&gt;SVG Fill&lt;/h3&gt;
+
+&lt;p&gt;If you have used an SVG then you have used the &lt;code&gt;fill&lt;/code&gt; property. &lt;code&gt;Fill&lt;/code&gt; determines what happens inside of the thing that is defined by points. Right or wrong, I think of &lt;code&gt;fill&lt;/code&gt; in the same way I think of &lt;code&gt;background&lt;/code&gt; in CSS. If you&amp;#39;re just working with a color, then &lt;code&gt;fill&lt;/code&gt; is pretty similar to &lt;code&gt;background&lt;/code&gt;. However, things get a little different once you start introducing images.&lt;/p&gt;
+
+&lt;p&gt;The first thing to know is that the definition of your image source must happen in the &lt;code&gt;&amp;lt;defs&amp;gt;&lt;/code&gt; tag. &lt;code&gt;&amp;lt;defs&lt;/code&gt; are inserted right after the opening &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. Here is how my &lt;code&gt;&amp;lt;defs&lt;/code&gt; looks:
+&lt;pre&gt;
+&lt;code&gt;
+&amp;lt;defs&amp;gt;
+    &amp;lt;pattern height=&amp;quot;150&amp;quot; id=&amp;quot;img1&amp;quot; patternUnits=&amp;quot;userSpaceOnUse&amp;quot; width=&amp;quot;150&amp;quot;&amp;gt;
+      &amp;lt;image height=&amp;quot;150&amp;quot; width=&amp;quot;150&amp;quot; x=&amp;quot;0&amp;quot; xlink:href=&amp;quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/97391/star.svg&amp;quot; y=&amp;quot;0&amp;quot;/&amp;gt;
+    &amp;lt;/pattern&amp;gt;
+  &amp;lt;/defs&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;There are four key pieces of the &lt;code&gt;&amp;lt;pattern&amp;gt;&lt;/code&gt; definition to focus on. The first is the pattern &lt;code&gt;height&lt;/code&gt; and &lt;/code&gt;width&lt;/code&gt;. You can think of these definitions as the size of the container that the image sits in. If you set the size of the pattern to anything larger than the size of the &lt;code&gt;&amp;lt;image&amp;gt;&lt;/code&gt; there will be extra space around the image. I wanted the stars to be tight against each other. To make sure there was no extra space I set the &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; of the pattern and the image to the exact same value. You&amp;#39;ll notice that these values do not have any unit definitions. Unit-less size definitions default to pixels throughout different parts of SVG markup.&lt;/p&gt;
+
+&lt;p&gt;An &lt;code&gt;id&lt;/code&gt; must be defined for the pattern. The &lt;code&gt;id&lt;/code&gt; is used later to reference the pattern from the &lt;code&gt;&amp;lt;pattern&amp;gt;&lt;/code&gt; definition. I happened to use CSS to set the fill of the states. You will be able to reference the &lt;code&gt;id&lt;/code&gt; from the CSS and the browser will know what to do with it.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+.state {
+  fill: url(#img1);
+  fill-opacity: 0;
+  stroke:#f5f5f5;
+  stroke-width:1;
+  stroke-opacity:1;
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;This is a good time to mention an interesting feature about using patterns for fills in SVG. The pattern will repeat itself how you would expect. In my SVG file there are multiple states. Each state has a separate &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt; definition. Still, the single image defined in the pattern repeats itself across the patterns to form one, cohesive pattern. I don&amp;#39;t know the technical details on how it works, but it does and it&amp;#39;s cool.&lt;/p&gt;
+
+&lt;p&gt;The final thing I thought about in the definition is the &lt;code&gt;xlink:href&lt;/code&gt;. The source can be any image file type that you would expect (.svg, .jpg, .png, etc.).&lt;/p&gt;
+
+&lt;p&gt;Just for reference, I dug into info on &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Patterns&quot;&gt;MDN&lt;/a&gt; and a question someone answered on &lt;a href=&quot;http://stackoverflow.com/questions/3796025/fill-svg-path-element-with-a-background-image&quot;&gt;StackOverflow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;loop&quot;&gt;Sass Loops&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://thesassway.com/intermediate/if-for-each-while&quot;&gt;Control directives&lt;/a&gt; are one of my favorite reasons for using Sass. I have found &lt;code&gt;for&lt;/code&gt; loops to be particularly useful. In this example I wanted to add a short time delay between each state increasing its &lt;code&gt;fill-opacity&lt;/code&gt;. There are a few ways to get this result. You could add a different class to each state and set the &lt;code&gt;animation-delay&lt;/code&gt; to a slightly different value for each. That would be messy and take too much time.&lt;/p&gt;
+
+&lt;p&gt;The better option is to use &lt;a href=&quot;https://css-tricks.com/the-difference-between-nth-child-and-nth-of-type/&quot;&gt;nth-of-type&lt;/a&gt; combined with a &lt;code&gt;for&lt;/code&gt; loop. The loop I set up goes through each element with the class &lt;code&gt;state&lt;/code&gt;. During the loop &lt;code&gt;$i&lt;/code&gt; gets updated by 1. We can use the variable in multiple places. I use the same variable that gets updated during the loop to change the number in the &lt;code&gt;nth-of-type&lt;/code&gt; psuedo class. I also use the variable in the &lt;code&gt;animation-delay&lt;/code&gt; equation.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+@for $i from 1 through $states {
+  .state:nth-of-type(#{$i}){
+    animation: flash 1s linear 1 forwards;
+    animation-delay: ($i*0.15)+s;
+  }
+}
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;I think finding good ways to use control directives is the main benefit of these creative exercises. They allow you to think analytically and build good foundations for programming in the future.&lt;/p&gt;
+
+&lt;h3 id=&quot;shadow&quot;&gt;Filter: drop-shadow&lt;/h3&gt;
+
+&lt;p&gt;I never used the &lt;code&gt;drop-shadow&lt;/code&gt; property before this exercise. It&amp;#39;s an awesome way to do what you hoped &lt;code&gt;box-shadow&lt;/code&gt; would do on your SVG. The difference is &lt;code&gt;drop-shadow&lt;/code&gt; calculates the area of the element it is being applied to and acts accordingly.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#39;ll notice that in the example the shadow fits nicely around each state. Unfortunately that calculation comes at a processing cost. When I had the &lt;code&gt;drop-shadow&lt;/code&gt; being applied immediately to each state it basically crashed the browser. That is because the browser was calculating where to put the points in the SVG, calculating the points that the drop shadow needed to go around, and running an animation. Even on my high-end device there were problems.&lt;/p&gt;
+
+&lt;p&gt;To fix the problem I added an animation to the drop shadow that was delayed by the time it took to fill each state plus a few milliseconds. The whole example is still expensive, but the delay helped quite a bit.&lt;/p&gt;
+
+&lt;h3&gt;Final Thoughts&lt;/h3&gt;
+
+&lt;p&gt;If someone ever wanted a similar graphic on their site there are a few things to think about. The first, and most important, is the size of the SVG. The map does not need to be nearly as precise as the one I used. Think about using your design chops to find a solution that is smaller but conveys the same message. The other thing to remember is that some of this stuff is experimental. For example, &lt;code&gt;filter&lt;/code&gt; seems to be forever messed up in IE. Always check &lt;a href=&quot;caniuse.com&quot;&gt;Can I Use&lt;/a&gt; before using any experimental properties.&lt;/p&gt;
+
+&lt;p&gt;Let me know if you need help with anything I mentioned above. Also, please let me know if you think something is inaccurate and I&amp;#39;ll fix it. The best way to reach me is on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com//2015/07/05/how-i-built-it.html</link>
+        <guid isPermaLink="true">http://yourdomain.com//2015/07/05/how-i-built-it.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Fourth of July</title>
@@ -306,21 +412,6 @@ So you&amp;#39;ll notice pretty quickly that I&amp;#39;m using five tasks. I&amp
         <pubDate>Mon, 22 Jun 2015 00:00:00 -0400</pubDate>
         <link>http://yourdomain.com//2015/06/22/everything-is-gone.html</link>
         <guid isPermaLink="true">http://yourdomain.com//2015/06/22/everything-is-gone.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Hello, benjaminjoyce.com</title>
-        <description>&lt;p&gt;It&amp;#39;s 2015. It&amp;#39;s getting late and I have work tomorrow. Yet, I&amp;#39;m taking this time to launch a blog. Mine won&amp;#39;t be much different than the millions of others already on the internet. Yet, it&amp;#39;s a special moment for me. It&amp;#39;s not the first time I have launched a personal website. I first launched something back in 2010. That site, it&amp;#39;s content, and snapshot of that time is gone.&lt;/p&gt;
-
-&lt;p&gt;Those forgotten memories is why I write again today. I don&amp;#39;t want to forget. I want to look back at how bad of a writer I am. I want to see when I learned what I learned. This blog will have everything from CSS tips to personal achievements and failures. I am taking an oath not to delete my posts due to embarrassment, pressure, or other forces. Benjaminjoyce.com is a reflection of me, at the time of each post.&lt;/p&gt;
-
-&lt;p&gt;That&amp;#39;s all I have for now.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 21 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/21/hello-benjaminjoycedotcom.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/21/hello-benjaminjoycedotcom.html</guid>
         
         
       </item>
