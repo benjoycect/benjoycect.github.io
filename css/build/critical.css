@@ -30,7 +30,6 @@ nav a:not(:last-of-type){ margin-bottom: 0px; margin-right: 5%; }
 .article--teaser{ padding-top: 1em; padding-bottom: 1em; -webkit-transition-property: color, background-color; -webkit-transition-duration: 0.5s, 0.5s; -webkit-transition-timing-function: ease, ease; -webkit-transition-delay: initial, initial; }
 .article--teaser a{ color: inherit; text-decoration: none; }
 .article__list{ list-style-type: none; list-style-position: initial; list-style-image: initial; padding-left: 0px; }
-blockquote{ background-color: rgb(233, 233, 233); border-right-width: 0.5em; border-right-style: solid; border-right-color: rgb(254, 151, 0); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(212, 212, 212); border-left-width: 1px; border-left-style: solid; border-left-color: rgb(212, 212, 212); padding-top: 1em; padding-right: 5%; padding-bottom: 1em; padding-left: 5%; }
 .icon{ height: 2em; width: 2em; }
 .site-logo{ background-color: transparent; height: 2em; margin-bottom: 1em; -webkit-transition-property: -webkit-transform; -webkit-transition-duration: 0.25s; -webkit-transition-timing-function: linear; -webkit-transition-delay: initial; width: 2em; }
 @media (min-width: 80em){
