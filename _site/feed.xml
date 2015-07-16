@@ -5,9 +5,22 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 05 Jul 2015 23:14:23 -0400</pubDate>
-    <lastBuildDate>Sun, 05 Jul 2015 23:14:23 -0400</lastBuildDate>
+    <pubDate>Wed, 15 Jul 2015 21:42:51 -0400</pubDate>
+    <lastBuildDate>Wed, 15 Jul 2015 21:42:51 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Tools I Use: Pocket</title>
+        <description>&lt;p&gt;I&amp;#39;ve tried all sorts of tools to help me save and organize links. Recently, I started using &lt;a href=&quot;https://getpocket.com&quot;&gt;Pocket&lt;/a&gt;. The app has been around since 2007 (previously known as Read it Later). I&amp;#39;m happy to be a late adopter as it is now integrated into all the applications I could possibly imagine.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;ve ever wanted to save a link from &lt;a href=&quot;http://help.getpocket.com/customer/portal/articles/482762-how-to-save-from-twitter-for-iphone&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;https://getpocket.com/chrome/&quot;&gt;Chrome&lt;/a&gt;, or any of the other &lt;a href=&quot;https://getpocket.com/apps/&quot;&gt;500 supported apps&lt;/a&gt;, give Pocket a try.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com//2015/07/15/tools-i-use.html</link>
+        <guid isPermaLink="true">http://yourdomain.com//2015/07/15/tools-i-use.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>How I Built It: Fourth of July</title>
@@ -400,19 +413,6 @@ So you&amp;#39;ll notice pretty quickly that I&amp;#39;m using five tasks. I&amp
         <category>links,</category>
         
         <category>radio</category>
-        
-      </item>
-    
-      <item>
-        <title>Everything is Gone</title>
-        <description>&lt;p&gt;Pro-tip: Be super careful when using Git for the first time. Just felt the classic pain of deleting about 3 hours of work on this site.&lt;/p&gt;
-
-&lt;p&gt;The patient person in me says it&amp;#39;s a learning experience. The patient person better get the hell out of this room.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 22 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/22/everything-is-gone.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/22/everything-is-gone.html</guid>
-        
         
       </item>
     
