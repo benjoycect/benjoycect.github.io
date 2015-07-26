@@ -10,12 +10,12 @@ For a long time CSS was really confusing to me. I was shocked after every line o
 
 The other day a friend asked me why part of the text in one of his text inputs was hidden. He accidently set a height on his <code>&lt;input></code> elements. This isn't a problem unique to first-time front-end developers. It feels good to set a height on elements. However, setting an explicit height can cause trouble later if you're not careful.
 
-First, let take a look at my friend's example with the <code>input</code> (note that you won't notice anything wrong in Chrome or desktop Safari, but keep reading).
+First, let's take a look at my friend's example with the <code>input</code> (note that you won't notice anything wrong in Chrome or desktop Safari, but keep reading).
 
 <select style="font-size:20px; height: 18px; margin-left: 40%; width: 20%;">
   <option>Apples</option>
   <option>Oranges</option>
-  <option>Banannas</option>
+  <option>Bananas</option>
 </select>
 
 To understand what is happening we need to get into the box model. If you've never heard of the box model, stop and read [The CSS Box Model](https://css-tricks.com/the-css-box-model/) on CSS-Tricks. When content is driving the size of the box, padding, border, and margin are calculated based on the edges of the content.
@@ -62,7 +62,7 @@ Document flow is tied with the box model for the CSS concepts I think are most i
 
 The [first web page](http://info.cern.ch/hypertext/WWW/TheProject.html) is a great example of normal document flow. You can see that nothing sits on the same line as the <code>&lt;h1></code> of the page. The default display value for a <code>&lt;h1></code> is <code>block</code>. The inverse is true for the <code>&lt;a></code> tags that appear within the first paragraph. <code>&lt;a></code> tags have a default display value of <code>inline</code>.
 
-Confusion can occur when things are both in the normal document flow and outside of it. Not understanding this property may result in undesirerable results. For example, you will be disappointed if you add an absolutely positioned logo at the top of the page and expect your navigation to sit next to the logo.
+Confusion can occur when things are both in the normal document flow and outside of it. Not understanding this property may result in undesirable results. For example, you will be disappointed if you add an absolutely positioned logo at the top of the page and expect your navigation to sit next to the logo.
 
 <p data-height="234" data-theme-id="16322" data-slug-hash="30cff6e84d84ee78728ad4509720fe37" data-default-tab="result" data-user="benjoyce" class='codepen'>See the Pen <a href='http://codepen.io/benjoyce/pen/30cff6e84d84ee78728ad4509720fe37/'>30cff6e84d84ee78728ad4509720fe37</a> by Ben Joyce (<a href='http://codepen.io/benjoyce'>@benjoyce</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>

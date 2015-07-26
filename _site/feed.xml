@@ -5,8 +5,8 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Jul 2015 23:12:29 -0400</pubDate>
-    <lastBuildDate>Sat, 25 Jul 2015 23:12:29 -0400</lastBuildDate>
+    <pubDate>Sun, 26 Jul 2015 08:51:48 -0400</pubDate>
+    <lastBuildDate>Sun, 26 Jul 2015 08:51:48 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -17,12 +17,12 @@
 
 &lt;p&gt;The other day a friend asked me why part of the text in one of his text inputs was hidden. He accidently set a height on his &lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt; elements. This isn&amp;#39;t a problem unique to first-time front-end developers. It feels good to set a height on elements. However, setting an explicit height can cause trouble later if you&amp;#39;re not careful.&lt;/p&gt;
 
-&lt;p&gt;First, let take a look at my friend&amp;#39;s example with the &lt;code&gt;input&lt;/code&gt; (note that you won&amp;#39;t notice anything wrong in Chrome or desktop Safari, but keep reading).&lt;/p&gt;
+&lt;p&gt;First, let&amp;#39;s take a look at my friend&amp;#39;s example with the &lt;code&gt;input&lt;/code&gt; (note that you won&amp;#39;t notice anything wrong in Chrome or desktop Safari, but keep reading).&lt;/p&gt;
 
 &lt;p&gt;&lt;select style=&quot;font-size:20px; height: 18px; margin-left: 40%; width: 20%;&quot;&gt;
   &lt;option&gt;Apples&lt;/option&gt;
   &lt;option&gt;Oranges&lt;/option&gt;
-  &lt;option&gt;Banannas&lt;/option&gt;
+  &lt;option&gt;Bananas&lt;/option&gt;
 &lt;/select&gt;&lt;/p&gt;
 
 &lt;p&gt;To understand what is happening we need to get into the box model. If you&amp;#39;ve never heard of the box model, stop and read &lt;a href=&quot;https://css-tricks.com/the-css-box-model/&quot;&gt;The CSS Box Model&lt;/a&gt; on CSS-Tricks. When content is driving the size of the box, padding, border, and margin are calculated based on the edges of the content.&lt;/p&gt;
@@ -72,7 +72,7 @@
 
 &lt;p&gt;The &lt;a href=&quot;http://info.cern.ch/hypertext/WWW/TheProject.html&quot;&gt;first web page&lt;/a&gt; is a great example of normal document flow. You can see that nothing sits on the same line as the &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; of the page. The default display value for a &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is &lt;code&gt;block&lt;/code&gt;. The inverse is true for the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags that appear within the first paragraph. &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags have a default display value of &lt;code&gt;inline&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Confusion can occur when things are both in the normal document flow and outside of it. Not understanding this property may result in undesirerable results. For example, you will be disappointed if you add an absolutely positioned logo at the top of the page and expect your navigation to sit next to the logo.&lt;/p&gt;
+&lt;p&gt;Confusion can occur when things are both in the normal document flow and outside of it. Not understanding this property may result in undesirable results. For example, you will be disappointed if you add an absolutely positioned logo at the top of the page and expect your navigation to sit next to the logo.&lt;/p&gt;
 
 &lt;p data-height=&quot;234&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;30cff6e84d84ee78728ad4509720fe37&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/30cff6e84d84ee78728ad4509720fe37/&#39;&gt;30cff6e84d84ee78728ad4509720fe37&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
