@@ -5,9 +5,114 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://yourdomain.com//</link>
     <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Jul 2015 21:42:51 -0400</pubDate>
-    <lastBuildDate>Wed, 15 Jul 2015 21:42:51 -0400</lastBuildDate>
+    <pubDate>Sat, 25 Jul 2015 23:12:29 -0400</pubDate>
+    <lastBuildDate>Sat, 25 Jul 2015 23:12:29 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>My CSS Mistakes</title>
+        <description>&lt;p&gt;For a long time CSS was really confusing to me. I was shocked after every line of code I wrote. Text flowed outside its container, things didn&amp;#39;t position themselves like I expected, and elements I expected to be center sat on the left side of the page. These problems left my CSS with &lt;code&gt;!important&lt;/code&gt; declarations and hacks to make things look right. This is my post that would have taught past me how to fix those mistakes and where to get more information. Maybe you have the same problems and this post will help you too.&lt;/p&gt;
+
+&lt;h2&gt;Height&lt;/h2&gt;
+
+&lt;p&gt;The other day a friend asked me why part of the text in one of his text inputs was hidden. He accidently set a height on his &lt;code&gt;&amp;lt;input&amp;gt;&lt;/code&gt; elements. This isn&amp;#39;t a problem unique to first-time front-end developers. It feels good to set a height on elements. However, setting an explicit height can cause trouble later if you&amp;#39;re not careful.&lt;/p&gt;
+
+&lt;p&gt;First, let take a look at my friend&amp;#39;s example with the &lt;code&gt;input&lt;/code&gt; (note that you won&amp;#39;t notice anything wrong in Chrome or desktop Safari, but keep reading).&lt;/p&gt;
+
+&lt;p&gt;&lt;select style=&quot;font-size:20px; height: 18px; margin-left: 40%; width: 20%;&quot;&gt;
+  &lt;option&gt;Apples&lt;/option&gt;
+  &lt;option&gt;Oranges&lt;/option&gt;
+  &lt;option&gt;Banannas&lt;/option&gt;
+&lt;/select&gt;&lt;/p&gt;
+
+&lt;p&gt;To understand what is happening we need to get into the box model. If you&amp;#39;ve never heard of the box model, stop and read &lt;a href=&quot;https://css-tricks.com/the-css-box-model/&quot;&gt;The CSS Box Model&lt;/a&gt; on CSS-Tricks. When content is driving the size of the box, padding, border, and margin are calculated based on the edges of the content.&lt;/p&gt;
+
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;986e518c542049dca4bdcf80c5b6a73e&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/986e518c542049dca4bdcf80c5b6a73e/&#39;&gt;Normal Box&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Setting an explicit height ignores the content and will make the box the size set in the CSS. I didn&amp;#39;t change the padding, border, or margin from the previous example. I did add a height. You can see that the content is now overflowing from the box (that is because the &lt;a href=&quot;https://bocoup.com/weblog/new-overflow-default/&quot;&gt;default&lt;/a&gt; is &lt;code&gt;overflow: visible&lt;/code&gt;). Additionally, the bottom border and the bottom margin are being calculated based on the new position of the bottom of the box.&lt;/p&gt;
+
+&lt;p data-height=&quot;216&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;cd4f283aaff1e8ec3515ef2f84608b6e&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/cd4f283aaff1e8ec3515ef2f84608b6e/&#39;&gt;Height Box&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;But let&amp;#39;s say you know you need something to be a certain height. There are a few options. First, you can use the &lt;code&gt;overflow&lt;/code&gt; &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/overflow&quot;&gt;property&lt;/a&gt;. Setting &lt;code&gt;overflow-y&lt;/code&gt; to &lt;code&gt;scroll&lt;/code&gt; might be a tempting solution in our example above. This solution should be avoided in most situations. Imagine scrolling down a webpage only to be stuck in a content box that has its own scroll. An &lt;a href=&quot;http://ux.stackexchange.com/questions/58499/in-page-scrollbars-yes-or-no-or-maybe/#answer-58551&quot;&gt;answer&lt;/a&gt; by &lt;a href=&quot;http://ux.stackexchange.com/users/21165/alexeypegov&quot;&gt;alexeypegov&lt;/a&gt; on UX StackExchange has some good examples of when it might be okay to use &lt;code&gt;overflow-y: scroll&lt;/code&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+    You may use nested scrolling panes if they&#39;re shown temporary (like in Facebook example you&#39;ve mentioned in your question: the scrolling list in popup which is shown for a moment and will not break the page scrolling itself).
+    &lt;/li&gt;
+    &lt;li&gt;
+    Editable areas like comments may be scrolled while being edited (and reverted back to non-scrollable mode then editing is done).
+    &lt;/li&gt;
+    &lt;li&gt;
+    Web apps which may occupy the whole browser window and avoid scrolling of the content by using dynamic layout so it&#39;s OK to use nested scrolling panes (since main content area could never be scrolled anyway).
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Besides overflow, &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes&quot;&gt;flexbox&lt;/a&gt; solves many challenges developers have with height. For example, equal height columns can be done with only &lt;a href=&quot;http://clearleft.com/thinks/270&quot;&gt;one line of code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;949835e2077b5e45aab26aadc2967c71&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/949835e2077b5e45aab26aadc2967c71/&#39;&gt;Equal Height Columns&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also consider letting the height be driven by the content. The W3C specs are basically written to support content-driven boxes. Letting the content drive the height will save you many headaches down the road.&lt;/p&gt;
+
+&lt;p&gt;Finally, you can set a height that fits your content. The most important thing is being intentional with height. Knowing how setting a height will affect your site is powerful knowledge.&lt;/p&gt;
+
+&lt;h2&gt;Position&lt;/h2&gt;
+
+&lt;p&gt;Document flow is tied with the box model for the CSS concepts I think are most important. Tuts+ has a great article on normal document flow, &lt;a href=&quot;http://webdesign.tutsplus.com/articles/quick-tip-utilizing-normal-document-flow--webdesign-8199&quot;&gt;Quick Tip: Utilizing Normal Document Flow&lt;/a&gt;. In the article they describe normal document flow as&lt;/p&gt;
+
+&lt;blockquote&gt;
+[H]ow a page is presented when you do nothing to it with regard to structural styling.&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://info.cern.ch/hypertext/WWW/TheProject.html&quot;&gt;first web page&lt;/a&gt; is a great example of normal document flow. You can see that nothing sits on the same line as the &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; of the page. The default display value for a &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is &lt;code&gt;block&lt;/code&gt;. The inverse is true for the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags that appear within the first paragraph. &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags have a default display value of &lt;code&gt;inline&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Confusion can occur when things are both in the normal document flow and outside of it. Not understanding this property may result in undesirerable results. For example, you will be disappointed if you add an absolutely positioned logo at the top of the page and expect your navigation to sit next to the logo.&lt;/p&gt;
+
+&lt;p data-height=&quot;234&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;30cff6e84d84ee78728ad4509720fe37&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/30cff6e84d84ee78728ad4509720fe37/&#39;&gt;30cff6e84d84ee78728ad4509720fe37&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Whoops, why are things sitting on top of each other? Well, elements in the normal document flow are ignoring the heart logo since it was taken out of the normal document flow.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/guilh&quot;&gt;Guil  Hernandez&amp;#39;s&lt;/a&gt; course on &lt;a href=&quot;teamtreehouse.com&quot;&gt;Treehouse&lt;/a&gt;, &lt;a href=&quot;http://teamtreehouse.com/library/css-layout-techniques&quot;&gt;CSS Layout Techniques&lt;/a&gt; is one of the best explanations for layout complexities that I have come across. Treehouse costs a few bucks a month, but it worth the price of admission. Consider taking his course if you find stuff isn&amp;#39;t laying out like you want.&lt;/p&gt;
+
+&lt;h2&gt;Center Alignment&lt;/h2&gt;
+
+&lt;p&gt;Center alignment was one of those things that I had to look up every time for a long time. Not even vertical alignment, which can be solved &lt;a href=&quot;http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/&quot;&gt;in three lines&lt;/a&gt; or &lt;a href=&quot;https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/&quot;&gt;by flexbox&lt;/a&gt;. There are a bunch of techniques for centering. Each is used for different situations.&lt;/p&gt;
+
+&lt;p&gt;There are four basic ways to horizontally center items:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For block-level containers &lt;a href=&quot;https://css-tricks.com/almanac/properties/t/text-align/&quot;&gt;text-align: center;&lt;/a&gt; will center that container&amp;#39;s inline or inline-block elements&lt;/li&gt;
+&lt;li&gt;For absolutely positioned elements with a known or unknown width &lt;a href=&quot;https://teamtreehouse.com/forum/centre-align-an-absolute-positioned-element-with-unknown-width&quot;&gt;left: 0; right: 0; margin-left: auto; margin-right: auto;&lt;/a&gt; will center that element&lt;/li&gt;
+&lt;li&gt;For block-level elements with a width margin-left: auto; margin-right: auto; will center that element and its content&lt;/li&gt;
+&lt;li&gt;For parent elements that are &lt;a href=&quot;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&quot;&gt;display: flex;&lt;/a&gt;, justify-content: center; will center all child elements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is everything in action:&lt;/p&gt;
+
+&lt;p data-height=&quot;156&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;3b11a5a3f76e7b2c461fc72406647957&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/3b11a5a3f76e7b2c461fc72406647957/&#39;&gt;3b11a5a3f76e7b2c461fc72406647957&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;For more on centering, check out &lt;a href=&quot;https://css-tricks.com/centering-css-complete-guide/_&quot;&gt;Centering in CSS: A Complete Guide&lt;/a&gt; on CSS-Tricks.&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Even the most simple display tasks can be difficult in CSS. Don&amp;#39;t worry if you have to look up how to do something once or twenty times. Everyone is learning together. Visit the sites I link to throughout this article if you&amp;#39;re having any of these problems. Or contact me on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt; and I can try to help. Let me know if you notice any issues with the article. Best of luck!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 25 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://yourdomain.com//2015/07/25/css-mistkaes.html</link>
+        <guid isPermaLink="true">http://yourdomain.com//2015/07/25/css-mistkaes.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Tools I Use: Pocket</title>
@@ -396,23 +501,6 @@ So you&amp;#39;ll notice pretty quickly that I&amp;#39;m using five tasks. I&amp
         <link>http://yourdomain.com//2015/06/25/my-grunt-file.html</link>
         <guid isPermaLink="true">http://yourdomain.com//2015/06/25/my-grunt-file.html</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>Listen to &amp;quot;The Memory Palace&amp;quot;</title>
-        <description>&lt;p&gt;I&amp;#39;m always blown away at talks or articles that are able to take random moments in history and connect them to the present. One talk I saw that has stuck with me is Ethan Marcotte&amp;#39;s talk at &lt;a href=&quot;http://aneventapart.com/event/austin-2013&quot;&gt;An Event Apart: Austin 2013&lt;/a&gt; called the &amp;quot;The Map &amp;amp; The Territory&amp;quot; (you can watch it on &lt;a href=&quot;https://vimeo.com/120164988&quot; title=&quot;The Map &amp;amp; The Territory&quot;&gt;Vimeo&lt;/a&gt;). I wonder how great speakers find these moments in history that show the audience how the past can teach us about the future.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately I have not learned how to take the time to read about our history. However, I just learned about Nate DiMeo&amp;#39;s podcast, &lt;a href=&quot;http://thememorypalace.us/&quot; title=&quot;The Memory Palace&quot;&gt;The Memory Palace&lt;/a&gt;, because of their inclusion into the &lt;a href=&quot;http://www.radiotopia.fm/&quot; title=&quot;Radiotopia&quot;&gt;Radiotopia&lt;/a&gt; family. I&amp;#39;ve made it through 5 episodes and have already learned so much. Go listen if you want to be inspired by the past and figure out how it can change our future. They&amp;#39;re about 5 minutes. You have no excuse not to.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 24 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//links,/radio/2015/06/24/the-memory-palace.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//links,/radio/2015/06/24/the-memory-palace.html</guid>
-        
-        
-        <category>links,</category>
-        
-        <category>radio</category>
         
       </item>
     
