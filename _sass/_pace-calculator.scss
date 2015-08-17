@@ -19,7 +19,7 @@
   &__section {
     border: 1px solid #e2e2e2;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     padding-left: 5%;
@@ -29,14 +29,22 @@
     position: relative;
     margin-left: 0;
     margin-right: 0;
+    text-align: center;
+    @media screen and (min-width: 25.25em) {
+      flex-direction: row;
+      text-align: initial;
+    }
   }
 
   &__label {
+    display: block;
     font-weight: 300;
-    margin-left: 1.25em; // magic number
-    position: absolute;
     text-transform: uppercase;
-    top: -1.8em;
+    @media screen and (min-width: 25.25em) {
+      position: absolute;
+      margin-left: 1.25em; // magic number
+      top: -1.8em;
+    }
   }
 
   label[for="distance"] {
@@ -52,7 +60,10 @@
     font-family: $primary-font;
     font-size: 2em;
     text-align: center;
-    width: 2em;
+    width: 100%;
+    @media screen and (min-width: 25.25em) {
+      width: 2em;
+    }
     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
@@ -127,5 +138,4 @@
     text-align: center;
     text-transform: uppercase;
   }
-
 }
