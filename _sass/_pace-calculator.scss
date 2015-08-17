@@ -1,0 +1,131 @@
+.pace-calculator {
+  background-color: #fff;
+  color: $text-color;
+  border: 1px solid darken($body-color, 25%);
+  border-radius: 0.25em;
+  padding: 1em 5%;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    @media screen and (min-width: 54.5em) {
+      width: 60%;
+    }
+  }
+
+  &__section {
+    border: 1px solid #e2e2e2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &__label {
+    font-weight: 300;
+    margin-left: 1.25em; // magic number
+    position: absolute;
+    text-transform: uppercase;
+    top: -1.8em;
+  }
+
+  label[for="distance"] {
+    margin-left: 0;
+  }
+
+  &__input {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px dashed #e2e2e2;
+    border-left: 0;
+    color: $text-color;
+    font-family: $primary-font;
+    font-size: 2em;
+    text-align: center;
+    width: 2em;
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .colon {
+    margin-top: 0.5em;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  button {
+    display: block;
+    margin-top: 1em;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    width: 10em;
+  }
+
+
+  .input-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 54.5em) {
+      flex-direction: row;
+    }
+  }
+
+
+  .output {
+    margin-top: 0.25em;
+    position: relative;
+    width: 100%;
+    @media screen and (min-width: 54.5em) {
+      margin-left: 5%;
+      width: 40%;
+    }
+    p {margin: 0;}
+  }
+
+  .output__value {
+    border: 1px solid #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    text-align: center;
+  }
+
+  .output__pace {
+    border-bottom: 1px dashed #e2e2e2;
+    color: $green;
+    font-size: 2em;
+    padding-bottom: 0.25em;
+    padding-top: 0.25em;
+    text-align: center;
+    transition: color 0.25s ease;
+  }
+
+  .output__pace--no-value {
+    color: lighten($green, 40%);
+    font-style: italic;
+  }
+
+  .output__label {
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+}

@@ -3,11 +3,178 @@
   <channel>
     <title>Benjamin Joyce&#39;s blog</title>
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
-    <link>http://yourdomain.com//</link>
-    <atom:link href="http://yourdomain.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Jul 2015 22:06:06 -0400</pubDate>
-    <lastBuildDate>Sun, 26 Jul 2015 22:06:06 -0400</lastBuildDate>
+    <link>http://benjaminjoyce.com//</link>
+    <atom:link href="http://benjaminjoyce.com//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 16 Aug 2015 22:15:01 -0400</pubDate>
+    <lastBuildDate>Sun, 16 Aug 2015 22:15:01 -0400</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
+    
+      <item>
+        <title>Pace Calculator</title>
+        <description>&lt;p&gt;I created a small pace calculator for my own use. There are many TODOs, but let me know if something can be done better. I&amp;#39;ll be open sourcing the project later this week. You can take a look at the first iteration of the solution here. Your &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;feedback&lt;/a&gt; is always welcome.&lt;/p&gt;
+
+&lt;p&gt;The constraints I put on myself were to use vanilla JavaScript, less than 3KB, and as few &amp;quot;wrapper divs&amp;quot; as I could get away with. I will be writing another post when the calculator is on GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/build/calculator.css&quot;&gt;
+&lt;script src=&quot;/js/paceCalculator.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;pace-calculator&quot;&gt;
+  &lt;div class=&quot;input-container&quot;&gt;
+    &lt;form class=&quot;pace-calculator__form&quot;&gt;
+      &lt;section class=&quot;time pace-calculator__section&quot;&gt;
+        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;hour&quot;&gt;HH&lt;/label&gt;
+        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;hour&quot; placeholder=&quot;00&quot; required /&gt;
+        &lt;span class=&quot;colon&quot;&gt;:&lt;/span&gt;
+        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;minute&quot;&gt;MM&lt;/label&gt;
+        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;minute&quot; placeholder=&quot;00&quot; required /&gt;
+        &lt;span class=&quot;colon&quot;&gt;:&lt;/span&gt;
+        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;second&quot;&gt;SS&lt;/label&gt;
+        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;second&quot; placeholder=&quot;00&quot; required /&gt;
+      &lt;/section&gt;
+      &lt;section class=&quot;distance pace-calculator__section&quot;&gt;
+        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;distance&quot;&gt;Distance&lt;/label&gt;
+        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;distance&quot; placeholder=&quot;00.00&quot; required /&gt;
+        &lt;p&gt;Mile(s)&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/form&gt;
+    &lt;div class=&quot;output&quot;&gt;
+      &lt;p class=&quot;output__label&quot;&gt;Pace&lt;/p&gt;
+      &lt;div class=&quot;output__value&quot;&gt;
+        &lt;p class=&quot;output__pace output__pace--no-value&quot; id=&quot;pace&quot;&gt;00:00:00&lt;/p&gt;
+        &lt;p&gt;Per Mile&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button id=&quot;process&quot;&gt;Calculate Pace&lt;/button&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;h3&gt;HTML&lt;/h3&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+&amp;lt;div class=&quot;pace-calculator&quot;&gt;
+  &amp;lt;div class=&quot;input-container&quot;&gt;
+    &amp;lt;form class=&quot;pace-calculator__form&quot;&gt;
+      &amp;lt;section class=&quot;time pace-calculator__section&quot;&gt;
+        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;hour&quot;&gt;HH&amp;lt;/label&gt;
+        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;hour&quot; placeholder=&quot;00&quot; required /&gt;
+        &amp;lt;span class=&quot;colon&quot;&gt;:&amp;lt;/span&gt;
+        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;minute&quot;&gt;MM&amp;lt;/label&gt;
+        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;minute&quot; placeholder=&quot;00&quot; required /&gt;
+        &amp;lt;span class=&quot;colon&quot;&gt;:&amp;lt;/span&gt;
+        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;second&quot;&gt;SS&amp;lt;/label&gt;
+        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;second&quot; placeholder=&quot;00&quot; required /&gt;
+      &amp;lt;/section&gt;
+      &amp;lt;section class=&quot;distance pace-calculator__section&quot;&gt;
+        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;distance&quot;&gt;Distance&amp;lt;/label&gt;
+        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;distance&quot; placeholder=&quot;00.00&quot; required /&gt;
+        &amp;lt;p&gt;Mile(s)&amp;lt;/p&gt;
+      &amp;lt;/section&gt;
+    &amp;lt;/form&gt;
+    &amp;lt;div class=&quot;output&quot;&gt;
+      &amp;lt;p class=&quot;output__label&quot;&gt;Pace&amp;lt;/p&gt;
+      &amp;lt;div class=&quot;output__value&quot;&gt;
+        &amp;lt;p class=&quot;output__pace output__pace--no-value&quot; id=&quot;pace&quot;&gt;00:00:00&amp;lt;/p&gt;
+        &amp;lt;p&gt;Per Mile&amp;lt;/p&gt;
+      &amp;lt;/div&gt;
+    &amp;lt;/div&gt;
+  &amp;lt;/div&gt;
+  &amp;lt;button id=&quot;process&quot;&gt;Calculate Pace&amp;lt;/button&gt;
+&amp;lt;/div&gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h3&gt;JavaScript&lt;/h3&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+  var pace = document.getElementById(&#39;pace&#39;); // Get the pace input
+  var processResult = document.getElementById(&#39;process&#39;); // The main button
+  var hours = document.getElementById(&#39;hour&#39;); // Get the hour input
+  var minutes = document.getElementById(&#39;minute&#39;); // Get the minute input
+  var seconds = document.getElementById(&#39;second&#39;); // Get the second input
+  var distance = document.getElementById(&#39;distance&#39;); // Get the distance input
+
+  // Watch for the process button to be clicked then run the function
+  if(processResult) {
+    processResult.addEventListener(&quot;click&quot;, calculatePace, false);
+  }
+
+  // The function that calculates pace
+  function calculatePace(){
+    var paceOutput = 0; // The variable that holds the pace output
+
+    var hoursInSecs = Number(hours.value * 3600); // Takes the value of the hours input, multiplies it by 3600 to hours in seconds, changes the string to a number.
+
+    var minsInSecs = Number(minutes.value * 60); // Takes the minutes input and converts it to a number.
+
+    var secsInSecs = Number(seconds.value); // Takes the seconds input, changes the string to a number.
+    var finalDistance = Number(distance.value); // Holds the distance input
+
+
+
+    paceOutput = (hoursInSecs + minsInSecs + secsInSecs) / finalDistance; // Calculation for pace and update the paceOutput variable with that value.
+
+    // The function that takes the output of the pace and turns it into a time format for display.
+    function getPace(){
+      var paceHours = paceOutput / 3600;
+
+      var paceMins = paceOutput / 60; // Separate the total minutes from the total seconds.
+
+      var paceSecs = (paceMins % 1); // Get the remainder of the pace value and multiply it by 60 to convert to seconds
+
+      if(isNaN(paceHours) || isNaN(paceMins) || isNaN(paceSecs)) {
+        pace.textContent = &quot;Please enter a number 0-99&quot;;
+      } else {
+        var finalHours = Math.floor(paceHours);
+        var finalMins = Math.floor(paceMins);
+        var finalSecs = (paceSecs.toFixed(2) * 100);
+
+        if(finalHours &gt; 0) {
+        pace.textContent = String(&#39;00&#39;+finalHours).slice(-2) + &quot;:&quot; + String(&#39;00&#39;+finalMins).slice(-2) + &quot;:&quot; + String(&#39;00&#39;+finalSecs).slice(-2); // Update the pace output placeholder with the minutes and the seconds, only show the value to the closest second.
+        } else {
+          pace.textContent = String(&#39;00&#39;+finalMins).slice(-2) + &quot;:&quot; + String(&#39;00&#39;+finalSecs).slice(-2);
+        }
+
+        changeClass();
+      }
+    }
+
+    function changeClass(){
+      pace.classList.remove(&#39;output__pace--no-value&#39;);
+    }
+    getPace();
+  }
+});
+&lt;/code&gt;
+&lt;/pre&gt;
+</description>
+        <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://benjaminjoyce.com//2015/08/16/pace-calculator.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/08/16/pace-calculator.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>First Image</title>
+        <description>&lt;p&gt;I just set up an account on AWS and will be using &lt;a href=&quot;https://aws.amazon.com/cloudfront/&quot;&gt;CloudFront&lt;/a&gt; CDN for images. I&amp;#39;ll write about getting CloudFront set up and some of the things I am trying out with &lt;code&gt;srcset&lt;/code&gt; very soon.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center&quot;&gt;
+&lt;img src=&quot;http://images.benjaminjoyce.com/EarthRise.jpg&quot;
+     srcset=&quot;http://images.benjaminjoyce.com/EarthRise.jpg 1024w, http://images.benjaminjoyce.com/EarthRise.jpg 640w, http://d3p41d0ahmxvrr.cloudfront.net/Mom-400.jpg 320w&quot;
+     sizes=&quot;(min-width: 36em) 33.3vw, 100vw&quot;
+     alt=&quot;My mom, sister, and me&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Image: &lt;a href=&quot;https://flic.kr/p/8GrsJ6&quot;&gt;Earth Rise as Seen From Lunar Surface&lt;/a&gt; from &lt;a href=&quot;https://www.flickr.com/photos/nasacommons/&quot;&gt;NASA on The Commons&lt;/a&gt;; &lt;em&gt;Altered for speed performance&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://benjaminjoyce.com//2015/08/16/first-image.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/08/16/first-image.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>My CSS Mistakes</title>
@@ -108,8 +275,8 @@
 &lt;p&gt;Even the most simple display tasks can be difficult in CSS. Don&amp;#39;t worry if you have to look up how to do something once or twenty times. Everyone is learning together. Visit the sites I link to throughout this article if you&amp;#39;re having any of these problems. Or contact me on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt; and I can try to help. Let me know if you notice any issues with the article. Best of luck!&lt;/p&gt;
 </description>
         <pubDate>Sat, 25 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/07/25/css-mistkaes.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/07/25/css-mistkaes.html</guid>
+        <link>http://benjaminjoyce.com//2015/07/25/css-mistkaes.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/25/css-mistkaes.html</guid>
         
         
       </item>
@@ -121,8 +288,8 @@
 &lt;p&gt;If you&amp;#39;ve ever wanted to save a link from &lt;a href=&quot;http://help.getpocket.com/customer/portal/articles/482762-how-to-save-from-twitter-for-iphone&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;https://getpocket.com/chrome/&quot;&gt;Chrome&lt;/a&gt;, or any of the other &lt;a href=&quot;https://getpocket.com/apps/&quot;&gt;500 supported apps&lt;/a&gt;, give Pocket a try.&lt;/p&gt;
 </description>
         <pubDate>Wed, 15 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/07/15/tools-i-use.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/07/15/tools-i-use.html</guid>
+        <link>http://benjaminjoyce.com//2015/07/15/tools-i-use.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/15/tools-i-use.html</guid>
         
         
       </item>
@@ -227,8 +394,8 @@
 &lt;p&gt;Let me know if you need help with anything I mentioned above. Also, please let me know if you think something is inaccurate and I&amp;#39;ll fix it. The best way to reach me is on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/07/05/how-i-built-it.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/07/05/how-i-built-it.html</guid>
+        <link>http://benjaminjoyce.com//2015/07/05/how-i-built-it.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/05/how-i-built-it.html</guid>
         
         
       </item>
@@ -242,8 +409,8 @@
 &lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 04 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/07/04/fourth-of-july.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/07/04/fourth-of-july.html</guid>
+        <link>http://benjaminjoyce.com//2015/07/04/fourth-of-july.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/04/fourth-of-july.html</guid>
         
         
       </item>
@@ -257,8 +424,8 @@
 &lt;p&gt;The best we can do is be prepared. Keep up the good work.&lt;/p&gt;
 </description>
         <pubDate>Tue, 30 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/30/one-plate-one-fork.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/30/one-plate-one-fork.html</guid>
+        <link>http://benjaminjoyce.com//2015/06/30/one-plate-one-fork.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/30/one-plate-one-fork.html</guid>
         
         
       </item>
@@ -286,8 +453,8 @@
 &lt;p&gt;Let me know what you think! You can find me on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 29 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/29/the-logo.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/29/the-logo.html</guid>
+        <link>http://benjaminjoyce.com//2015/06/29/the-logo.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/29/the-logo.html</guid>
         
         
       </item>
@@ -326,8 +493,8 @@
 &lt;p&gt;Good luck! Check back here as I&amp;#39;ll be writing about some more specifics around style guide-driven front-end development. Also, let me know if you notice any grammar or spelling mistakes. The best place to get in touch is tweeting me &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 28 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/28/style-guides-are-hard.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/28/style-guides-are-hard.html</guid>
+        <link>http://benjaminjoyce.com//2015/06/28/style-guides-are-hard.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/28/style-guides-are-hard.html</guid>
         
         
       </item>
@@ -363,143 +530,8 @@
 &lt;p&gt;Let me know if you&amp;#39;ve done something interesting with your 404 page. The best place to get in touch is tweeting me &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/27/four-hundred-four.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/27/four-hundred-four.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Fridays Are For Starting</title>
-        <description>&lt;blockquote&gt;[I]t&#39;s like coming home on Friday night and doing your homework right away so that your Saturday night is free to just party.
-
-&lt;p class=&quot;blockquote__author&quot;&gt;Mike Meyers as Wayne Campbell, Wayne&#39;s World 2&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;I don&amp;#39;t know if I fully subscribe to getting everything done on a Friday. A little procrastination feels so nice after a long week. It&amp;#39;s good to get started on Friday. Like the tell-tale-heart, the post I started today won&amp;#39;t be off my mind until I &lt;code&gt;git push&lt;/code&gt; later this weekend. Starting the post will not make me anxious or stressed. It will just keep me honest.&lt;/p&gt;
-
-&lt;p&gt;Writing every day is going to be hard. I have about one and a half hours a day to write. Writing will fill the short time between running, work, running, and a social life. I think this site will be something I enjoy though. It feels like illustrating, coding, or playing music. The feeling can&amp;#39;t really be described. You can find the emotion somewhere between excitement and happiness. Energy, maybe? I&amp;#39;m not sure. &lt;a href=&quot;http://austinkleon.com/&quot;&gt;Austin Kleon&lt;/a&gt; wrote one of my favorite quotes about this subject.&lt;/p&gt;
-
-&lt;blockquote&gt;Inertia is the death of creativity. You have to stay in the groove. When you get out of the groove, you start to dread the work, because you know it’s going to suck for a while—it’s going to suck until you get back into the flow.
-
-&lt;p class=&quot;blockquote__author&quot;&gt;Austin Kleon. &lt;a href=&quot;http://www.amazon.com/Steal-Like-Artist-Things-Creative/dp/0761169253&quot;&gt;Steal Like an Artist&lt;/a&gt;.&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;I think you have to stay busy to be good. Think about lazy Sundays. To me, that is the worst. Nothing is getting done after your legs start to atrophy and brain turns to mush. I was able to crank out half of a decent post and this quick rant in the two hours I had between work and hanging out with friends. I don&amp;#39;t think I&amp;#39;ll produce nearly that much when I&amp;#39;m not busy.&lt;/p&gt;
-
-&lt;p&gt;Okay, get something started, then have fun. Enjoy your weekend.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 26 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/26/fridays-are-for-starting.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/26/fridays-are-for-starting.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>My Gruntfile</title>
-        <description>&lt;p&gt;I&amp;#39;m using some &lt;a href=&quot;http://gruntjs.com/&quot; title=&quot;Grunt&quot;&gt;Grunt&lt;/a&gt; tasks that have helped me get this site running. They have also made my life way easier. A few caveats before we get started. One, I know Grunt isn&amp;#39;t the super cool task runner it was when it was first released. &lt;a href=&quot;http://gulpjs.com/&quot; title=&quot;Gulp&quot;&gt;Gulp&lt;/a&gt; has earned that distinction from most developers I talk to now. &lt;a href=&quot;https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4&quot;&gt;Enough&lt;/a&gt; has been &lt;a href=&quot;http://www.hongkiat.com/blog/gulp-vs-grunt/&quot;&gt;written&lt;/a&gt; about &lt;a href=&quot;http://sixrevisions.com/web-development/grunt-vs-gulp/&quot;&gt;Grunt versus Gulp&lt;/a&gt; that I don&amp;#39;t need to go into that. I&amp;#39;ve tried both. I started with Grunt, thanks to Chris Coyier&amp;#39;s awesome 24 Ways &lt;a href=&quot;http://24ways.org/2013/grunt-is-not-weird-and-hard/&quot;&gt;article&lt;/a&gt;. I like it and I&amp;#39;m staying with it for a while. Another quick note, I have an extremely basic website right now. I haven&amp;#39;t added any images (yet) and there is basically no interactivity. Finally, I&amp;#39;m not going to teach you how to use Grunt. The previously mentioned article by Chris Coyier does it better than I ever could.&lt;/p&gt;
-
-&lt;p&gt;Okay? Good? Let&amp;#39;s see that &lt;code&gt;Gruntfile.js&lt;/code&gt;!
-&lt;pre&gt;&lt;code&gt;
-module.exports = function(grunt) {
-    grunt.initConfig({
-      sass: { // Task
-        dist: { // Target
-          options: { // Target options
-            style: &amp;#39;compressed&amp;#39;
-          },
-          files: { // Dictionary of files
-            &amp;#39;css/main.css&amp;#39;: &amp;#39;sass/main.scss&amp;#39; // &amp;#39;destination&amp;#39;: &amp;#39;source&amp;#39;
-          }
-        }
-      },
-      svgstore: {
-        options: {
-          prefix: &amp;#39;shape-&amp;#39;, // This will prefix each &lt;g&gt; ID
-        },
-        default: {
-          files: {
-            &amp;#39;img/svgs/svg-defs.svg&amp;#39;: [&amp;#39;img/svg-src/[an asterisk goes here].svg&amp;#39;],
-          }
-        }
-      },
-      autoprefixer: {
-        dist: {
-          files: {
-            &amp;#39;css/build/main.css&amp;#39;: &amp;#39;css/main.css&amp;#39;
-          }
-        }
-      },
-      criticalcss: {
-        custom: {
-          options: {
-            url: &amp;quot;http://127.0.0.1:4000&amp;quot;,
-            width: 3000,
-            height: 2000,
-            outputfile: &amp;quot;css/build/critical.css&amp;quot;,
-            filename: &amp;quot;css/build/main.css&amp;quot;, // Using path.resolve( path.join( ... ) ) is a good idea here
-            buffer: 800 * 1024,
-            ignoreConsole: false
-          }
-        }
-      },
-      watch: {
-        files: [&amp;#39;img/svg-src/[an asterisk goes here].svg&amp;#39;, &amp;#39;sass/[an asterisk goes here]&amp;#39;],
-        tasks: [&amp;#39;svgstore&amp;#39;, &amp;#39;sass&amp;#39;, &amp;#39;autoprefixer&amp;#39;, &amp;#39;criticalcss&amp;#39;]
-      }
-    });
-    grunt.loadNpmTasks(&amp;#39;grunt-contrib-sass&amp;#39;);
-    grunt.loadNpmTasks(&amp;#39;grunt-contrib-watch&amp;#39;);
-    grunt.loadNpmTasks(&amp;#39;grunt-svgstore&amp;#39;);
-    grunt.loadNpmTasks(&amp;#39;grunt-autoprefixer&amp;#39;);
-    grunt.loadNpmTasks(&amp;#39;grunt-criticalcss&amp;#39;);
-    grunt.registerTask(&amp;#39;default&amp;#39;, [&amp;#39;sass&amp;#39;, &amp;#39;autoprefixer&amp;#39;, &amp;#39;criticalcss&amp;#39;]);
-    };
-&lt;/code&gt;&lt;/pre&gt;
-So you&amp;#39;ll notice pretty quickly that I&amp;#39;m using five tasks. I&amp;#39;ll talk about each one and the settings that got me confused.&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;https://github.com/gruntjs/grunt-contrib-sass&quot;&gt;grunt-contrib-sass&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;I have been writing all my style code in &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; for about two years. If you&amp;#39;re writing your stylesheets in CSS, stop and learn Sass. It will save you a ton of time and your code will be much easier to read. I&amp;#39;m not going to go into the intricacies of Sass. I recommend the courses on &lt;a href=&quot;https://teamtreehouse.com&quot;&gt;Treehouse&lt;/a&gt; if you want to learn Sass.&lt;/p&gt;
-
-&lt;p&gt;Sass is a preprocessor for CSS. Preprocessors introduce a level of abstraction that makes CSS way easier to write.&lt;/p&gt;
-
-&lt;p&gt;Having the abstraction comes at a bit of a cost though because you have to compile it to code that the browser can read. Having a task runner makes compiling the code super easy. After installing grunt-contrib-sass, I went to the &lt;code&gt;files&lt;/code&gt; block and set &lt;code&gt;&amp;#39;css/main.css&amp;#39;: &amp;#39;sass/main.scss&amp;#39;&lt;/code&gt; &lt;code&gt;&amp;#39;css/main.css&amp;#39;&lt;/code&gt; is the final stylesheet that my site uses and &lt;code&gt;&amp;#39;sass/main.scss&amp;#39;&lt;/code&gt;&lt;/pre&gt; is the location of the &lt;code&gt;.scss&lt;/code&gt; file that contains all of the necessary &lt;code&gt;@import&lt;/code&gt; declarations for my Sass partials. Now, this pattern of &lt;code&gt;destination : source&lt;/code&gt; is one I find a little weird, but see in many tasks. I remember by thinking &amp;quot;this thing works by getting stuff from : this thing.&amp;quot; I&amp;#39;m sure there is a good reason for the pattern, but I have no idea.&lt;/p&gt;
-
-&lt;p&gt;The other piece of grunt-contrib-sass that is important is the &lt;code&gt;style&lt;/code&gt; declaration. I started looking all &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt; for a good CSS minifyier until I finally realized the Sass task does it for you. Just make the style &lt;code&gt;compressed&lt;/code&gt; and you&amp;#39;re all set. You should minify. No one needs to look at your production stylesheet and it reduces file size a pretty significant amount.&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;https://github.com/FWeinb/grunt-svgstore&quot;&gt;grunt-svgstore&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;This method is another Chris Coyier special. Go check out the article about this method, &lt;a href=&quot;https://css-tricks.com/svg-sprites-use-better-icon-fonts/&quot;&gt;Icon System with SVG Sprites&lt;/a&gt;. The article explains about all you need to know. I&amp;#39;ve liked working with this approach. But, I have noticed it&amp;#39;s a little weird to add classes to specific parts of one of the SVGs in the sprite.&lt;/p&gt;
-
-&lt;p&gt;Just be sure to plan ahead before you combine the files into one. You&amp;#39;re production SVG file will be overwritten every time you add a new file. Make sure those classes and animations live in the individual file, pre-combination.&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;https://github.com/nDmitry/grunt-autoprefixer&quot;&gt;grunt-autoprefixer&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;The first thing you notice when you get to the page for Autoprefixer is a message to use PostCSS instead. I&amp;#39;ve heard good things about PostCSS, but I haven&amp;#39;t explored it too much yet. It&amp;#39;s on my list of tools to learn more about, but here is what I know: Autoprefixer works.&lt;/p&gt;
-
-&lt;p&gt;Autoprefixer is crucial to making sure my site works on a bunch of different browsers. It uses information from &lt;a href=&quot;http://caniuse.com/&quot;&gt;Can I use...&lt;/a&gt; to determine when to add &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix&quot;&gt;vendor prefixes&lt;/a&gt; to different CSS properties. Use this tool if you want your site to look reasonable in other browsers. It takes almost no extra work (besides testing, you should still be testing).&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;https://github.com/filamentgroup/grunt-criticalcss&quot;&gt;grunt-criticalcss&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;I strongly recommend you read &lt;a href=&quot;https://www.filamentgroup.com/lab/performance-rwd.html&quot;&gt;How we make RWD sites load fast as heck&lt;/a&gt; written by Scott Jehl. It has been about a year since that article came out and I still use many of the ideas from it today. Thinking about critical CSS is one of those ideas.&lt;/p&gt;
-
-&lt;p&gt;Right now, my site is tiny. I&amp;#39;m able to inline my whole style sheet, besides the request for the font files from Google. Still, my the home page still gets delivered in less than 6kb (gzip). I don&amp;#39;t really need to worry about critical CSS right now. Soon my site and stylesheet will get into territory that makes it more than one http request. I have this task running in preparation for that day.&lt;/p&gt;
-
-&lt;p&gt;I do have a few things to say about grunt-criticalcss. It&amp;#39;s not perfect. I set the &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; declarations to some pretty massive values. Still, the page still looked super broken on first paint. I recommend using this task as a starting point and then taking a bit of time to use your brain to figure out what else needs to be included inline.&lt;/p&gt;
-
-&lt;h3&gt;&lt;a href=&quot;https://github.com/gruntjs/grunt-contrib-watch&quot;&gt;grunt-contrib-watch&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Having something watch your files is pretty necessary for any task runner. Having Watch running will allow you to not have to worry about typing &lt;code&gt;grunt&lt;/code&gt; every time you want to preview your site.&lt;/p&gt;
-
-&lt;h3&gt;Final Thoughts&lt;/h3&gt;
-
-&lt;p&gt;There are many easier options to get a website up and running. But there is something special about crafting something from nothing and making it yours. Task runners make the process of creating a site &amp;quot;from scratch&amp;quot; much smoother. This is my approach to Grunt and it&amp;#39;s not perfect. Keep an eye on the site for updates about my Grunt process, deeper dives into the reasons for each task, and inevitably, my switch to Gulp.&lt;/p&gt;
-
-&lt;p&gt;If you have any questions or feedback, shoot me a tweet &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 25 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://yourdomain.com//2015/06/25/my-grunt-file.html</link>
-        <guid isPermaLink="true">http://yourdomain.com//2015/06/25/my-grunt-file.html</guid>
+        <link>http://benjaminjoyce.com//2015/06/27/four-hundred-four.html</link>
+        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/27/four-hundred-four.html</guid>
         
         
       </item>

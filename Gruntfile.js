@@ -6,7 +6,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: { // Dictionary of files
-          'css/main.css': '_sass/main.scss' // 'destination': 'source'
+          'css/main.css': '_sass/main.scss', // 'destination': 'source'
+          'css/calculator.css': '_sass/calculator.scss'
         }
       }
     },
@@ -23,7 +24,8 @@ module.exports = function(grunt) {
     autoprefixer: {
       dist: {
         files: {
-          'css/build/main.css': 'css/main.css'
+          'css/build/main.css': 'css/main.css',
+          'css/build/calculator.css': 'css/calculator.css'
         }
       }
     },
@@ -41,7 +43,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['img/svg-src/*svg', '_sass/*'],
+      files: ['img/svg-src/*svg', '_sass/*', 'js/*'],
       tasks: ['svgstore', 'sass', 'autoprefixer', 'criticalcss']
     }
   });

@@ -35,3 +35,5 @@ nav a:not(:last-of-type){ margin-bottom: 0px; margin-right: 5%; }
 @media (min-width: 80em){
 .site-logo{ margin-bottom: 0px; }
 }
+ code{ background-color: rgb(255, 255, 255); color: rgb(100, 83, 219); overflow-x: scroll; }
+h2{ text-transform: uppercase; }
