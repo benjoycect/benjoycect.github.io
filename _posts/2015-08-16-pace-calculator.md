@@ -14,13 +14,13 @@ The constraints I put on myself were to use vanilla JavaScript, less than 3KB, a
   <div class="input-container">
     <form class="pace-calculator__form">
       <section class="time pace-calculator__section">
-        <label class="pace-calculator__label" for="hour">HH</label>
+        <label class="pace-calculator__label" for="hour">HOURS</label>
         <input class="pace-calculator__input" type="number" id="hour" placeholder="00" required />
         <span class="colon">:</span>
-        <label class="pace-calculator__label" for="minute">MM</label>
+        <label class="pace-calculator__label" for="minute">MINUTES</label>
         <input class="pace-calculator__input" type="number" id="minute" placeholder="00" required />
         <span class="colon">:</span>
-        <label class="pace-calculator__label" for="second">SS</label>
+        <label class="pace-calculator__label" for="second">SECONDS</label>
         <input class="pace-calculator__input" type="number" id="second" placeholder="00" required />
       </section>
       <section class="distance pace-calculator__section">

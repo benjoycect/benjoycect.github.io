@@ -32,3 +32,5 @@ _site/
 
 # JPG Images
 *.jpg
+
+.DS_Store

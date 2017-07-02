@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Benjamin Joyce&#39;s blog</title>
+    <title>Benjamin Joyce's blog</title>
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
-    <link>http://benjaminjoyce.com//</link>
-    <atom:link href="http://benjaminjoyce.com//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Aug 2015 19:37:36 -0400</pubDate>
-    <lastBuildDate>Mon, 17 Aug 2015 19:37:36 -0400</lastBuildDate>
-    <generator>Jekyll v2.5.2</generator>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 02 Jul 2017 14:30:12 -0400</pubDate>
+    <lastBuildDate>Sun, 02 Jul 2017 14:30:12 -0400</lastBuildDate>
+    <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Starting Slow</title>
+        <description>&lt;p&gt;After two years of being absent on this blog I&amp;#39;m back to &lt;a href=&quot;http://austinkleon.com/show-your-work/&quot;&gt;show my work&lt;/a&gt;. Like many others I&amp;#39;ve decided to start a side project. It&amp;#39;s called &lt;a href=&quot;http://www.finlo.io&quot;&gt;Finlo&lt;/a&gt;. The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of June 16, 2017 it hasn&amp;#39;t launched. This post is about why and how it&amp;#39;s frustrating.&lt;/p&gt;
+
+&lt;p&gt;I bought the domain for Finlo on April 13, 2017. I thought my first iteration of Finlo would be out by the end of the weekend (a landing page). I&amp;#39;ve worked with &lt;a href=&quot;https://pivotal.io/labs&quot;&gt;Pivotal Labs&lt;/a&gt; in my day job, read &lt;a href=&quot;http://theleanstartup.com/&quot;&gt;Lean Startup&lt;/a&gt; (among many other books and articles about lean product development), and have been a vocal proponent of agile product development with everyone I&amp;#39;ve worked with. I also have practiced user experience design and development for 8 years and recently got my MBA. I thought I had all the tools to get something up quickly that I could use to determine whether there is a market for my product and begin discovery exercises to better understand my potential customers. However, I quickly became overwhelmed.&lt;/p&gt;
+
+&lt;h2&gt;Idea Overload&lt;/h2&gt;
+
+&lt;p&gt;A quick Google search for &amp;quot;idea overload&amp;quot; showed me that I am not the first one to think of the term. The term came to mind when I started thinking about what was different about this side project versus my day job. In my day job, one of the primary components of my work is to help my teams have a specific focus on problems. We work to understand the problem from the user/customer perspective, understand how the problem fits into the larger experience, and frame solutions that can solve the problem. The whole process is really about pulling great ideas out from the clutter. It&amp;#39;s a challenge to successfully accomplish this task with multiple people but I am finding that it is even harder when I am only working with myself.&lt;/p&gt;
+
+&lt;p&gt;As I reflect on why I am struggling with it I realize that it is because I have no constraints. Right now there are no expectations from anyone else and I&amp;#39;m already making a living. What that leaves me with is too much time to think when what I should be doing is learning. I&amp;#39;ve been so worried about what my first release will look like since Finlo is founded on the principle that people want to seek out well-done and handmade experiences. I want people&amp;#39;s first impression of Finlo (and my first entrepreneurial endeavor) to be incredible. I want people to know that I don&amp;#39;t just care about making money, but am going to work tirelessly to connect people with other people who are making something great. So even though I know I&amp;#39;m just going to be making an informational landing page, I&amp;#39;ve been delaying a release because I don&amp;#39;t think that some descriptive copy is good enough or I learn about a new way that some other company launched and I consider scrapping my approach.&lt;/p&gt;
+
+&lt;p&gt;I need to be listening to everything I&amp;#39;ve learned in my professional career and focus on learning. So, how am I going to battle idea overload. First, I&amp;#39;m going to stick to the version of &amp;quot;Welcome to Finlo&amp;quot; that I have today, June 18th. It might not be perfect but I will be able to learn from it. Next, I&amp;#39;m going to set a deadline for myself. A tweet from &lt;a href=&quot;https://twitter.com/Lin_Manuel?ref_src=twsrc%5Etfw&amp;ref_url=https%3A%2F%2Ftwitter.com%2Flin_manuel%2Fstatus%2F832175919649456128&quot;&gt;@Lin_Manuel&lt;/a&gt; inspired me to do so.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Deadlines.&lt;br&gt;You know how if you set an alarm for a certain time your brain will wake up just before?&lt;br&gt;Deadlines teach your brain the same way. &lt;a href=&quot;https://t.co/IRImJTmEQ5&quot;&gt;https://t.co/IRImJTmEQ5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Lin-Manuel Miranda (@Lin_Manuel) &lt;a href=&quot;https://twitter.com/Lin_Manuel/status/832175919649456128&quot;&gt;February 16, 2017&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I have a family vacation coming up and my family will always take priority, so I&amp;#39;m going to set myself a doable deadline of July 10th, 2017 to get the landing page up. Be sure to visit &lt;a href=&quot;http://www.finlo.io&quot;&gt;Finlo&lt;/a&gt; then to see the first preview of Finlo up and running.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;It&amp;#39;s gotten pretty late and I&amp;#39;m writing a bit more than I expected, but I think it&amp;#39;s important for me to get it out. So in the spirit of release and learn, I&amp;#39;m going to publish this post as a part one. Part two will feature: Websites Seem Harder Now and Get Out of Here, Imposter.&lt;/p&gt;
+
+&lt;p&gt;Goodnight.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Jul 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//2017/07/02/starting-slow.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/07/02/starting-slow.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Pace Calculator</title>
@@ -21,13 +54,13 @@
   &lt;div class=&quot;input-container&quot;&gt;
     &lt;form class=&quot;pace-calculator__form&quot;&gt;
       &lt;section class=&quot;time pace-calculator__section&quot;&gt;
-        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;hour&quot;&gt;HH&lt;/label&gt;
+        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;hour&quot;&gt;HOURS&lt;/label&gt;
         &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;hour&quot; placeholder=&quot;00&quot; required /&gt;
         &lt;span class=&quot;colon&quot;&gt;:&lt;/span&gt;
-        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;minute&quot;&gt;MM&lt;/label&gt;
+        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;minute&quot;&gt;MINUTES&lt;/label&gt;
         &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;minute&quot; placeholder=&quot;00&quot; required /&gt;
         &lt;span class=&quot;colon&quot;&gt;:&lt;/span&gt;
-        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;second&quot;&gt;SS&lt;/label&gt;
+        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;second&quot;&gt;SECONDS&lt;/label&gt;
         &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;second&quot; placeholder=&quot;00&quot; required /&gt;
       &lt;/section&gt;
       &lt;section class=&quot;distance pace-calculator__section&quot;&gt;
@@ -87,13 +120,13 @@
 
 &lt;pre&gt;
 &lt;code&gt;
-document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-  var pace = document.getElementById(&#39;pace&#39;); // Get the pace input
-  var processResult = document.getElementById(&#39;process&#39;); // The main button
-  var hours = document.getElementById(&#39;hour&#39;); // Get the hour input
-  var minutes = document.getElementById(&#39;minute&#39;); // Get the minute input
-  var seconds = document.getElementById(&#39;second&#39;); // Get the second input
-  var distance = document.getElementById(&#39;distance&#39;); // Get the distance input
+document.addEventListener('DOMContentLoaded', function() {
+  var pace = document.getElementById('pace'); // Get the pace input
+  var processResult = document.getElementById('process'); // The main button
+  var hours = document.getElementById('hour'); // Get the hour input
+  var minutes = document.getElementById('minute'); // Get the minute input
+  var seconds = document.getElementById('second'); // Get the second input
+  var distance = document.getElementById('distance'); // Get the distance input
 
   // Watch for the process button to be clicked then run the function
   if(processResult) {
@@ -131,9 +164,9 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
         var finalSecs = (paceSecs.toFixed(2) * 100);
 
         if(finalHours &gt; 0) {
-        pace.textContent = String(&#39;00&#39;+finalHours).slice(-2) + &quot;:&quot; + String(&#39;00&#39;+finalMins).slice(-2) + &quot;:&quot; + String(&#39;00&#39;+finalSecs).slice(-2); // Update the pace output placeholder with the minutes and the seconds, only show the value to the closest second.
+        pace.textContent = String('00'+finalHours).slice(-2) + &quot;:&quot; + String('00'+finalMins).slice(-2) + &quot;:&quot; + String('00'+finalSecs).slice(-2); // Update the pace output placeholder with the minutes and the seconds, only show the value to the closest second.
         } else {
-          pace.textContent = String(&#39;00&#39;+finalMins).slice(-2) + &quot;:&quot; + String(&#39;00&#39;+finalSecs).slice(-2);
+          pace.textContent = String('00'+finalMins).slice(-2) + &quot;:&quot; + String('00'+finalSecs).slice(-2);
         }
 
         changeClass();
@@ -141,7 +174,7 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
     }
 
     function changeClass(){
-      pace.classList.remove(&#39;output__pace--no-value&#39;);
+      pace.classList.remove('output__pace--no-value');
     }
     getPace();
   }
@@ -150,8 +183,8 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;/pre&gt;
 </description>
         <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/08/16/pace-calculator.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/08/16/pace-calculator.html</guid>
+        <link>http://localhost:4000//2015/08/16/pace-calculator.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/08/16/pace-calculator.html</guid>
         
         
       </item>
@@ -170,8 +203,8 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;p&gt;Image: &lt;a href=&quot;https://flic.kr/p/8GrsJ6&quot;&gt;Earth Rise as Seen From Lunar Surface&lt;/a&gt; from &lt;a href=&quot;https://www.flickr.com/photos/nasacommons/&quot;&gt;NASA on The Commons&lt;/a&gt;; &lt;em&gt;Altered for speed performance&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/08/16/first-image.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/08/16/first-image.html</guid>
+        <link>http://localhost:4000//2015/08/16/first-image.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/08/16/first-image.html</guid>
         
         
       </item>
@@ -194,37 +227,37 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 
 &lt;p&gt;To understand what is happening we need to get into the box model. If you&amp;#39;ve never heard of the box model, stop and read &lt;a href=&quot;https://css-tricks.com/the-css-box-model/&quot;&gt;The CSS Box Model&lt;/a&gt; on CSS-Tricks. When content is driving the size of the box, padding, border, and margin are calculated based on the edges of the content.&lt;/p&gt;
 
-&lt;p data-height=&quot;268&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;986e518c542049dca4bdcf80c5b6a73e&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/986e518c542049dca4bdcf80c5b6a73e/&#39;&gt;Normal Box&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;986e518c542049dca4bdcf80c5b6a73e&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/986e518c542049dca4bdcf80c5b6a73e/'&gt;Normal Box&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Setting an explicit height ignores the content and will make the box the size set in the CSS. I didn&amp;#39;t change the padding, border, or margin from the previous example. I did add a height. You can see that the content is now overflowing from the box (that is because the &lt;a href=&quot;https://bocoup.com/weblog/new-overflow-default/&quot;&gt;default&lt;/a&gt; is &lt;code&gt;overflow: visible&lt;/code&gt;). Additionally, the bottom border and the bottom margin are being calculated based on the new position of the bottom of the box.&lt;/p&gt;
 
-&lt;p data-height=&quot;216&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;cd4f283aaff1e8ec3515ef2f84608b6e&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/cd4f283aaff1e8ec3515ef2f84608b6e/&#39;&gt;Height Box&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;216&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;cd4f283aaff1e8ec3515ef2f84608b6e&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/cd4f283aaff1e8ec3515ef2f84608b6e/'&gt;Height Box&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;But let&amp;#39;s say you know you need something to be a certain height. There are a few options. First, you can use the &lt;code&gt;overflow&lt;/code&gt; &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/overflow&quot;&gt;property&lt;/a&gt;. Setting &lt;code&gt;overflow-y&lt;/code&gt; to &lt;code&gt;scroll&lt;/code&gt; might be a tempting solution in our example above. This solution should be avoided in most situations. Imagine scrolling down a webpage only to be stuck in a content box that has its own scroll. An &lt;a href=&quot;http://ux.stackexchange.com/questions/58499/in-page-scrollbars-yes-or-no-or-maybe/#answer-58551&quot;&gt;answer&lt;/a&gt; by &lt;a href=&quot;http://ux.stackexchange.com/users/21165/alexeypegov&quot;&gt;alexeypegov&lt;/a&gt; on UX StackExchange has some good examples of when it might be okay to use &lt;code&gt;overflow-y: scroll&lt;/code&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;ol&gt;
     &lt;li&gt;
-    You may use nested scrolling panes if they&#39;re shown temporary (like in Facebook example you&#39;ve mentioned in your question: the scrolling list in popup which is shown for a moment and will not break the page scrolling itself).
+    You may use nested scrolling panes if they're shown temporary (like in Facebook example you've mentioned in your question: the scrolling list in popup which is shown for a moment and will not break the page scrolling itself).
     &lt;/li&gt;
     &lt;li&gt;
     Editable areas like comments may be scrolled while being edited (and reverted back to non-scrollable mode then editing is done).
     &lt;/li&gt;
     &lt;li&gt;
-    Web apps which may occupy the whole browser window and avoid scrolling of the content by using dynamic layout so it&#39;s OK to use nested scrolling panes (since main content area could never be scrolled anyway).
+    Web apps which may occupy the whole browser window and avoid scrolling of the content by using dynamic layout so it's OK to use nested scrolling panes (since main content area could never be scrolled anyway).
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Besides overflow, &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes&quot;&gt;flexbox&lt;/a&gt; solves many challenges developers have with height. For example, equal height columns can be done with only &lt;a href=&quot;http://clearleft.com/thinks/270&quot;&gt;one line of code&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p data-height=&quot;268&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;949835e2077b5e45aab26aadc2967c71&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/949835e2077b5e45aab26aadc2967c71/&#39;&gt;Equal Height Columns&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;268&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;949835e2077b5e45aab26aadc2967c71&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/949835e2077b5e45aab26aadc2967c71/'&gt;Equal Height Columns&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;You can also consider letting the height be driven by the content. The W3C specs are basically written to support content-driven boxes. Letting the content drive the height will save you many headaches down the road.&lt;/p&gt;
 
@@ -241,9 +274,9 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 
 &lt;p&gt;Confusion can occur when things are both in the normal document flow and outside of it. Not understanding this property may result in undesirable results. For example, you will be disappointed if you add an absolutely positioned logo at the top of the page and expect your navigation to sit next to the logo.&lt;/p&gt;
 
-&lt;p data-height=&quot;234&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;30cff6e84d84ee78728ad4509720fe37&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/30cff6e84d84ee78728ad4509720fe37/&#39;&gt;30cff6e84d84ee78728ad4509720fe37&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;234&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;30cff6e84d84ee78728ad4509720fe37&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/30cff6e84d84ee78728ad4509720fe37/'&gt;30cff6e84d84ee78728ad4509720fe37&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Whoops, why are things sitting on top of each other? Well, elements in the normal document flow are ignoring the heart logo since it was taken out of the normal document flow.&lt;/p&gt;
 
@@ -264,9 +297,9 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 
 &lt;p&gt;Here is everything in action:&lt;/p&gt;
 
-&lt;p data-height=&quot;156&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;3b11a5a3f76e7b2c461fc72406647957&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/3b11a5a3f76e7b2c461fc72406647957/&#39;&gt;3b11a5a3f76e7b2c461fc72406647957&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;156&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;3b11a5a3f76e7b2c461fc72406647957&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/3b11a5a3f76e7b2c461fc72406647957/'&gt;3b11a5a3f76e7b2c461fc72406647957&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;For more on centering, check out &lt;a href=&quot;https://css-tricks.com/centering-css-complete-guide/_&quot;&gt;Centering in CSS: A Complete Guide&lt;/a&gt; on CSS-Tricks.&lt;/p&gt;
 
@@ -275,8 +308,8 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;p&gt;Even the most simple display tasks can be difficult in CSS. Don&amp;#39;t worry if you have to look up how to do something once or twenty times. Everyone is learning together. Visit the sites I link to throughout this article if you&amp;#39;re having any of these problems. Or contact me on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt; and I can try to help. Let me know if you notice any issues with the article. Best of luck!&lt;/p&gt;
 </description>
         <pubDate>Sat, 25 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/07/25/css-mistkaes.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/25/css-mistkaes.html</guid>
+        <link>http://localhost:4000//2015/07/25/css-mistkaes.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/07/25/css-mistkaes.html</guid>
         
         
       </item>
@@ -288,8 +321,8 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;p&gt;If you&amp;#39;ve ever wanted to save a link from &lt;a href=&quot;http://help.getpocket.com/customer/portal/articles/482762-how-to-save-from-twitter-for-iphone&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;https://getpocket.com/chrome/&quot;&gt;Chrome&lt;/a&gt;, or any of the other &lt;a href=&quot;https://getpocket.com/apps/&quot;&gt;500 supported apps&lt;/a&gt;, give Pocket a try.&lt;/p&gt;
 </description>
         <pubDate>Wed, 15 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/07/15/tools-i-use.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/15/tools-i-use.html</guid>
+        <link>http://localhost:4000//2015/07/15/tools-i-use.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/07/15/tools-i-use.html</guid>
         
         
       </item>
@@ -308,7 +341,7 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;/ul&gt;
 
 &lt;p&gt;Before we dive in, here is the final:
-&lt;p data-height=&quot;809&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpvzNK&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/gpvzNK/&#39;&gt;Fourth of July&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;809&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpvzNK&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/gpvzNK/'&gt;Fourth of July&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 
 &lt;p&gt;Okay, cool. Go America! Let&amp;#39;s learn something.&lt;/p&gt;
@@ -394,8 +427,8 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;p&gt;Let me know if you need help with anything I mentioned above. Also, please let me know if you think something is inaccurate and I&amp;#39;ll fix it. The best way to reach me is on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/07/05/how-i-built-it.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/05/how-i-built-it.html</guid>
+        <link>http://localhost:4000//2015/07/05/how-i-built-it.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/07/05/how-i-built-it.html</guid>
         
         
       </item>
@@ -404,13 +437,13 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
         <title>Fourth of July</title>
         <description>&lt;p&gt;Have a fun an safe Fourth of July. I stayed up way to late making a Pen to celebrate! Expect an article that deconstructs how I made it tomorrow.&lt;/p&gt;
 
-&lt;p data-height=&quot;821&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpvzNK&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/gpvzNK/&#39;&gt;Fourth of July&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;821&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpvzNK&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/gpvzNK/'&gt;Fourth of July&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 </description>
         <pubDate>Sat, 04 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/07/04/fourth-of-july.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/07/04/fourth-of-july.html</guid>
+        <link>http://localhost:4000//2015/07/04/fourth-of-july.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/07/04/fourth-of-july.html</guid>
         
         
       </item>
@@ -424,8 +457,8 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;p&gt;The best we can do is be prepared. Keep up the good work.&lt;/p&gt;
 </description>
         <pubDate>Tue, 30 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/06/30/one-plate-one-fork.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/30/one-plate-one-fork.html</guid>
+        <link>http://localhost:4000//2015/06/30/one-plate-one-fork.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/06/30/one-plate-one-fork.html</guid>
         
         
       </item>
@@ -444,17 +477,17 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 
 &lt;p&gt;The logo isn&amp;#39;t the best thing I&amp;#39;ve done, but I like it. It definitely has my illustration style. It&amp;#39;s also easy to manipulate and build on. For example, I created a pen that simulates 3-D:&lt;/p&gt;
 
-&lt;p data-height=&quot;561&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpoRLM&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/gpoRLM/&#39;&gt;Fake 3d&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;p data-height=&quot;561&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpoRLM&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/gpoRLM/'&gt;Fake 3d&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;I don&amp;#39;t have a use for this particular pen right now, but it made me realize I can use this image for different demos. Perhaps the little tiger has more 3-D or animated adventures in his future. Or perhaps he stays as a link to the homepage.&lt;/p&gt;
 
 &lt;p&gt;Let me know what you think! You can find me on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 29 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/06/29/the-logo.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/29/the-logo.html</guid>
+        <link>http://localhost:4000//2015/06/29/the-logo.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/06/29/the-logo.html</guid>
         
         
       </item>
@@ -493,45 +526,8 @@ document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
 &lt;p&gt;Good luck! Check back here as I&amp;#39;ll be writing about some more specifics around style guide-driven front-end development. Also, let me know if you notice any grammar or spelling mistakes. The best place to get in touch is tweeting me &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 28 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/06/28/style-guides-are-hard.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/28/style-guides-are-hard.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Four Hundred Four</title>
-        <description>&lt;p&gt;The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn&amp;#39;t exist. I wanted to create a &lt;a href=&quot;http://benjaminjoyce.com/404&quot;&gt;404 page&lt;/a&gt; that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.&lt;/p&gt;
-
-&lt;p&gt;First, I found the official &lt;a href=&quot;https://help.github.com/articles/custom-404-pages/&quot;&gt;documentation&lt;/a&gt; on GitHub. I got the page running locally and started to think about what I wanted to put up. There was an old &lt;a href=&quot;http://codepen.io/benjoyce/pen/myqxad&quot;&gt;pen&lt;/a&gt; that featured an SVG illustration I did of Beaker from the Muppets.&lt;/p&gt;
-
-&lt;p data-height=&quot;673&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;myqxad&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/myqxad/&#39;&gt;Beaker&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;I wrote a &lt;a href=&quot;http://codepen.io/benjoyce/blog/quick-smil-animation-tip&quot;&gt;post&lt;/a&gt; on my &lt;a href=&quot;http://codepen.io/benjoyce/blog/&quot;&gt;CodePen blog&lt;/a&gt; about the specifics of creating the animations in the pen. You should read that if you&amp;#39;ve never used SMIL before.&lt;/p&gt;
-
-&lt;p&gt;I thought re-purposing that work would be perfect for the 404 page. It is a fun showcase of what is possible with SVG and was a good reflection of my personality. Unfortunately, taking the pen and jamming it onto my site wouldn&amp;#39;t work. The image didn&amp;#39;t look anything like the rest of my site. It also didn&amp;#39;t provide an easy way to include text that would bring the user back to a relevant page. Still, I tried something.&lt;/p&gt;
-
-&lt;p data-height=&quot;674&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;839684737b2e43f6bf64ce133becf63f&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class=&#39;codepen&#39;&gt;See the Pen &lt;a href=&#39;http://codepen.io/benjoyce/pen/839684737b2e43f6bf64ce133becf63f/&#39;&gt;Beaker Fork&lt;/a&gt; by Ben Joyce (&lt;a href=&#39;http://codepen.io/benjoyce&#39;&gt;@benjoyce&lt;/a&gt;) on &lt;a href=&#39;http://codepen.io&#39;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;I pushed that version and realized quickly that it was weird and would not work. My guess is that most people are going to view my site on a small device. This giant image and overlay text worked, but looked pretty junky.&lt;/p&gt;
-
-&lt;p&gt;The imagine had to be scaled down and fit inside the page. Making the change was a bit of a pain due to my approach to the original build. Each component was its own SVG. I did this so that I could manipulate the position and size with CSS. The new design required the whole scene to scale together. I could have gone through and set everything to get my desired result, but that would have been more effort than just recreating the scene as one SVG.&lt;/p&gt;
-
-&lt;p&gt;So that&amp;#39;s what I did. I do all my SVG illustration in Illustrator. I fired open the program and got to work. After putting the illustration together I exported it over to a pen on CodePen. Seeing changes is helpful to me when working with animations. However, it&amp;#39;s still not ideal. I haven&amp;#39;t come across an easy way to navigate through large SVGs. Figuring out which &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;circle&amp;gt;&lt;/code&gt; I should be adding a class to is painful. If you&amp;#39;re working with a large SVG file I think you just have to deal with it. Knowing what the color is for the fill or stroke of the elements within the SVG is the most helpful way to navigate.&lt;/p&gt;
-
-&lt;p&gt;The animations I used were the same as the original pen. I had to make Beaker&amp;#39;s mouth open again, but this time I knew how. One piece I&amp;#39;m still working on is the initial explosion. I left that as a separate SVG. I haven&amp;#39;t fully determined how I want that to look. Right now it explodes in the middle of the screen on some devices and a random place on others. I made sure to set &lt;code&gt;pointer-events: none&lt;/code&gt; on the explosion so the links to the home and about page still worked. Be sure to set your pointer event to none if there is something that takes up the full screen.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m pretty happy with the &lt;a href=&quot;http://benjaminjoyce.com/404&quot;&gt;final result&lt;/a&gt;. I think 404 pages should be unique, but feel cohesive with the rest of the site.&lt;/p&gt;
-
-&lt;p&gt;Let me know if you&amp;#39;ve done something interesting with your 404 page. The best place to get in touch is tweeting me &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 27 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://benjaminjoyce.com//2015/06/27/four-hundred-four.html</link>
-        <guid isPermaLink="true">http://benjaminjoyce.com//2015/06/27/four-hundred-four.html</guid>
+        <link>http://localhost:4000//2015/06/28/style-guides-are-hard.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2015/06/28/style-guides-are-hard.html</guid>
         
         
       </item>
