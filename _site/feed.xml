@@ -5,8 +5,8 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 31 Jul 2017 23:23:02 -0400</pubDate>
-    <lastBuildDate>Mon, 31 Jul 2017 23:23:02 -0400</lastBuildDate>
+    <pubDate>Mon, 31 Jul 2017 23:24:47 -0400</pubDate>
+    <lastBuildDate>Mon, 31 Jul 2017 23:24:47 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -62,13 +62,9 @@
 &lt;p&gt;I&amp;#39;ve hinted at this through the other tips, but interviews are as much about the company learning if you&amp;#39;re a good fit for them as you finding out if the company is a good fit for you. Ask questions that you&amp;#39;re curious about. Sometimes companies will shield you from their actual culture. If you sense that they are hiding something, ask questions that might be a little uncomfortable for them to answer. Just like you have to be your real self, encourage the interviewer to be their real self.&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//design,/business/2017/07/30/ux-job-interview-tips.html</link>
-        <guid isPermaLink="true">http://localhost:4000//design,/business/2017/07/30/ux-job-interview-tips.html</guid>
+        <link>http://localhost:4000//2017/07/30/ux-job-interview-tips.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/07/30/ux-job-interview-tips.html</guid>
         
-        
-        <category>design,</category>
-        
-        <category>business</category>
         
       </item>
     

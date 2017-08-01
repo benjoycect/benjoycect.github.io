@@ -2,7 +2,7 @@
 layout: post
 title:  "UX Job Interview Tips"
 date:   2017-07-30
-categories: design, business
+categories:
 ---
 I've been conducting interviews for various roles in IT and design for about six years. In that time I've seen all sorts of interviews, good and bad. These are tips that from my perspective will help a hiring manager really understand you and whether you will be a fit for their team and whether their team is a fit for you.
 
