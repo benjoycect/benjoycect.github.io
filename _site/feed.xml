@@ -5,9 +5,42 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 31 Jul 2017 23:24:47 -0400</pubDate>
-    <lastBuildDate>Mon, 31 Jul 2017 23:24:47 -0400</lastBuildDate>
+    <pubDate>Mon, 31 Jul 2017 23:47:03 -0400</pubDate>
+    <lastBuildDate>Mon, 31 Jul 2017 23:47:03 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Featured work: Self-Service</title>
+        <description>&lt;p&gt;This is the first of many featured work articles I&amp;#39;ll post. This one is about a self-service feature I lead the design on for Travelers.&lt;/p&gt;
+
+&lt;h4&gt;Goal&lt;/h4&gt;
+
+&lt;p&gt;Reduce friction in the post-sales process for personal insurance customers.&lt;/p&gt;
+
+&lt;h4&gt;The Story&lt;/h4&gt;
+
+&lt;p&gt;The details of the product itself cannot be discussed as it has not been shared publicly, but I want to share my role. This project began with an idea for a solution that centered around a recently published paper on artificial intelligence. While the concept was exciting, it lacked focus about who would benefit from the solution and why. I worked with the team the team to take a step back from the technical implementation of the solution and understand the problem we were trying to solve.&lt;/p&gt;
+
+&lt;p&gt;I decided to try a week-long design sprint. The sprint followed the plan and concepts outlined in &lt;a href=&quot;http://www.thesprintbook.com/&quot;&gt;The Sprint Book&lt;/a&gt;. The outcomes from the sprint week were:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt; The product had a concrete goal&lt;/li&gt;
+&lt;li&gt; Underwriters and claims professionals were talked to which gave the team a better understanding of the problem&lt;/li&gt;
+&lt;li&gt; Concepts created addressed an actual problem rather than blindly attempted to use a technology&lt;/li&gt;
+&lt;li&gt; The new artificial intelligence breakthrough was still part of the &amp;quot;winning&amp;quot; concept, but the proposed use was different than the original concept&lt;/li&gt;
+&lt;li&gt; A prototype was created that validated what we learned with potential users of the app and business owners&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s3.amazonaws.com/benjaminjoyce-images/sprint-room.jpg&quot; alt=&quot;A picture of the design sprint room at the end of the week&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;After the sprint week ended the product manager and I looked at everything we learned and started to plan the first iteration. Since this product manager was new to the role and working in agile environments I provided training on the goals of story writing and how to write a good story. I shared everything I had learned from past work with &lt;a href=&quot;https://www.pivotallabs.com&quot;&gt;Pivotal Labs&lt;/a&gt; and my experience on other agile products. We took some of the persona work and story mapping we had done in the design sprint to write stories that were focused on delivering small pieces of value to the users who fit in the personas.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 31 Jul 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//2017/07/31/fw-self-service.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/07/31/fw-self-service.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>UX Job Interview Tips</title>
@@ -518,35 +551,6 @@ document.addEventListener('DOMContentLoaded', function() {
         <pubDate>Tue, 30 Jun 2015 00:00:00 -0400</pubDate>
         <link>http://localhost:4000//2015/06/30/one-plate-one-fork.html</link>
         <guid isPermaLink="true">http://localhost:4000//2015/06/30/one-plate-one-fork.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>The Logo</title>
-        <description>&lt;p&gt;&amp;quot;Is it a bikini?&amp;quot; &amp;quot;No mom, it&amp;#39;s supposed to be a tiger.&amp;quot;&lt;/p&gt;
-
-&lt;p&gt;I decided to create a logo for my site. This first iteration of the site is bare by design. I&amp;#39;m hoping that people focus on the words and examples in the posts, but I wanted to add some other interesting elements. That is where the logo comes in. I guess the meaning of the logo is up for interpretation. For example, my mom first guessed it was a bikini, then a cat, then landed on tiger. I think of it as a tiger.&lt;/p&gt;
-
-&lt;p&gt;Tigers were my favorite animal growing up. I just thought they were cool. I collected a bunch of weird tiger stuff: figurines, piggy banks, porcelain plates. I&amp;#39;m not that into tigers any more. Still, if I was to cast a Patronus Charm it would definitely be a tiger. So that&amp;#39;s where I landed and I started to sketch.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;ll often do sketching on a piece of paper. Other times I like to mess around with geometric shapes in Illustrator and see what I come up with. I chose the computer to sketch out ideas for the logo of this site. First I started with a couple basic shapes for the head. To do this I used a combination of the pen tool and shape builder tool. I find it easier to duplicate half of a path, flip it, and join the paths for symmetrical drawings. It only took a few tries to get the head look the way I wanted. From there I messed around with different triangles and lines until I had something I thought looked cool.&lt;/p&gt;
-
-&lt;p&gt;The colors were the most important part of the logo to me. I knew I wanted contrasting colors that I could use throughout the site. Luckily tigers are orange and that pairs well with blue when done right. I went for a highly saturated orange as the base. I knew most of the site would be white and gray so I wanted the logo to pop. The blue is much less saturated. There was a highly saturated blue and orange house in the town I grew up in. Ever since the first time I saw that house I have been extremely careful mixing those two colors together. The result was pleasing to my eye and paired well with the blue I was using for my links.&lt;/p&gt;
-
-&lt;p&gt;The logo isn&amp;#39;t the best thing I&amp;#39;ve done, but I like it. It definitely has my illustration style. It&amp;#39;s also easy to manipulate and build on. For example, I created a pen that simulates 3-D:&lt;/p&gt;
-
-&lt;p data-height=&quot;561&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpoRLM&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/gpoRLM/'&gt;Fake 3d&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;I don&amp;#39;t have a use for this particular pen right now, but it made me realize I can use this image for different demos. Perhaps the little tiger has more 3-D or animated adventures in his future. Or perhaps he stays as a link to the homepage.&lt;/p&gt;
-
-&lt;p&gt;Let me know what you think! You can find me on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 29 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/06/29/the-logo.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/06/29/the-logo.html</guid>
         
         
       </item>
