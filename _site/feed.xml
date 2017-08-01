@@ -5,13 +5,76 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 02 Jul 2017 14:30:12 -0400</pubDate>
-    <lastBuildDate>Sun, 02 Jul 2017 14:30:12 -0400</lastBuildDate>
+    <pubDate>Mon, 31 Jul 2017 23:23:02 -0400</pubDate>
+    <lastBuildDate>Mon, 31 Jul 2017 23:23:02 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
+        <title>UX Job Interview Tips</title>
+        <description>&lt;p&gt;I&amp;#39;ve been conducting interviews for various roles in IT and design for about six years. In that time I&amp;#39;ve seen all sorts of interviews, good and bad. These are tips that from my perspective will help a hiring manager really understand you and whether you will be a fit for their team and whether their team is a fit for you.&lt;/p&gt;
+
+&lt;h2&gt;STAR&lt;/h2&gt;
+
+&lt;p&gt;When I&amp;#39;m interviewing someone I want to know about them first and foremost. In order to get that I want to hear about their role on past experiences. I&amp;#39;ve come across a framework called STAR: &lt;b&gt;S&lt;/b&gt;ituation, &lt;b&gt;T&lt;/b&gt;ask, &lt;b&gt;A&lt;/b&gt;ction, &lt;b&gt;R&lt;/b&gt;esult. When someone interviewing you asks you a question that starts with &amp;quot;tell me about a time,&amp;quot; consider the STAR framework.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s a simple example to outline a response that I believe effectively demonstrates the STAR framework. Let&amp;#39;s pretend the interviewer asked, &amp;quot;tell me about a time when you had to work with a team.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;First, start with the situation, for example:&lt;/p&gt;
+
+&lt;blockquote&gt;I was assigned to a project where we had to figure out how to increase the number of donations people who visited the non-profit's website made. It was an agile team that featured me as the designer, two developers, and two people who knew the business of the non-profit well.&lt;/blockquote&gt;
+
+&lt;p&gt;This is really the setup for the rest of your story. It helps the interviewer understand the context of what you&amp;#39;re about to tell them.&lt;/p&gt;
+
+&lt;p&gt;Next, move on to your task. Even if the team accomplished great things together, the interviewer is most interested in hearing about how you specifically worked and contributed to that success.&lt;/p&gt;
+
+&lt;p&gt;An example task might be:&lt;/p&gt;
+
+&lt;blockquote&gt;My role was to understand the users of the site, including their motivations and ability to donate to the non-profit. This research was expected to be turned into an experience design that included both the website and the offline experience which encouraged and made it easier for the people who wanted to donate to do so. It was up to me to help guide the team towards the best approach to the research and make sure that they understood everything so that we built the right solution for the right person.&lt;/blockquote&gt;
+
+&lt;p&gt;At this point the interviewer will have a good understanding of the context of your response and know about your past roles beyond the title you put on your resume. You&amp;#39;re now ready to get into the body of your response, the action.&lt;/p&gt;
+
+&lt;p&gt;The action part of your response might sound like:&lt;/p&gt;
+
+&lt;blockquote&gt;I started by having the team go through exercises that helped us understand the problem more. Since the two business members of the team felt like they had a good idea of the problem it was a little hard to convince them that these activities would be valuable. However, after we went through them and they saw that they had gaps in their understanding they were totally onboard. It also helped myself and the developers learn where we had to focus. Next, I created interview questions that we could ask to users who fit the personas we developed during the initial exercises. One of the business members of the team facilitated the interviews with users we recruited through an online service who had visited the non-profit's site but did not donate. We were able to understand their motivations and develop a user journey map. The whole team went through what we had learned and developed a list of opportunities. I created wireframes for the parts that involved a UI and got those in front of more users with a quick and dirty task-based usability study. I made some adjustments then I worked with the business team to create user stories that accurately matched what we had learned were customers expectations. Those stories were executed on by the developers on the team who made further recommendations that were well informed and helped make the new donation experience even better.&lt;/blockquote&gt;
+
+&lt;p&gt;The action part of the answer would be a great time to show your work if possible. Provide artifacts that were produced as part of the process or point to how your actions influenced a live part of the design. Showing work is much more difficult under a non-disclosure agreement. I prefer when candidates can show me their work but totally sympathize when they can&amp;#39;t. If they describe their work with enough detail then I can usually get a sense of whether their approach would work well with my team.&lt;/p&gt;
+
+&lt;p&gt;Finally, you&amp;#39;re at the point where you should describe the results of your effort. Not all stories are tied to a financial result at the time, but should be tied to something that is measurable.&lt;/p&gt;
+
+&lt;p&gt;For example, the result part of your response might sound like:&lt;/p&gt;
+
+&lt;blockquote&gt;First, my effort to get the team involved with researching and understanding the people who are interested in the non-profit made it much easier for us to make decisions and support those decisions together when working with the non-profit board. We quickly went from forming to performing because we all worked toward a common, well understood goal. Also, the non-profit is seeing strong returns from my design. Donations are up 20 percent through the website and surprisingly 15 percent through non-web means. The non-profit is now able to provide more services and the board told our team that we would be leading more national-level efforts due to the success of our work with the donations.&lt;/blockquote&gt;
+
+&lt;p&gt;It&amp;#39;s not bragging when describing what you did or the results. Don&amp;#39;t try to minimize your efforts. Also, keep everything concise and on-point. Though the example above may read long, it is about two minutes in length at a comfortable speed. If you take the interviewer through this framework when they ask behavioral-based questions then you&amp;#39;ll get to present your best self and have them really understand what you&amp;#39;re about.&lt;/p&gt;
+
+&lt;h2&gt;Don&amp;#39;t judge&lt;/h2&gt;
+
+&lt;p&gt;This suggestion should be obvious to most good candidates (and people), but don&amp;#39;t judge your interviewer by their race, gender, age, way of talking, face, or really anything except the questions they are asking and responses they give you to your questions. I&amp;#39;m young in appearance and have had good conversations with candidates then found out from other interviewers that they commented on my age and asked how I got into my position. Designers are working to understand and create things that help people. You will not get the job if there you have any hint of discrimination. You should also really take a look inward and work toward understanding people better. Your life will be better.&lt;/p&gt;
+
+&lt;h2&gt;Be real&lt;/h2&gt;
+
+&lt;p&gt;There is no reason not to be yourself in an interview. If you present a version of yourself that isn&amp;#39;t true to who you are then you&amp;#39;re just hurting yourself and the business you&amp;#39;re interviewing with. This stage of the employee experience is all about finding the best company for you. If you don&amp;#39;t present a true version of yourself then you&amp;#39;re putting yourself and the company you&amp;#39;re interviewing with at a disadvantage.&lt;/p&gt;
+
+&lt;p&gt;Get good sleep the night before, prepare, and bring your best self. Just make sure it is yourself.&lt;/p&gt;
+
+&lt;h2&gt;Ask questions&lt;/h2&gt;
+
+&lt;p&gt;I&amp;#39;ve hinted at this through the other tips, but interviews are as much about the company learning if you&amp;#39;re a good fit for them as you finding out if the company is a good fit for you. Ask questions that you&amp;#39;re curious about. Sometimes companies will shield you from their actual culture. If you sense that they are hiding something, ask questions that might be a little uncomfortable for them to answer. Just like you have to be your real self, encourage the interviewer to be their real self.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Jul 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//design,/business/2017/07/30/ux-job-interview-tips.html</link>
+        <guid isPermaLink="true">http://localhost:4000//design,/business/2017/07/30/ux-job-interview-tips.html</guid>
+        
+        
+        <category>design,</category>
+        
+        <category>business</category>
+        
+      </item>
+    
+      <item>
         <title>Starting Slow</title>
-        <description>&lt;p&gt;After two years of being absent on this blog I&amp;#39;m back to &lt;a href=&quot;http://austinkleon.com/show-your-work/&quot;&gt;show my work&lt;/a&gt;. Like many others I&amp;#39;ve decided to start a side project. It&amp;#39;s called &lt;a href=&quot;http://www.finlo.io&quot;&gt;Finlo&lt;/a&gt;. The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of June 16, 2017 it hasn&amp;#39;t launched. This post is about why and how it&amp;#39;s frustrating.&lt;/p&gt;
+        <description>&lt;p&gt;After two years of being absent on this blog I&amp;#39;m back to &lt;a href=&quot;http://austinkleon.com/show-your-work/&quot;&gt;show my work&lt;/a&gt;. Like many others I&amp;#39;ve decided to start a side project. It&amp;#39;s called &lt;a href=&quot;http://www.finlo.io&quot;&gt;Finlo&lt;/a&gt;. The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of July 2, 2017 it hasn&amp;#39;t launched. This post is about why and how it&amp;#39;s frustrating.&lt;/p&gt;
 
 &lt;p&gt;I bought the domain for Finlo on April 13, 2017. I thought my first iteration of Finlo would be out by the end of the weekend (a landing page). I&amp;#39;ve worked with &lt;a href=&quot;https://pivotal.io/labs&quot;&gt;Pivotal Labs&lt;/a&gt; in my day job, read &lt;a href=&quot;http://theleanstartup.com/&quot;&gt;Lean Startup&lt;/a&gt; (among many other books and articles about lean product development), and have been a vocal proponent of agile product development with everyone I&amp;#39;ve worked with. I also have practiced user experience design and development for 8 years and recently got my MBA. I thought I had all the tools to get something up quickly that I could use to determine whether there is a market for my product and begin discovery exercises to better understand my potential customers. However, I quickly became overwhelmed.&lt;/p&gt;
 
@@ -488,46 +551,6 @@ document.addEventListener('DOMContentLoaded', function() {
         <pubDate>Mon, 29 Jun 2015 00:00:00 -0400</pubDate>
         <link>http://localhost:4000//2015/06/29/the-logo.html</link>
         <guid isPermaLink="true">http://localhost:4000//2015/06/29/the-logo.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Style Guides At Huge, Old Companies Are Really Hard</title>
-        <description>&lt;p&gt;A bunch has been written about front-end style guides. Anna Debenham has provided the most on the subject. Her site, &lt;a href=&quot;http://styleguides.io/&quot;&gt;styleguides.io&lt;/a&gt;, is the best place for style guide resources. I have a perspective on style guides at huge, old companies. It&amp;#39;s one you may have heard before, but I think it&amp;#39;s worth sharing. &lt;em&gt;Implementing a style guide is hard.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;To explore why style guides are so difficult we&amp;#39;ll look at a theoretical time line for a Fortune 100 financial services company. Suppose the company that has been around for 200 years. 200 years of sales, accounting, and management. Around 60 years ago those tasks started to be done with a &lt;a href=&quot;http://www.bbc.com/news/magazine-23509153&quot;&gt;computer&lt;/a&gt;. Then, 47 years ago, things on the computer got a little easier thanks to the &lt;a href=&quot;https://www.youtube.com/watch?v=yJDv-zdhzMY&quot;&gt;graphical user interface&lt;/a&gt;. Those working using computers started to get used to the metaphors and interactions introduced in those early systems. 30 years ago, assumptions on how computers should work expanded to nearly everyone. The web &lt;a href=&quot;http://info.cern.ch/hypertext/WWW/TheProject.html&quot;&gt;became a thing&lt;/a&gt; 24 years ago, in 1991. Finally, intranets &lt;a href=&quot;http://www.businessweek.com/1996/09/b34641.htm&quot;&gt;gained popularity&lt;/a&gt; in 1996.&lt;/p&gt;
-
-&lt;p&gt;50 years of history can be felt every day at old, large companies. That is not a reason to run from these types of institutions. Battling technical debt and legacy systems should be part of the design challenge. This might be controversial, but I think creating an all-inclusive style guide at a company of immense size and system history is impossible. At the very least it&amp;#39;s not worth trying to do. Companies that have a history that dates back to the first computer are using systems that couldn&amp;#39;t benefit from a style guide. I hate to say it, but HOST systems are too far gone. The text-based systems likely have very strong patterns that are taught to the users. Companies who have these systems know it is technical debt. If you have to help design something that must be implemented on these systems, do your best and move on.&lt;/p&gt;
-
-&lt;p&gt;So far the bad, but obvious news is that we can&amp;#39;t build a style guide for a text-based system. Desktop applications are a little weird too, but there use a GUI that we&amp;#39;re used to so it should be a little easier to implement style guidelines, right? Right? At this point I would start thinking a little smaller. The web! HOST is toast, desktop is at a rest stop, but the web. I know the web. I love the web! Surely we can build something that wrangles in the spaghetti  styles and implementations across the different web properties.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;#39;s take a quick inventory of the previously mentioned hypothetical companies web properties:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;An intranet built on an old CMS no one has heard of but each &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; has in-lined styles&lt;/li&gt;
-&lt;li&gt;A separate &amp;quot;web portal&amp;quot; for legal, finance, marketing, operations, etc. (times five for the different product lines) all built on different platforms&lt;/li&gt;
-&lt;li&gt;A public internet site with 20 separate sites for customers to service one thing or another&lt;/li&gt;
-&lt;li&gt;Microsoft SharePoint&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After taking a close look at SharePoint most have to put their inventorying on pause for a quick trip to the spa. The large amount of systems is the greatest challenge for developing a front-end style guide. You&amp;#39;ll come across vastly different HTML structures and JavaScript frameworks that were used to implement these different systems. Perhaps more importantly, these systems are used for very different tasks. Trying to implement a style guide for all these existing systems would likely fight against the systems. The style guide should be used as a complementary tool.&lt;/p&gt;
-
-&lt;p&gt;So where do you start? I think the best place to start is the future. Because there are so old systems at these types of companies, it also means there are probably a ton of new projects. Redesign, rewrites, &amp;quot;reimagining,&amp;quot; whatever you want to call them. It&amp;#39;s these nearly &lt;a href=&quot;https://en.wikipedia.org/wiki/Greenfield_project?oldformat=true&quot;&gt;greenfield&lt;/a&gt; projects (at least on the front-end) that you should focus on. I also think that the project should be something of scale and priority. Some may disagree but I think building the style guide shouldn&amp;#39;t be easy. Creating a style guide for one new site for one small department will feel like a style guide for a tiny blog (like this one). If you want this thing to last you have to have the fights and make tough decisions. Maintenance of the project is only going to get tougher. Do something that works well, but makes you really work as a team.&lt;/p&gt;
-
-&lt;p&gt;The other benefit to hitching onto a big project is that there is likely more room for scope and budget. Some of the approaches to building the guides are better than others, at least conceptually. Ian Feather&amp;#39;s post, &lt;a href=&quot;http://ianfeather.co.uk/a-maintainable-style-guide/&quot;&gt;A Maintainable Style Guide&lt;/a&gt;, is a compelling way to get the benefit of the style guide without loosing any development hours. However, getting buy-in isn&amp;#39;t going to be easy. There is never enough time, budget, or scope on any project. I&amp;#39;ll write more about approaches to getting buy-in, but for now let&amp;#39;s just say that the larger project is where you should start.&lt;/p&gt;
-
-&lt;p&gt;Quick aside, you can try to do this off the side-of-your-desk, &lt;a href=&quot;http://alistapart.com/article/building-twitter-bootstrap&quot;&gt;I know Mark Otto did&lt;/a&gt;, but it&amp;#39;s going to be really hard to get it right. The challenge with this approach is time and resources. On my first attempt at this stuff I was able to get a decent static style guide built and launched internally. However, there was no budget and the priority was low. If you go with the Mark Otto approach, make sure you build up a team of people who are as passionate about it as you are. You&amp;#39;ll need a small army to support the project in their valuable free time if you don&amp;#39;t have a budget. Let me know if you do try it and actually get a maintainable work flow.&lt;/p&gt;
-
-&lt;p&gt;So you&amp;#39;ve gotten buy-in from the project stakeholders, the style guide development is being included in the project estimates, and you&amp;#39;ve studied like crazy to ensure the style guide gets built in the best way possible. Be sure to get a seat at the table early in project planning. If you don&amp;#39;t feel like you have the authority to have your voice heard, change your attitude. You&amp;#39;re reading about this stuff and have listened to dozens of others talk about their experience with this same type of effort. Work with your team. You probably have the best knowledge of how others have approached development with front-end style guides. Listen to your team though. They have had experiences with different projects and likely different companies. If they&amp;#39;re negative about something, get to the root-cause of their concern. If they have an idea for a different approach to development, understand why they feel that way and share your opinion.&lt;/p&gt;
-
-&lt;p&gt;These types of exercises have been going on for 50 years. You will be having a new and old conversation at the same time. Learn as much as you can and learn fast. Parts of how your organization implements this system might not work. Hard work now will make for much easier development and maintenance in the future.&lt;/p&gt;
-
-&lt;p&gt;Good luck! Check back here as I&amp;#39;ll be writing about some more specifics around style guide-driven front-end development. Also, let me know if you notice any grammar or spelling mistakes. The best place to get in touch is tweeting me &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 28 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/06/28/style-guides-are-hard.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/06/28/style-guides-are-hard.html</guid>
         
         
       </item>
