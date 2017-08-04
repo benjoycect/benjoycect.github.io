@@ -20,7 +20,7 @@ permalink: /
         {% if post.categories != blank %}
           <ul class="tags">
             {% for categories in post.categories %}
-              <a href="/tags/{{categories}}"><li class="tag">{{categories}}</li></a>
+              <li class="tag">{{categories}}</li>
             {% endfor %}
           </ul>
         {% endif %}
