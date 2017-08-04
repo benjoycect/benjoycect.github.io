@@ -2,7 +2,7 @@
 layout: post
 title:  "Listen to &quot;The Memory Palace&quot;"
 date:   2015-06-24
-categories: links, radio
+categories: [Article, Links]
 ---
 I'm always blown away at talks or articles that are able to take random moments in history and connect them to the present. One talk I saw that has stuck with me is Ethan Marcotte's talk at [An Event Apart: Austin 2013](http://aneventapart.com/event/austin-2013) called the "The Map & The Territory" (you can watch it on [Vimeo](https://vimeo.com/120164988 "The Map & The Territory")). I wonder how great speakers find these moments in history that show the audience how the past can teach us about the future.
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "One Dish. One Fork. One Spoon."
 date:   2015-06-30
-categories:
+categories: [Article]
 ---
 I've started something new that has made life easier. The second I use a dish or silverware I wash it and put it back. It takes about two minutes and thirty seconds each time I hand wash the dishes from the previous meal. I've learned a valuable lesson from this new habit. It's a lesson that can be pulled directly from the lean manufacturing handbook: flow can work better than batch.
 

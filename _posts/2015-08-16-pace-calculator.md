@@ -2,7 +2,7 @@
 layout: post
 title:  "Pace Calculator"
 date:   2015-08-16
-categories:
+categories: [Article, Front-End Development]
 ---
 I created a small pace calculator for my own use. There are many TODOs, but let me know if something can be done better. I'll be open sourcing the project later this week. You can take a look at the first iteration of the solution here. Your [feedback](https://twitter.com/BenJoyceCT) is always welcome.
 

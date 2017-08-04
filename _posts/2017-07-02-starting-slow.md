@@ -2,7 +2,7 @@
 layout: post
 title:  "Starting Slow"
 date:   2017-07-02
-categories:
+categories: [Article, Design, Business]
 ---
 After two years of being absent on this blog I'm back to [show my work](http://austinkleon.com/show-your-work/). Like many others I've decided to start a side project. It's called [Finlo](http://www.finlo.io). The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of July 2, 2017 it hasn't launched. This post is about why and how it's frustrating.
 

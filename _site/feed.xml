@@ -5,19 +5,19 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 31 Jul 2017 23:47:03 -0400</pubDate>
-    <lastBuildDate>Mon, 31 Jul 2017 23:47:03 -0400</lastBuildDate>
+    <pubDate>Fri, 04 Aug 2017 01:16:57 -0400</pubDate>
+    <lastBuildDate>Fri, 04 Aug 2017 01:16:57 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
         <title>Featured work: Self-Service</title>
         <description>&lt;p&gt;This is the first of many featured work articles I&amp;#39;ll post. This one is about a self-service feature I lead the design on for Travelers.&lt;/p&gt;
 
-&lt;h4&gt;Goal&lt;/h4&gt;
+&lt;h2&gt;Goal&lt;/h2&gt;
 
 &lt;p&gt;Reduce friction in the post-sales process for personal insurance customers.&lt;/p&gt;
 
-&lt;h4&gt;The Story&lt;/h4&gt;
+&lt;h2&gt;The Story&lt;/h2&gt;
 
 &lt;p&gt;The details of the product itself cannot be discussed as it has not been shared publicly, but I want to share my role. This project began with an idea for a solution that centered around a recently published paper on artificial intelligence. While the concept was exciting, it lacked focus about who would benefit from the solution and why. I worked with the team the team to take a step back from the technical implementation of the solution and understand the problem we were trying to solve.&lt;/p&gt;
 
@@ -36,9 +36,11 @@
 &lt;p&gt;After the sprint week ended the product manager and I looked at everything we learned and started to plan the first iteration. Since this product manager was new to the role and working in agile environments I provided training on the goals of story writing and how to write a good story. I shared everything I had learned from past work with &lt;a href=&quot;https://www.pivotallabs.com&quot;&gt;Pivotal Labs&lt;/a&gt; and my experience on other agile products. We took some of the persona work and story mapping we had done in the design sprint to write stories that were focused on delivering small pieces of value to the users who fit in the personas.&lt;/p&gt;
 </description>
         <pubDate>Mon, 31 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2017/07/31/fw-self-service.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2017/07/31/fw-self-service.html</guid>
+        <link>http://localhost:4000//featured%20work/2017/07/31/fw-self-service.html</link>
+        <guid isPermaLink="true">http://localhost:4000//featured%20work/2017/07/31/fw-self-service.html</guid>
         
+        
+        <category>Featured Work</category>
         
       </item>
     
@@ -95,9 +97,28 @@
 &lt;p&gt;I&amp;#39;ve hinted at this through the other tips, but interviews are as much about the company learning if you&amp;#39;re a good fit for them as you finding out if the company is a good fit for you. Ask questions that you&amp;#39;re curious about. Sometimes companies will shield you from their actual culture. If you sense that they are hiding something, ask questions that might be a little uncomfortable for them to answer. Just like you have to be your real self, encourage the interviewer to be their real self.&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2017/07/30/ux-job-interview-tips.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2017/07/30/ux-job-interview-tips.html</guid>
+        <link>http://localhost:4000//article/design/business/2017/07/30/ux-job-interview-tips.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/design/business/2017/07/30/ux-job-interview-tips.html</guid>
         
+        
+        <category>Article</category>
+        
+        <category>Design</category>
+        
+        <category>Business</category>
+        
+      </item>
+    
+      <item>
+        <title>Design Decisions Quote</title>
+        <description>&lt;p&gt;89% of decisions you make as a designer have nothing to do with type, colors, or grids.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Jul 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//quote/2017/07/30/decisions-quote.html</link>
+        <guid isPermaLink="true">http://localhost:4000//quote/2017/07/30/decisions-quote.html</guid>
+        
+        
+        <category>Quote</category>
         
       </item>
     
@@ -128,9 +149,15 @@
 &lt;p&gt;Goodnight.&lt;/p&gt;
 </description>
         <pubDate>Sun, 02 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2017/07/02/starting-slow.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2017/07/02/starting-slow.html</guid>
+        <link>http://localhost:4000//article/design/business/2017/07/02/starting-slow.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/design/business/2017/07/02/starting-slow.html</guid>
         
+        
+        <category>Article</category>
+        
+        <category>Design</category>
+        
+        <category>Business</category>
         
       </item>
     
@@ -275,9 +302,13 @@ document.addEventListener('DOMContentLoaded', function() {
 &lt;/pre&gt;
 </description>
         <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/08/16/pace-calculator.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/08/16/pace-calculator.html</guid>
+        <link>http://localhost:4000//article/front-end%20development/2015/08/16/pace-calculator.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/front-end%20development/2015/08/16/pace-calculator.html</guid>
         
+        
+        <category>Article</category>
+        
+        <category>Front-End Development</category>
         
       </item>
     
@@ -289,15 +320,17 @@ document.addEventListener('DOMContentLoaded', function() {
 &lt;img src=&quot;http://images.benjaminjoyce.com/EarthRise.jpg&quot;
      srcset=&quot;http://images.benjaminjoyce.com/EarthRise.jpg 1024w, http://images.benjaminjoyce.com/EarthRise.jpg 640w, http://d3p41d0ahmxvrr.cloudfront.net/Mom-400.jpg 320w&quot;
      sizes=&quot;(min-width: 36em) 33.3vw, 100vw&quot;
-     alt=&quot;My mom, sister, and me&quot;&gt;
+     alt=&quot;Earth Rise as Seen From Lunar Surface from NASA on The Commons&quot;&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Image: &lt;a href=&quot;https://flic.kr/p/8GrsJ6&quot;&gt;Earth Rise as Seen From Lunar Surface&lt;/a&gt; from &lt;a href=&quot;https://www.flickr.com/photos/nasacommons/&quot;&gt;NASA on The Commons&lt;/a&gt;; &lt;em&gt;Altered for speed performance&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/08/16/first-image.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/08/16/first-image.html</guid>
+        <link>http://localhost:4000//article/2015/08/16/first-image.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/2015/08/16/first-image.html</guid>
         
+        
+        <category>Article</category>
         
       </item>
     
@@ -400,9 +433,26 @@ document.addEventListener('DOMContentLoaded', function() {
 &lt;p&gt;Even the most simple display tasks can be difficult in CSS. Don&amp;#39;t worry if you have to look up how to do something once or twenty times. Everyone is learning together. Visit the sites I link to throughout this article if you&amp;#39;re having any of these problems. Or contact me on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt; and I can try to help. Let me know if you notice any issues with the article. Best of luck!&lt;/p&gt;
 </description>
         <pubDate>Sat, 25 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/07/25/css-mistkaes.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/07/25/css-mistkaes.html</guid>
+        <link>http://localhost:4000//article/front-end%20development/2015/07/25/css-mistkaes.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/front-end%20development/2015/07/25/css-mistkaes.html</guid>
         
+        
+        <category>Article</category>
+        
+        <category>Front-End Development</category>
+        
+      </item>
+    
+      <item>
+        <title>Design Decisions Quote</title>
+        <description>&lt;p&gt;I think we&amp;#39;re at our best when we&amp;#39;re at our weirdest.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 24 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//quote/2015/07/24/weirdest-quote.html</link>
+        <guid isPermaLink="true">http://localhost:4000//quote/2015/07/24/weirdest-quote.html</guid>
+        
+        
+        <category>Quote</category>
         
       </item>
     
@@ -413,9 +463,11 @@ document.addEventListener('DOMContentLoaded', function() {
 &lt;p&gt;If you&amp;#39;ve ever wanted to save a link from &lt;a href=&quot;http://help.getpocket.com/customer/portal/articles/482762-how-to-save-from-twitter-for-iphone&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;https://getpocket.com/chrome/&quot;&gt;Chrome&lt;/a&gt;, or any of the other &lt;a href=&quot;https://getpocket.com/apps/&quot;&gt;500 supported apps&lt;/a&gt;, give Pocket a try.&lt;/p&gt;
 </description>
         <pubDate>Wed, 15 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/07/15/tools-i-use.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/07/15/tools-i-use.html</guid>
+        <link>http://localhost:4000//article/2015/07/15/tools-i-use.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/2015/07/15/tools-i-use.html</guid>
         
+        
+        <category>Article</category>
         
       </item>
     
@@ -519,39 +571,15 @@ document.addEventListener('DOMContentLoaded', function() {
 &lt;p&gt;Let me know if you need help with anything I mentioned above. Also, please let me know if you think something is inaccurate and I&amp;#39;ll fix it. The best way to reach me is on Twitter &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/07/05/how-i-built-it.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/07/05/how-i-built-it.html</guid>
+        <link>http://localhost:4000//article/design/front-end%20development/2015/07/05/how-i-built-it.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/design/front-end%20development/2015/07/05/how-i-built-it.html</guid>
         
         
-      </item>
-    
-      <item>
-        <title>Fourth of July</title>
-        <description>&lt;p&gt;Have a fun an safe Fourth of July. I stayed up way to late making a Pen to celebrate! Expect an article that deconstructs how I made it tomorrow.&lt;/p&gt;
-
-&lt;p data-height=&quot;821&quot; data-theme-id=&quot;16322&quot; data-slug-hash=&quot;gpvzNK&quot; data-default-tab=&quot;result&quot; data-user=&quot;benjoyce&quot; class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/benjoyce/pen/gpvzNK/'&gt;Fourth of July&lt;/a&gt; by Ben Joyce (&lt;a href='http://codepen.io/benjoyce'&gt;@benjoyce&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
-</description>
-        <pubDate>Sat, 04 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/07/04/fourth-of-july.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/07/04/fourth-of-july.html</guid>
+        <category>Article</category>
         
+        <category>Design</category>
         
-      </item>
-    
-      <item>
-        <title>One Dish. One Fork. One Spoon.</title>
-        <description>&lt;p&gt;I&amp;#39;ve started something new that has made life easier. The second I use a dish or silverware I wash it and put it back. It takes about two minutes and thirty seconds each time I hand wash the dishes from the previous meal. I&amp;#39;ve learned a valuable lesson from this new habit. It&amp;#39;s a lesson that can be pulled directly from the lean manufacturing handbook: flow can work better than batch.&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m not an expert on lean, but I want to recommend &lt;a href=&quot;lean.org&quot;&gt;lean.org&lt;/a&gt;. It&amp;#39;s not the best looking site I read, but it has some of the best content. It&amp;#39;s a great place to start learning about lean. Actually implementing lean in any process is extremely hard. Even my little dish washing example takes a ton of mental effort to overcome the wonderful feeling of procrastination.&lt;/p&gt;
-
-&lt;p&gt;The best we can do is be prepared. Keep up the good work.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//2015/06/30/one-plate-one-fork.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2015/06/30/one-plate-one-fork.html</guid>
-        
+        <category>Front-End Development</category>
         
       </item>
     

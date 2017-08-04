@@ -79,13 +79,11 @@
       });
       return ss;
     }
-    loadCSS("/css/build/main.css");
+    // loadCSS("/css/build/main.css");
+    loadCSS("/css/build/test.css")
   </script>
-  <style>
-    html{box-sizing:border-box}*{box-sizing:inherit}body{margin:0;padding:0}h1,h2,h3,h4,h5,h6{margin-top:0}img{max-width:100%;height:auto}.hide{display:none}body{background-color:#f6f6f6;color:#555;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-size:1.25em;line-height:1.75em}a{color:#3498db;-webkit-transition:color 0.25s;transition:color 0.25s}a:hover{color:#16527a}a:focus{color:#a0cfee}section{max-width:50em;margin:2em auto;padding-left:5%;padding-right:5%}header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#fff;box-shadow:0 0.25em 1em rgba(0,0,0,0.25);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}nav{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}@media (min-width: 80em){nav{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}}nav a:not(:last-of-type){margin-bottom:1em}@media (min-width: 80em){nav a:not(:last-of-type){margin-bottom:0;margin-right:5%}}.article__title-card{-webkit-box-align:baseline;-webkit-align-items:baseline;-ms-flex-align:baseline;align-items:baseline;border-bottom:1px dashed #d4d4d4;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:1em;font-weight:300;line-height:1.25;word-wrap:break-word}.article__title{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;font-size:2.5em;margin-top:0.5em;margin-bottom:0.5em}@media (min-width: 80em){.article__title{font-size:4em}}.article__date{font-size:1em;text-transform:uppercase}@media (min-width: 80em){.article__date{font-size:1em}}.article--teaser{padding-top:1em;padding-bottom:1em;-webkit-transition:background-color 0.5s ease;transition:background-color 0.5s ease}.article--teaser a{color:inherit;text-decoration:none}.article--teaser:hover{background-color:#a0cfee}.article__list{list-style:none;padding-left:0}blockquote{background-color:#e9e9e9;border-right:0.5em solid #fe9700;border-bottom:1px solid #d4d4d4;border-left:1px solid #d4d4d4;padding:1em 5%;position:relative}footer{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#333;border-top:0.5em solid #b6b6b6;color:#fff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.colophon{color:#fff}.colophon a{color:#fff}.colophon a:hover{color:#bfbfbf}.social-links{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}@media (min-width: 80em){.social-links{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.social-links a:not(:last-of-type){margin-right:5%;margin-top:1.5em;margin-bottom:1.5em}@media (min-width: 80em){.social-links a:not(:last-of-type){margin-top:0;margin-bottom:0}}.icon{height:2em;width:2em}.site-logo{background-color:transparent;height:2em;margin-bottom:1em;-webkit-transition:-webkit-transform 0.25s linear;transition:transform 0.25s linear;width:2em}.site-logo:hover{-webkit-transform:scale(1.5);-ms-transform:scale(1.5);transform:scale(1.5)}@media (min-width: 80em){.site-logo{margin-bottom:0}}.site-icon--codepen{fill:#fff}
-  </style>
   <noscript>
-    <link rel="stylesheet" href="/css/build/main.css">
+    <link rel="stylesheet" href="/css/build/test.css">
   </noscript>
   <script>
     (function(i, s, o, g, r, a, m) {
@@ -103,10 +101,47 @@
     ga('create', 'UA-64479832-1', 'auto');
     ga('send', 'pageview');
   </script>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'wyc7tig',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<style>
+  body {
+    -webkit-animation: fadein 1s ease;
+            animation: fadein 1s ease;
+  }
+  .home-page__previews {
+    -webkit-animation: fadein 3s ease;
+            animation: fadein 3s ease;
+  }
+  @-webkit-keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
 </head>
 
 <body>
-  <svg class="hide" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rss-logo-gradient_1_" gradientUnits="userSpaceOnUse" x1="811.1932" y1="811.1965" x2="88.7961" y2="88.7994"> <stop offset="0" style="stop-color:#D95B29"/> <stop offset="0.1134" style="stop-color:#DE642B"/> <stop offset="0.2984" style="stop-color:#EA7C31"/> <stop offset="0.5" style="stop-color:#FB9E3A"/> <stop offset="0.6497" style="stop-color:#F69537"/> <stop offset="0.8929" style="stop-color:#EA7D31"/> <stop offset="1" style="stop-color:#E3702D"/> </linearGradient></defs><symbol viewBox="0 0 900 900" id="shape-codepen-logo"><title>codepen-logo</title> <path d="M450.6,3C203.4,3,3,203.4,3,450.6s200.4,447.5,447.6,447.5c247.2,0,447.5-200.4,447.5-447.5 S697.7,3,450.6,3z M450.6,824.6c-206.3,0-374-167.8-374-374s167.8-374,374-374c206.2,0,374,167.8,374,374S656.8,824.6,450.6,824.6z " fill="#fff"/> <path d="M184.3,346.5c0,0-10.5,5.1-10.5,19.7v168.6c0,0-0.5,8.7,10.6,19.8l252.9,168.6c13.2,8.4,26.4,0,26.4,0 l252.9-168.6c0,0,10.6-5.4,10.6-19.8l0,0V366.2c0-14.3-10.6-19.8-10.6-19.8L463.7,177.8c-8-5.3-18.4-5.3-26.4,0L184.4,346.5 M184.3,346.5
+  <!-- <svg class="hide" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rss-logo-gradient_1_" gradientUnits="userSpaceOnUse" x1="811.1932" y1="811.1965" x2="88.7961" y2="88.7994"> <stop offset="0" style="stop-color:#D95B29"/> <stop offset="0.1134" style="stop-color:#DE642B"/> <stop offset="0.2984" style="stop-color:#EA7C31"/> <stop offset="0.5" style="stop-color:#FB9E3A"/> <stop offset="0.6497" style="stop-color:#F69537"/> <stop offset="0.8929" style="stop-color:#EA7D31"/> <stop offset="1" style="stop-color:#E3702D"/> </linearGradient></defs><symbol viewBox="0 0 900 900" id="shape-codepen-logo"><title>codepen-logo</title> <path d="M450.6,3C203.4,3,3,203.4,3,450.6s200.4,447.5,447.6,447.5c247.2,0,447.5-200.4,447.5-447.5 S697.7,3,450.6,3z M450.6,824.6c-206.3,0-374-167.8-374-374s167.8-374,374-374c206.2,0,374,167.8,374,374S656.8,824.6,450.6,824.6z " fill="#fff"/> <path d="M184.3,346.5c0,0-10.5,5.1-10.5,19.7v168.6c0,0-0.5,8.7,10.6,19.8l252.9,168.6c13.2,8.4,26.4,0,26.4,0 l252.9-168.6c0,0,10.6-5.4,10.6-19.8l0,0V366.2c0-14.3-10.6-19.8-10.6-19.8L463.7,177.8c-8-5.3-18.4-5.3-26.4,0L184.4,346.5 M184.3,346.5
     M474.3,242l186.3,124.2l-83.2,55.7l-103.1-69V242z M426.8,242V353l-103.1,69l-83.2-55.7L426.8,242z M221.4,410.8 l59.5,39.8l-59.5,39.8V410.8z M426.8,659.1L240.4,534.8l83.2-55.7l103.1,69V659.1z M450.6,506.8l-84.1-56.3l84.1-56.3l84.1,56.3 L450.6,506.8z
     M474.3,659.1V548.1l103.1-69l83.2,55.7L474.3,659.1z M679.7,490.4l-59.5-39.8l59.5-39.8V490.4z" fill="#fff"/> </symbol><symbol viewBox="0 0 900 900" id="shape-logo"><title>logo</title> <polygon fill="#FE9700" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="450,183.6 515,179.8 633.8,111.1
 		702.6,9 778.7,118.6 737.8,261.5 737.8,632.9 450,891.1 162.2,632.9 162.2,261.5 121.3,118.6 197.4,9 266.2,111.1 385,179.8 	"/> <polygon fill="#65BEEF" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="162.2,261.5 450,417.5
@@ -130,243 +165,347 @@
 	c-30.3-1-58.7-9.3-83.6-23.1c0,0.8,0,1.5,0,2.3c0,89.5,63.6,164.1,148.1,181.1c-15.5,4.2-31.8,6.5-48.6,6.5
 	c-11.9,0-23.5-1.2-34.7-3.3c23.5,73.4,91.7,126.7,172.5,128.2c-63.2,49.5-142.8,79-229.3,79c-14.9,0-29.6-0.9-44-2.6
 	c81.7,52.4,178.8,83,283,83c339.6,0,525.3-281.3,525.3-525.3c0-8-0.2-16-0.5-23.9C843.9,240.4,875.2,207.9,900,170.9L900,170.9z"/> </symbol></svg>
-
-  <header>
-    <a href="/">
-      <svg class="icon site-logo">
-        <use xlink:href="#shape-logo"></use>
-      </svg>
-    </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-    </nav>
-  </header>
-  <section>
+ -->
+  <div class="page">
+    <header>
+      <nav class="site-navigation">
+        <a class="site-navigation__link" href="/">Home</a>
+        <!-- <a class="site-navigation__link" href="">Featured Work</a> -->
+        <a class="site-navigation__link" href="photos">Photos</a>
+        <!-- <a class="site-navigation__link" href="">Articles</a> -->
+      </nav>
+    </header>
+    <div class="main-content">
 
 
-    <ul class="article__list">
-  
-      <li class="article--teaser">
-      <a href="/2017/07/31/fw-self-service.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Featured work: Self-Service</span>
-              <span class="article__date">Published on Jul 31, 2017</span>
-          </h2>
-        <p>This is the first of many featured work articles I&#39;ll post. This one is about a self-service feature I lead the design on for Travelers.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2017/07/30/ux-job-interview-tips.html">
-        <h2 class="article__title-card">
-              <span class="article__title">UX Job Interview Tips</span>
-              <span class="article__date">Published on Jul 30, 2017</span>
-          </h2>
-        <p>I&#39;ve been conducting interviews for various roles in IT and design for about six years. In that time I&#39;ve seen all sorts of interviews, good and bad. These are tips that from my perspective will help a hiring manager really understand you and whether you will be a fit for their team and whether their team is a fit for you.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2017/07/02/starting-slow.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Starting Slow</span>
-              <span class="article__date">Published on Jul 2, 2017</span>
-          </h2>
-        <p>After two years of being absent on this blog I&#39;m back to <a href="http://austinkleon.com/show-your-work/">show my work</a>. Like many others I&#39;ve decided to start a side project. It&#39;s called <a href="http://www.finlo.io">Finlo</a>. The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of July 2, 2017 it hasn&#39;t launched. This post is about why and how it&#39;s frustrating.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/08/16/pace-calculator.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Pace Calculator</span>
-              <span class="article__date">Published on Aug 16, 2015</span>
-          </h2>
-        <p>I created a small pace calculator for my own use. There are many TODOs, but let me know if something can be done better. I&#39;ll be open sourcing the project later this week. You can take a look at the first iteration of the solution here. Your <a href="https://twitter.com/BenJoyceCT">feedback</a> is always welcome.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/08/16/first-image.html">
-        <h2 class="article__title-card">
-              <span class="article__title">First Image</span>
-              <span class="article__date">Published on Aug 16, 2015</span>
-          </h2>
-        <p>I just set up an account on AWS and will be using <a href="https://aws.amazon.com/cloudfront/">CloudFront</a> CDN for images. I&#39;ll write about getting CloudFront set up and some of the things I am trying out with <code>srcset</code> very soon.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/07/25/css-mistkaes.html">
-        <h2 class="article__title-card">
-              <span class="article__title">My CSS Mistakes</span>
-              <span class="article__date">Published on Jul 25, 2015</span>
-          </h2>
-        <p>For a long time CSS was really confusing to me. I was shocked after every line of code I wrote. Text flowed outside its container, things didn&#39;t position themselves like I expected, and elements I expected to be center sat on the left side of the page. These problems left my CSS with <code>!important</code> declarations and hacks to make things look right. This is my post that would have taught past me how to fix those mistakes and where to get more information. Maybe you have the same problems and this post will help you too.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/07/15/tools-i-use.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Tools I Use: Pocket</span>
-              <span class="article__date">Published on Jul 15, 2015</span>
-          </h2>
-        <p>I&#39;ve tried all sorts of tools to help me save and organize links. Recently, I started using <a href="https://getpocket.com">Pocket</a>. The app has been around since 2007 (previously known as Read it Later). I&#39;m happy to be a late adopter as it is now integrated into all the applications I could possibly imagine.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/07/05/how-i-built-it.html">
-        <h2 class="article__title-card">
-              <span class="article__title">How I Built It: Fourth of July</span>
-              <span class="article__date">Published on Jul 5, 2015</span>
-          </h2>
-        <p>This is the first of my planned &quot;walk through&quot; posts. Today I&#39;m writing about the process I went through to create the pen I made for the Fourth of July.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/07/04/fourth-of-july.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Fourth of July</span>
-              <span class="article__date">Published on Jul 4, 2015</span>
-          </h2>
-        <p>Have a fun an safe Fourth of July. I stayed up way to late making a Pen to celebrate! Expect an article that deconstructs how I made it tomorrow.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/30/one-plate-one-fork.html">
-        <h2 class="article__title-card">
-              <span class="article__title">One Dish. One Fork. One Spoon.</span>
-              <span class="article__date">Published on Jun 30, 2015</span>
-          </h2>
-        <p>I&#39;ve started something new that has made life easier. The second I use a dish or silverware I wash it and put it back. It takes about two minutes and thirty seconds each time I hand wash the dishes from the previous meal. I&#39;ve learned a valuable lesson from this new habit. It&#39;s a lesson that can be pulled directly from the lean manufacturing handbook: flow can work better than batch.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/29/the-logo.html">
-        <h2 class="article__title-card">
-              <span class="article__title">The Logo</span>
-              <span class="article__date">Published on Jun 29, 2015</span>
-          </h2>
-        <p>&quot;Is it a bikini?&quot; &quot;No mom, it&#39;s supposed to be a tiger.&quot;</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/28/style-guides-are-hard.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Style Guides At Huge, Old Companies Are Really Hard</span>
-              <span class="article__date">Published on Jun 28, 2015</span>
-          </h2>
-        <p>A bunch has been written about front-end style guides. Anna Debenham has provided the most on the subject. Her site, <a href="http://styleguides.io/">styleguides.io</a>, is the best place for style guide resources. I have a perspective on style guides at huge, old companies. It&#39;s one you may have heard before, but I think it&#39;s worth sharing. <em>Implementing a style guide is hard.</em></p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/27/four-hundred-four.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Four Hundred Four</span>
-              <span class="article__date">Published on Jun 27, 2015</span>
-          </h2>
-        <p>The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn&#39;t exist. I wanted to create a <a href="http://benjaminjoyce.com/404">404 page</a> that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/26/fridays-are-for-starting.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Fridays Are For Starting</span>
-              <span class="article__date">Published on Jun 26, 2015</span>
-          </h2>
-        <p><blockquote>[I]t&#39;s like coming home on Friday night and doing your homework right away so that your Saturday night is free to just party.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/25/my-grunt-file.html">
-        <h2 class="article__title-card">
-              <span class="article__title">My Gruntfile</span>
-              <span class="article__date">Published on Jun 25, 2015</span>
-          </h2>
-        <p>I&#39;m using some <a href="http://gruntjs.com/" title="Grunt">Grunt</a> tasks that have helped me get this site running. They have also made my life way easier. A few caveats before we get started. One, I know Grunt isn&#39;t the super cool task runner it was when it was first released. <a href="http://gulpjs.com/" title="Gulp">Gulp</a> has earned that distinction from most developers I talk to now. <a href="https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4">Enough</a> has been <a href="http://www.hongkiat.com/blog/gulp-vs-grunt/">written</a> about <a href="http://sixrevisions.com/web-development/grunt-vs-gulp/">Grunt versus Gulp</a> that I don&#39;t need to go into that. I&#39;ve tried both. I started with Grunt, thanks to Chris Coyier&#39;s awesome 24 Ways <a href="http://24ways.org/2013/grunt-is-not-weird-and-hard/">article</a>. I like it and I&#39;m staying with it for a while. Another quick note, I have an extremely basic website right now. I haven&#39;t added any images (yet) and there is basically no interactivity. Finally, I&#39;m not going to teach you how to use Grunt. The previously mentioned article by Chris Coyier does it better than I ever could.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/links,/radio/2015/06/24/the-memory-palace.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Listen to &quot;The Memory Palace&quot;</span>
-              <span class="article__date">Published on Jun 24, 2015</span>
-          </h2>
-        <p>I&#39;m always blown away at talks or articles that are able to take random moments in history and connect them to the present. One talk I saw that has stuck with me is Ethan Marcotte&#39;s talk at <a href="http://aneventapart.com/event/austin-2013">An Event Apart: Austin 2013</a> called the &quot;The Map &amp; The Territory&quot; (you can watch it on <a href="https://vimeo.com/120164988" title="The Map &amp; The Territory">Vimeo</a>). I wonder how great speakers find these moments in history that show the audience how the past can teach us about the future.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/22/everything-is-gone.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Everything is Gone</span>
-              <span class="article__date">Published on Jun 22, 2015</span>
-          </h2>
-        <p>Pro-tip: Be super careful when using Git for the first time. Just felt the classic pain of deleting about 3 hours of work on this site.</p>
-
-        </a>
-      </li>
-
-  
-      <li class="article--teaser">
-      <a href="/2015/06/21/hello-benjaminjoycedotcom.html">
-        <h2 class="article__title-card">
-              <span class="article__title">Hello, benjaminjoyce.com</span>
-              <span class="article__date">Published on Jun 21, 2015</span>
-          </h2>
-        <p>It&#39;s 2015. It&#39;s getting late and I have work tomorrow. Yet, I&#39;m taking this time to launch a blog. Mine won&#39;t be much different than the millions of others already on the internet. However, it&#39;s a special moment for me. It&#39;s not the first time I have launched a personal website. I first launched something back in 2010. That site, it&#39;s content, and snapshot of that time is gone.</p>
-
-        </a>
-      </li>
-
-  
-</ul>
-
-
+    <section class="home-page__blurb row">
+  <h1 class="home-page__heading">Hi, I'm Ben.</h1>
+  <p class="home-page__blurb-text">I'm a designer with an eye on the future. I have researched and created things for companies big and small. I love getting deep into a problem and working with teams to create awesome solutions.</p>
 </section>
+
+<section class="home-page__previews row">
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/featured%20work/2017/07/31/fw-self-service.html">Featured work: Self-Service</a></h3>
+        <p><p>This is the first of many featured work articles I&#39;ll post. This one is about a self-service feature I lead the design on for Travelers.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Featured Work"><li class="tag">Featured Work</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/design/business/2017/07/30/ux-job-interview-tips.html">UX Job Interview Tips</a></h3>
+        <p><p>I&#39;ve been conducting interviews for various roles in IT and design for about six years. In that time I&#39;ve seen all sorts of interviews, good and bad. These are tips that from my perspective will help a hiring manager really understand you and whether you will be a fit for their team and whether their team is a fit for you.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Design"><li class="tag">Design</li></a>
+            
+              <a href="/tags/Business"><li class="tag">Business</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card--quote">
+        <p>89% of decisions you make as a designer have nothing to do with type, colors, or grids.</p>
+
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/design/business/2017/07/02/starting-slow.html">Starting Slow</a></h3>
+        <p><p>After two years of being absent on this blog I&#39;m back to <a href="http://austinkleon.com/show-your-work/">show my work</a>. Like many others I&#39;ve decided to start a side project. It&#39;s called <a href="http://www.finlo.io">Finlo</a>. The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of July 2, 2017 it hasn&#39;t launched. This post is about why and how it&#39;s frustrating.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Design"><li class="tag">Design</li></a>
+            
+              <a href="/tags/Business"><li class="tag">Business</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/front-end%20development/2015/08/16/pace-calculator.html">Pace Calculator</a></h3>
+        <p><p>I created a small pace calculator for my own use. There are many TODOs, but let me know if something can be done better. I&#39;ll be open sourcing the project later this week. You can take a look at the first iteration of the solution here. Your <a href="https://twitter.com/BenJoyceCT">feedback</a> is always welcome.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Front-End Development"><li class="tag">Front-End Development</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/2015/08/16/first-image.html">First Image</a></h3>
+        <p><p>I just set up an account on AWS and will be using <a href="https://aws.amazon.com/cloudfront/">CloudFront</a> CDN for images. I&#39;ll write about getting CloudFront set up and some of the things I am trying out with <code>srcset</code> very soon.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/front-end%20development/2015/07/25/css-mistkaes.html">My CSS Mistakes</a></h3>
+        <p><p>For a long time CSS was really confusing to me. I was shocked after every line of code I wrote. Text flowed outside its container, things didn&#39;t position themselves like I expected, and elements I expected to be center sat on the left side of the page. These problems left my CSS with <code>!important</code> declarations and hacks to make things look right. This is my post that would have taught past me how to fix those mistakes and where to get more information. Maybe you have the same problems and this post will help you too.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Front-End Development"><li class="tag">Front-End Development</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card--quote">
+        <p>I think we&#39;re at our best when we&#39;re at our weirdest.</p>
+
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/2015/07/15/tools-i-use.html">Tools I Use: Pocket</a></h3>
+        <p><p>I&#39;ve tried all sorts of tools to help me save and organize links. Recently, I started using <a href="https://getpocket.com">Pocket</a>. The app has been around since 2007 (previously known as Read it Later). I&#39;m happy to be a late adopter as it is now integrated into all the applications I could possibly imagine.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/design/front-end%20development/2015/07/05/how-i-built-it.html">How I Built It: Fourth of July</a></h3>
+        <p><p>This is the first of my planned &quot;walk through&quot; posts. Today I&#39;m writing about the process I went through to create the pen I made for the Fourth of July.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Design"><li class="tag">Design</li></a>
+            
+              <a href="/tags/Front-End Development"><li class="tag">Front-End Development</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/design/2015/07/04/fourth-of-july.html">Fourth of July</a></h3>
+        <p><p>Have a fun an safe Fourth of July. I stayed up way to late making a Pen to celebrate! Expect an article that deconstructs how I made it tomorrow.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Design"><li class="tag">Design</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/30/one-plate-one-fork.html">One Dish. One Fork. One Spoon.</a></h3>
+        <p><p>I&#39;ve started something new that has made life easier. The second I use a dish or silverware I wash it and put it back. It takes about two minutes and thirty seconds each time I hand wash the dishes from the previous meal. I&#39;ve learned a valuable lesson from this new habit. It&#39;s a lesson that can be pulled directly from the lean manufacturing handbook: flow can work better than batch.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/design/2015/06/29/the-logo.html">The Logo</a></h3>
+        <p><p>&quot;Is it a bikini?&quot; &quot;No mom, it&#39;s supposed to be a tiger.&quot;</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Design"><li class="tag">Design</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/design/front-end%20development/2015/06/28/style-guides-are-hard.html">Style Guides At Huge, Old Companies Are Really Hard</a></h3>
+        <p><p>A bunch has been written about front-end style guides. Anna Debenham has provided the most on the subject. Her site, <a href="http://styleguides.io/">styleguides.io</a>, is the best place for style guide resources. I have a perspective on style guides at huge, old companies. It&#39;s one you may have heard before, but I think it&#39;s worth sharing. <em>Implementing a style guide is hard.</em></p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Design"><li class="tag">Design</li></a>
+            
+              <a href="/tags/Front-End Development"><li class="tag">Front-End Development</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/svg/2015/06/27/four-hundred-four.html">Four Hundred Four</a></h3>
+        <p><p>The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn&#39;t exist. I wanted to create a <a href="http://benjaminjoyce.com/404">404 page</a> that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/SVG"><li class="tag">SVG</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/26/fridays-are-for-starting.html">Fridays Are For Starting</a></h3>
+        <p><p>I don&#39;t know if I fully subscribe to getting everything done on a Friday. A little procrastination feels so nice after a long week. It&#39;s good to get started on Friday. Like the tell-tale-heart, the post I started today won&#39;t be off my mind until I <code>git push</code> later this weekend. Starting the post will not make me anxious or stressed. It will just keep me honest.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/css/front-end%20development/2015/06/25/my-grunt-file.html">My Gruntfile</a></h3>
+        <p><p>I&#39;m using some <a href="http://gruntjs.com/" title="Grunt">Grunt</a> tasks that have helped me get this site running. They have also made my life way easier. A few caveats before we get started. One, I know Grunt isn&#39;t the super cool task runner it was when it was first released. <a href="http://gulpjs.com/" title="Gulp">Gulp</a> has earned that distinction from most developers I talk to now. <a href="https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4">Enough</a> has been <a href="http://www.hongkiat.com/blog/gulp-vs-grunt/">written</a> about <a href="http://sixrevisions.com/web-development/grunt-vs-gulp/">Grunt versus Gulp</a> that I don&#39;t need to go into that. I&#39;ve tried both. I started with Grunt, thanks to Chris Coyier&#39;s awesome 24 Ways <a href="http://24ways.org/2013/grunt-is-not-weird-and-hard/">article</a>. I like it and I&#39;m staying with it for a while. Another quick note, I have an extremely basic website right now. I haven&#39;t added any images (yet) and there is basically no interactivity. Finally, I&#39;m not going to teach you how to use Grunt. The previously mentioned article by Chris Coyier does it better than I ever could.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/CSS"><li class="tag">CSS</li></a>
+            
+              <a href="/tags/Front-End Development"><li class="tag">Front-End Development</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/links/2015/06/24/the-memory-palace.html">Listen to &quot;The Memory Palace&quot;</a></h3>
+        <p><p>I&#39;m always blown away at talks or articles that are able to take random moments in history and connect them to the present. One talk I saw that has stuck with me is Ethan Marcotte&#39;s talk at <a href="http://aneventapart.com/event/austin-2013">An Event Apart: Austin 2013</a> called the &quot;The Map &amp; The Territory&quot; (you can watch it on <a href="https://vimeo.com/120164988" title="The Map &amp; The Territory">Vimeo</a>). I wonder how great speakers find these moments in history that show the audience how the past can teach us about the future.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+              <a href="/tags/Links"><li class="tag">Links</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/22/everything-is-gone.html">Everything is Gone</a></h3>
+        <p><p>Pro-tip: Be super careful when using Git for the first time. Just felt the classic pain of deleting about 3 hours of work on this site.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+    
+      <div class="card">
+        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/21/hello-benjaminjoycedotcom.html">Hello, benjaminjoyce.com</a></h3>
+        <p><p>It&#39;s 2015. It&#39;s getting late and I have work tomorrow. Yet, I&#39;m taking this time to launch a blog. Mine won&#39;t be much different than the millions of others already on the internet. However, it&#39;s a special moment for me. It&#39;s not the first time I have launched a personal website. I first launched something back in 2010. That site, it&#39;s content, and snapshot of that time is gone.</p>
+</p>
+        
+          <ul class="tags">
+            
+              <a href="/tags/Article"><li class="tag">Article</li></a>
+            
+          </ul>
+        
+      </div>
+    
+  
+</section>
+
+
+  </div>
+</div>
 <footer>
   <p class="colophon">
     Posts by Benjamin Joyce. <a href="/2015/06/21/hello-benjaminjoycedotcom.html">First published in 2015</a>.

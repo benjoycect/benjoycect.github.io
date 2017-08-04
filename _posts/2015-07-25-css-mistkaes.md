@@ -2,7 +2,7 @@
 layout: post
 title:  "My CSS Mistakes"
 date:   2015-07-25
-categories:
+categories: [Article, Front-End Development]
 ---
 For a long time CSS was really confusing to me. I was shocked after every line of code I wrote. Text flowed outside its container, things didn't position themselves like I expected, and elements I expected to be center sat on the left side of the page. These problems left my CSS with <code>!important</code> declarations and hacks to make things look right. This is my post that would have taught past me how to fix those mistakes and where to get more information. Maybe you have the same problems and this post will help you too.
 

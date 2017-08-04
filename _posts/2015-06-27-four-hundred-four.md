@@ -2,7 +2,7 @@
 layout: post
 title:  "Four Hundred Four"
 date:   2015-06-27
-categories:
+categories: [Article, SVG]
 ---
 The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn't exist. I wanted to create a [404 page](http://benjaminjoyce.com/404) that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.
 

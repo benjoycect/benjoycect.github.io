@@ -2,7 +2,7 @@
 layout: post
 title:  "Tools I Use: Pocket"
 date:   2015-07-15
-categories:
+categories: [Article]
 ---
 I've tried all sorts of tools to help me save and organize links. Recently, I started using [Pocket](https://getpocket.com). The app has been around since 2007 (previously known as Read it Later). I'm happy to be a late adopter as it is now integrated into all the applications I could possibly imagine.
 

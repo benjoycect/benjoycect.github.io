@@ -2,7 +2,7 @@
 layout: post
 title:  "Style Guides At Huge, Old Companies Are Really Hard"
 date:   2015-06-28
-categories:
+categories: [Article, Design, Front-End Development]
 ---
 A bunch has been written about front-end style guides. Anna Debenham has provided the most on the subject. Her site, [styleguides.io](http://styleguides.io/), is the best place for style guide resources. I have a perspective on style guides at huge, old companies. It's one you may have heard before, but I think it's worth sharing. <em>Implementing a style guide is hard.</em>
 

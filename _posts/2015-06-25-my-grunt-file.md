@@ -2,7 +2,7 @@
 layout: post
 title:  My Gruntfile
 date:   2015-06-25
-categories:
+categories: [Article, CSS, Front-End Development]
 ---
 I'm using some [Grunt](http://gruntjs.com/ "Grunt") tasks that have helped me get this site running. They have also made my life way easier. A few caveats before we get started. One, I know Grunt isn't the super cool task runner it was when it was first released. [Gulp](http://gulpjs.com/ "Gulp") has earned that distinction from most developers I talk to now. [Enough](https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4) has been [written](http://www.hongkiat.com/blog/gulp-vs-grunt/) about [Grunt versus Gulp](http://sixrevisions.com/web-development/grunt-vs-gulp/) that I don't need to go into that. I've tried both. I started with Grunt, thanks to Chris Coyier's awesome 24 Ways [article](http://24ways.org/2013/grunt-is-not-weird-and-hard/). I like it and I'm staying with it for a while. Another quick note, I have an extremely basic website right now. I haven't added any images (yet) and there is basically no interactivity. Finally, I'm not going to teach you how to use Grunt. The previously mentioned article by Chris Coyier does it better than I ever could.
 

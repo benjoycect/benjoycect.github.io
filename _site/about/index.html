@@ -79,13 +79,11 @@
       });
       return ss;
     }
-    loadCSS("/css/build/main.css");
+    // loadCSS("/css/build/main.css");
+    loadCSS("/css/build/test.css")
   </script>
-  <style>
-    html{box-sizing:border-box}*{box-sizing:inherit}body{margin:0;padding:0}h1,h2,h3,h4,h5,h6{margin-top:0}img{max-width:100%;height:auto}.hide{display:none}body{background-color:#f6f6f6;color:#555;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-size:1.25em;line-height:1.75em}a{color:#3498db;-webkit-transition:color 0.25s;transition:color 0.25s}a:hover{color:#16527a}a:focus{color:#a0cfee}section{max-width:50em;margin:2em auto;padding-left:5%;padding-right:5%}header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#fff;box-shadow:0 0.25em 1em rgba(0,0,0,0.25);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){header{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}nav{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}@media (min-width: 80em){nav{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}}nav a:not(:last-of-type){margin-bottom:1em}@media (min-width: 80em){nav a:not(:last-of-type){margin-bottom:0;margin-right:5%}}.article__title-card{-webkit-box-align:baseline;-webkit-align-items:baseline;-ms-flex-align:baseline;align-items:baseline;border-bottom:1px dashed #d4d4d4;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:1em;font-weight:300;line-height:1.25;word-wrap:break-word}.article__title{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;font-size:2.5em;margin-top:0.5em;margin-bottom:0.5em}@media (min-width: 80em){.article__title{font-size:4em}}.article__date{font-size:1em;text-transform:uppercase}@media (min-width: 80em){.article__date{font-size:1em}}.article--teaser{padding-top:1em;padding-bottom:1em;-webkit-transition:background-color 0.5s ease;transition:background-color 0.5s ease}.article--teaser a{color:inherit;text-decoration:none}.article--teaser:hover{background-color:#a0cfee}.article__list{list-style:none;padding-left:0}blockquote{background-color:#e9e9e9;border-right:0.5em solid #fe9700;border-bottom:1px solid #d4d4d4;border-left:1px solid #d4d4d4;padding:1em 5%;position:relative}footer{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background-color:#333;border-top:0.5em solid #b6b6b6;color:#fff;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:1em 5%}@media (min-width: 80em){footer{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.colophon{color:#fff}.colophon a{color:#fff}.colophon a:hover{color:#bfbfbf}.social-links{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}@media (min-width: 80em){.social-links{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}.social-links a:not(:last-of-type){margin-right:5%;margin-top:1.5em;margin-bottom:1.5em}@media (min-width: 80em){.social-links a:not(:last-of-type){margin-top:0;margin-bottom:0}}.icon{height:2em;width:2em}.site-logo{background-color:transparent;height:2em;margin-bottom:1em;-webkit-transition:-webkit-transform 0.25s linear;transition:transform 0.25s linear;width:2em}.site-logo:hover{-webkit-transform:scale(1.5);-ms-transform:scale(1.5);transform:scale(1.5)}@media (min-width: 80em){.site-logo{margin-bottom:0}}.site-icon--codepen{fill:#fff}
-  </style>
   <noscript>
-    <link rel="stylesheet" href="/css/build/main.css">
+    <link rel="stylesheet" href="/css/build/test.css">
   </noscript>
   <script>
     (function(i, s, o, g, r, a, m) {
@@ -103,10 +101,47 @@
     ga('create', 'UA-64479832-1', 'auto');
     ga('send', 'pageview');
   </script>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'wyc7tig',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<style>
+  body {
+    -webkit-animation: fadein 1s ease;
+            animation: fadein 1s ease;
+  }
+  .home-page__previews {
+    -webkit-animation: fadein 3s ease;
+            animation: fadein 3s ease;
+  }
+  @-webkit-keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
 </head>
 
 <body>
-  <svg class="hide" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rss-logo-gradient_1_" gradientUnits="userSpaceOnUse" x1="811.1932" y1="811.1965" x2="88.7961" y2="88.7994"> <stop offset="0" style="stop-color:#D95B29"/> <stop offset="0.1134" style="stop-color:#DE642B"/> <stop offset="0.2984" style="stop-color:#EA7C31"/> <stop offset="0.5" style="stop-color:#FB9E3A"/> <stop offset="0.6497" style="stop-color:#F69537"/> <stop offset="0.8929" style="stop-color:#EA7D31"/> <stop offset="1" style="stop-color:#E3702D"/> </linearGradient></defs><symbol viewBox="0 0 900 900" id="shape-codepen-logo"><title>codepen-logo</title> <path d="M450.6,3C203.4,3,3,203.4,3,450.6s200.4,447.5,447.6,447.5c247.2,0,447.5-200.4,447.5-447.5 S697.7,3,450.6,3z M450.6,824.6c-206.3,0-374-167.8-374-374s167.8-374,374-374c206.2,0,374,167.8,374,374S656.8,824.6,450.6,824.6z " fill="#fff"/> <path d="M184.3,346.5c0,0-10.5,5.1-10.5,19.7v168.6c0,0-0.5,8.7,10.6,19.8l252.9,168.6c13.2,8.4,26.4,0,26.4,0 l252.9-168.6c0,0,10.6-5.4,10.6-19.8l0,0V366.2c0-14.3-10.6-19.8-10.6-19.8L463.7,177.8c-8-5.3-18.4-5.3-26.4,0L184.4,346.5 M184.3,346.5
+  <!-- <svg class="hide" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rss-logo-gradient_1_" gradientUnits="userSpaceOnUse" x1="811.1932" y1="811.1965" x2="88.7961" y2="88.7994"> <stop offset="0" style="stop-color:#D95B29"/> <stop offset="0.1134" style="stop-color:#DE642B"/> <stop offset="0.2984" style="stop-color:#EA7C31"/> <stop offset="0.5" style="stop-color:#FB9E3A"/> <stop offset="0.6497" style="stop-color:#F69537"/> <stop offset="0.8929" style="stop-color:#EA7D31"/> <stop offset="1" style="stop-color:#E3702D"/> </linearGradient></defs><symbol viewBox="0 0 900 900" id="shape-codepen-logo"><title>codepen-logo</title> <path d="M450.6,3C203.4,3,3,203.4,3,450.6s200.4,447.5,447.6,447.5c247.2,0,447.5-200.4,447.5-447.5 S697.7,3,450.6,3z M450.6,824.6c-206.3,0-374-167.8-374-374s167.8-374,374-374c206.2,0,374,167.8,374,374S656.8,824.6,450.6,824.6z " fill="#fff"/> <path d="M184.3,346.5c0,0-10.5,5.1-10.5,19.7v168.6c0,0-0.5,8.7,10.6,19.8l252.9,168.6c13.2,8.4,26.4,0,26.4,0 l252.9-168.6c0,0,10.6-5.4,10.6-19.8l0,0V366.2c0-14.3-10.6-19.8-10.6-19.8L463.7,177.8c-8-5.3-18.4-5.3-26.4,0L184.4,346.5 M184.3,346.5
     M474.3,242l186.3,124.2l-83.2,55.7l-103.1-69V242z M426.8,242V353l-103.1,69l-83.2-55.7L426.8,242z M221.4,410.8 l59.5,39.8l-59.5,39.8V410.8z M426.8,659.1L240.4,534.8l83.2-55.7l103.1,69V659.1z M450.6,506.8l-84.1-56.3l84.1-56.3l84.1,56.3 L450.6,506.8z
     M474.3,659.1V548.1l103.1-69l83.2,55.7L474.3,659.1z M679.7,490.4l-59.5-39.8l59.5-39.8V490.4z" fill="#fff"/> </symbol><symbol viewBox="0 0 900 900" id="shape-logo"><title>logo</title> <polygon fill="#FE9700" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="450,183.6 515,179.8 633.8,111.1
 		702.6,9 778.7,118.6 737.8,261.5 737.8,632.9 450,891.1 162.2,632.9 162.2,261.5 121.3,118.6 197.4,9 266.2,111.1 385,179.8 	"/> <polygon fill="#65BEEF" stroke="#000000" stroke-width="12.0853" stroke-miterlimit="10" points="162.2,261.5 450,417.5
@@ -130,25 +165,23 @@
 	c-30.3-1-58.7-9.3-83.6-23.1c0,0.8,0,1.5,0,2.3c0,89.5,63.6,164.1,148.1,181.1c-15.5,4.2-31.8,6.5-48.6,6.5
 	c-11.9,0-23.5-1.2-34.7-3.3c23.5,73.4,91.7,126.7,172.5,128.2c-63.2,49.5-142.8,79-229.3,79c-14.9,0-29.6-0.9-44-2.6
 	c81.7,52.4,178.8,83,283,83c339.6,0,525.3-281.3,525.3-525.3c0-8-0.2-16-0.5-23.9C843.9,240.4,875.2,207.9,900,170.9L900,170.9z"/> </symbol></svg>
+ -->
+  <div class="page">
+    <header>
+      <nav class="site-navigation">
+        <a class="site-navigation__link" href="/">Home</a>
+        <!-- <a class="site-navigation__link" href="">Featured Work</a> -->
+        <a class="site-navigation__link" href="photos">Photos</a>
+        <!-- <a class="site-navigation__link" href="">Articles</a> -->
+      </nav>
+    </header>
+    <div class="main-content">
 
-  <header>
-    <a href="/">
-      <svg class="icon site-logo">
-        <use xlink:href="#shape-logo"></use>
-      </svg>
-    </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-    </nav>
-  </header>
-  <section>
-
-<article>
-	<h2 class="article__title-card">
-		<span class="article__title">About</span>
-		<span class="article__date">Published on Jun 21, 2015
-	</h2>
+<article class="post">
+	<h1 class="post__title">
+		About
+	</h1>
+	<p class="post__date">Published on Jun 21, 2015</p>
 	  <p>I&#39;m Ben Joyce. I&#39;m a designer and developer from Connecticut. I like to run, play music, and mess around on <a href="http://codepen.io/benjoyce/">CodePen</a>.</p>
 
 <p>I spend a lot of time on the web. Here are some of my favorite sites to visit. I&#39;ll add more as I think of them:</p>
@@ -196,7 +229,8 @@
 <p></article></p>
 
 </article>
-</section>
+  </div>
+</div>
 <footer>
   <p class="colophon">
     Posts by Benjamin Joyce. <a href="/2015/06/21/hello-benjaminjoycedotcom.html">First published in 2015</a>.

@@ -2,15 +2,15 @@
 layout: post
 title:  "Featured work: Self-Service"
 date:   2017-07-31
-categories:
+categories: ['Featured Work']
 ---
 This is the first of many featured work articles I'll post. This one is about a self-service feature I lead the design on for Travelers.
 
-#### Goal
+## Goal
 
 Reduce friction in the post-sales process for personal insurance customers.
 
-#### The Story
+## The Story
 
 The details of the product itself cannot be discussed as it has not been shared publicly, but I want to share my role. This project began with an idea for a solution that centered around a recently published paper on artificial intelligence. While the concept was exciting, it lacked focus about who would benefit from the solution and why. I worked with the team the team to take a step back from the technical implementation of the solution and understand the problem we were trying to solve.
 

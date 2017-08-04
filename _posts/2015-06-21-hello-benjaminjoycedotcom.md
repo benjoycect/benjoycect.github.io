@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello, benjaminjoyce.com"
 date:   2015-06-21
-categories:
+categories: [Article]
 ---
 It's 2015. It's getting late and I have work tomorrow. Yet, I'm taking this time to launch a blog. Mine won't be much different than the millions of others already on the internet. However, it's a special moment for me. It's not the first time I have launched a personal website. I first launched something back in 2010. That site, it's content, and snapshot of that time is gone.
 

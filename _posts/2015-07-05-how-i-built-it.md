@@ -2,7 +2,7 @@
 layout: post
 title:  "How I Built It: Fourth of July"
 date:   2015-07-05
-categories:
+categories: [Article, Design, Front-End Development]
 ---
 This is the first of my planned "walk through" posts. Today I'm writing about the process I went through to create the pen I made for the Fourth of July.
 
