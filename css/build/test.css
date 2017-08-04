@@ -11,7 +11,12 @@ a {
   color: #00607c;
   text-decoration: none;
 }
-
+p > a {
+  text-decoration: underline;
+}
+p > a:hover {
+  text-decoration: none;
+}
 .link {
   color: #00607c;
 }
