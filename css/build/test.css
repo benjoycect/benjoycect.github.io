@@ -348,3 +348,13 @@ blockquote {
   padding: 1em 5%;
   font-style: italic;
 }
+
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1em 5%;
+}
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
