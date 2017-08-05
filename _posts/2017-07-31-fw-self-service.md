@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Featured work: Self-Service"
+title:  "Featured Work: Self-Service"
 date:   2017-07-31
 categories: ['Featured Work']
 ---

@@ -5,12 +5,12 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Aug 2017 19:53:24 -0400</pubDate>
-    <lastBuildDate>Sat, 05 Aug 2017 19:53:24 -0400</lastBuildDate>
+    <pubDate>Sat, 05 Aug 2017 19:55:59 -0400</pubDate>
+    <lastBuildDate>Sat, 05 Aug 2017 19:55:59 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
-        <title>Featured work: Communication Platform</title>
+        <title>Featured Work: Communication Platform</title>
         <description>&lt;p&gt;In August of 2015 it was announced that the CEO of Travelers was stepping down due to illness. The incoming CEO, Alan Schnitzer, was taking over for a beloved leader and wanted to show that he would continue a tradition of honest communication.&lt;/p&gt;
 
 &lt;h2&gt;Goal&lt;/h2&gt;
@@ -49,7 +49,7 @@
       </item>
     
       <item>
-        <title>Featured work: Self-Service</title>
+        <title>Featured Work: Self-Service</title>
         <description>&lt;p&gt;This is the first of many featured work articles I&amp;#39;ll post. This one is about a self-service feature I led the design on for Travelers.&lt;/p&gt;
 
 &lt;h2&gt;Goal&lt;/h2&gt;
