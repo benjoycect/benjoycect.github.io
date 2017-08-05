@@ -5,12 +5,12 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Aug 2017 19:22:35 -0400</pubDate>
-    <lastBuildDate>Sat, 05 Aug 2017 19:22:35 -0400</lastBuildDate>
+    <pubDate>Sat, 05 Aug 2017 19:53:24 -0400</pubDate>
+    <lastBuildDate>Sat, 05 Aug 2017 19:53:24 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
-        <title>Internal Communication Platform</title>
+        <title>Featured work: Communication Platform</title>
         <description>&lt;p&gt;In August of 2015 it was announced that the CEO of Travelers was stepping down due to illness. The incoming CEO, Alan Schnitzer, was taking over for a beloved leader and wanted to show that he would continue a tradition of honest communication.&lt;/p&gt;
 
 &lt;h2&gt;Goal&lt;/h2&gt;
@@ -40,8 +40,8 @@
 &lt;p&gt;My efforts on the product were rewarded by Alan. He presented myself and two members of the development team with the CEO award at the 2016 Annual Shareholders Meeting.&lt;/p&gt;
 </description>
         <pubDate>Sat, 05 Aug 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//featured%20work/2017/08/05/fw-internal-communication-platform.html</link>
-        <guid isPermaLink="true">http://localhost:4000//featured%20work/2017/08/05/fw-internal-communication-platform.html</guid>
+        <link>http://localhost:4000//featured%20work/2017/08/05/fw-communication-platform.html</link>
+        <guid isPermaLink="true">http://localhost:4000//featured%20work/2017/08/05/fw-communication-platform.html</guid>
         
         
         <category>Featured Work</category>

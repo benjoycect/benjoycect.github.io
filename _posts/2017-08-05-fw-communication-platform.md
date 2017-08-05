@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Internal Communication Platform"
+title:  "Featured work: Communication Platform"
 date:   2017-08-05
 categories: ['Featured Work']
 ---

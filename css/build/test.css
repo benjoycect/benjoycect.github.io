@@ -141,7 +141,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .home-page__heading:hover::before {
-  content: "🖐 ";
+  content: url(http://images.benjaminjoyce.com/wave.png);
+  margin-right: 16px;
+}
+.home-page__heading--photo:hover::before {
+  content: url(http://images.benjaminjoyce.com/camera.png);
+  margin-right: 16px;
 }
 
 .work__header {
