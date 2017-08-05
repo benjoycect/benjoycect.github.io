@@ -5,13 +5,13 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Aug 2017 12:02:37 -0400</pubDate>
-    <lastBuildDate>Fri, 04 Aug 2017 12:02:37 -0400</lastBuildDate>
+    <pubDate>Fri, 04 Aug 2017 20:30:06 -0400</pubDate>
+    <lastBuildDate>Fri, 04 Aug 2017 20:30:06 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
         <title>Featured work: Self-Service</title>
-        <description>&lt;p&gt;This is the first of many featured work articles I&amp;#39;ll post. This one is about a self-service feature I lead the design on for Travelers.&lt;/p&gt;
+        <description>&lt;p&gt;This is the first of many featured work articles I&amp;#39;ll post. This one is about a self-service feature I led the design on for Travelers.&lt;/p&gt;
 
 &lt;h2&gt;Goal&lt;/h2&gt;
 

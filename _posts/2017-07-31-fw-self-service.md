@@ -4,7 +4,7 @@ title:  "Featured work: Self-Service"
 date:   2017-07-31
 categories: ['Featured Work']
 ---
-This is the first of many featured work articles I'll post. This one is about a self-service feature I lead the design on for Travelers.
+This is the first of many featured work articles I'll post. This one is about a self-service feature I led the design on for Travelers.
 
 ## Goal
 
