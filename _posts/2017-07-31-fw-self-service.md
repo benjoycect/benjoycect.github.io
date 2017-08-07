@@ -12,7 +12,7 @@ Reduce friction in the post-sales process for personal insurance customers.
 
 ## The Story
 
-The details of the product itself cannot be discussed as it has not been shared publicly, but I want to share my role. This project began with an idea for a solution that centered around a recently published paper on artificial intelligence. While the concept was exciting, it lacked focus about who would benefit from the solution and why. I worked with the team the team to take a step back from the technical implementation of the solution and understand the problem we were trying to solve.
+This project began with an idea for a solution that centered around a recently published paper on artificial intelligence. While the concept was exciting, it lacked focus about who would benefit from the solution and why. I worked with the team the team to take a step back from the technical implementation of the solution and understand the problem we were trying to solve.
 
 I decided to try a week-long design sprint. The sprint followed the plan and concepts outlined in [The Sprint Book](http://www.thesprintbook.com/). The outcomes from the sprint week were:
 

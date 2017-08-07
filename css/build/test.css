@@ -363,3 +363,9 @@ footer a {
   color: #fff;
   text-decoration: underline;
 }
+
+.card__image {
+  margin-bottom: 2em;
+  max-height: 400px;
+  overflow: hidden;
+}

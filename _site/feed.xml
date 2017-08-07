@@ -5,9 +5,24 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Aug 2017 19:55:59 -0400</pubDate>
-    <lastBuildDate>Sat, 05 Aug 2017 19:55:59 -0400</lastBuildDate>
+    <pubDate>Sun, 06 Aug 2017 22:12:29 -0400</pubDate>
+    <lastBuildDate>Sun, 06 Aug 2017 22:12:29 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Illustration: Eggman</title>
+        <description>&lt;p&gt;I&amp;#39;m excited to have Eggman be my first little illustration that I&amp;#39;m sharing. Eggman was a character I made up in grade school and have been playing with ever since. If only I could find the hundreds of MS Paint files with my Egg people comics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/Eggman.png&quot; alt=&quot;A digital illustration of Eggman; an egg with super powers&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 06 Aug 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//illustration/2017/08/06/eggman.html</link>
+        <guid isPermaLink="true">http://localhost:4000//illustration/2017/08/06/eggman.html</guid>
+        
+        
+        <category>Illustration</category>
+        
+      </item>
     
       <item>
         <title>Featured Work: Communication Platform</title>
@@ -21,13 +36,13 @@
 
 &lt;p&gt;I was selected to lead the design of the product. We kicked off with a discovery phase that included interviews with Alan, executive leadership, and employees. Since time with the CEO was limited I had to make every interview count. We got straight to the point talking about goals for the product and what he hoped to achieve as CEO. As an added benefit the interviews doubled as reverse mentoring time. I was able to help Alan understand technology capabilities and how user-centered design can improve results.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/personas.jpg&quot; alt=&quot;alt text&quot; title=&quot;Illustration of the personas created after discovery&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/personas.jpg&quot; alt=&quot;Illustration of the personas created after discovery&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;The result of discovery was an understanding of what Alan was hoping to achieve and employee expectations for communication. I used this information to scope the product and determine goals. Additionally, the discovery phase helped show risk-adverse stakeholders the risk of not allowing employees to have an open communication channel back to Alan.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/axure.png&quot; alt=&quot;alt text&quot; title=&quot;Wireframes of the project&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/axure.png&quot; alt=&quot;Wireframes of the project&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/usertest.jpg&quot; alt=&quot;alt text&quot; title=&quot;A user testing the prototype&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/usertest.jpg&quot; alt=&quot;A user testing the prototype&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Next I explored solutions to solve the problem. This exploration took the form of creating example content for wireframes and mockups. I got the solutions in front of users and iterated for a week while my development team got the environment set up.&lt;/p&gt;
 
@@ -58,7 +73,7 @@
 
 &lt;h2&gt;The Story&lt;/h2&gt;
 
-&lt;p&gt;The details of the product itself cannot be discussed as it has not been shared publicly, but I want to share my role. This project began with an idea for a solution that centered around a recently published paper on artificial intelligence. While the concept was exciting, it lacked focus about who would benefit from the solution and why. I worked with the team the team to take a step back from the technical implementation of the solution and understand the problem we were trying to solve.&lt;/p&gt;
+&lt;p&gt;This project began with an idea for a solution that centered around a recently published paper on artificial intelligence. While the concept was exciting, it lacked focus about who would benefit from the solution and why. I worked with the team the team to take a step back from the technical implementation of the solution and understand the problem we were trying to solve.&lt;/p&gt;
 
 &lt;p&gt;I decided to try a week-long design sprint. The sprint followed the plan and concepts outlined in &lt;a href=&quot;http://www.thesprintbook.com/&quot;&gt;The Sprint Book&lt;/a&gt;. The outcomes from the sprint week were:&lt;/p&gt;
 
@@ -492,21 +507,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         
         <category>Quote</category>
-        
-      </item>
-    
-      <item>
-        <title>Tools I Use: Pocket</title>
-        <description>&lt;p&gt;I&amp;#39;ve tried all sorts of tools to help me save and organize links. Recently, I started using &lt;a href=&quot;https://getpocket.com&quot;&gt;Pocket&lt;/a&gt;. The app has been around since 2007 (previously known as Read it Later). I&amp;#39;m happy to be a late adopter as it is now integrated into all the applications I could possibly imagine.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;#39;ve ever wanted to save a link from &lt;a href=&quot;http://help.getpocket.com/customer/portal/articles/482762-how-to-save-from-twitter-for-iphone&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;https://getpocket.com/chrome/&quot;&gt;Chrome&lt;/a&gt;, or any of the other &lt;a href=&quot;https://getpocket.com/apps/&quot;&gt;500 supported apps&lt;/a&gt;, give Pocket a try.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 15 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//article/2015/07/15/tools-i-use.html</link>
-        <guid isPermaLink="true">http://localhost:4000//article/2015/07/15/tools-i-use.html</guid>
-        
-        
-        <category>Article</category>
         
       </item>
     

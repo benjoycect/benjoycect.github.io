@@ -14,13 +14,13 @@ Reinvent how employees interact with the CEO.
 
 I was selected to lead the design of the product. We kicked off with a discovery phase that included interviews with Alan, executive leadership, and employees. Since time with the CEO was limited I had to make every interview count. We got straight to the point talking about goals for the product and what he hoped to achieve as CEO. As an added benefit the interviews doubled as reverse mentoring time. I was able to help Alan understand technology capabilities and how user-centered design can improve results.
 
-![alt text](http://images.benjaminjoyce.com/personas.jpg "Illustration of the personas created after discovery")
+![Illustration of the personas created after discovery](http://images.benjaminjoyce.com/personas.jpg)
 
 The result of discovery was an understanding of what Alan was hoping to achieve and employee expectations for communication. I used this information to scope the product and determine goals. Additionally, the discovery phase helped show risk-adverse stakeholders the risk of not allowing employees to have an open communication channel back to Alan.
 
-![alt text](http://images.benjaminjoyce.com/axure.png "Wireframes of the project")
+![Wireframes of the project](http://images.benjaminjoyce.com/axure.png)
 
-![alt text](http://images.benjaminjoyce.com/usertest.jpg "A user testing the prototype")
+![A user testing the prototype](http://images.benjaminjoyce.com/usertest.jpg)
 
 Next I explored solutions to solve the problem. This exploration took the form of creating example content for wireframes and mockups. I got the solutions in front of users and iterated for a week while my development team got the environment set up.
 
