@@ -5,9 +5,24 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Aug 2017 22:12:29 -0400</pubDate>
-    <lastBuildDate>Sun, 06 Aug 2017 22:12:29 -0400</lastBuildDate>
+    <pubDate>Mon, 07 Aug 2017 19:59:50 -0400</pubDate>
+    <lastBuildDate>Mon, 07 Aug 2017 19:59:50 -0400</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Featured Work: Huckle Buckle</title>
+        <description>&lt;p&gt;I got some feedback today that made me want to share some of my visual design chops. I came up with a mobile game idea today. The game is called Huckle Buckle. It takes the concept of the &amp;quot;you&amp;#39;re getting warmer&amp;quot; game and brings it to a grand scale. I still have to work out all the details, but basically there is a reward that is in an unknown location to the user. The user walks or runs around using the feedback from the game to get to the location of the reward. As they move the map is updated to show their route. Take a look and let me know what you think &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@BenJoyceCT&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/hucklebuckle.png&quot; alt=&quot;A screenshot of the Huckle Buckle game that includes hot and cold indicators and a map&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Aug 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//featured%20work/2017/08/07/huckle-buckle.html</link>
+        <guid isPermaLink="true">http://localhost:4000//featured%20work/2017/08/07/huckle-buckle.html</guid>
+        
+        
+        <category>Featured Work</category>
+        
+      </item>
     
       <item>
         <title>Illustration: Eggman</title>
@@ -494,19 +509,6 @@ document.addEventListener('DOMContentLoaded', function() {
         <category>Article</category>
         
         <category>Front-End Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Design Decisions Quote</title>
-        <description>&lt;p&gt;I think we&amp;#39;re at our best when we&amp;#39;re at our weirdest.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 24 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//quote/2015/07/24/weirdest-quote.html</link>
-        <guid isPermaLink="true">http://localhost:4000//quote/2015/07/24/weirdest-quote.html</guid>
-        
-        
-        <category>Quote</category>
         
       </item>
     
