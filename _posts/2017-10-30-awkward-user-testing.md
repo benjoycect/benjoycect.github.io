@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Awkward User Testing"
-date:   2018-10-30
+date:   2017-10-30
 categories: [Article, Design]
 ---
 "Anything you get back is helpful" wrote Lyz Nagan in a great [post](https://www.clockwork.com/news/2017/09/11/770/the_one_thing_you_always_get_from_user_testing) about the benefits of user testing. I found myself nodding along to all the points made in the article and felt inspired to share an experience of when a user test was extremely awkward but uncommonly helpful.
 
-I was a designer and business analyst on a strategic project at Travelers that was intended to make significant improvements to the customer experience and processes across Operations. The team worked hard to make sure that we were going to improve things and research was a major component of our work. Upon designing a new process that would support the changes I met with an employee in our back office to validate some of the decisions. This employee had been working at Travelers for over 30 years in a similar function. I presented a prototype that demonstrated the new information flow. I thought that she would poke holes in the flow and some of the slight changes to her role. But before I could even ask a question she dropped a bomb of feedback.
+I was a designer and business analyst on a strategic project at Travelers that was intended to make significant improvements to the customer experience and processes across Operations. The team worked hard to make sure that we were going to improve things and research was a major component of our work. Upon designing a new process that would support the changes, I met with an employee in our back office to validate some of the decisions. This employee had been working at Travelers for over 30 years in a similar function. I presented a prototype that demonstrated the new information flow. I thought that she would poke holes in the flow and some of the slight changes to her role. But before I could even ask a question she dropped a bomb of feedback.
 
 ## The Feedback Bomb
 "So, you are automating me out of a job?"
