@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Featured Work: Madison Tutoring"
-date:   2017-08-06
+date:   2017-10-30
 categories: [Featured Work]
 image: http://images.benjaminjoyce.com/tutor-color.png
 ---
