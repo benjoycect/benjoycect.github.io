@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Illustration: Stormtrooper"
-date:   2017-08-06
+date:   2017-11-07
 categories: [Illustration]
 image: http://images.benjaminjoyce.com/stormtrooper.png
 ---
