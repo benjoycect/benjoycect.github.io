@@ -5,32 +5,68 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Aug 2017 13:07:04 -0400</pubDate>
-    <lastBuildDate>Thu, 10 Aug 2017 13:07:04 -0400</lastBuildDate>
+    <pubDate>Mon, 08 Jan 2018 23:52:29 -0500</pubDate>
+    <lastBuildDate>Mon, 08 Jan 2018 23:52:29 -0500</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
-        <title>Design Scope</title>
-        <description>&lt;p&gt;Scope is an interesting concept when talking about agile product development. The point of agile is to learn, make, and repeat. I&amp;#39;ve experienced pushback on this approach from designers because it &amp;quot;does not allow you to create a well designed experience.&amp;quot; I have learned that the difficulties with designing agile products have less to do with the agile and more to do with how organizations and teams implement agile practices.&lt;/p&gt;
+        <title>Illustration: Stormtrooper</title>
+        <description>&lt;p&gt;A couple years ago I illustrated a First Order stormtrooper. It was to practice animating SVG strokes. Check out the animated version on &lt;a href=&quot;https://codepen.io/benjoyce/pen/zGaNvo&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Stop Building Solutions That Don&amp;#39;t Solve a Problem&lt;/h2&gt;
-
-&lt;p&gt;My experience has shown that a project goal such as &amp;quot;build an app that let&amp;#39;s customers book their flights&amp;quot; significantly increases the risk of a product. Starting with that premise and a list of features that an executive came up with eliminates any possibility for learning. So many teams are told exactly what to build then break it up that task into weekly or two week iterations. The iterations become a formality because even if there is a release of the product the results of the release aren&amp;#39;t considered.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;#39;t like to call this approach waterfall. I call it falling out of a tree. Every iteration (or smack into a branch) is a painful and stressful activity for the team. By the end you may have completed what the executive asked for, but there could be broken bones and there definitely will be bruises.&lt;/p&gt;
-
-&lt;p&gt;Some designers say they prefer this method because it allows for them to better design an end-to-end experience. I have no doubt that there are good designers who get users involved when they are assigned to projects run in this way. They do all the things they should: interview stakeholders and customers, test concepts early, and even design using the company&amp;#39;s design system. The designer is able to take all of the requirements and put them into a product that allows users in usability sessions to complete tasks. These are good exercises for getting feedback from users. However, I don&amp;#39;t even consider this approach to be design because &lt;/p&gt;
-
-&lt;h2&gt;On Security, Beauty, Usability&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/stormtrooper.png&quot; alt=&quot;A digital illustration of a stormtrooper&quot;&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 10 Aug 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//article/business/design/2017/08/10/design-scope.html</link>
-        <guid isPermaLink="true">http://localhost:4000//article/business/design/2017/08/10/design-scope.html</guid>
+        <pubDate>Tue, 07 Nov 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//illustration/2017/11/07/stormtrooper.html</link>
+        <guid isPermaLink="true">http://localhost:4000//illustration/2017/11/07/stormtrooper.html</guid>
+        
+        
+        <category>Illustration</category>
+        
+      </item>
+    
+      <item>
+        <title>Featured Work: Madison Tutoring</title>
+        <description>&lt;p&gt;Many years ago I created a logo for my friend&amp;#39;s business &lt;a href=&quot;http://www.madisontutoring.com/&quot;&gt;Madison Tutoring&lt;/a&gt;. He&amp;#39;s gotten some years out of it so I thought it might be nice to share here.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://images.benjaminjoyce.com/tutor-color.png&quot; alt=&quot;Madison Tutoring logo&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 30 Oct 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//featured%20work/illustration/2017/10/30/madison-tutoring.html</link>
+        <guid isPermaLink="true">http://localhost:4000//featured%20work/illustration/2017/10/30/madison-tutoring.html</guid>
+        
+        
+        <category>Featured Work</category>
+        
+        <category>Illustration</category>
+        
+      </item>
+    
+      <item>
+        <title>Awkward User Testing</title>
+        <description>&lt;p&gt;&amp;quot;Anything you get back is helpful&amp;quot; wrote Lyz Nagan in a great &lt;a href=&quot;https://www.clockwork.com/news/2017/09/11/770/the_one_thing_you_always_get_from_user_testing&quot;&gt;post&lt;/a&gt; about the benefits of user testing. I found myself nodding along to all the points made in the article and felt inspired to share an experience of when a user test was extremely awkward but uncommonly helpful.&lt;/p&gt;
+
+&lt;p&gt;I was a designer and business analyst on a strategic project at Travelers that was intended to make significant improvements to the customer experience and processes across Operations. The team worked hard to make sure that we were going to improve things and research was a major component of our work. Upon designing a new process that would support the changes, I met with an employee in our back office to validate some of the decisions. This employee had been working at Travelers for over 30 years in a similar function. I presented a prototype that demonstrated the new information flow. I thought that she would poke holes in the flow and some of the slight changes to her role. But before I could even ask a question she dropped a bomb of feedback.&lt;/p&gt;
+
+&lt;h2&gt;The Feedback Bomb&lt;/h2&gt;
+
+&lt;p&gt;&amp;quot;So, you are automating me out of a job?&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;ll never forget the feeling in my stomach when she asked me that. I knew there were going to be changes to her job but I also understood that she was going to take over different but comparable responsibilities. I didn&amp;#39;t know how to respond. The product owner who was with me for the test and I made eyes at each other. This was feedback that I was not prepared for. The product owner and I talked through the changes but I could tell that she was not satisfied with the answer. She explained that she was close to retirement and not excited about or expecting to have to learn a whole new job right before that milestone.&lt;/p&gt;
+
+&lt;p&gt;We moved on to addressing the flows and she quickly validated the design decisions. Normally positive feedback on these decisions would mean that we could move forward. However, my title is experience designer and I knew that the experience for this key employee would be negative and that would hurt her and our business goals.&lt;/p&gt;
+
+&lt;h2&gt;How I Learned to Stop Worrying and Love the Bomb&lt;/h2&gt;
+
+&lt;p&gt;This was some of the most important feedback we received for the whole project. It caused us to take a hard look at all the people affected by the process on an individual level. We worked with HR and the training team to create programs that would ease the employees into the changes instead of throwing a new process at them and forcing them to do it.&lt;/p&gt;
+
+&lt;p&gt;Getting this very unexpected feedback changed me as a designer. I believe that I was drawn to this profession because of the empathy that it requires and the personal connections that must be made to gain that empathy. Up until that point in my career I had received &amp;quot;negative&amp;quot; feedback on my designs but never something so personal. What I learned is that because I design experiences that can have radical effects on people&amp;#39;s lives I should be ready for radical feedback. This feedback can be the most uncomfortable but also the most valuable in helping you grow as a designer and a person.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 30 Oct 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000//article/design/2017/10/30/awkward-user-testing.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/design/2017/10/30/awkward-user-testing.html</guid>
         
         
         <category>Article</category>
-        
-        <category>Business</category>
         
         <category>Design</category>
         
@@ -254,179 +290,6 @@
         <category>Design</category>
         
         <category>Business</category>
-        
-      </item>
-    
-      <item>
-        <title>Pace Calculator</title>
-        <description>&lt;p&gt;I created a small pace calculator for my own use. There are many TODOs, but let me know if something can be done better. I&amp;#39;ll be open sourcing the project later this week. You can take a look at the first iteration of the solution here. Your &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;feedback&lt;/a&gt; is always welcome.&lt;/p&gt;
-
-&lt;p&gt;The constraints I put on myself were to use vanilla JavaScript, less than 3KB, and as few &amp;quot;wrapper divs&amp;quot; as I could get away with. I will be writing another post when the calculator is on GitHub.&lt;/p&gt;
-
-&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/build/calculator.css&quot;&gt;
-&lt;script src=&quot;/js/paceCalculator.js&quot;&gt;&lt;/script&gt;
-&lt;div class=&quot;pace-calculator&quot;&gt;
-  &lt;div class=&quot;input-container&quot;&gt;
-    &lt;form class=&quot;pace-calculator__form&quot;&gt;
-      &lt;section class=&quot;time pace-calculator__section&quot;&gt;
-        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;hour&quot;&gt;HOURS&lt;/label&gt;
-        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;hour&quot; placeholder=&quot;00&quot; required /&gt;
-        &lt;span class=&quot;colon&quot;&gt;:&lt;/span&gt;
-        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;minute&quot;&gt;MINUTES&lt;/label&gt;
-        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;minute&quot; placeholder=&quot;00&quot; required /&gt;
-        &lt;span class=&quot;colon&quot;&gt;:&lt;/span&gt;
-        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;second&quot;&gt;SECONDS&lt;/label&gt;
-        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;second&quot; placeholder=&quot;00&quot; required /&gt;
-      &lt;/section&gt;
-      &lt;section class=&quot;distance pace-calculator__section&quot;&gt;
-        &lt;label class=&quot;pace-calculator__label&quot; for=&quot;distance&quot;&gt;Distance&lt;/label&gt;
-        &lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;distance&quot; placeholder=&quot;00.00&quot; required /&gt;
-        &lt;p&gt;Mile(s)&lt;/p&gt;
-      &lt;/section&gt;
-    &lt;/form&gt;
-    &lt;div class=&quot;output&quot;&gt;
-      &lt;p class=&quot;output__label&quot;&gt;Pace&lt;/p&gt;
-      &lt;div class=&quot;output__value&quot;&gt;
-        &lt;p class=&quot;output__pace output__pace--no-value&quot; id=&quot;pace&quot;&gt;00:00:00&lt;/p&gt;
-        &lt;p&gt;Per Mile&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;button id=&quot;process&quot;&gt;Calculate Pace&lt;/button&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;h3&gt;HTML&lt;/h3&gt;
-
-&lt;pre&gt;
-&lt;code&gt;
-&amp;lt;div class=&quot;pace-calculator&quot;&gt;
-  &amp;lt;div class=&quot;input-container&quot;&gt;
-    &amp;lt;form class=&quot;pace-calculator__form&quot;&gt;
-      &amp;lt;section class=&quot;time pace-calculator__section&quot;&gt;
-        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;hour&quot;&gt;HH&amp;lt;/label&gt;
-        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;hour&quot; placeholder=&quot;00&quot; required /&gt;
-        &amp;lt;span class=&quot;colon&quot;&gt;:&amp;lt;/span&gt;
-        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;minute&quot;&gt;MM&amp;lt;/label&gt;
-        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;minute&quot; placeholder=&quot;00&quot; required /&gt;
-        &amp;lt;span class=&quot;colon&quot;&gt;:&amp;lt;/span&gt;
-        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;second&quot;&gt;SS&amp;lt;/label&gt;
-        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;second&quot; placeholder=&quot;00&quot; required /&gt;
-      &amp;lt;/section&gt;
-      &amp;lt;section class=&quot;distance pace-calculator__section&quot;&gt;
-        &amp;lt;label class=&quot;pace-calculator__label&quot; for=&quot;distance&quot;&gt;Distance&amp;lt;/label&gt;
-        &amp;lt;input class=&quot;pace-calculator__input&quot; type=&quot;number&quot; id=&quot;distance&quot; placeholder=&quot;00.00&quot; required /&gt;
-        &amp;lt;p&gt;Mile(s)&amp;lt;/p&gt;
-      &amp;lt;/section&gt;
-    &amp;lt;/form&gt;
-    &amp;lt;div class=&quot;output&quot;&gt;
-      &amp;lt;p class=&quot;output__label&quot;&gt;Pace&amp;lt;/p&gt;
-      &amp;lt;div class=&quot;output__value&quot;&gt;
-        &amp;lt;p class=&quot;output__pace output__pace--no-value&quot; id=&quot;pace&quot;&gt;00:00:00&amp;lt;/p&gt;
-        &amp;lt;p&gt;Per Mile&amp;lt;/p&gt;
-      &amp;lt;/div&gt;
-    &amp;lt;/div&gt;
-  &amp;lt;/div&gt;
-  &amp;lt;button id=&quot;process&quot;&gt;Calculate Pace&amp;lt;/button&gt;
-&amp;lt;/div&gt;
-&lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;h3&gt;JavaScript&lt;/h3&gt;
-
-&lt;pre&gt;
-&lt;code&gt;
-document.addEventListener('DOMContentLoaded', function() {
-  var pace = document.getElementById('pace'); // Get the pace input
-  var processResult = document.getElementById('process'); // The main button
-  var hours = document.getElementById('hour'); // Get the hour input
-  var minutes = document.getElementById('minute'); // Get the minute input
-  var seconds = document.getElementById('second'); // Get the second input
-  var distance = document.getElementById('distance'); // Get the distance input
-
-  // Watch for the process button to be clicked then run the function
-  if(processResult) {
-    processResult.addEventListener(&quot;click&quot;, calculatePace, false);
-  }
-
-  // The function that calculates pace
-  function calculatePace(){
-    var paceOutput = 0; // The variable that holds the pace output
-
-    var hoursInSecs = Number(hours.value * 3600); // Takes the value of the hours input, multiplies it by 3600 to hours in seconds, changes the string to a number.
-
-    var minsInSecs = Number(minutes.value * 60); // Takes the minutes input and converts it to a number.
-
-    var secsInSecs = Number(seconds.value); // Takes the seconds input, changes the string to a number.
-    var finalDistance = Number(distance.value); // Holds the distance input
-
-
-
-    paceOutput = (hoursInSecs + minsInSecs + secsInSecs) / finalDistance; // Calculation for pace and update the paceOutput variable with that value.
-
-    // The function that takes the output of the pace and turns it into a time format for display.
-    function getPace(){
-      var paceHours = paceOutput / 3600;
-
-      var paceMins = paceOutput / 60; // Separate the total minutes from the total seconds.
-
-      var paceSecs = (paceMins % 1); // Get the remainder of the pace value and multiply it by 60 to convert to seconds
-
-      if(isNaN(paceHours) || isNaN(paceMins) || isNaN(paceSecs)) {
-        pace.textContent = &quot;Please enter a number 0-99&quot;;
-      } else {
-        var finalHours = Math.floor(paceHours);
-        var finalMins = Math.floor(paceMins);
-        var finalSecs = (paceSecs.toFixed(2) * 100);
-
-        if(finalHours &gt; 0) {
-        pace.textContent = String('00'+finalHours).slice(-2) + &quot;:&quot; + String('00'+finalMins).slice(-2) + &quot;:&quot; + String('00'+finalSecs).slice(-2); // Update the pace output placeholder with the minutes and the seconds, only show the value to the closest second.
-        } else {
-          pace.textContent = String('00'+finalMins).slice(-2) + &quot;:&quot; + String('00'+finalSecs).slice(-2);
-        }
-
-        changeClass();
-      }
-    }
-
-    function changeClass(){
-      pace.classList.remove('output__pace--no-value');
-    }
-    getPace();
-  }
-});
-&lt;/code&gt;
-&lt;/pre&gt;
-</description>
-        <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//article/front-end%20development/2015/08/16/pace-calculator.html</link>
-        <guid isPermaLink="true">http://localhost:4000//article/front-end%20development/2015/08/16/pace-calculator.html</guid>
-        
-        
-        <category>Article</category>
-        
-        <category>Front-End Development</category>
-        
-      </item>
-    
-      <item>
-        <title>First Image</title>
-        <description>&lt;p&gt;I just set up an account on AWS and will be using &lt;a href=&quot;https://aws.amazon.com/cloudfront/&quot;&gt;CloudFront&lt;/a&gt; CDN for images. I&amp;#39;ll write about getting CloudFront set up and some of the things I am trying out with &lt;code&gt;srcset&lt;/code&gt; very soon.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center&quot;&gt;
-&lt;img src=&quot;http://images.benjaminjoyce.com/EarthRise.jpg&quot;
-     srcset=&quot;http://images.benjaminjoyce.com/EarthRise.jpg 1024w, http://images.benjaminjoyce.com/EarthRise.jpg 640w, http://d3p41d0ahmxvrr.cloudfront.net/Mom-400.jpg 320w&quot;
-     sizes=&quot;(min-width: 36em) 33.3vw, 100vw&quot;
-     alt=&quot;Earth Rise as Seen From Lunar Surface from NASA on The Commons&quot;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Image: &lt;a href=&quot;https://flic.kr/p/8GrsJ6&quot;&gt;Earth Rise as Seen From Lunar Surface&lt;/a&gt; from &lt;a href=&quot;https://www.flickr.com/photos/nasacommons/&quot;&gt;NASA on The Commons&lt;/a&gt;; &lt;em&gt;Altered for speed performance&lt;/em&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 16 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//article/2015/08/16/first-image.html</link>
-        <guid isPermaLink="true">http://localhost:4000//article/2015/08/16/first-image.html</guid>
-        
-        
-        <category>Article</category>
         
       </item>
     
