@@ -5,9 +5,50 @@
     <description>Posts about the web, business, and other stuff I do in my free time.</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Jan 2018 00:05:24 -0500</pubDate>
-    <lastBuildDate>Tue, 09 Jan 2018 00:05:24 -0500</lastBuildDate>
+    <pubDate>Tue, 09 Jan 2018 17:20:59 -0500</pubDate>
+    <lastBuildDate>Tue, 09 Jan 2018 17:20:59 -0500</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>AI and Design</title>
+        <description>&lt;p&gt;In my design role I have a significant amount of exposure to artificial intelligence (AI). This is a new frontier that presents new opportunities for designers but most articles I’ve read don’t talk about real-world experience designing with AI. Here is my attempt to share some of what I&amp;#39;ve learned about designing with AI.&lt;/p&gt;
+
+&lt;h2&gt;It&amp;#39;s not pretty&lt;/h2&gt;
+
+&lt;p&gt;My graduate degree is an MBA with a focus in business analytics. Most of my graduate research was spent preparing and massaging data that could be used to build models. Days and days of preparation. The only difference with creating AIs is that it is typically weeks and weeks of understanding a problem, understanding data, preparing data, and then modeling.&lt;/p&gt;
+
+&lt;p&gt;This work, especially in the early stages, can&amp;#39;t be outsourced or sent to &lt;a href=&quot;https://www.mturk.com/mturk/welcome&quot;&gt;Amazon Mechanical Turk&lt;/a&gt; or something similar. In data mining,  &lt;a href=&quot;https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining&quot;&gt;CRISP-DM&lt;/a&gt; is typically followed to work toward desirable and useful results. Good AI projects follow this methodology as well. Traditionally this work is done by data scientists. However, as teams integrate, designers will be deeply involved too.&lt;/p&gt;
+
+&lt;p&gt;As I learned about CRISP-DM and especially the business understanding and data understanding steps I was amazed at how similar it was to design research. Data scientists did all of the same things as me in the early stages: &lt;a href=&quot;https://medium.com/research-things/interviewing-humans-fa198f809c40&quot;&gt;talk to stakeholders&lt;/a&gt; (including product sponsors and individuals involved in the process), research what has been done already, research what others outside of the group have approached similar problems, and brainstorm and sketch based on what was learned. All that work allows both data scientists and designers to really dig into what data is available and consider how the data can be used to help solve the problem at hand.&lt;/p&gt;
+
+&lt;p&gt;Your job as a designer on these types of projects will be to help the team progress while staying focused on the user. I&amp;#39;ve been in the position where the team is working on understanding the data and realizing that it may be impossible to solve the problem in the way originally proposed. Depending on your team that might mean a pivot away from the original idea to something else. The product risk comes from when the team finds something the can do with the data that doesn&amp;#39;t quite solve a problem but could be interesting. You will need to ensure that everyone involved understands what the repercussions are of the pivot. Being such a new field there could be research and development benefit to the company without really benefiting any user. This has been the hardest part of my job. I have not found any golden rule for when to fight against something or pursue. It&amp;#39;s more of a &amp;quot;you&amp;#39;ll know it when you see it&amp;quot; type of thing.&lt;/p&gt;
+
+&lt;p&gt;This work takes effort. If your team believes that AI can be used to solve a problem be prepared to have this initial work to take more effort than you&amp;#39;re used to with more mature tools. There are so many unknowns with AI that you&amp;#39;ll be iterating between business understanding data understanding, and trying to design the solution constantly. Many times you won&amp;#39;t get the results you were hoping for. Sometimes you&amp;#39;ll see magic.&lt;/p&gt;
+
+&lt;h2&gt;Sometimes it&amp;#39;s magic&lt;/h2&gt;
+
+&lt;p&gt;Seeing a computer do something you&amp;#39;ve never seen a computer do can be really exciting. Knowing that we don&amp;#39;t fully understand how the computer is making the decisions is confusing and thought provoking. For example, one project I worked on created a detailed classification of an object in a photo (I can talk broadly about what we did, but can’t say exactly what we were classifying). That object typically is seen outdoors. Our training data set included the object in many different outdoor settings. I learned that a customer might take a photo of this object with another person in frame, which wasn’t something we had in our training data. I decided to test the model by adding a person into a validation photo. The model worked well, ignored the person, and correctly classified the object. I tried many different types of people in different validation photos and everything worked fine.&lt;/p&gt;
+
+&lt;p&gt;Then I tested some dogs. Then I tested some cats. Apparently our model was a dog lover because the classifications were all over the place when a dog was in the photo, but cats didn’t affect the classification confidence or accuracy.&lt;/p&gt;
+
+&lt;p&gt;This was a finding that was a little funny, a little spooky, and showed the value a designer can bring to AI projects. I wouldn’t have thought about testing the model with pets or people if I didn’t take the time to do discovery work. We then created data that included different pets and retrain the model.&lt;/p&gt;
+
+&lt;h2&gt;Final thought&lt;/h2&gt;
+
+&lt;p&gt;“Should designers know how to code” was the big question for the last 10 years. I believe the question should now be, “should designers know statistics?” My thoughts on that question are the same as the code question. Good designers know the people, the problem, the business, and the technology which is delivering a solution to a problem. That technology may now include data science and math. I don’t think that an effective designer needs to get their PhD in statistics or data science, but knowing how to work with data will make you much more effective.&lt;/p&gt;
+
+&lt;p&gt;Let me know if you’d like to talk more about AI, design, or anything else &lt;a href=&quot;https://twitter.com/BenJoyceCT&quot;&gt;@benjoycect&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Jan 2018 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//article/design/2018/01/09/ai-and-design.html</link>
+        <guid isPermaLink="true">http://localhost:4000//article/design/2018/01/09/ai-and-design.html</guid>
+        
+        
+        <category>Article</category>
+        
+        <category>Design</category>
+        
+      </item>
     
       <item>
         <title>Illustration: Stormtrooper</title>
@@ -255,45 +296,6 @@
         
         
         <category>Quote</category>
-        
-      </item>
-    
-      <item>
-        <title>Starting Slow</title>
-        <description>&lt;p&gt;After two years of being absent on this blog I&amp;#39;m back to &lt;a href=&quot;http://austinkleon.com/show-your-work/&quot;&gt;show my work&lt;/a&gt;. Like many others I&amp;#39;ve decided to start a side project. It&amp;#39;s called &lt;a href=&quot;http://www.finlo.io&quot;&gt;Finlo&lt;/a&gt;. The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of July 2, 2017 it hasn&amp;#39;t launched. This post is about why and how it&amp;#39;s frustrating.&lt;/p&gt;
-
-&lt;p&gt;I bought the domain for Finlo on April 13, 2017. I thought my first iteration of Finlo would be out by the end of the weekend (a landing page). I&amp;#39;ve worked with &lt;a href=&quot;https://pivotal.io/labs&quot;&gt;Pivotal Labs&lt;/a&gt; in my day job, read &lt;a href=&quot;http://theleanstartup.com/&quot;&gt;Lean Startup&lt;/a&gt; (among many other books and articles about lean product development), and have been a vocal proponent of agile product development with everyone I&amp;#39;ve worked with. I also have practiced user experience design and development for 8 years and recently got my MBA. I thought I had all the tools to get something up quickly that I could use to determine whether there is a market for my product and begin discovery exercises to better understand my potential customers. However, I quickly became overwhelmed.&lt;/p&gt;
-
-&lt;h2&gt;Idea Overload&lt;/h2&gt;
-
-&lt;p&gt;A quick Google search for &amp;quot;idea overload&amp;quot; showed me that I am not the first one to think of the term. The term came to mind when I started thinking about what was different about this side project versus my day job. In my day job, one of the primary components of my work is to help my teams have a specific focus on problems. We work to understand the problem from the user/customer perspective, understand how the problem fits into the larger experience, and frame solutions that can solve the problem. The whole process is really about pulling great ideas out from the clutter. It&amp;#39;s a challenge to successfully accomplish this task with multiple people but I am finding that it is even harder when I am only working with myself.&lt;/p&gt;
-
-&lt;p&gt;As I reflect on why I am struggling with it I realize that it is because I have no constraints. Right now there are no expectations from anyone else and I&amp;#39;m already making a living. What that leaves me with is too much time to think when what I should be doing is learning. I&amp;#39;ve been so worried about what my first release will look like since Finlo is founded on the principle that people want to seek out well-done and handmade experiences. I want people&amp;#39;s first impression of Finlo (and my first entrepreneurial endeavor) to be incredible. I want people to know that I don&amp;#39;t just care about making money, but am going to work tirelessly to connect people with other people who are making something great. So even though I know I&amp;#39;m just going to be making an informational landing page, I&amp;#39;ve been delaying a release because I don&amp;#39;t think that some descriptive copy is good enough or I learn about a new way that some other company launched and I consider scrapping my approach.&lt;/p&gt;
-
-&lt;p&gt;I need to be listening to everything I&amp;#39;ve learned in my professional career and focus on learning. So, how am I going to battle idea overload. First, I&amp;#39;m going to stick to the version of &amp;quot;Welcome to Finlo&amp;quot; that I have today, June 18th. It might not be perfect but I will be able to learn from it. Next, I&amp;#39;m going to set a deadline for myself. A tweet from &lt;a href=&quot;https://twitter.com/Lin_Manuel?ref_src=twsrc%5Etfw&amp;ref_url=https%3A%2F%2Ftwitter.com%2Flin_manuel%2Fstatus%2F832175919649456128&quot;&gt;@Lin_Manuel&lt;/a&gt; inspired me to do so.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Deadlines.&lt;br&gt;You know how if you set an alarm for a certain time your brain will wake up just before?&lt;br&gt;Deadlines teach your brain the same way. &lt;a href=&quot;https://t.co/IRImJTmEQ5&quot;&gt;https://t.co/IRImJTmEQ5&lt;/a&gt;&lt;/p&gt;&amp;mdash; Lin-Manuel Miranda (@Lin_Manuel) &lt;a href=&quot;https://twitter.com/Lin_Manuel/status/832175919649456128&quot;&gt;February 16, 2017&lt;/a&gt;&lt;/blockquote&gt;
-
-&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;I have a family vacation coming up and my family will always take priority, so I&amp;#39;m going to set myself a doable deadline of July 10th, 2017 to get the landing page up. Be sure to visit &lt;a href=&quot;http://www.finlo.io&quot;&gt;Finlo&lt;/a&gt; then to see the first preview of Finlo up and running.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;p&gt;It&amp;#39;s gotten pretty late and I&amp;#39;m writing a bit more than I expected, but I think it&amp;#39;s important for me to get it out. So in the spirit of release and learn, I&amp;#39;m going to publish this post as a part one. Part two will feature: Websites Seem Harder Now and Get Out of Here, Imposter.&lt;/p&gt;
-
-&lt;p&gt;Goodnight.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 02 Jul 2017 00:00:00 -0400</pubDate>
-        <link>http://localhost:4000//article/design/business/2017/07/02/starting-slow.html</link>
-        <guid isPermaLink="true">http://localhost:4000//article/design/business/2017/07/02/starting-slow.html</guid>
-        
-        
-        <category>Article</category>
-        
-        <category>Design</category>
-        
-        <category>Business</category>
         
       </item>
     
