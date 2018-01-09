@@ -22,12 +22,16 @@ The result of discovery was an understanding of what Alan was hoping to achieve 
 
 ![A user testing the prototype](http://images.benjaminjoyce.com/usertest.jpg)
 
-Next I explored solutions to solve the problem. This exploration took the form of creating example content for wireframes and mockups. I got the solutions in front of users and iterated for a week while my development team got the environment set up.
+Next, I explored solutions to solve the problem. This exploration took the form of creating example content for wireframes and mockups. I got the solutions in front of users and iterated for a week while my development team got the environment set up.
 
-Since the focused was narrowed through discovery and framing the team was able to build and release our first iteration of the product in three weeks. This speed and focused allowed us to release the product to a small group, get feedback, and iterate quickly.
+Since the focused was narrowed through discovery and framing, the team was able to build and release our first iteration of the product in three weeks. This speed and focus allowed us to release the product to a small group, get feedback, and iterate quickly.
 
 ## Result
 
 The product met the goals found during discovery. Employees have noted that they have more access to the CEO than they expected. Alan uses the product on a daily basis to share what he thinks is important.
 
-My efforts on the product were rewarded by Alan. He presented myself and two members of the development team with the CEO award at the 2016 Annual Shareholders Meeting.
+My efforts on the product were rewarded by Alan. He presented me with the CEO award at the 2016 Annual Shareholders Meeting.
+
+### Learn more
+
+Want to learn more about the team dynamic, workshops I ran with stakeholders and users, how the IA was determined, or how my mindset around interactive product management changed after this project? Please feel free to <a href="mailto:me@benjaminjoyce.com?Subject=Hello">email me</a>.
