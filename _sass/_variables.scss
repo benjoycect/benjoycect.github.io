@@ -1,20 +1,44 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic);
+// Media query
+$mq-babybear:   "(min-width: 80em)";
+$mq-papabear:   "(min-width: 100em)";
+$mq-dark:       "(prefers-color-scheme: dark)";
 
-// Fonts
-$primary-font: 'Open Sans', Helvetica, Arial, sans-serif;
+// OLD OLD OLD Fonts
+$primary-font: serif;
 $line-height: 1.75em;
 $base-size: 1.25em;
 
-// Colors
+// Fonts
+:root {
+  --display-font: 'Nunito', sans-serif;
+  --sans-font: 'Alegreya Sans', sans-serif;
+}
+
+// OLD OLD OLD OLD Colors
 $text-color:   #555;
-$body-color:   #f6f6f6;
+$body-color:   #fff;
 $blue:         #3498db;
 $orange:       #fe9700;
 $purple:       #6453db;
 $green:        #59BA48;
 
-// Media query
-$mq-babybear:   "(min-width: 80em)";
-$mq-papabear:   "(min-width: 100em)";
+
+// Colors
+:root {
+  --red: #fa6060;
+  --blue: #225f85;
+  --link: var(--blue);
+  --darkest-blue: #141C21;
+  --pure-white: #fff;
+  --gray-white: #e5e5e5;
+}
+
+@media #{$mq-dark} {
+  :root {
+    --pure-white: #e5e5e5;
+    --link: #b65cd6;
+  }
+}
+
 // Width stuff
-$max-width: 50em;
+//$max-width: 50em;

@@ -1,6 +1,6 @@
 .pace-calculator {
   background-color: #fff;
-  color: $text-color;
+  color: var(--text-color);
   border: 1px solid darken($body-color, 25%);
   border-radius: 0.25em;
   padding: 1em 5%;
@@ -55,7 +55,7 @@
     border-right: 0;
     border-bottom: 1px dashed #e2e2e2;
     border-left: 0;
-    color: $text-color;
+    color: var(--text-color);
     font-family: $primary-font;
     font-size: 2em;
     text-align: center;

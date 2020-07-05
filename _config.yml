@@ -9,6 +9,6 @@ github_username:  BenJoyceCT
 
 # Build settings
 markdown: redcarpet
-pygments: true
+# pygments: true
 
 exclude: [node_modules]

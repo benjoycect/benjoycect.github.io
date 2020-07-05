@@ -29,29 +29,15 @@ module.exports = function(grunt) {
         }
       }
     },
-    criticalcss: {
-      custom: {
-        options: {
-          url: "http://127.0.0.1:4000",
-          width: 3000,
-          height: 2000,
-          outputfile: "css/build/critical.css",
-          filename: "css/build/main.css", // Using path.resolve( path.join( ... ) ) is a good idea here
-          buffer: 800 * 1024,
-          ignoreConsole: false
-        }
-      }
-    },
     watch: {
       files: ['img/svg-src/*svg', '_sass/*', 'js/*'],
-      tasks: ['svgstore', 'sass', 'autoprefixer', 'criticalcss']
+      tasks: ['svgstore', 'sass', 'autoprefixer']
     }
   });
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-criticalcss');
 
-  grunt.registerTask('default', ['sass', 'autoprefixer', 'criticalcss']);
+  grunt.registerTask('default', ["sass", "svgstore", "autoprefixer"]);
 };

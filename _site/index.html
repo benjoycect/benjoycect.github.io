@@ -3,141 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/favicon/manifest.json">
-  <link rel="shortcut icon" href="/favicon/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
-  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
   <meta name=viewport content="width=device-width, initial-scale=1">
   <title>Home</title>
-
-  <script id="loadcss">
-    /*!
-              loadCSS: load a CSS file asynchronously.
-              [c]2014 @scottjehl, Filament Group, Inc.
-              Licensed MIT
-              */
-
-    /* exported loadCSS */
-    function loadCSS(href, before, media, callback) {
-      "use strict";
-      // Arguments explained:
-      // `href` is the URL for your CSS file.
-      // `before` optionally defines the element we'll use as a reference for injecting our <link>
-      // By default, `before` uses the first <script> element in the page.
-      // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
-      // If so, pass a different reference element to the `before` argument and it'll insert before that instead
-      // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
-      var ss = window.document.createElement("link");
-      var ref = before || window.document.getElementsByTagName("script")[0];
-      var sheets = window.document.styleSheets;
-      ss.rel = "stylesheet";
-      ss.href = href;
-      // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
-      ss.media = "only x";
-      // DEPRECATED
-      if (callback) {
-        ss.onload = callback;
-      }
-
-      // inject link
-      ref.parentNode.insertBefore(ss, ref);
-      // This function sets the link's media back to `all` so that the stylesheet applies once it loads
-      // It is designed to poll until document.styleSheets includes the new sheet.
-      ss.onloadcssdefined = function(cb) {
-        var defined;
-        for (var i = 0; i < sheets.length; i++) {
-          if (sheets[i].href && sheets[i].href === ss.href) {
-            defined = true;
-          }
-        }
-        if (defined) {
-          cb();
-        } else {
-          setTimeout(function() {
-            ss.onloadcssdefined(cb);
-          });
-        }
-      };
-      ss.onloadcssdefined(function() {
-        ss.media = media || "all";
-      });
-      return ss;
-    }
-    // loadCSS("/css/build/main.css");
-    loadCSS("/css/build/test.css")
-  </script>
-  <noscript>
-    <link rel="stylesheet" href="/css/build/test.css">
-  </noscript>
-  <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-64479832-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <script>
-  (function(d) {
-    var config = {
-      kitId: 'wyc7tig',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
-<style>
-  body {
-    -webkit-animation: fadein 1s ease;
-            animation: fadein 1s ease;
-  }
-  .home-page__previews {
-    -webkit-animation: fadein 3s ease;
-            animation: fadein 3s ease;
-  }
-  @-webkit-keyframes fadein {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadein {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-</style>
+  <link rel="stylesheet" href="/css/build/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -166,33 +35,30 @@
 	c-11.9,0-23.5-1.2-34.7-3.3c23.5,73.4,91.7,126.7,172.5,128.2c-63.2,49.5-142.8,79-229.3,79c-14.9,0-29.6-0.9-44-2.6
 	c81.7,52.4,178.8,83,283,83c339.6,0,525.3-281.3,525.3-525.3c0-8-0.2-16-0.5-23.9C843.9,240.4,875.2,207.9,900,170.9L900,170.9z"/> </symbol></svg>
  -->
-  <div class="page">
-    <header>
-      <nav class="site-navigation">
-        <a class="site-navigation__link" href="/">Home</a>
-        <!-- <a class="site-navigation__link" href="">Featured Work</a> -->
-        <a class="site-navigation__link" href="/photos">Photos</a>
-        <!-- <a class="site-navigation__link" href="">Articles</a> -->
-      </nav>
-    </header>
-    <div class="main-content">
+  <header>
+    <nav class="primary-navigation" role="navigation">
+      <a href="/">home</a>
+      <a href="/posts">posts</a>
+      <a href="/photos">photos</a>
+    </nav>
+  </header>
 
-
-    <section class="home-page__blurb row">
-  <h1 class="home-page__heading">Hi, I'm Ben.</h1>
-  <div class="home-page__blurb-text">
-    <p>I'm a designer with an eye on the future. I have researched and created things for companies big and small. I love getting deep into a problem and working with teams to create awesome solutions. Here's my site to share a small sample of what I've made and have to say.</p>
-    <p>I suggest starting with <a href="/featured%20work/2017/08/05/fw-communication-platform.html">Featured Work: Communication Platform</a> to learn how I've worked in the past.</p>
+    <main class="main-content">
+      <header class="site-header">
+  <div class="header__title">
+    <h1 class="header__heading">Home</h1>
+    <p class="header__subheading">(a little of everything)</p>
   </div>
-</section>
+</header>
 
-<section class="home-page__previews row">
+<div class="summary-card-wrapper">
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/2018/01/09/ai-and-design.html">AI and Design</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/2018/01/09/ai-and-design.html">AI and Design</a></h1>
         <p><p>In my design role I have a significant amount of exposure to artificial intelligence (AI). This is a new frontier that presents new opportunities for designers but most articles I’ve read don’t talk about real-world experience designing with AI. Here is my attempt to share some of what I&#39;ve learned about designing with AI.</p>
 </p>
+        <p><a href="/article/design/2018/01/09/ai-and-design.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -206,8 +72,8 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/illustration/2017/11/07/stormtrooper.html">Illustration: Stormtrooper</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/illustration/2017/11/07/stormtrooper.html">Illustration: Sto...</a></h1>
         <p></p>
         <div class="card__image">
           <img src="http://images.benjaminjoyce.com/stormtrooper.png" />
@@ -223,8 +89,8 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/featured%20work/illustration/2017/10/30/madison-tutoring.html">Featured Work: Madison Tutoring</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/featured%20work/illustration/2017/10/30/madison-tutoring.html">Featured Work: Ma...</a></h1>
         <p></p>
         <div class="card__image">
           <img src="http://images.benjaminjoyce.com/tutor-color.png" />
@@ -242,10 +108,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/2017/10/30/awkward-user-testing.html">Awkward User Testing</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/2017/10/30/awkward-user-testing.html">Awkward User Testing</a></h1>
         <p><p>&quot;Anything you get back is helpful&quot; wrote Lyz Nagan in a great <a href="https://www.clockwork.com/news/2017/09/11/770/the_one_thing_you_always_get_from_user_testing">post</a> about the benefits of user testing. I found myself nodding along to all the points made in the article and felt inspired to share an experience of when a user test was extremely awkward but uncommonly helpful.</p>
 </p>
+        <p><a href="/article/design/2017/10/30/awkward-user-testing.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -259,10 +126,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/featured%20work/2017/08/07/huckle-buckle.html">Featured Work: Huckle Buckle</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/featured%20work/2017/08/07/huckle-buckle.html">Featured Work: Hu...</a></h1>
         <p><p>I got some feedback today that made me want to share some of my visual design chops. I came up with a mobile game idea today. The game is called Huckle Buckle. It takes the concept of the &quot;you&#39;re getting warmer&quot; game and brings it to a grand scale. I still have to work out all the details, but basically there is a reward that is in an unknown location to the user. The user walks or runs around using the feedback from the game to get to the location of the reward. As they move the map is updated to show their route. Take a look and let me know what you think <a href="https://twitter.com/BenJoyceCT">@BenJoyceCT</a>!</p>
 </p>
+        <p><a href="/featured%20work/2017/08/07/huckle-buckle.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -274,8 +142,8 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/illustration/2017/08/06/eggman.html">Illustration: Eggman</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/illustration/2017/08/06/eggman.html">Illustration: Eggman</a></h1>
         <p></p>
         <div class="card__image">
           <img src="http://images.benjaminjoyce.com/Eggman.png" />
@@ -291,10 +159,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/featured%20work/2017/08/05/fw-communication-platform.html">Featured Work: Communication Platform</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/featured%20work/2017/08/05/fw-communication-platform.html">Featured Work: Co...</a></h1>
         <p><p>In August of 2015 it was announced that the CEO of Travelers was stepping down due to illness. The incoming CEO, Alan Schnitzer, was taking over for a beloved leader and wanted to show that he would continue a tradition of honest communication.</p>
 </p>
+        <p><a href="/featured%20work/2017/08/05/fw-communication-platform.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -306,10 +175,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/featured%20work/2017/07/31/fw-self-service.html">Featured Work: Self-Service</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/featured%20work/2017/07/31/fw-self-service.html">Featured Work: Se...</a></h1>
         <p><p>This is the first of many featured work articles I&#39;ll post. This one is about a self-service feature I led the design on for Travelers.</p>
 </p>
+        <p><a href="/featured%20work/2017/07/31/fw-self-service.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -321,10 +191,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/business/2017/07/30/ux-job-interview-tips.html">UX Job Interview Tips</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/business/2017/07/30/ux-job-interview-tips.html">UX Job Interview ...</a></h1>
         <p><p>I&#39;ve been conducting interviews for various roles in IT and design for about six years. In that time I&#39;ve seen all sorts of interviews, good and bad. These are tips that from my perspective will help a hiring manager really understand you and whether you will be a fit for their team and whether their team is a fit for you.</p>
 </p>
+        <p><a href="/article/design/business/2017/07/30/ux-job-interview-tips.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -340,17 +211,18 @@
     
   
     
-      <div class="card--quote">
+      <div class="summary-card--quote">
         <p>89% of decisions you make as a designer have nothing to do with type, colors, or grids.</p>
 
       </div>
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/business/2017/07/02/starting-slow.html">Starting Slow</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/business/2017/07/02/starting-slow.html">Starting Slow</a></h1>
         <p><p>After two years of being absent on this blog I&#39;m back to <a href="http://austinkleon.com/show-your-work/">show my work</a>. Like many others I&#39;ve decided to start a side project. It&#39;s called <a href="http://www.finlo.io">Finlo</a>. The idea is that Finlo will be a better way to stumble upon local places that care deeply about their craft. As of July 2, 2017 it hasn&#39;t launched. This post is about why and how it&#39;s frustrating.</p>
 </p>
+        <p><a href="/article/design/business/2017/07/02/starting-slow.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -366,10 +238,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/front-end%20development/2015/08/16/pace-calculator.html">Pace Calculator</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/front-end%20development/2015/08/16/pace-calculator.html">Pace Calculator</a></h1>
         <p><p>I created a small pace calculator for my own use. There are many TODOs, but let me know if something can be done better. I&#39;ll be open sourcing the project later this week. You can take a look at the first iteration of the solution here. Your <a href="https://twitter.com/BenJoyceCT">feedback</a> is always welcome.</p>
 </p>
+        <p><a href="/article/front-end%20development/2015/08/16/pace-calculator.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -383,10 +256,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/2015/08/16/first-image.html">First Image</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/2015/08/16/first-image.html">First Image</a></h1>
         <p><p>I just set up an account on AWS and will be using <a href="https://aws.amazon.com/cloudfront/">CloudFront</a> CDN for images. I&#39;ll write about getting CloudFront set up and some of the things I am trying out with <code>srcset</code> very soon.</p>
 </p>
+        <p><a href="/article/2015/08/16/first-image.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -398,10 +272,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/front-end%20development/2015/07/25/css-mistkaes.html">My CSS Mistakes</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/front-end%20development/2015/07/25/css-mistkaes.html">My CSS Mistakes</a></h1>
         <p><p>For a long time CSS was really confusing to me. I was shocked after every line of code I wrote. Text flowed outside its container, things didn&#39;t position themselves like I expected, and elements I expected to be center sat on the left side of the page. These problems left my CSS with <code>!important</code> declarations and hacks to make things look right. This is my post that would have taught past me how to fix those mistakes and where to get more information. Maybe you have the same problems and this post will help you too.</p>
 </p>
+        <p><a href="/article/front-end%20development/2015/07/25/css-mistkaes.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -415,17 +290,18 @@
     
   
     
-      <div class="card--quote">
+      <div class="summary-card--quote">
         <p>I think we&#39;re at our best when we&#39;re at our weirdest.</p>
 
       </div>
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/2015/07/15/tools-i-use.html">Tools I Use: Pocket</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/2015/07/15/tools-i-use.html">Tools I Use: Pocket</a></h1>
         <p><p>I&#39;ve tried all sorts of tools to help me save and organize links. Recently, I started using <a href="https://getpocket.com">Pocket</a>. The app has been around since 2007 (previously known as Read it Later). I&#39;m happy to be a late adopter as it is now integrated into all the applications I could possibly imagine.</p>
 </p>
+        <p><a href="/article/2015/07/15/tools-i-use.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -437,10 +313,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/front-end%20development/2015/07/05/how-i-built-it.html">How I Built It: Fourth of July</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/front-end%20development/2015/07/05/how-i-built-it.html">How I Built It: F...</a></h1>
         <p><p>This is the first of my planned &quot;walk through&quot; posts. Today I&#39;m writing about the process I went through to create the pen I made for the Fourth of July.</p>
 </p>
+        <p><a href="/article/design/front-end%20development/2015/07/05/how-i-built-it.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -456,10 +333,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/2015/07/04/fourth-of-july.html">Fourth of July</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/2015/07/04/fourth-of-july.html">Fourth of July</a></h1>
         <p><p>Have a fun an safe Fourth of July. I stayed up way to late making a Pen to celebrate! Expect an article that deconstructs how I made it tomorrow.</p>
 </p>
+        <p><a href="/article/design/2015/07/04/fourth-of-july.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -473,10 +351,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/30/one-plate-one-fork.html">One Dish. One Fork. One Spoon.</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/2015/06/30/one-plate-one-fork.html">One Dish. One For...</a></h1>
         <p><p>I&#39;ve started something new that has made life easier. The second I use a dish or silverware I wash it and put it back. It takes about two minutes and thirty seconds each time I hand wash the dishes from the previous meal. I&#39;ve learned a valuable lesson from this new habit. It&#39;s a lesson that can be pulled directly from the lean manufacturing handbook: flow can work better than batch.</p>
 </p>
+        <p><a href="/article/2015/06/30/one-plate-one-fork.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -488,10 +367,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/2015/06/29/the-logo.html">The Logo</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/2015/06/29/the-logo.html">The Logo</a></h1>
         <p><p>&quot;Is it a bikini?&quot; &quot;No mom, it&#39;s supposed to be a tiger.&quot;</p>
 </p>
+        <p><a href="/article/design/2015/06/29/the-logo.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -505,10 +385,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/design/front-end%20development/2015/06/28/style-guides-are-hard.html">Style Guides At Huge, Old Companies Are Really Hard</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/design/front-end%20development/2015/06/28/style-guides-are-hard.html">Style Guides At H...</a></h1>
         <p><p>A bunch has been written about front-end style guides. Anna Debenham has provided the most on the subject. Her site, <a href="http://styleguides.io/">styleguides.io</a>, is the best place for style guide resources. I have a perspective on style guides at huge, old companies. It&#39;s one you may have heard before, but I think it&#39;s worth sharing. <em>Implementing a style guide is hard.</em></p>
 </p>
+        <p><a href="/article/design/front-end%20development/2015/06/28/style-guides-are-hard.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -524,10 +405,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/svg/2015/06/27/four-hundred-four.html">Four Hundred Four</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/svg/2015/06/27/four-hundred-four.html">Four Hundred Four</a></h1>
         <p><p>The default 404 page of a GitHub pages site has nothing to do with that site. Keeping the default could be confusing for people who go to a page that doesn&#39;t exist. I wanted to create a <a href="http://benjaminjoyce.com/404">404 page</a> that made it easy for visitors to get back to a familiar place. I also wanted to add a little personality to that page. Here is how I did it.</p>
 </p>
+        <p><a href="/article/svg/2015/06/27/four-hundred-four.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -541,10 +423,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/26/fridays-are-for-starting.html">Fridays Are For Starting</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/2015/06/26/fridays-are-for-starting.html">Fridays Are For S...</a></h1>
         <p><p>I don&#39;t know if I fully subscribe to getting everything done on a Friday. A little procrastination feels so nice after a long week. It&#39;s good to get started on Friday. Like the tell-tale-heart, the post I started today won&#39;t be off my mind until I <code>git push</code> later this weekend. Starting the post will not make me anxious or stressed. It will just keep me honest.</p>
 </p>
+        <p><a href="/article/2015/06/26/fridays-are-for-starting.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -556,10 +439,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/css/front-end%20development/2015/06/25/my-grunt-file.html">My Gruntfile</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/css/front-end%20development/2015/06/25/my-grunt-file.html">My Gruntfile</a></h1>
         <p><p>I&#39;m using some <a href="http://gruntjs.com/" title="Grunt">Grunt</a> tasks that have helped me get this site running. They have also made my life way easier. A few caveats before we get started. One, I know Grunt isn&#39;t the super cool task runner it was when it was first released. <a href="http://gulpjs.com/" title="Gulp">Gulp</a> has earned that distinction from most developers I talk to now. <a href="https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4">Enough</a> has been <a href="http://www.hongkiat.com/blog/gulp-vs-grunt/">written</a> about <a href="http://sixrevisions.com/web-development/grunt-vs-gulp/">Grunt versus Gulp</a> that I don&#39;t need to go into that. I&#39;ve tried both. I started with Grunt, thanks to Chris Coyier&#39;s awesome 24 Ways <a href="http://24ways.org/2013/grunt-is-not-weird-and-hard/">article</a>. I like it and I&#39;m staying with it for a while. Another quick note, I have an extremely basic website right now. I haven&#39;t added any images (yet) and there is basically no interactivity. Finally, I&#39;m not going to teach you how to use Grunt. The previously mentioned article by Chris Coyier does it better than I ever could.</p>
 </p>
+        <p><a href="/article/css/front-end%20development/2015/06/25/my-grunt-file.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -575,10 +459,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/links/2015/06/24/the-memory-palace.html">Listen to &quot;The Memory Palace&quot;</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/links/2015/06/24/the-memory-palace.html">Listen to &quot;T...</a></h1>
         <p><p>I&#39;m always blown away at talks or articles that are able to take random moments in history and connect them to the present. One talk I saw that has stuck with me is Ethan Marcotte&#39;s talk at <a href="http://aneventapart.com/event/austin-2013">An Event Apart: Austin 2013</a> called the &quot;The Map &amp; The Territory&quot; (you can watch it on <a href="https://vimeo.com/120164988" title="The Map &amp; The Territory">Vimeo</a>). I wonder how great speakers find these moments in history that show the audience how the past can teach us about the future.</p>
 </p>
+        <p><a href="/article/links/2015/06/24/the-memory-palace.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -592,10 +477,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/22/everything-is-gone.html">Everything is Gone</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/2015/06/22/everything-is-gone.html">Everything is Gone</a></h1>
         <p><p>Pro-tip: Be super careful when using Git for the first time. Just felt the classic pain of deleting about 3 hours of work on this site.</p>
 </p>
+        <p><a href="/article/2015/06/22/everything-is-gone.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -607,10 +493,11 @@
     
   
     
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="/article/2015/06/21/hello-benjaminjoycedotcom.html">Hello, benjaminjoyce.com</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="/article/2015/06/21/hello-benjaminjoycedotcom.html">Hello, benjaminjo...</a></h1>
         <p><p>It&#39;s 2015. It&#39;s getting late and I have work tomorrow. Yet, I&#39;m taking this time to launch a blog. Mine won&#39;t be much different than the millions of others already on the internet. However, it&#39;s a special moment for me. It&#39;s not the first time I have launched a personal website. I first launched something back in 2010. That site, it&#39;s content, and snapshot of that time is gone.</p>
 </p>
+        <p><a href="/article/2015/06/21/hello-benjaminjoycedotcom.html">Read more</a></p>
         
           <ul class="tags">
             
@@ -621,21 +508,17 @@
       </div>
     
   
-</section>
-
-
-  </div>
 </div>
+
+    </main>
 <footer>
   <p class="colophon">
     Posts by Benjamin Joyce. <a href="/article/2015/06/21/hello-benjaminjoycedotcom.html">First published in 2015</a>.
   </p>
   <div class="social-links">
-    <a href="/feed.xml">RSS</a> <a href="https://twitter.com/BenJoyceCT">@BenJoyceCT</a> <a href="http://codepen.io/benjoyce/">CodePen</a>
+    <a href="/feed.xml">RSS</a>
   </div>
-  <p>Emoji icons provided free by <a href="https://www.emojione.com/">EmojiOne</a>
 </footer>
 
   </body>
 </html>
-

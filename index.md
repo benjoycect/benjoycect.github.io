@@ -1,24 +1,19 @@
 ---
 layout: default
 title: Home
+subtitle: (a little of everything)
 permalink: /
 ---
-<section class="home-page__blurb row">
-  <h1 class="home-page__heading">Hi, I'm Ben.</h1>
-  <div class="home-page__blurb-text">
-    <p>I'm a designer with an eye on the future. I have researched and created things for companies big and small. I love getting deep into a problem and working with teams to create awesome solutions. Here's my site to share a small sample of what I've made and have to say.</p>
-    <p>I suggest starting with <a href="/featured%20work/2017/08/05/fw-communication-platform.html">Featured Work: Communication Platform</a> to learn how I've worked in the past.</p>
-  </div>
-</section>
-<section class="home-page__previews row">
+{% include herotitle.html %}
+<div class="summary-card-wrapper">
   {% for post in site.posts %}
     {% if post.categories contains "Quote" %}
-      <div class="card--quote">
+      <div class="summary-card--quote">
         {{ post.excerpt }}
       </div>
     {% elsif post.categories contains "Illustration" %}
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="{{post.url}}">{{ post.title }}</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="{{post.url}}">{{ post.title | truncate: 20 }}</a></h1>
         <p></p>
         <div class="card__image">
           <img src="{{ post.image }}" />
@@ -32,9 +27,10 @@ permalink: /
         {% endif %}
       </div>
     {% else %}
-      <div class="card">
-        <h3 class="work__heading"><a class="card__link" href="{{post.url}}">{{ post.title }}</a></h3>
+      <div class="summary-card">
+        <h1 class="summary-card__heading"><a class="card__link" href="{{post.url}}">{{ post.title | truncate: 20 }}</a></h1>
         <p>{{ post.excerpt }}</p>
+        <p><a href="{{post.url}}">Read more</a></p>
         {% if post.categories != blank %}
           <ul class="tags">
             {% for categories in post.categories %}
@@ -45,4 +41,4 @@ permalink: /
       </div>
     {% endif %}
   {% endfor %}
-</section>
+</div>

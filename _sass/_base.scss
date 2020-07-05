@@ -4,7 +4,7 @@
 
 body {
   background-color: $body-color;
-  color: $text-color;
+  color: var(--text-color);
   font-family: $primary-font;
   font-size: $base-size;
   line-height: $line-height;
@@ -19,9 +19,11 @@ a {
     color: lighten($blue, 25%);
   }
 }
+/*
 section {
   max-width: $max-width;
   margin: 2em auto;
   padding-left: 5%;
   padding-right: 5%;
 }
+*/
