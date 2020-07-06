@@ -7,10 +7,11 @@ permalink: posts
 {% include herotitle.html %}
 
 <div class="one-column-body-wrapper">
-  <ul>
+  <ul class="table-of-contents">
   {% for post in site.posts %}
-    <li>
-      <p>{{ post.date | date: "%b %-d, %Y" }} <a href="{{ post.url }}">{{ post.title }}</a></p>
+    <li class="table-of-contents__item">
+      <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+      <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>

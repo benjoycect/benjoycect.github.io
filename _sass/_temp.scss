@@ -63,7 +63,7 @@ a:visited {
 
 .header__heading {
   font-family: var(--display-font);
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 .header__subheading {
@@ -78,6 +78,12 @@ a:visited {
   .header__heading {
     font-size: 4rem;
   }
+}
+
+.table-of-contents__item {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
 }
 
 
