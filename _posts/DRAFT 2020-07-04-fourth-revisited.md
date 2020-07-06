@@ -11,4 +11,4 @@ I don't think any other holiday has signified the change in my life more than th
 
 Early adulthood was when things started to shift. In 2014 a night of extreme sadness and bad decision making led to a Fourth that I reflect on and regret. That day was an inflection point for me. After that night I started to explore my mental health and terrible parts of my personality. I hope to write about that journey. I hope that I can share what I've learned with our child.
 
-This Fourth is another I think I'll remember forever. The 
+This Fourth is another I think I'll remember forever. The killing of George Floyd just 
