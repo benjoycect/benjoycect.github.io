@@ -54,7 +54,6 @@ a {
   grid-column-end: 6;
   margin-top: 8.25rem;
   margin-bottom: 4rem;
-  border-top: 4px solid;
 }
 @media screen and (min-width: 800px) {
   .site-name {
