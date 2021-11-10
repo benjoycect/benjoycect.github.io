@@ -47,6 +47,7 @@ a {
 .site-name {
   color: #ff8181;
   font-size: 9em;
+  font-weight: 900;
   word-break: break-all;
   grid-row: 2;
   grid-column-start: 1;
