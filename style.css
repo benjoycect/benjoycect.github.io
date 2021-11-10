@@ -53,12 +53,14 @@ a {
   grid-column-end: 6;
   margin-top: 8.25rem;
   margin-bottom: 4rem;
+  word-break: break-all;
 }
 @media screen and (min-width: 800px) {
   .site-name {
     grid-column-start: 1;
     grid-column-end: 4;
     text-transform: uppercase;
+    word-break: normal;
   }
 }
 
