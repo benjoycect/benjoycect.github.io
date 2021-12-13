@@ -107,3 +107,21 @@ canvas {
   position: absolute;
   z-index: -1;
 }
+
+
+@media(prefers-color-scheme: light) {
+  body {
+    background-image: none;
+    background-color: #ff9e9e;
+  }
+  a {
+    color: #544200;
+  }
+  .section-heading {
+    color: #c90d0d;
+  }
+  .text-content {
+    color: #300f0f;
+  }
+  
+}
