@@ -115,7 +115,10 @@ canvas {
     background-color: #ff9e9e;
   }
   a {
-    color: #544200;
+    color: #840f5c;
+  }
+  a:visited {
+    color: #840f5c;
   }
   .section-heading {
     color: #c90d0d;
