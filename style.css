@@ -23,7 +23,10 @@ body {
 }
 
 a {
-  color: #b0f0ff;
+  color: #CFA40C;
+}
+a:visited {
+  color: #CFA40C;
 }
 
 .external-links {
@@ -74,7 +77,7 @@ a {
 }
 
 .section-heading {
-  color: #17A192;
+  color: #CFA40C;
   font-family: "Urbanist", sans-serif;
   font-size: 4em;
   font-weight: 100;
