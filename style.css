@@ -55,7 +55,6 @@ a:visited {
   margin-top: 8.25rem;
   margin-bottom: 4rem;
   word-break: break-all;
-  text-shadow: 0 0 20px #fff;
 }
 @media screen and (min-width: 800px) {
   .site-name {
@@ -91,7 +90,7 @@ a:visited {
   color: #fef0ce;
   font-size: 1.125em;
   font-weight: 400;
-  grid-row: 5;
+  grid-row: 4;
   grid-column-start: 1;
   grid-column-end: 8;
   line-height: 1.45;
