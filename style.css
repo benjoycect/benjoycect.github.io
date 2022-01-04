@@ -21,10 +21,10 @@ body {
 }
 
 a {
-  color: #CFA40C;
+  color: #96e2f9;
 }
 a:visited {
-  color: #CFA40C;
+  color: #96e2f9;
 }
 
 .external-links {
@@ -91,12 +91,16 @@ a:visited {
   color: #fef0ce;
   font-size: 1.125em;
   font-weight: 400;
-  grid-row: 4;
+  grid-row: 5;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 8;
   line-height: 1.45;
 }
-
+@media screen and (min-width: 800px) {
+  .text-content {
+    grid-column-end: 5;
+  }
+}
 .text-content p {
   margin-bottom: 1em;
 }
