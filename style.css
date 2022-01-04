@@ -1,5 +1,5 @@
 body {
-  background-color: #052723;
+  background-color: #051527;
 }
 
 .wrapper {
@@ -21,7 +21,9 @@ body {
 }
 
 a {
-  color: #96e2f9;
+  color: #fff;
+  border-bottom: 2px solid #ff609c;
+  text-decoration: none;
 }
 a:visited {
   color: #96e2f9;
@@ -76,7 +78,8 @@ a:visited {
 }
 
 .section-heading {
-  color: #ff9e9e;
+  color: #ff609c;
+;
   font-family: "Urbanist", sans-serif;
   font-size: 4em;
   font-weight: 100;
@@ -116,10 +119,11 @@ canvas {
     background-color: #ff9e9e;
   }
   a {
-    color: #004c70;
+    color: #300f0f;
+    border-bottom: 2px solid #c90d0d;
   }
   a:visited {
-    color: #004c70;
+    color: #300f0f;
   }
   .section-heading {
     color: #c90d0d;
