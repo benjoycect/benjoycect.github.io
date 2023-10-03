@@ -22,11 +22,11 @@ body {
 
 a {
   color: #fff;
-  border-bottom: 2px solid #faa484;
+  border-bottom: 2px solid #e36410;
   text-decoration: none;
 }
 a:visited {
-  color: #faa484;
+  color: #e36410;
 }
 
 .external-links {
@@ -77,10 +77,9 @@ a:visited {
 }
 
 .section-heading {
-  color: #faa484;
+  color: #e36410;
   font-family: 'Dela Gothic One', cursive;
   font-size: 6em;
-  font-weight: 100;
   grid-row: 3;
   grid-column-start: 1;
   grid-column-end: 5;
