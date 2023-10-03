@@ -62,7 +62,6 @@ a:visited {
   .site-name {
     grid-column-start: 1;
     grid-column-end: 4;
-    text-transform: uppercase;
     word-break: normal;
   }
 }
@@ -85,7 +84,6 @@ a:visited {
   grid-row: 3;
   grid-column-start: 1;
   grid-column-end: 5;
-  text-transform: uppercase;
 }
 
 .text-content {
