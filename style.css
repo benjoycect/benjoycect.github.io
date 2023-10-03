@@ -80,7 +80,7 @@ a:visited {
 .section-heading {
   color: #faa484;
   font-family: 'Dela Gothic One', cursive;
-  font-size: 4em;
+  font-size: 6em;
   font-weight: 100;
   grid-row: 3;
   grid-column-start: 1;
