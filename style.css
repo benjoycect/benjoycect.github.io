@@ -112,20 +112,20 @@ canvas {
 @media(prefers-color-scheme: light) {
   body {
     background-image: none;
-    background-color: #ff9e9e;
+    background-color: #f2b6b6;
   }
   a {
-    color: #300f0f;
+    color: #0c1621;
     border-bottom: 2px solid #c90d0d;
   }
   a:visited {
-    color: #300f0f;
+    color: #0c1621;
   }
   .section-heading {
     color: #c60b0b;
   }
   .text-content {
-    color: #300f0f;
+    color: #0c1621;
   }
   
 }
