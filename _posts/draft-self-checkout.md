@@ -8,8 +8,6 @@
 * My role
 * Problem 
 
-## Discovery
-
 ## Creating a path for the craft
 * Creating time
 * Ensuring quality 
