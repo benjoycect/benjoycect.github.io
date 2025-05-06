@@ -80,7 +80,7 @@ a:visited {
 
 .section-heading {
   color: #eb881e;
-  font-size: 6em;
+  font-size: 1.25em;
   grid-row: 3;
   grid-column-start: 1;
   grid-column-end: 5;
