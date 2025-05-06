@@ -51,8 +51,8 @@ a:visited {
 }
 
 .site-name {
-  color: #fff;
-  font-size: 1.25em;
+  color: #96B4E6;
+  font-size: 4em;
   grid-row: 2;
   grid-column-start: 1;
   grid-column-end: 6;
@@ -87,7 +87,7 @@ a:visited {
 }
 
 .text-content {
-  color: #fef0ce;
+  color: #96B4E6;
   font-size: 1em;
   font-weight: 400;
   grid-row: 4;
