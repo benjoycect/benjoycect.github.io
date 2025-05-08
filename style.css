@@ -55,10 +55,12 @@ a:visited {
   border-radius: 16px;
   padding: 24px 16px;
   gap: 24px;
+  grid-column-start: 1;
+  grid-column-end: 8;
 }
 
 @media screen and (min-width: 800px) {
-  .text-content {
+  .text-content, .article-preview {
     grid-column-end: 5;
   }
 }
