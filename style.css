@@ -47,6 +47,10 @@ a:visited {
   grid-column-end: 8;
   line-height: 1.3;
 }
+.articles {
+  grid-row: 6;
+  
+}
 .article-preview {
   border-radius: 16px;
   padding: 24px 16px;
