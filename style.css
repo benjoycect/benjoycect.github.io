@@ -88,4 +88,6 @@ a:visited {
   }
   
 }
-
+p {
+  margin-bottom: 1em;
+}
