@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Buy Third-Party Marketplace - Ben Joyce</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        background-color: #111f0b;
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        padding: 40px 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .header {
+        margin-bottom: 60px;
+    }
+
+    .name {
+        font-size: 48px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #a0b5a0;
+        margin-bottom: 30px;
+    }
+
+    .nav-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav-link:hover {
+        opacity: 1;
+    }
+
+    .case-header {
+        margin-bottom: 60px;
+        border-bottom: 1px solid #2a3d2a;
+        padding-bottom: 40px;
+    }
+
+    .case-title {
+        font-size: 42px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #ffffff;
+        line-height: 1.2;
+    }
+
+    .case-meta {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .meta-item {
+        font-size: 14px;
+        color: #8a9a8a;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .meta-value {
+        color: #ffffff;
+        font-weight: 400;
+    }
+
+    .case-summary {
+        font-size: 20px;
+        color: #b0c5b0;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .case-tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        color: #ffffff;
+        text-transform: lowercase;
+    }
+
+    .case-content {
+        display: grid;
+        gap: 50px;
+    }
+
+    .section {
+        border-left: 2px solid #2a3d2a;
+        padding-left: 30px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        font-weight: 300;
+        margin-bottom: 25px;
+        color: #ffffff;
+    }
+
+    .section-content {
+        font-size: 16px;
+        color: #b0c5b0;
+        line-height: 1.8;
+    }
+
+    .section-content p {
+        margin-bottom: 20px;
+    }
+
+    .section-content ul {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+
+    .section-content li {
+        margin-bottom: 10px;
+        color: #a0b5a0;
+    }
+
+    .highlight-box {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid #2a3d2a;
+        padding: 30px;
+        border-radius: 8px;
+        margin: 30px 0;
+    }
+
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .metric {
+        text-align: center;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 8px;
+    }
+
+    .metric-value {
+        font-size: 32px;
+        font-weight: 300;
+        color: #ffffff;
+        margin-bottom: 8px;
+    }
+
+    .metric-label {
+        font-size: 14px;
+        color: #8a9a8a;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .image-placeholder {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px dashed #2a3d2a;
+        height: 300px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8a9a8a;
+        font-size: 16px;
+        margin: 30px 0;
+    }
+
+    .quote {
+        font-size: 20px;
+        font-style: italic;
+        color: #d0e5d0;
+        border-left: 3px solid #4a5d4a;
+        padding-left: 25px;
+        margin: 30px 0;
+    }
+
+    .quote-author {
+        font-size: 14px;
+        color: #8a9a8a;
+        margin-top: 10px;
+        font-style: normal;
+    }
+
+    @media (max-width: 768px) {
+        .name {
+            font-size: 36px;
+        }
+        
+        .case-title {
+            font-size: 32px;
+        }
+        
+        .case-meta {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .section {
+            padding-left: 20px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+        }
+        
+        .metrics-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">Ben Joyce</h1>
+            <p class="subtitle">Leadership, strategy, design, product, analytics.</p>
+            <a href="#" class="nav-link">← Back to home</a>
+        </header>
+
+```
+    <div class="case-header">
+        <h2 class="case-title">Best Buy Third-Party Marketplace</h2>
+        <div class="case-meta">
+            <div class="meta-item">Role: <span class="meta-value">UX Senior Manager</span></div>
+            <div class="meta-item">Timeline: <span class="meta-value">12 months</span></div>
+            <div class="meta-item">Year: <span class="meta-value">2024</span></div>
+            <div class="meta-item">Team: <span class="meta-value">5 designers</span></div>
+        </div>
+        <p class="case-summary">
+            Led the design of cart, checkout, and availability experiences for third-party products on BestBuy.com. Successfully launched a marketplace that maintained customer trust while expanding product assortment, with results highlighted at town halls and mentioned on earnings calls.
+        </p>
+        <div class="case-tags">
+            <span class="tag">UX management</span>
+            <span class="tag">marketplace design</span>
+            <span class="tag">user research</span>
+            <span class="tag">e-commerce</span>
+            <span class="tag">retail</span>
+        </div>
+    </div>
+
+    <div class="case-content">
+        <section class="section">
+            <h3 class="section-title">What We Were Solving</h3>
+            <div class="section-content">
+                <p>Best Buy's product assortment needed to grow to better serve our customers. Leadership decided that a third-party (3P) marketplace was the best way to expand quickly. We were tasked with creating a buying experience for 3P that maintained the experience customers expect from Best Buy.</p>
+                
+                <p>The challenge was significant: how do you introduce third-party products into a trusted retail environment without compromising the customer experience that Best Buy is known for?</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">What Made This Hard</h3>
+            <div class="section-content">
+                <p>Customers had to feel confident that 3P products were legitimate and backed by Best Buy. At the same time, the business decided that paid member benefits like free shipping and protection plans would not apply to 3P products. That created a unique messaging challenge.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Core tension:</strong> Teams were having trouble communicating transparently without confusing the customer.</p>
+                </div>
+                
+                <p>We needed to balance business constraints with customer expectations, ensuring trust while being transparent about different terms and benefits for marketplace products.</p>
+            </div>
+        </section>
+
+        <div class="image-placeholder">
+            3P Product Detail Page & Offer Messaging
+        </div>
+
+        <section class="section">
+            <h3 class="section-title">What I Did</h3>
+            <div class="section-content">
+                <p>I led the team, execution, and cross-functional relationships across product, engineering, and supply chain. I initiated user research and presented our direction to leadership throughout.</p>
+                
+                <p>I had the team define marketplace principles based on third-party shopping research. We combined that with lessons from our recent checkout redesign to guide a design that built trust.</p>
+                
+                <p>We used iterative design and evaluative research to reduce usability and value risk. I created space for early exploration and encouraged bolder ideas. We reviewed our work with real customers to improve confidence and comprehension at each step.</p>
+                
+                <p>Key leadership actions:</p>
+                <ul>
+                    <li>Managed 5 designers including 4 direct reports covering content and product design</li>
+                    <li>Facilitated cross-functional alignment across multiple stakeholder groups</li>
+                    <li>Established research frameworks for marketplace trust and usability</li>
+                    <li>Presented strategic direction to executive leadership</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">How We Worked</h3>
+            <div class="section-content">
+                <p>We moved through discovery, exploration, evaluation, iteration, and then scenario design. We used a mix of customer sentiment research and market studies to guide our content and UI decisions.</p>
+                
+                <p>Our biggest constraint was the lack of member benefits on 3P products. Instead of focusing on exclusions, we led with what was included and used familiar UI patterns to keep things simple and trustworthy.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Design principle:</strong> Lead with what's included, not what's excluded. Use familiar patterns to build trust.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="image-placeholder">
+            Customer Sentiment Research & Purchase Flow Comparison
+        </div>
+
+        <section class="section">
+            <h3 class="section-title">What Happened</h3>
+            <div class="section-content">
+                <p>The feature just launched, but every round of testing showed improvement. Customers felt more confident in 3P purchases and understood key details like return policies and pricing differences.</p>
+                
+                <p>The work was praised across internal teams and recognized by leadership. It was highlighted at town halls and mentioned in public earnings calls as a key strategic effort.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Strategic impact:</strong> It created a foundation for Best Buy's future business model, supporting marketplace growth and retail media investment.</p>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-value">✓</div>
+                        <div class="metric-label">Successfully Launched 3P</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">↑</div>
+                        <div class="metric-label">Customer Confidence</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">🎯</div>
+                        <div class="metric-label">Earnings Call Mention</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">🏆</div>
+                        <div class="metric-label">Town Hall Recognition</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">What I Learned</h3>
+            <div class="section-content">
+                <p>I don't need to be involved in everything to have an impact. I can support other leaders by giving them tools and frameworks that help them lead more effectively.</p>
+                
+                <p>I saw my team embrace bold exploration and become more confident in their decisions. If I could go back, I'd push for higher quality earlier in the process.</p>
+                
+                <div class="quote">
+                    "When we have aligned goals and trust in each other, the work becomes more fun and more successful."
+                    <div class="quote-author">— Key insight from the project</div>
+                </div>
+                
+                <p>This project reinforced the value of iterative research and the importance of balancing business constraints with customer needs. The success came from building trust through transparency and familiar patterns rather than trying to hide limitations.</p>
+            </div>
+        </section>
+    </div>
+</div>
+```
+
+</body>
+</html>
