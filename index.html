@@ -10,26 +10,213 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+```
+    body {
+        background-color: #2a3d2a;
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        padding: 40px 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .header {
+        margin-bottom: 60px;
+    }
+
+    .name {
+        font-size: 48px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        color: #a0b5a0;
+        margin-bottom: 30px;
+    }
+
+    .nav-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav-link:hover {
+        opacity: 1;
+    }
+
+    .page-title {
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 50px;
+        color: #ffffff;
+    }
+
+    .case-studies {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .case-study {
+        border: 1px solid #3a4d3a;
+        background: rgba(255, 255, 255, 0.02);
+        padding: 40px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .case-study:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #4a5d4a;
+        transform: translateY(-2px);
+    }
+
+    .case-title {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        color: #ffffff;
+    }
+
+    .case-meta {
+        font-size: 14px;
+        color: #8a9a8a;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .case-description {
+        font-size: 16px;
+        color: #b0c5b0;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .case-tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        color: #ffffff;
+        text-transform: lowercase;
+    }
+
+    .impact-metric {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #3a4d3a;
+        font-size: 14px;
+        color: #90a590;
+    }
+
+    .metric-value {
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .name {
+            font-size: 36px;
+        }
+        
+        .page-title {
+            font-size: 28px;
+        }
+        
+        .case-study {
+            padding: 30px 25px;
+        }
+        
+        .case-title {
+            font-size: 20px;
+        }
+    }
+</style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="wrapper">
-<h2 class="section-heading">Ben Joyce</h2>
-<div class="text-content">
-  <p>Leadership, strategy, design, product, analytics.</p>
-  <p><a href="mailto:ben@benjaminjoyce.com">Contact me</a> for work examples.
-  <p>See my resume on <a href="https://benjoyce.cv">hello.cv</a>.
-</div><!--
-  <div class="articles">
-    <div class="article-preview">
-      <h3 class="section-heading">Design</h3>
-      <p class="text-content">My teams have driven tens of millions in incremental revenue, directly attributed to design improvements.
-      <a href>How I make good design good business.</a>
+    <div class="container">
+        <header class="header">
+            <h1 class="name"><a href="https://www.benjoyce.cv">Ben Joyce</a></h1>
+            <p class="subtitle">Leadership, strategy, design, product, analytics.</p>
+        </header>
+    <h2 class="page-title">Case Studies</h2>
+
+    <div class="case-studies">
+        <article class="case-study">
+            <h3 class="case-title">Building Best Buy’s Third-Party Marketplace from the Ground Up</h3>
+            <div class="case-meta">Design Leadership • 2025</div>
+            <p class="case-description">
+                0 to 1 is never easy. Luckily, I had a strong team and a great foundation. Read to learn how I led the team to design third-party offerings without losing customer trust.
+            </p>
+            <div class="case-tags">
+                <span class="tag">design strategy</span>
+                <span class="tag">user research</span>
+                <span class="tag">team leadership</span>
+                <span class="tag">0 to 1</span>
+            </div>
+            <div class="impact-metric">
+                Key impact: <span class="metric-value">Successful launch</span> to <span class="metric-value">millions of customers</span>
+            </div>
+        </article>
+
+        <article class="case-study">
+            <h3 class="case-title">Best Buy Checkout Redesign</h3>
+            <div class="case-meta">Vision • 2023</div>
+            <p class="case-description">
+                Led the creation and execution of a research-backed roadmap to reduce customer friction and increase conversion of Best Buy's cart and checkout.
+            </p>
+            <div class="case-tags">
+                <span class="tag">design strategy</span>
+                <span class="tag">team leadership</span>
+                <span class="tag">commerce</span>
+                <span class="tag">product management</span>
+            </div>
+            <div class="impact-metric">
+                Key impact: <span class="metric-value">4% relative conversion lift</span> for key checkout flows with <span class="metric-value">80% positive satisfaction</span> with checkout
+            </div>
+        </article>
+
+        <article class="case-study">
+            <h3 class="case-title">Saving Adjusters Time with AI Experimentation and a Sound Design Process</h3>
+            <div class="case-meta">Design & AI • 2017</div>
+            <p class="case-description">
+                Led a cross-functional team to redesign the mobile claims experience, using real-world observations and rapid prototyping to save adjusters time and shift the company’s approach to AI and product development.            </p>
+            <div class="case-tags">
+                <span class="tag">AI</span>
+                <span class="tag">mobile</span>
+                <span class="tag">research</span>
+                <span class="tag">design strategy</span>
+            </div>
+            <div class="impact-metric">
+                Key impact: <span class="metric-value">Up to 50% reduced time spent adjusting claims</span> and <span class="metric-value">furthered investment in the product model</span>
+            </div>
+        </article>
     </div>
-  </div>
-</div> -->
-<!-- partial -->
+</div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
 </body>
 </html>
