@@ -71,29 +71,42 @@
         </article>
     </div>
 </div>
-  <script>
+<script>
 if ('startViewTransition' in document) {
-  document.addEventListener('click', (event) => {
-    const anchor = event.target.closest('a');
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', event => {
+      const url = link.href;
 
-    // Only intercept clicks on links to same-origin pages
-    if (
-      anchor &&
-      anchor.href &&
-      anchor.origin === window.location.origin &&
-      !anchor.hasAttribute('data-no-transition')
-    ) {
-      event.preventDefault();
-      document.startViewTransition(() => {
-        return new Promise((resolve) => {
-          window.location.href = anchor.href;
-          resolve();
+      // Only intercept same-origin links
+      if (url && url.startsWith(window.location.origin)) {
+        event.preventDefault();
+
+        document.startViewTransition(() => {
+          return fetch(url)
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+
+              // Replace the content while naming the transition for .case-title
+              const oldTitle = document.querySelector('.case-title');
+              const newTitle = doc.querySelector('.case-title');
+
+              if (oldTitle && newTitle) {
+                oldTitle.style.viewTransitionName = 'case-title';
+                newTitle.style.viewTransitionName = 'case-title';
+              }
+
+              document.body.innerHTML = doc.body.innerHTML;
+              window.history.pushState({}, '', url);
+            });
         });
-      });
-    }
+      }
+    });
   });
 }
 </script>
+
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
 </body>
