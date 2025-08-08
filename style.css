@@ -12,7 +12,7 @@ body {
     font-family: "Geist", sans-serif;
     font-optical-sizing: auto;
     line-height: 1.6;
-    padding: 40px 20px;
+    padding: 40px 16px; /* 20 → 16 */
 }
 
 h1, h2, h3, h4, h5 {
@@ -28,20 +28,20 @@ h1, h2, h3, h4, h5 {
 }
 
 .header {
-    margin-bottom: 60px;
+    margin-bottom: 64px; /* 60 → 64 */
 }
 
 .name {
     font-size: 48px;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 16px; /* 20 → 16 */
     letter-spacing: 2px;
 }
 
 .subtitle {
     font-size: 18px;
     color: #a0b5a0;
-    margin-bottom: 30px;
+    margin-bottom: 32px; /* 30 → 32 */
 }
 
 .nav-link {
@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5 {
 .page-title {
     font-size: 36px;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 48px; /* 50 → 48 */
     color: #ffffff;
 }
 
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .case-header {
-    margin-bottom: 60px;
+    margin-bottom: 64px; /* 60 → 64 */
     border-bottom: 1px solid #2a3d2a;
     padding-bottom: 40px;
 }
@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5 {
 .case-title {
     font-size: 42px;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 16px; /* 20 → 16 */
     color: #ffffff;
     line-height: 1.2;
 }
@@ -103,9 +103,9 @@ h1, h2, h3, h4, h5 {
     color: #8a9a8a;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 25px;
+    margin-bottom: 24px; /* 25 → 24 */
     display: flex;
-    gap: 30px;
+    gap: 32px; /* 30 → 32 */
     flex-wrap: wrap;
 }
 
@@ -125,34 +125,34 @@ h1, h2, h3, h4, h5 {
     font-size: 16px;
     color: #b0c5b0;
     line-height: 1.7;
-    margin-bottom: 25px;
+    margin-bottom: 24px; /* 25 → 24 */
 }
 
 .case-summary {
     font-size: 20px;
     color: #b0c5b0;
     line-height: 1.7;
-    margin-bottom: 30px;
+    margin-bottom: 32px; /* 30 → 32 */
 }
 
 .case-tags {
     display: flex;
-    gap: 10px;
+    gap: 8px; /* 10 → 8 */
     flex-wrap: wrap;
 }
 
 .tag {
     background: rgba(255, 255, 255, 0.1);
-    padding: 6px 12px;
-    border-radius: 20px;
+    padding: 8px 16px; /* 6→8, 12→16 */
+    border-radius: 16px; /* 20 → 16 */
     font-size: 12px;
     color: #ffffff;
     text-transform: lowercase;
 }
 
 .impact-metric {
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 24px; /* 20 → 24 */
+    padding-top: 24px; /* 20 → 24 */
     border-top: 1px solid #3a4d3a;
     font-size: 14px;
     color: #90a590;
@@ -166,18 +166,18 @@ h1, h2, h3, h4, h5 {
 
 .case-content {
     display: grid;
-    gap: 50px;
+    gap: 48px; /* 50 → 48 */
 }
 
 .section {
     border-left: 2px solid #2a3d2a;
-    padding-left: 30px;
+    padding-left: 32px; /* 30 → 32 */
 }
 
 .section-title {
     font-size: 28px;
     font-weight: 300;
-    margin-bottom: 25px;
+    margin-bottom: 24px; /* 25 → 24 */
     color: #ffffff;
 }
 
@@ -188,37 +188,37 @@ h1, h2, h3, h4, h5 {
 }
 
 .section-content p {
-    margin-bottom: 20px;
+    margin-bottom: 24px; /* 20 → 24 */
 }
 
 .section-content ul {
-    margin: 20px 0;
-    padding-left: 20px;
+    margin: 24px 0; /* 20 → 24 */
+    padding-left: 24px; /* 20 → 24 */
 }
 
 .section-content li {
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* 10 → 8 */
     color: #a0b5a0;
 }
 
 .highlight-box {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid #2a3d2a;
-    padding: 30px;
+    padding: 32px; /* 30 → 32 */
     border-radius: 8px;
-    margin: 30px 0;
+    margin: 32px 0; /* 30 → 32 */
 }
 
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-    margin: 30px 0;
+    gap: 24px; /* 25 → 24 */
+    margin: 32px 0; /* 30 → 32 */
 }
 
 .metric {
     text-align: center;
-    padding: 25px;
+    padding: 24px; /* 25 → 24 */
     background: rgba(255, 255, 255, 0.02);
     border-radius: 8px;
 }
@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
     color: #8a9a8a;
     font-size: 16px;
-    margin: 30px 0;
+    margin: 32px 0; /* 30 → 32 */
 }
 
 .quote {
@@ -248,14 +248,14 @@ h1, h2, h3, h4, h5 {
     font-style: italic;
     color: #d0e5d0;
     border-left: 3px solid #4a5d4a;
-    padding-left: 25px;
-    margin: 30px 0;
+    padding-left: 24px; /* 25 → 24 */
+    margin: 32px 0; /* 30 → 32 */
 }
 
 .quote-author {
     font-size: 14px;
     color: #8a9a8a;
-    margin-top: 10px;
+    margin-top: 8px; /* 10 → 8 */
     font-style: normal;
 }
 
@@ -270,7 +270,7 @@ h1, h2, h3, h4, h5 {
     }
     
     .case-study {
-        padding: 30px 25px;
+        padding: 32px 24px; /* 30 → 32, 25 → 24 */
     }
     
     .case-title {
@@ -279,11 +279,11 @@ h1, h2, h3, h4, h5 {
     
     .case-meta {
         flex-direction: column;
-        gap: 15px;
+        gap: 16px; /* 15 → 16 */
     }
     
     .section {
-        padding-left: 20px;
+        padding-left: 24px; /* 20 → 24 */
     }
     
     .section-title {
