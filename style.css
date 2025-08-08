@@ -21,6 +21,11 @@ h1, h2, h3, h4, h5 {
     font-weight: 500;
 }
 
+a, a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* 2 - Classes */
 .container {
     max-width: 900px;
