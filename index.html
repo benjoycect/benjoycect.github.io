@@ -71,6 +71,30 @@
         </article>
     </div>
 </div>
+  <script>
+if ('startViewTransition' in document) {
+  document.addEventListener('click', (event) => {
+    const anchor = event.target.closest('a');
+
+    // Only intercept clicks on links to same-origin pages
+    if (
+      anchor &&
+      anchor.href &&
+      anchor.origin === window.location.origin &&
+      !anchor.hasAttribute('data-no-transition')
+    ) {
+      event.preventDefault();
+      document.startViewTransition(() => {
+        return new Promise((resolve) => {
+          window.location.href = anchor.href;
+          resolve();
+        });
+      });
+    }
+  });
+}
+</script>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
 </body>
 </html>
