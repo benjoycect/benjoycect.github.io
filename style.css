@@ -184,6 +184,10 @@ a:hover {
     padding-left: 32px; /* 30 → 32 */
 }
 
+.case-image {
+  max-width: 100%;
+}
+
 .section-title {
     font-size: 28px;
     font-weight: 300;
