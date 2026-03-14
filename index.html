@@ -1,113 +1,268 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Benjamin Joyce</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="./style.css">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benjamin Joyce — Product & Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:       #141C21;
+      --orange:   #a65402;
+      --cream:    #fef0ce;
+      --blue:     #1991ae;
+      --green:    #9db3a0;
+      --fs-base:  16px;
+      --pad-mobile: 24px;
+      --pad-desktop: 48px;
+    }
+
+    /* ── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: var(--fs-base);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      background: #141C21 !important;
+    }
+
+    body {
+      background: #141C21 !important;
+      color: var(--green);
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover { opacity: 0.75; }
+
+    /* ── LAYOUT ──────────────────────────────────────────────── */
+
+    /* Mobile-first: single column */
+    .site-wrapper {
+      min-height: 100vh;
+    }
+
+    /* ── HERO (mobile) ───────────────────────────────────────── */
+    .hero {
+      padding: 40px var(--pad-mobile) 60px;
+    }
+
+    .hero__name {
+      font-family: 'Climate Crisis', sans-serif;
+      font-size: clamp(0.9rem, 4vw, 1.1rem);
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .hero__title {
+      font-family: 'Climate Crisis', sans-serif;
+      font-size: clamp(2.8rem, 13vw, 4.5rem);
+      color: var(--cream);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
+    }
+
+    .hero__tagline {
+      color: var(--green);
+      font-size: 1rem;
+      margin-bottom: 20px;
+      max-width: 420px;
+    }
+
+    /* ── CASE STUDIES (mobile) ───────────────────────────────── */
+    .case-studies {
+      padding: 0 var(--pad-mobile) 80px;
+    }
+
+    .case-studies__label {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--green);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      border: 1.5px dashed var(--green);
+      border-radius: 6px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card__title {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--cream);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .card__desc {
+      font-size: 1rem;
+      color: var(--green);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .card__link {
+      font-size: 1rem;
+    }
+
+    /* ── LEFT NAME COLUMN (desktop only) ────────────────────── */
+    .name-column {
+      display: none;
+    }
+
+    /* ── DESKTOP ─────────────────────────────────────────────── */
+    @media (min-width: 900px) {
+
+      .site-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+      }
+
+      /* Left column: giant name as visual element */
+      .name-column {
+        display: flex;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: var(--pad-desktop);
+      }
+
+      .name-column__text {
+        font-family: 'Climate Crisis', sans-serif;
+        font-size: clamp(7rem, 12vw, 14rem);
+        color: var(--orange);
+        text-transform: uppercase;
+        line-height: 0.88;
+        letter-spacing: -0.02em;
+        word-break: break-all;
+        hyphens: none;
+        user-select: none;
+      }
+
+      /* Right column: scrollable content */
+      .content-column {
+        padding: 80px var(--pad-desktop) 80px var(--pad-desktop);
+        overflow-y: auto;
+      }
+
+      /* Hide the mobile name, show desktop name column */
+      .hero__name { display: none; }
+
+      .hero {
+        padding: 0 0 60px 0;
+      }
+
+      .hero__title {
+        font-size: clamp(3.5rem, 5vw, 5.5rem);
+        margin-bottom: 24px;
+      }
+
+      /* Cards become solid on desktop */
+      .card {
+        border: none;
+        background: #1e2d35;
+        border-radius: 8px;
+        padding: 28px;
+      }
+      .card::before,
+      .card::after { display: none; }
+
+      .case-studies {
+        padding: 0;
+      }
+    }
+
+    /* ── VERY WIDE: name bleeds as bg texture ────────────────── */
+    @media (min-width: 1400px) {
+      .name-column__text {
+        font-size: clamp(12rem, 16vw, 22rem);
+        color: transparent;
+        -webkit-text-stroke: 2px var(--orange);
+        opacity: 0.25;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="name"><a href="https://www.benjoyce.cv">Ben Joyce</a></h1>
-            <p class="subtitle">Leadership, strategy, design, product, analytics.</p>
-        </header>
-    <h2 class="page-title">Case Studies</h2>
 
-    <div class="case-studies">
-        <article class="case-study">
-            <h3 class="case-title"><a href="/case-3p-marketplace">Building Best Buy’s Third-Party Marketplace from the Ground Up</a></h3>
-            <div class="case-meta">Design Leadership • 2025</div>
-            <p class="case-description">
-                0 to 1 is never easy. Luckily, I had a strong team and a great foundation. Read to learn how I led the team to design third-party offerings without losing customer trust.
-            </p>
-            <div class="case-tags">
-                <span class="tag">design strategy</span>
-                <span class="tag">user research</span>
-                <span class="tag">team leadership</span>
-                <span class="tag">0 to 1</span>
-            </div>
-            <div class="impact-metric">
-                Key impact: <span class="metric-value">Successful launch</span> to <span class="metric-value">millions of customers</span>
-            </div>
-        </article>
+  <!-- MOBILE: name lives inside hero. DESKTOP: name lives in left column. -->
 
-        <article class="case-study">
-            <h3 class="case-title"><a href="/case-best-buy-checkout.html">Best Buy Checkout Redesign</a></h3>
-            <div class="case-meta">Vision • 2023</div>
-            <p class="case-description">
-                Led the creation and execution of a research-backed roadmap to reduce customer friction and increase conversion of Best Buy's cart and checkout.
-            </p>
-            <div class="case-tags">
-                <span class="tag">design strategy</span>
-                <span class="tag">team leadership</span>
-                <span class="tag">commerce</span>
-                <span class="tag">product management</span>
-            </div>
-            <div class="impact-metric">
-                Key impact: <span class="metric-value">Significant relative conversion lift</span> for key checkout flows with <span class="metric-value">positive satisfaction ratings</span> with checkout
-            </div>
-        </article>
+  <div class="site-wrapper">
 
-        <article class="case-study">
-            <h3 class="case-title"><a href="/case-saving-adjusters-time">Saving Adjusters Time with AI Experimentation and a Sound Design Process</a></h3>
-            <div class="case-meta">Design & AI • 2017</div>
-            <p class="case-description">
-                Led a cross-functional team to redesign the mobile claims experience, using real-world observations and rapid prototyping to save adjusters time and shift the company’s approach to AI and product development.            </p>
-            <div class="case-tags">
-                <span class="tag">AI</span>
-                <span class="tag">mobile</span>
-                <span class="tag">research</span>
-                <span class="tag">design strategy</span>
-            </div>
-            <div class="impact-metric">
-                Key impact: <span class="metric-value">Up to 50% reduced time spent adjusting claims</span> and <span class="metric-value">furthered investment in the product model</span>
-            </div>
-        </article>
+    <!-- LEFT COLUMN (desktop only) -->
+    <div class="name-column" aria-hidden="true">
+      <div class="name-column__text">BENJA&shy;MIN JOYCE</div>
     </div>
-</div>
-<script>
-if ('startViewTransition' in document) {
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', event => {
-      const url = link.href;
 
-      // Only intercept same-origin links
-      if (url && url.startsWith(window.location.origin)) {
-        event.preventDefault();
+    <!-- RIGHT COLUMN (all content on mobile; right col on desktop) -->
+    <div class="content-column">
 
-        document.startViewTransition(() => {
-          return fetch(url)
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
+      <section class="hero">
+        <span class="hero__name">Benjamin Joyce</span>
+        <h1 class="hero__title">Product &amp;&nbsp;Design</h1>
+        <p class="hero__tagline">Leadership, strategy, design, product management, analytics.</p>
+        <a href="https://www.benjoyce.cv" class="hero__resume">Resume</a>
+      </section>
 
-              // Replace the content while naming the transition for .case-title
-              const oldTitle = document.querySelector('.case-title');
-              const newTitle = doc.querySelector('.case-title');
+      <section class="case-studies">
+        <p class="case-studies__label">Case Studies</p>
 
-              if (oldTitle && newTitle) {
-                oldTitle.style.viewTransitionName = 'case-title';
-                newTitle.style.viewTransitionName = 'case-title';
-              }
+        <article class="card">
+          <h2 class="card__title">Building Best Buy's third-party marketplace from the ground up</h2>
+          <p class="card__desc">0 to 1 is never easy. Luckily, I had a strong team and a great foundation. Read to learn how I led the team to design third-party offerings without losing customer trust.</p>
+          <a href="marketplace.html" class="card__link">Read case</a>
+        </article>
 
-              document.body.innerHTML = doc.body.innerHTML;
-              window.history.pushState({}, '', url);
-            });
-        });
-      }
-    });
-  });
-}
-</script>
+        <article class="card">
+          <h2 class="card__title">Best Buy checkout redesign</h2>
+          <p class="card__desc">Led the creation and execution of a research-backed roadmap to reduce customer friction and increase conversion in Best Buy's cart and checkout. Delivered measurable conversion gains and improved customer sentiment, influencing future e-commerce strategy.</p>
+          <a href="checkout.html" class="card__link">Read case</a>
+        </article>
 
+        <article class="card">
+          <h2 class="card__title">Saving adjusters time with AI and design</h2>
+          <p class="card__desc">Led a cross-functional team to redesign the mobile claims experience, using real-world observations and rapid prototyping to save adjusters time and shift the company's approach to AI and product development.</p>
+          <a href="adjusters.html" class="card__link">Read case</a>
+        </article>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js'></script>
+      </section>
+
+    </div><!-- /content-column -->
+
+  </div><!-- /site-wrapper -->
+
 </body>
 </html>
