@@ -1,160 +1,302 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saving Adjusters Time with AI Experimentation and a Sound Design Process - Ben Joyce</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saving Adjusters Time with AI and Design — Benjamin Joyce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:       #141C21;
+      --orange:   #a65402;
+      --cream:    #fef0ce;
+      --blue:     #1991ae;
+      --green:    #9db3a0;
+      --fs-base:  16px;
+      --pad:      24px;
+      --max-w:    680px;
+    }
+
+    /* ── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: var(--fs-base);
+      overflow-x: hidden;
+      background: #141C21 !important;
+    }
+
+    body {
+      background: #141C21 !important;
+      color: var(--green);
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover { opacity: 0.75; }
+
+    /* ── PAGE WRAPPER ────────────────────────────────────────── */
+    .page {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 40px var(--pad) 100px;
+    }
+
+    /* ── BACK LINK ───────────────────────────────────────────── */
+    .back {
+      display: inline-block;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    /* ── CASE TITLE ──────────────────────────────────────────── */
+    .case-title {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 8vw, 3rem);
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 32px;
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    /* ── BODY COPY ───────────────────────────────────────────── */
+    .prose p {
+      font-size: 1rem;
+      color: var(--green);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    /* ── SECTION SUBHEADINGS ─────────────────────────────────── */
+    .section-heading {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--green);
+      margin: 40px 0 16px;
+    }
+
+    /* ── BOLD CALLOUT SUBHEADING ─────────────────────────────── */
+    .leadership-heading {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cream);
+      margin: 24px 0 12px;
+    }
+
+    /* ── NUMBERED OVERVIEW LIST ──────────────────────────────── */
+    .overview-list {
+      list-style: decimal;
+      margin: 20px 0 32px;
+      padding-left: 24px;
+    }
+    .overview-list li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--green);
+    }
+
+    /* ── BULLET LIST ─────────────────────────────────────────── */
+    .bullet-list {
+      list-style: disc;
+      margin: 0 0 24px 0;
+      padding-left: 24px;
+    }
+    .bullet-list li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--green);
+    }
+
+    /* ── PHASE OUTCOME CARD (dark, teal border) ──────────────── */
+    .outcome-phase {
+      border: 1.5px solid var(--blue);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .outcome-phase .outcome-label {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .outcome-phase p {
+      font-size: 1rem;
+      color: var(--green);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── PROJECT OUTCOME CARD (cream bg, grainy feel) ────────── */
+    .outcome-project {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 32px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Grain overlay */
+    .outcome-project::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+      background-size: 150px 150px;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+    .outcome-project .outcome-label {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--bg);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .outcome-project p {
+      font-size: 1rem;
+      color: var(--bg);
+      line-height: 1.7;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── IMAGE + CAPTION ─────────────────────────────────────── */
+    .case-image {
+      margin: 32px 0 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #0d1519;
+    }
+    .case-image img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+    .case-image figcaption {
+      font-size: 0.85rem;
+      color: var(--green);
+      opacity: 0.75;
+      padding: 10px 0 4px;
+      line-height: 1.5;
+    }
+
+    /* ── DESKTOP ─────────────────────────────────────────────── */
+    @media (min-width: 900px) {
+      .page {
+        padding: 60px 48px 120px;
+      }
+    }
+  </style>
+
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <h1 class="name">Ben Joyce</h1>
-      <p class="subtitle">Leadership, strategy, design, product, analytics.</p>
-      <a href="/" class="nav-link">← Back to home</a>
-    </header>
 
-    <div class="case-header">
-      <h2 class="case-title">Saving Adjusters Time with AI Experimentation and a Sound Design Process</h2>
-      <div class="case-meta">
-        <div class="meta-item">Role: <span class="meta-value">UX Lead</span></div>
-        <div class="meta-item">Year: <span class="meta-value">2017</span></div>
-        <div class="meta-item">Team: <span class="meta-value">2 designers</span></div>
-      </div>
-      <p class="case-summary">
-        Led a cross-functional effort from initial request through post-launch to redesign the mobile claims experience, freeing up claim handlers’ time through AI experimentation, research, and a refined product vision.
-      </p>
-      <div class="case-tags">
-        <span class="tag">AI experimentation</span>
-        <span class="tag">mobile UX</span>
-        <span class="tag">research</span>
-        <span class="tag">journey mapping</span>
-        <span class="tag">process improvement</span>
-      </div>
-    </div>
+  <div class="page">
 
-    <div class="case-content">
-      <section class="section">
-        <h3 class="section-title">What We Were Solving</h3>
-        <div class="section-content">
-          <p>Leadership believed adjusters spent too much time in the field on straightforward claims. We were tasked with finding ways to reduce that time through mobile and AI solutions.</p>
-          <p>The project required balancing ambitious AI ideas with the reality of complex claims work, ensuring that whatever we delivered actually fit into adjusters’ daily workflows.</p>
-        </div>
-      </section>
+```
+<a href="index.html" class="back">← Back to home</a>
 
-      <section class="section">
-        <h3 class="section-title">What Made This Hard</h3>
-        <div class="section-content">
-          <p>Even simple claims involved multiple variables. Early AI experiments didn’t fully address the complexity, and many adjusters’ pain points came from duplicated work rather than field time itself.</p>
-          <div class="highlight-box">
-            <p><strong>Core tension:</strong> Early assumptions didn’t align with observed workflows, requiring a shift in product vision.</p>
-          </div>
-          <p>The challenge was identifying real bottlenecks and focusing on high-value fixes while keeping stakeholders aligned.</p>
-        </div>
-      </section>
+<h1 class="case-title">Saving adjusters time with AI and design</h1>
 
-      <img src="path/to/image1.jpg" alt="Field adjuster using mobile claims app" class="case-image">
+<div class="prose">
 
-      <section class="section">
-        <h3 class="section-title">What I Did</h3>
-        <div class="section-content">
-          <p>I led the design process, managing two designers and collaborating closely with PMs, engineers, data scientists, and field adjusters. I drove user observation, journey mapping, and rapid prototyping to uncover and address real pain points.</p>
-          <p>Key leadership actions:</p>
-          <ul>
-            <li>Directed observation sessions with real claims in the field</li>
-            <li>Mapped end-to-end adjuster workflows to uncover duplication issues</li>
-            <li>Designed and tested mobile-first wireframes to streamline data collection</li>
-            <li>Pivoted from original AI-first approach to targeted process fixes</li>
-          </ul>
-        </div>
-      </section>
+  <p>Led a cross-functional effort from initial request through post-launch to redesign the mobile claims experience, freeing up claim handlers' time through AI experimentation, research, and a refined product vision.</p>
 
-      <section class="section">
-        <h3 class="section-title">How We Worked</h3>
-        <div class="section-content">
-          <p>We applied a strong product model approach: research, prototyping, and validation at each step. Rather than relying solely on AI experiments, we focused on process simplification and reducing double entry in notes.</p>
-          <div class="highlight-box">
-            <p><strong>Design principle:</strong> Observe real work before committing to assumptions. Solve for actual bottlenecks, not assumed ones.</p>
-          </div>
-        </div>
-      </section>
+  <p class="section-heading">Overview of my direction to the team</p>
 
-      <img src="path/to/image2.jpg" alt="Journey map of claims handling process" class="case-image">
+  <ol class="overview-list">
+    <li>Observe adjusters doing real work before committing to any solution</li>
+    <li>Map the end-to-end workflow to find where time was actually being lost</li>
+    <li>Design, test, and iterate toward solutions that fit into adjusters' real daily workflows</li>
+  </ol>
 
-      <section class="section">
-        <h3 class="section-title">What Happened</h3>
-        <div class="section-content">
-          <p>The redesigned mobile experience and process changes led to measurable time savings, wide adoption, and further investment in the mobile platform. The work strengthened organizational support for the product model.</p>
-          <div class="highlight-box">
-            <p><strong>Strategic impact:</strong> Created a scalable model for combining AI experiments with practical process design to deliver real operational gains.</p>
-          </div>
+  <p class="section-heading">What we were solving</p>
 
-          <div class="metrics-grid">
-            <div class="metric">
-              <div class="metric-value">↓</div>
-              <div class="metric-label">Reduced Time in Field</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">✓</div>
-              <div class="metric-label">Wide Adoption</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">↑</div>
-              <div class="metric-label">Platform Investment</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">🏆</div>
-              <div class="metric-label">Process Recognition</div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <p>Leadership believed adjusters spent too much time in the field on straightforward claims. We were tasked with finding ways to reduce that time through mobile and AI solutions.</p>
 
-      <section class="section">
-        <h3 class="section-title">What I Learned</h3>
-        <div class="section-content">
-          <p>This project reinforced the importance of grounding product vision in real-world observation. By validating assumptions through direct user research, we avoided over-investing in solutions that wouldn’t address the real issues.</p>
-          <div class="quote">
-            "Seeing the work firsthand changed our priorities and saved us from chasing the wrong solution."
-            <div class="quote-author">— Ben Joyce</div>
-          </div>
-          <p>If I could go back, I’d refocus the team even faster once the initial AI direction proved less viable. The key lesson: real observation drives better outcomes than assumptions alone.</p>
-        </div>
-      </section>
-    </div>
+  <p>The project required balancing ambitious AI ideas with the reality of complex claims work, ensuring that whatever we delivered actually fit into adjusters' daily workflows.</p>
+
+  <p class="section-heading">What made this hard</p>
+
+  <p>Even simple claims involved multiple variables. Early AI experiments didn't fully address the complexity, and many adjusters' pain points came from duplicated work rather than field time itself.</p>
+
+  <p>Early assumptions didn't align with observed workflows, requiring a shift in product vision. The challenge was identifying real bottlenecks and focusing on high-value fixes while keeping stakeholders aligned.</p>
+
+  <p class="section-heading">What I did</p>
+
+  <p>I led the design process, managing two designers and collaborating closely with PMs, engineers, data scientists, and field adjusters. I drove user observation, journey mapping, and rapid prototyping to uncover and address real pain points.</p>
+
+  <p class="leadership-heading">Key leadership actions:</p>
+
+  <ul class="bullet-list">
+    <li>Directed observation sessions with real claims in the field</li>
+    <li>Mapped end-to-end adjuster workflows to uncover duplication issues</li>
+    <li>Designed and tested mobile-first wireframes to streamline data collection</li>
+    <li>Pivoted from the original AI-first approach to targeted process fixes once field observation revealed where time was actually being lost</li>
+  </ul>
+
+  <div class="outcome-phase">
+    <p class="outcome-label">Phase outcome</p>
+    <p>Seeing the work firsthand changed our priorities and saved us from chasing the wrong solution. The team aligned on a focused direction grounded in what adjusters actually needed.</p>
   </div>
 
-  <script>
-  if ('startViewTransition' in document) {
-    document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', event => {
-        const url = link.href;
-        if (url && url.startsWith(window.location.origin)) {
-          event.preventDefault();
-          document.startViewTransition(() => {
-            return fetch(url)
-              .then(res => res.text())
-              .then(html => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const oldTitle = document.querySelector('.case-title');
-                const newTitle = doc.querySelector('.case-title');
-                if (oldTitle && newTitle) {
-                  oldTitle.style.viewTransitionName = 'case-title';
-                  newTitle.style.viewTransitionName = 'case-title';
-                }
-                document.body.innerHTML = doc.body.innerHTML;
-                window.history.pushState({}, '', url);
-              });
-          });
-        }
-      });
-    });
-  }
-  </script>
+  <p class="section-heading">How we worked</p>
+
+  <p>We applied a strong product model approach: research, prototyping, and validation at each step. Rather than relying solely on AI experiments, we focused on process simplification and reducing double entry in notes.</p>
+
+  <p>Our design principle was to observe real work before committing to assumptions — solve for actual bottlenecks, not assumed ones.</p>
+
+  <p class="leadership-heading">Some leadership decisions I made during this phase:</p>
+
+  <ul class="bullet-list">
+    <li>I pushed for field observation early, before any solutions were committed to</li>
+    <li>I made sure the team had the context behind every piece of partner feedback so we could respond to the real need, not just the surface request</li>
+    <li>I ensured we had a plan to iterate and test quickly rather than waiting for a complete solution</li>
+  </ul>
+
+  <div class="outcome-phase">
+    <p class="outcome-label">Phase outcome</p>
+    <p>The redesigned mobile experience fit naturally into adjusters' daily workflows. The team delivered something that solved real problems rather than assumed ones.</p>
+  </div>
+
+  <p class="section-heading">What happened</p>
+
+  <p>The redesigned mobile experience and process changes led to measurable time savings, wide adoption, and further investment in the mobile platform. The work strengthened organizational support for the product model.</p>
+
+  <p>The project created a scalable model for combining AI experiments with practical process design to deliver real operational gains.</p>
+
+  <div class="outcome-project">
+    <p class="outcome-label">Project outcome</p>
+    <p>Adjusters spent less time in the field on straightforward claims. The experience saw wide adoption and led to further platform investment. The work was recognized across the organization and shifted how the company approached AI and product development.</p>
+  </div>
+
+</div><!-- /prose -->
+```
+
+  </div><!-- /page -->
+
 </body>
 </html>
