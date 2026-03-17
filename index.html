@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -49,10 +50,33 @@
     }
     a:hover { opacity: 0.75; }
 
+    /* ── PARTICLE CANVAS ─────────────────────────────────────── */
+    #particle-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── ENTRANCE ANIMATION ──────────────────────────────────── */
+    .animate-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ── LAYOUT ──────────────────────────────────────────────── */
 
     /* Mobile-first: single column */
     .site-wrapper {
+      position: relative;
+      z-index: 1;
       min-height: 100vh;
     }
 
@@ -149,7 +173,6 @@
       /* Left column: giant name as visual element */
       .name-column {
         display: flex;
-        display: flex;
         justify-content: center;
         overflow: hidden;
         padding: var(--pad-desktop);
@@ -210,54 +233,143 @@
       }
     }
   </style>
+
 </head>
 <body>
+
+  <!-- PARTICLE CANVAS — sits fixed behind everything -->
+
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
 
   <!-- MOBILE: name lives inside hero. DESKTOP: name lives in left column. -->
 
   <div class="site-wrapper">
 
-    <!-- LEFT COLUMN (desktop only) -->
-    <div class="name-column" aria-hidden="true">
-      <div class="name-column__text">BENJA&shy;MIN JOYCE</div>
-    </div>
+```
+<!-- LEFT COLUMN (desktop only) -->
+<div class="name-column" aria-hidden="true">
+  <div class="name-column__text animate-in" style="transition-delay: 200ms">BENJA&shy;MIN JOYCE</div>
+</div>
 
-    <!-- RIGHT COLUMN (all content on mobile; right col on desktop) -->
-    <div class="content-column">
+<!-- RIGHT COLUMN (all content on mobile; right col on desktop) -->
+<div class="content-column">
 
-      <section class="hero">
-        <span class="hero__name">Benjamin Joyce</span>
-        <h1 class="hero__title">Product &amp;&nbsp;Design</h1>
-        <p class="hero__tagline">Leadership, strategy, design, product management, analytics.</p>
-        <a href="https://www.benjoyce.cv" class="hero__resume">Resume</a>
-      </section>
+  <section class="hero">
+    <span class="hero__name animate-in" style="transition-delay: 0ms">Benjamin Joyce</span>
+    <h1 class="hero__title animate-in" style="transition-delay: 120ms">Product &amp;&nbsp;Design</h1>
+    <p class="hero__tagline animate-in" style="transition-delay: 240ms">Leadership, strategy, design, product management, analytics.</p>
+    <a href="https://www.benjoyce.cv" class="hero__resume animate-in" style="transition-delay: 360ms">Resume</a>
+  </section>
 
-      <section class="case-studies">
-        <p class="case-studies__label">Case Studies</p>
+  <section class="case-studies">
+    <p class="case-studies__label animate-in" style="transition-delay: 480ms">Case Studies</p>
 
-        <article class="card">
-          <h2 class="card__title">Building Best Buy's third-party marketplace from the ground up</h2>
-          <p class="card__desc">0 to 1 is never easy. Luckily, I had a strong team and a great foundation. Read to learn how I led the team to design third-party offerings without losing customer trust.</p>
-          <a href="case-3p-marketplace.html" class="card__link">Read case</a>
-        </article>
+    <article class="card animate-in" style="transition-delay: 560ms">
+      <h2 class="card__title">Building Best Buy's third-party marketplace from the ground up</h2>
+      <p class="card__desc">0 to 1 is never easy. Luckily, I had a strong team and a great foundation. Read to learn how I led the team to design third-party offerings without losing customer trust.</p>
+      <a href="case-3p-marketplace.html" class="card__link">Read case</a>
+    </article>
 
-        <article class="card">
-          <h2 class="card__title">Best Buy checkout redesign</h2>
-          <p class="card__desc">Led the creation and execution of a research-backed roadmap to reduce customer friction and increase conversion in Best Buy's cart and checkout. Delivered measurable conversion gains and improved customer sentiment, influencing future e-commerce strategy.</p>
-          <a href="case-best-buy-checkout.html" class="card__link">Read case</a>
-        </article>
+    <article class="card animate-in" style="transition-delay: 640ms">
+      <h2 class="card__title">Best Buy checkout redesign</h2>
+      <p class="card__desc">Led the creation and execution of a research-backed roadmap to reduce customer friction and increase conversion in Best Buy's cart and checkout. Delivered measurable conversion gains and improved customer sentiment, influencing future e-commerce strategy.</p>
+      <a href="case-best-buy-checkout.html" class="card__link">Read case</a>
+    </article>
 
-        <article class="card">
-          <h2 class="card__title">Saving adjusters time with AI and design</h2>
-          <p class="card__desc">Led a cross-functional team to redesign the mobile claims experience, using real-world observations and rapid prototyping to save adjusters time and shift the company's approach to AI and product development.</p>
-          <a href="case-saving-adjusters-time.html" class="card__link">Read case</a>
-        </article>
+    <article class="card animate-in" style="transition-delay: 720ms">
+      <h2 class="card__title">Saving adjusters time with AI and design</h2>
+      <p class="card__desc">Led a cross-functional team to redesign the mobile claims experience, using real-world observations and rapid prototyping to save adjusters time and shift the company's approach to AI and product development.</p>
+      <a href="case-saving-adjusters-time.html" class="card__link">Read case</a>
+    </article>
 
-      </section>
+  </section>
 
-    </div><!-- /content-column -->
+</div><!-- /content-column -->
+```
 
   </div><!-- /site-wrapper -->
+
+  <script>
+    // ── PARTICLE FIELD ──────────────────────────────────────────
+    (function () {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx    = canvas.getContext('2d');
+
+      const COLORS = [
+        'rgba(254, 240, 206, 0.18)',
+        'rgba(254, 240, 206, 0.09)',
+        'rgba(25,  145, 174, 0.14)',
+        'rgba(25,  145, 174, 0.07)',
+      ];
+
+      const COUNT = 55;
+      let particles = [];
+      let W, H;
+
+      function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+
+      function rand(a, b) { return a + Math.random() * (b - a); }
+
+      function makeParticle() {
+        return {
+          x:          rand(0, W),
+          y:          rand(0, H),
+          r:          rand(0.5, 2.0),
+          color:      COLORS[Math.floor(Math.random() * COLORS.length)],
+          vx:         rand(-0.10, 0.10),
+          vy:         rand(-0.08, 0.08),
+          phase:      rand(0, Math.PI * 2),
+          phaseSpeed: rand(0.005, 0.014),
+        };
+      }
+
+      function init() {
+        resize();
+        particles = Array.from({ length: COUNT }, makeParticle);
+      }
+
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+
+        for (const p of particles) {
+          p.phase += p.phaseSpeed;
+          const r = Math.max(0.2, p.r + Math.sin(p.phase) * 0.35);
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < -4)    p.x = W + 4;
+          if (p.x > W + 4) p.x = -4;
+          if (p.y < -4)    p.y = H + 4;
+          if (p.y > H + 4) p.y = -4;
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      window.addEventListener('resize', resize, { passive: true });
+
+      init();
+      requestAnimationFrame(tick);
+    })();
+
+    // ── ENTRANCE ANIMATION ──────────────────────────────────────
+    (function () {
+      setTimeout(function () {
+        document.querySelectorAll('.animate-in').forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }, 80);
+    })();
+  </script>
 
 </body>
 </html>
