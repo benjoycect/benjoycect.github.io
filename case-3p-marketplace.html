@@ -209,6 +209,228 @@
         padding: 60px 48px 120px;
       }
     }
+
+    /* ── TRIVIA GAME ─────────────────────────────────────────── */
+    .trivia {
+      margin-bottom: 56px;
+    }
+
+    .trivia__intro {
+      margin-bottom: 28px;
+    }
+    .trivia__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .trivia__intro-body {
+      font-size: 1rem;
+      color: var(--green);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .trivia__btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--cream);
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.2s ease;
+      text-decoration: none;
+    }
+    .trivia__btn:hover { opacity: 0.85; color: var(--cream); }
+
+    /* Game area */
+    .trivia__game { display: none; }
+    .trivia__game.active { display: block; }
+
+    .trivia__progress {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .trivia__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      transition: background 0.3s ease;
+    }
+    .trivia__dot.done   { background: #2a3d4a; }
+    .trivia__dot.active { background: var(--cream); }
+
+    /* Card stack */
+    .trivia__stack {
+      position: relative;
+      height: 300px;
+      margin-bottom: 16px;
+    }
+    .trivia__stack::before,
+    .trivia__stack::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      background: var(--cream);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+    .trivia__stack::before {
+      width: calc(100% - 24px);
+      height: 100%;
+      top: 7px;
+      transform: translateX(-50%);
+      opacity: 0.2;
+    }
+    .trivia__stack::after {
+      width: calc(100% - 44px);
+      height: 100%;
+      top: 14px;
+      transform: translateX(-50%);
+      opacity: 0.1;
+    }
+
+    .trivia__card {
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      z-index: 2;
+      transition: transform 0.22s cubic-bezier(0.4, 0, 1, 1);
+    }
+    .trivia__card.flip-out { transform: scaleX(0); }
+    .trivia__card.flip-in  { transform: scaleX(0); transition: none; }
+    .trivia__card.flip-in.flip-go {
+      transform: scaleX(1);
+      transition: transform 0.22s cubic-bezier(0, 0, 0.2, 1);
+    }
+    .trivia__card.entering {
+      animation: tSlideIn 0.35s cubic-bezier(0.2, 0, 0.2, 1) both;
+    }
+    @keyframes tSlideIn {
+      from { opacity: 0; transform: translateX(32px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .trivia__face,
+    .trivia__back {
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      pointer-events: none;
+    }
+    .trivia__face {
+      background: var(--cream);
+      color: var(--bg);
+    }
+    .trivia__back {
+      background: #1a2830;
+      border: 1.5px solid #2a3d4a;
+      display: none;
+    }
+    .trivia__card.showing-back .trivia__face { display: none; }
+    .trivia__card.showing-back .trivia__back  { display: flex; }
+
+    .trivia__eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .trivia__face .trivia__eyebrow { color: var(--orange); }
+    .trivia__back .trivia__eyebrow { color: var(--blue); }
+
+    .trivia__q {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #141C21;
+      line-height: 1.45;
+      flex: 1;
+    }
+    .trivia__a {
+      font-size: 0.95rem;
+      color: var(--cream);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .trivia__hint {
+      font-size: 0.78rem;
+      color: #141C21;
+      opacity: 0.3;
+      margin-top: 16px;
+    }
+
+    .trivia__num {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-family: 'Climate Crisis', sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+    .trivia__face .trivia__num { color: var(--orange); opacity: 0.1; }
+    .trivia__back .trivia__num { color: var(--cream);  opacity: 0.06; }
+
+    .trivia__next {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: var(--green);
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 11px 20px;
+      border-radius: 4px;
+      border: 1.5px solid #2a3d4a;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: border-color 0.2s, color 0.2s, opacity 0.2s;
+      opacity: 0;
+      pointer-events: none;
+      margin-top: 4px;
+    }
+    .trivia__next.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .trivia__next:hover {
+      border-color: var(--green);
+      color: var(--cream);
+    }
+
+    /* End state — game collapses, case flows */
+    .trivia__end {
+      display: none;
+      padding: 20px 0 8px;
+      border-top: 1px solid #2a3d4a;
+    }
+    .trivia__end.active { display: block; }
+    .trivia__end-text {
+      font-size: 0.9rem;
+      color: var(--green);
+      opacity: 0.6;
+      font-style: italic;
+    }
   </style>
 
 </head>
@@ -224,6 +446,56 @@
 <div class="prose">
 
   <p>Best Buy's product assortment needed to grow to better serve our customers. The strategy to address that need was to create a third-party (3P) marketplace. My team was tasked with creating a buying experience for 3P that maintained the experience customers expect from Best Buy.</p>
+
+</div>
+
+<!-- ── TRIVIA ─────────────────────────────────────────────── -->
+<div class="trivia">
+
+  <!-- Intro -->
+  <div class="trivia__intro" id="t-intro">
+    <p class="trivia__label">Before you read</p>
+    <p class="trivia__intro-body">Five questions from a real project. There's no wrong answer, but I made specific choices. If you'd do it differently, I genuinely want to hear why. Tap a card to see what I did.</p>
+    <button class="trivia__btn" id="t-start">Let's go</button>
+  </div>
+
+  <!-- Game -->
+  <div class="trivia__game" id="t-game">
+    <div class="trivia__progress" id="t-progress">
+      <div class="trivia__dot active"></div>
+      <div class="trivia__dot"></div>
+      <div class="trivia__dot"></div>
+      <div class="trivia__dot"></div>
+      <div class="trivia__dot"></div>
+    </div>
+
+    <div class="trivia__stack">
+      <div class="trivia__card entering" id="t-card">
+        <div class="trivia__face">
+          <div class="trivia__num" id="t-fnum">1</div>
+          <p class="trivia__eyebrow">Question <span id="t-qnum">1</span> of 5</p>
+          <p class="trivia__q" id="t-q"></p>
+          <p class="trivia__hint">Tap to reveal</p>
+        </div>
+        <div class="trivia__back">
+          <div class="trivia__num" id="t-bnum">1</div>
+          <p class="trivia__eyebrow">What I did</p>
+          <p class="trivia__a" id="t-a"></p>
+        </div>
+      </div>
+    </div>
+
+    <button class="trivia__next" id="t-next">Next question →</button>
+  </div>
+
+  <!-- End -->
+  <div class="trivia__end" id="t-end">
+    <p class="trivia__end-text">Now read how it came together.</p>
+  </div>
+
+</div>
+
+<div class="prose">
 
   <p class="section-heading">Overview of my direction to the team</p>
 
@@ -312,6 +584,105 @@
 
 
   </div><!-- /page -->
+
+  <script>
+    const CARDS = [
+      {
+        q: "Before the team designed anything, what was the first thing I did?",
+        a: "I got research started. Best Buy has a great research team, but that means you have to be thoughtful about giving them time, clear briefs, and context. We needed to understand what customers actually expected when buying a 3P product, not what we assumed."
+      },
+      {
+        q: "I had a lead designer who was great at exploring multiple options. How did I use that?",
+        a: "I used it as a coaching opportunity. He knew how to work this way. I wanted him to learn how to teach others to do it too. I gave him the lead on running the exploration sessions with his teammates."
+      },
+      {
+        q: "My team generated dozens of ideas. Some I disagreed with. What did I do?",
+        a: "I joined the sessions and shared my perspective. I also made sure my ideas didn't win just because I'm the manager. The best idea should win."
+      },
+      {
+        q: "Customer testing flagged a real problem. What did I do with that?",
+        a: "I made sure the team understood the feedback and the reason behind it. Then I made sure we had a plan to iterate and test quickly. Every round of results went back to our partners."
+      },
+      {
+        q: "How do we know it worked?",
+        a: "3P conversion matched first-party. Return rates came in lower. Customers were confident enough that the numbers showed it."
+      }
+    ];
+
+    let current = 0;
+    let flipped = false;
+
+    const tIntro = document.getElementById('t-intro');
+    const tGame  = document.getElementById('t-game');
+    const tEnd   = document.getElementById('t-end');
+    const tCard  = document.getElementById('t-card');
+    const tQ     = document.getElementById('t-q');
+    const tA     = document.getElementById('t-a');
+    const tQNum  = document.getElementById('t-qnum');
+    const tFNum  = document.getElementById('t-fnum');
+    const tBNum  = document.getElementById('t-bnum');
+    const tNext  = document.getElementById('t-next');
+    const tDots  = document.querySelectorAll('.trivia__dot');
+
+    function loadCard(index) {
+      tQ.textContent    = CARDS[index].q;
+      tA.textContent    = CARDS[index].a;
+      tQNum.textContent = index + 1;
+      tFNum.textContent = index + 1;
+      tBNum.textContent = index + 1;
+      tNext.textContent = index < CARDS.length - 1 ? 'Next question →' : 'Read the case →';
+      tCard.classList.remove('showing-back', 'flip-out', 'flip-in', 'flip-go', 'entering');
+      void tCard.offsetWidth;
+      tCard.classList.add('entering');
+      flipped = false;
+      tNext.classList.remove('visible');
+      tDots.forEach((dot, i) => {
+        dot.classList.remove('active', 'done');
+        if (i < index)       dot.classList.add('done');
+        else if (i === index) dot.classList.add('active');
+      });
+    }
+
+    document.getElementById('t-start').addEventListener('click', () => {
+      tIntro.style.display = 'none';
+      tGame.classList.add('active');
+      loadCard(0);
+    });
+
+    tCard.addEventListener('click', () => {
+      if (flipped) return;
+      flipped = true;
+      tCard.classList.add('flip-out');
+      setTimeout(() => {
+        tCard.classList.add('showing-back');
+        tCard.classList.remove('flip-out');
+        tCard.classList.add('flip-in');
+        void tCard.offsetWidth;
+        tCard.classList.add('flip-go');
+        setTimeout(() => {
+          tCard.classList.remove('flip-in', 'flip-go');
+          tNext.classList.add('visible');
+        }, 240);
+      }, 220);
+    });
+
+    tNext.addEventListener('click', () => {
+      current++;
+      if (current >= CARDS.length) {
+        tGame.classList.remove('active');
+        tEnd.classList.add('active');
+      } else {
+        loadCard(current);
+      }
+    });
+
+    // Init
+    tQ.textContent    = CARDS[0].q;
+    tA.textContent    = CARDS[0].a;
+    tQNum.textContent = 1;
+    tFNum.textContent = 1;
+    tBNum.textContent = 1;
+  </script>
 
 </body>
 </html>
