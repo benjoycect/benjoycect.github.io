@@ -209,12 +209,120 @@
         padding: 60px 48px 120px;
       }
     }
+
+    /* ── ASTEROIDS GAME ──────────────────────────────────────── */
+    .game-block {
+      margin: 0 0 48px;
+    }
+
+    .game-block__intro {
+      margin-bottom: 20px;
+    }
+    .game-block__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .game-block__body {
+      font-size: 1rem;
+      color: var(--green);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .game-block__btn {
+      background: var(--orange);
+      color: var(--cream);
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .game-block__btn:hover { opacity: 0.85; }
+
+    /* The game canvas container */
+    .game-arena {
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0d1519;
+      border: 1px solid #2a3d4a;
+      touch-action: none;
+    }
+    .game-arena.active { display: block; }
+
+    #ast-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* In-game UI */
+    .game-hint {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      color: var(--green);
+      opacity: 0.4;
+      letter-spacing: 0.06em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* Win state — collapses game, shows outcome inline */
+    .game-won {
+      display: none;
+      animation: fadeUp 0.5s ease both;
+    }
+    .game-won.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .game-won__note {
+      font-size: 0.85rem;
+      color: var(--green);
+      font-style: italic;
+      opacity: 0.6;
+      margin-bottom: 24px;
+    }
+    .game-won__replay {
+      background: transparent;
+      border: 1.5px solid #2a3d4a;
+      color: var(--green);
+      font-family: 'Urbanist', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .game-won__replay:hover { border-color: var(--green); color: var(--cream); }
   </style>
 
 </head>
 <body>
 
   <div class="page">
+
 
 <a href="index.html" class="back">← Back to home</a>
 
@@ -223,6 +331,31 @@
 <div class="prose">
 
   <p>Led the creation and execution of a research-backed roadmap to reduce customer friction and increase conversion in Best Buy's cart and checkout. Delivered measurable conversion gains and improved customer sentiment, influencing future e-commerce strategy.</p>
+
+</div>
+
+<!-- ── ASTEROIDS GAME ──────────────────────────────────── -->
+<div class="game-block">
+
+  <div class="game-block__intro" id="ast-intro">
+    <p class="game-block__label">Before you read</p>
+    <p class="game-block__body">Every asteroid is a real friction point we found in Best Buy's checkout. Destroy them to see what we did about it.</p>
+    <button class="game-block__btn" id="ast-start">Play</button>
+  </div>
+
+  <div class="game-arena" id="ast-arena">
+    <canvas id="ast-canvas"></canvas>
+    <p class="game-hint" id="ast-hint"></p>
+  </div>
+
+  <div class="game-won" id="ast-won">
+    <p class="game-won__note">All friction cleared. Now read how we got there.</p>
+    <button class="game-won__replay" id="ast-replay">Play again</button>
+  </div>
+
+</div>
+
+<div class="prose">
 
   <p class="section-heading">Overview of my direction to the team</p>
 
@@ -289,7 +422,706 @@
 
 </div><!-- /prose -->
 
+
   </div><!-- /page -->
+
+  <script>
+  (function () {
+    'use strict';
+
+    const FRICTIONS = [
+      { label: 'Unclear\nprogress',       solution: 'Added clear step indicators' },
+      { label: 'Too many\nform fields',   solution: 'Removed unnecessary fields' },
+      { label: 'Poor mobile\nergonomics', solution: 'Redesigned for thumb reach' },
+      { label: 'Hidden\nshipping costs',  solution: 'Surfaced costs earlier' },
+      { label: 'Confusing\nmembership',   solution: 'Simplified member benefits' },
+      { label: 'Guest checkout\nburied',  solution: 'Made guest path prominent' },
+      { label: 'Payment\nfriction',       solution: 'Streamlined payment entry' },
+    ];
+
+    const canvas = document.getElementById('ast-canvas');
+    const ctx    = canvas.getContext('2d');
+    const arena  = document.getElementById('ast-arena');
+    const DPR    = Math.min(window.devicePixelRatio || 1, 2);
+    let W, H;
+
+    function resize() {
+      W = arena.clientWidth;
+      H = arena.clientHeight;
+      canvas.width  = W * DPR;
+      canvas.height = H * DPR;
+      canvas.style.width  = W + 'px';
+      canvas.style.height = H + 'px';
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+
+    const C = {
+      bg: '#0d1519', ship: '#fef0ce', bullet: '#1991ae',
+      asteroid: '#9db3a0', solution: '#fef0ce', orange: '#a65402',
+    };
+
+    // Spin button dimensions
+    const BTN_R  = 36; // radius
+    const BTN_PAD = 20; // from bottom-left corner
+
+    let ship, bullets, asteroids, particles, solutions;
+    let gameRunning = false;
+    let frictionIndex = 0;
+    let rafId = null;
+    let spinning = false; // spin button held
+    let lastFire = 0;
+
+    function makeShip() {
+      return {
+        x: W / 2, y: H / 2,
+        angle: -Math.PI / 2,
+        radius: 12,
+      };
+    }
+
+    function makeShape(n) {
+      return Array.from({ length: n }, (_, i) => {
+        const a = (i / n) * Math.PI * 2;
+        const r = 0.72 + Math.random() * 0.28;
+        return { x: Math.cos(a) * r, y: Math.sin(a) * r };
+      });
+    }
+
+    function makeAsteroid(x, y, size, fi) {
+      const r   = { large: 44, medium: 24, small: 12 }[size];
+      const spd = { large: 0.7, medium: 1.2, small: 2.0 }[size];
+      const sides = { large: 10, medium: 8, small: 6 }[size];
+      const a = Math.random() * Math.PI * 2;
+      return {
+        x, y,
+        vx: Math.cos(a) * spd, vy: Math.sin(a) * spd,
+        radius: r, size,
+        angle: Math.random() * Math.PI * 2,
+        spin: (Math.random() - 0.5) * 0.025,
+        shape: makeShape(sides),
+        fi: fi ?? null,
+      };
+    }
+
+    function spawnAsteroids() {
+      asteroids = []; frictionIndex = 0;
+      for (let i = 0; i < Math.min(FRICTIONS.length, 5); i++) {
+        let x, y;
+        do { x = Math.random() * W; y = Math.random() * H; }
+        while (Math.hypot(x - W/2, y - H/2) < 130);
+        asteroids.push(makeAsteroid(x, y, 'large', frictionIndex++));
+      }
+    }
+
+    function makeParts(x, y, color, n) {
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * Math.PI * 2, spd = 1 + Math.random() * 3;
+        particles.push({ x, y,
+          vx: Math.cos(a) * spd, vy: Math.sin(a) * spd,
+          life: 40 + Math.random() * 25, maxLife: 65,
+          color, size: 1 + Math.random() * 2 });
+      }
+    }
+
+    function init() {
+      resize();
+      ship = makeShip();
+      bullets = []; particles = []; solutions = [];
+      frictionIndex = 0;
+      spawnAsteroids();
+    }
+
+    function fire() {
+      if (!gameRunning) return;
+      const now = Date.now();
+      if (now - lastFire < 200) return;
+      lastFire = now;
+      const speed = 10;
+      bullets.push({
+        x: ship.x + Math.cos(ship.angle) * 16,
+        y: ship.y + Math.sin(ship.angle) * 16,
+        vx: Math.cos(ship.angle) * speed,
+        vy: Math.sin(ship.angle) * speed,
+        life: 55,
+      });
+    }
+
+    function wrap(o) {
+      if (o.x < -o.radius) o.x = W + o.radius;
+      if (o.x > W + o.radius) o.x = -o.radius;
+      if (o.y < -o.radius) o.y = H + o.radius;
+      if (o.y > H + o.radius) o.y = -o.radius;
+    }
+
+    // Is a point inside the spin button?
+    function inSpinBtn(px, py) {
+      const bx = BTN_PAD + BTN_R;
+      const by = H - BTN_PAD - BTN_R;
+      return Math.hypot(px - bx, py - by) <= BTN_R + 8;
+    }
+
+    // ── KEYBOARD (desktop) ────────────────────────────────────
+    const keys = {};
+    window.addEventListener('keydown', e => {
+      keys[e.code] = true;
+      if (e.code === 'Space' && gameRunning) { e.preventDefault(); fire(); }
+    });
+    window.addEventListener('keyup', e => { keys[e.code] = false; });
+
+    // ── TOUCH ─────────────────────────────────────────────────
+    let spinTouchId = null;
+
+    canvas.addEventListener('touchstart', e => {
+      e.preventDefault();
+      for (const t of e.changedTouches) {
+        const rect = arena.getBoundingClientRect();
+        const px = t.clientX - rect.left;
+        const py = t.clientY - rect.top;
+        if (inSpinBtn(px, py)) {
+          spinTouchId = t.identifier;
+          spinning = true;
+        } else {
+          fire();
+        }
+      }
+    }, { passive: false });
+
+    canvas.addEventListener('touchend', e => {
+      for (const t of e.changedTouches) {
+        if (t.identifier === spinTouchId) {
+          spinTouchId = null;
+          spinning = false;
+        }
+      }
+    }, { passive: false });
+
+    canvas.addEventListener('touchcancel', e => {
+      spinTouchId = null; spinning = false;
+    }, { passive: false });
+
+    // Desktop click to fire
+    canvas.addEventListener('mousedown', e => {
+      const rect = arena.getBoundingClientRect();
+      const px = e.clientX - rect.left;
+      const py = e.clientY - rect.top;
+      if (!inSpinBtn(px, py)) fire();
+    });
+
+    // ── UPDATE ────────────────────────────────────────────────
+    function update() {
+      if (!gameRunning) return;
+
+      // Spin
+      const rotSpeed = 0.06;
+      if (spinning || keys['ArrowLeft'] || keys['KeyA']) ship.angle -= rotSpeed;
+      if (keys['ArrowRight'] || keys['KeyD']) ship.angle += rotSpeed;
+
+      // Bullets
+      bullets = bullets.filter(b => b.life-- > 0);
+      for (const b of bullets) { b.x += b.vx; b.y += b.vy; }
+
+      // Asteroids
+      for (const a of asteroids) {
+        a.x += a.vx; a.y += a.vy; a.angle += a.spin; wrap(a);
+      }
+
+      // Particles
+      particles = particles.filter(p => p.life-- > 0);
+      for (const p of particles) { p.x += p.vx; p.y += p.vy; p.vx *= 0.96; p.vy *= 0.96; }
+
+      // Solutions
+      solutions = solutions.filter(s => s.life-- > 0);
+      for (const s of solutions) s.y -= 0.5;
+
+      // Bullet vs asteroid
+      for (let bi = bullets.length - 1; bi >= 0; bi--) {
+        const b = bullets[bi];
+        for (let ai = asteroids.length - 1; ai >= 0; ai--) {
+          const a = asteroids[ai];
+          if (Math.hypot(b.x - a.x, b.y - a.y) < a.radius) {
+            bullets.splice(bi, 1);
+            makeParts(a.x, a.y, C.asteroid, 10);
+            if (a.fi !== null && FRICTIONS[a.fi]) {
+              solutions.push({ x: a.x, y: a.y,
+                text: FRICTIONS[a.fi].solution,
+                life: 80, maxLife: 80 });
+            }
+            if (a.size === 'large') {
+              for (let s = 0; s < 2; s++)
+                asteroids.push(makeAsteroid(a.x, a.y, 'medium',
+                  frictionIndex < FRICTIONS.length ? frictionIndex++ : null));
+            } else if (a.size === 'medium') {
+              for (let s = 0; s < 2; s++)
+                asteroids.push(makeAsteroid(a.x, a.y, 'small', null));
+            }
+            asteroids.splice(ai, 1);
+            break;
+          }
+        }
+      }
+
+      // Win
+      if (asteroids.length === 0) {
+        gameRunning = false;
+        setTimeout(() => {
+          arena.classList.remove('active');
+          document.getElementById('ast-won').classList.add('active');
+        }, 700);
+      }
+    }
+
+    // ── DRAW ──────────────────────────────────────────────────
+    function draw() {
+      ctx.fillStyle = C.bg;
+      ctx.fillRect(0, 0, W, H);
+
+      // Asteroids
+      for (const a of asteroids) {
+        ctx.save();
+        ctx.translate(a.x, a.y);
+        ctx.rotate(a.angle);
+        ctx.beginPath();
+        ctx.moveTo(a.shape[0].x * a.radius, a.shape[0].y * a.radius);
+        for (let i = 1; i < a.shape.length; i++)
+          ctx.lineTo(a.shape[i].x * a.radius, a.shape[i].y * a.radius);
+        ctx.closePath();
+        ctx.strokeStyle = C.asteroid; ctx.lineWidth = 1.5; ctx.stroke();
+        if (a.size !== 'small' && a.fi !== null && FRICTIONS[a.fi]) {
+          const fs = a.size === 'large' ? 9 : 7;
+          ctx.fillStyle = C.asteroid;
+          ctx.font = `600 ${fs}px Urbanist, sans-serif`;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          const lines = FRICTIONS[a.fi].label.split('\n');
+          lines.forEach((l, i) => ctx.fillText(l, 0, (i - (lines.length - 1) / 2) * (fs + 3)));
+        }
+        ctx.restore();
+      }
+
+      // Bullets
+      for (const b of bullets) {
+        ctx.beginPath(); ctx.arc(b.x, b.y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = C.bullet; ctx.fill();
+        ctx.beginPath(); ctx.arc(b.x, b.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(25,145,174,0.2)'; ctx.fill();
+      }
+
+      // Particles
+      for (const p of particles) {
+        ctx.globalAlpha = p.life / p.maxLife;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color; ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+
+      // Solutions
+      for (const s of solutions) {
+        ctx.globalAlpha = Math.min(1, s.life / 20) * (s.life / s.maxLife);
+        ctx.fillStyle = C.solution;
+        ctx.font = '600 11px Urbanist, sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText('→ ' + s.text, s.x, s.y);
+      }
+      ctx.globalAlpha = 1;
+
+      // Ship
+      ctx.save();
+      ctx.translate(ship.x, ship.y);
+      ctx.rotate(ship.angle);
+      ctx.beginPath();
+      ctx.moveTo(16, 0); ctx.lineTo(-10, 9); ctx.lineTo(-7, 0); ctx.lineTo(-10, -9);
+      ctx.closePath();
+      ctx.strokeStyle = C.ship; ctx.lineWidth = 1.8; ctx.stroke();
+      ctx.restore();
+
+      // Spin button
+      const bx = BTN_PAD + BTN_R;
+      const by = H - BTN_PAD - BTN_R;
+      ctx.beginPath();
+      ctx.arc(bx, by, BTN_R, 0, Math.PI * 2);
+      ctx.fillStyle = spinning
+        ? 'rgba(166,84,2,0.35)'
+        : 'rgba(255,255,255,0.05)';
+      ctx.fill();
+      ctx.strokeStyle = spinning
+        ? 'rgba(166,84,2,0.8)'
+        : 'rgba(157,179,160,0.3)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      // Rotate icon
+      ctx.save();
+      ctx.translate(bx, by);
+      ctx.strokeStyle = spinning ? C.orange : C.asteroid;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(0, 0, 12, -Math.PI * 0.8, Math.PI * 0.8);
+      ctx.stroke();
+      // Arrow tip
+      const tipA = Math.PI * 0.8;
+      const tx = Math.cos(tipA) * 12, ty = Math.sin(tipA) * 12;
+      ctx.beginPath();
+      ctx.moveTo(tx - 5, ty - 2);
+      ctx.lineTo(tx, ty);
+      ctx.lineTo(tx - 2, ty + 5);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function loop() {
+      update(); draw();
+      rafId = requestAnimationFrame(loop);
+    }
+
+    function startGame() {
+      document.getElementById('ast-intro').style.display = 'none';
+      document.getElementById('ast-won').classList.remove('active');
+      arena.classList.add('active');
+      init();
+      gameRunning = true;
+      spinning = false;
+      if (rafId) cancelAnimationFrame(rafId);
+      loop();
+    }
+
+    document.getElementById('ast-start').addEventListener('click', startGame);
+    document.getElementById('ast-replay').addEventListener('click', () => {
+      document.getElementById('ast-won').classList.remove('active');
+      arena.classList.add('active');
+      init();
+      gameRunning = true;
+      spinning = false;
+      if (rafId) cancelAnimationFrame(rafId);
+      loop();
+    });
+
+    // Controls hint
+    const isMobile = 'ontouchstart' in window;
+    document.getElementById('ast-hint').textContent = isMobile
+      ? 'Hold ↺ to spin · tap anywhere to shoot'
+      : '← → to spin  ·  click or space to shoot';
+
+  })();
+  </script>
+
+</body>
+</html>
+
+
+const canvas  = document.getElementById('ast-canvas');
+const ctx     = canvas.getContext('2d');
+const arena   = document.getElementById('ast-arena');
+const DPR     = Math.min(window.devicePixelRatio || 1, 2);
+let W, H;
+
+function resize() {
+  W = arena.clientWidth;
+  H = arena.clientHeight;
+  canvas.width  = W * DPR;
+  canvas.height = H * DPR;
+  canvas.style.width  = W + 'px';
+  canvas.style.height = H + 'px';
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+
+const C = {
+  bg: '#0d1519', ship: '#fef0ce', bullet: '#1991ae',
+  asteroid: '#9db3a0', solution: '#fef0ce', orange: '#a65402',
+};
+
+let ship, bullets, asteroids, particles, solutions;
+let gameRunning = false;
+let frictionIndex = 0;
+let rafId = null;
+
+function makeShip() {
+  return { x: W/2, y: H/2, vx: 0, vy: 0,
+           angle: -Math.PI/2, thrusting: false,
+           radius: 12, invincible: 100 };
+}
+
+function makeShape(n) {
+  return Array.from({ length: n }, (_, i) => {
+    const a = (i / n) * Math.PI * 2;
+    const r = 0.72 + Math.random() * 0.28;
+    return { x: Math.cos(a) * r, y: Math.sin(a) * r };
+  });
+}
+
+function makeAsteroid(x, y, size, fi) {
+  const r = { large: 44, medium: 24, small: 12 }[size];
+  const spd = { large: 0.7, medium: 1.2, small: 2.0 }[size];
+  const sides = { large: 10, medium: 8, small: 6 }[size];
+  const a = Math.random() * Math.PI * 2;
+  return { x, y, vx: Math.cos(a)*spd, vy: Math.sin(a)*spd,
+           radius: r, size, angle: Math.random()*Math.PI*2,
+           spin: (Math.random()-0.5)*0.025,
+           shape: makeShape(sides), fi: fi ?? null };
+}
+
+function spawnAsteroids() {
+  asteroids = []; frictionIndex = 0;
+  const count = Math.min(FRICTIONS.length, 5);
+  for (let i = 0; i < count; i++) {
+    let x, y;
+    do { x = Math.random()*W; y = Math.random()*H; }
+    while (Math.hypot(x-W/2, y-H/2) < 130);
+    asteroids.push(makeAsteroid(x, y, 'large', frictionIndex++));
+  }
+}
+
+function makeParts(x, y, color, n) {
+  for (let i = 0; i < n; i++) {
+    const a = Math.random()*Math.PI*2, spd = 1+Math.random()*3;
+    particles.push({ x, y, vx: Math.cos(a)*spd, vy: Math.sin(a)*spd,
+                     life: 40+Math.random()*25, maxLife: 65,
+                     color, size: 1+Math.random()*2 });
+  }
+}
+
+function init() {
+  ship = makeShip(); bullets = []; particles = []; solutions = [];
+  frictionIndex = 0; spawnAsteroids();
+}
+
+// ── INPUT ───────────────────────────────────────────────
+const keys = {};
+window.addEventListener('keydown', e => {
+  keys[e.code] = true;
+  if (e.code === 'Space' && gameRunning) { e.preventDefault(); fire(); }
+});
+window.addEventListener('keyup', e => { keys[e.code] = false; });
+
+let touchLeftId = null, touchRightId = null, touchLeftX = 0, lastFire = 0;
+
+canvas.addEventListener('touchstart', e => {
+  e.preventDefault();
+  for (const t of e.changedTouches) {
+    if (t.clientX < arena.getBoundingClientRect().left + W/2) {
+      touchLeftId = t.identifier; touchLeftX = t.clientX;
+    } else {
+      touchRightId = t.identifier; ship.thrusting = true; fire();
+    }
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  for (const t of e.changedTouches) {
+    if (t.identifier === touchLeftId) {
+      ship.angle += (t.clientX - touchLeftX) * 0.009;
+      touchLeftX = t.clientX;
+    }
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchend', e => {
+  for (const t of e.changedTouches) {
+    if (t.identifier === touchLeftId)  touchLeftId = null;
+    if (t.identifier === touchRightId) { touchRightId = null; ship.thrusting = false; }
+  }
+}, { passive: false });
+
+function fire() {
+  if (!gameRunning) return;
+  const now = Date.now();
+  if (now - lastFire < 230) return;
+  lastFire = now;
+  bullets.push({ x: ship.x + Math.cos(ship.angle)*16,
+                 y: ship.y + Math.sin(ship.angle)*16,
+                 vx: ship.vx + Math.cos(ship.angle)*9,
+                 vy: ship.vy + Math.sin(ship.angle)*9, life: 50 });
+}
+
+function wrap(o) {
+  if (o.x < -o.radius) o.x = W+o.radius;
+  if (o.x > W+o.radius) o.x = -o.radius;
+  if (o.y < -o.radius) o.y = H+o.radius;
+  if (o.y > H+o.radius) o.y = -o.radius;
+}
+
+function update() {
+  if (!gameRunning) return;
+
+  if (keys['ArrowLeft']  || keys['KeyA']) ship.angle -= 0.055;
+  if (keys['ArrowRight'] || keys['KeyD']) ship.angle += 0.055;
+  if (keys['ArrowUp']    || keys['KeyW']) ship.thrusting = true;
+  else if (!touchRightId) ship.thrusting = false;
+
+  if (ship.thrusting) {
+    ship.vx += Math.cos(ship.angle) * 0.22;
+    ship.vy += Math.sin(ship.angle) * 0.22;
+    makeParts(ship.x-Math.cos(ship.angle)*14, ship.y-Math.sin(ship.angle)*14, C.orange, 1);
+  }
+  if (touchRightId && Date.now()-lastFire > 280) fire();
+
+  const spd = Math.hypot(ship.vx, ship.vy);
+  if (spd > 6) { ship.vx = ship.vx/spd*6; ship.vy = ship.vy/spd*6; }
+  ship.vx *= 0.985; ship.vy *= 0.985;
+  ship.x += ship.vx; ship.y += ship.vy;
+  wrap(ship);
+  if (ship.invincible > 0) ship.invincible--;
+
+  bullets = bullets.filter(b => b.life-- > 0);
+  for (const b of bullets) { b.x += b.vx; b.y += b.vy; }
+
+  for (const a of asteroids) {
+    a.x += a.vx; a.y += a.vy; a.angle += a.spin; wrap(a);
+  }
+
+  particles = particles.filter(p => p.life-- > 0);
+  for (const p of particles) { p.x += p.vx; p.y += p.vy; p.vx *= 0.96; p.vy *= 0.96; }
+
+  solutions = solutions.filter(s => s.life-- > 0);
+  for (const s of solutions) s.y -= 0.5;
+
+  // Bullet vs asteroid
+  for (let bi = bullets.length-1; bi >= 0; bi--) {
+    const b = bullets[bi];
+    for (let ai = asteroids.length-1; ai >= 0; ai--) {
+      const a = asteroids[ai];
+      if (Math.hypot(b.x-a.x, b.y-a.y) < a.radius) {
+        bullets.splice(bi, 1);
+        makeParts(a.x, a.y, C.asteroid, 10);
+        if (a.fi !== null && FRICTIONS[a.fi]) {
+          solutions.push({ x: a.x, y: a.y, text: FRICTIONS[a.fi].solution, life: 80, maxLife: 80 });
+        }
+        if (a.size === 'large') {
+          for (let s = 0; s < 2; s++)
+            asteroids.push(makeAsteroid(a.x, a.y, 'medium',
+              frictionIndex < FRICTIONS.length ? frictionIndex++ : null));
+        } else if (a.size === 'medium') {
+          for (let s = 0; s < 2; s++)
+            asteroids.push(makeAsteroid(a.x, a.y, 'small', null));
+        }
+        asteroids.splice(ai, 1);
+        break;
+      }
+    }
+  }
+
+  // Ship vs asteroid
+  if (ship.invincible === 0) {
+    for (const a of asteroids) {
+      if (Math.hypot(ship.x-a.x, ship.y-a.y) < a.radius+ship.radius-4) {
+        ship.vx = -ship.vx*2; ship.vy = -ship.vy*2;
+        ship.invincible = 80;
+        makeParts(ship.x, ship.y, C.ship, 6);
+        break;
+      }
+    }
+  }
+
+  // Win
+  if (asteroids.length === 0) {
+    gameRunning = false;
+    setTimeout(() => {
+      arena.classList.remove('active');
+      document.getElementById('ast-won').classList.add('active');
+    }, 700);
+  }
+}
+
+function draw() {
+  ctx.fillStyle = C.bg;
+  ctx.fillRect(0, 0, W, H);
+
+  for (const a of asteroids) {
+    ctx.save();
+    ctx.translate(a.x, a.y);
+    ctx.rotate(a.angle);
+    ctx.beginPath();
+    ctx.moveTo(a.shape[0].x*a.radius, a.shape[0].y*a.radius);
+    for (let i = 1; i < a.shape.length; i++)
+      ctx.lineTo(a.shape[i].x*a.radius, a.shape[i].y*a.radius);
+    ctx.closePath();
+    ctx.strokeStyle = C.asteroid;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    if (a.size !== 'small' && a.fi !== null && FRICTIONS[a.fi]) {
+      const fs = a.size === 'large' ? 9 : 7;
+      ctx.fillStyle = C.asteroid;
+      ctx.font = `600 ${fs}px Urbanist, sans-serif`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      const lines = FRICTIONS[a.fi].label.split('\n');
+      lines.forEach((l, i) => ctx.fillText(l, 0, (i-(lines.length-1)/2)*(fs+3)));
+    }
+    ctx.restore();
+  }
+
+  for (const b of bullets) {
+    ctx.beginPath(); ctx.arc(b.x, b.y, 2.5, 0, Math.PI*2);
+    ctx.fillStyle = C.bullet; ctx.fill();
+    ctx.beginPath(); ctx.arc(b.x, b.y, 5, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(25,145,174,0.2)'; ctx.fill();
+  }
+
+  for (const p of particles) {
+    ctx.globalAlpha = p.life/p.maxLife;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+    ctx.fillStyle = p.color; ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+
+  for (const s of solutions) {
+    ctx.globalAlpha = Math.min(1, s.life/20) * (s.life/s.maxLife);
+    ctx.fillStyle = C.solution;
+    ctx.font = '600 11px Urbanist, sans-serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('→ ' + s.text, s.x, s.y);
+  }
+  ctx.globalAlpha = 1;
+
+  if (ship.invincible % 6 < 3) {
+    ctx.save();
+    ctx.translate(ship.x, ship.y);
+    ctx.rotate(ship.angle);
+    ctx.beginPath();
+    ctx.moveTo(16, 0); ctx.lineTo(-10, 9); ctx.lineTo(-7, 0); ctx.lineTo(-10, -9);
+    ctx.closePath();
+    ctx.strokeStyle = C.ship; ctx.lineWidth = 1.8; ctx.stroke();
+    if (ship.thrusting) {
+      ctx.beginPath();
+      ctx.moveTo(-7, 3); ctx.lineTo(-16-Math.random()*7, 0); ctx.lineTo(-7, -3);
+      ctx.strokeStyle = C.orange; ctx.lineWidth = 1.5; ctx.stroke();
+    }
+    ctx.restore();
+  }
+}
+
+function loop() {
+  update(); draw();
+  rafId = requestAnimationFrame(loop);
+}
+
+function startGame() {
+  document.getElementById('ast-intro').style.display = 'none';
+  document.getElementById('ast-won').classList.remove('active');
+  arena.classList.add('active');
+  resize();
+  init();
+  gameRunning = true;
+  if (rafId) cancelAnimationFrame(rafId);
+  loop();
+}
+
+document.getElementById('ast-start').addEventListener('click', startGame);
+document.getElementById('ast-replay').addEventListener('click', () => {
+  document.getElementById('ast-won').classList.remove('active');
+  arena.classList.add('active');
+  resize();
+  init();
+  gameRunning = true;
+  if (rafId) cancelAnimationFrame(rafId);
+  loop();
+});
+
+const isMobile = 'ontouchstart' in window;
+document.getElementById('ast-hint').textContent = isMobile
+  ? 'Left: steer · Right: thrust & fire'
+  : '← → rotate  ·  ↑ thrust  ·  space fire';
+
+
+})();
+</script>
 
 </body>
 </html>
