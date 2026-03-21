@@ -72,17 +72,143 @@
     }
 
     /* ── LAYOUT ──────────────────────────────────────────────── */
-
-    /* Mobile-first: single column */
     .site-wrapper {
       position: relative;
       z-index: 1;
       min-height: 100vh;
     }
 
+    /* ── VP1 LAMP (mobile only) ──────────────────────────────── */
+    .lamp-wrap {
+      display: flex;
+      justify-content: center;
+      padding-top: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Cord from ceiling to canopy */
+    .lamp-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 24px;
+      background: linear-gradient(180deg, rgba(200,152,14,0.15) 0%, rgba(200,152,14,0.5) 100%);
+      z-index: 2;
+    }
+
+    .lamp-glow {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      pointer-events: none;
+      background: transparent;
+      transition: background 0.6s ease;
+      z-index: 1;
+    }
+    .lamp-glow.on {
+      background: radial-gradient(
+        ellipse 90% 75% at 50% 28%,
+        rgba(255,195,45,0.00) 0%,
+        rgba(255,195,45,0.10) 12%,
+        rgba(255,178,28,0.14) 22%,
+        rgba(255,165,15,0.08) 45%,
+        rgba(255,150,10,0.02) 65%,
+        rgba(255,150,10,0.00) 80%
+      );
+    }
+
+    svg.lamp-svg {
+      width: 160px;
+      cursor: default;
+      overflow: visible;
+      position: relative;
+      z-index: 2;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ── WALL SWITCH ─────────────────────────────────────────── */
+    .switch-wrap {
+      position: absolute;
+      right: var(--pad-mobile);
+      top: -22px;
+      z-index: 3;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Outer housing — recessed into the wall */
+    .switch-plate {
+      width: 30px;
+      height: 50px;
+      background: #16232a;
+      border: 1.5px solid #253340;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 4px;
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.7),
+        inset 0 1px 3px rgba(0,0,0,0.6);
+    }
+
+    /* Rocker paddle — tilts on center axis, light/shadow only */
+    .switch-rocker {
+      width: 100%;
+      height: 100%;
+      border-radius: 2px;
+      /* OFF: top catches light, bottom in shadow = top lighter */
+      background: linear-gradient(
+        180deg,
+        #3a5060 0%,    /* top — raised, catching light */
+        #2a3d4a 45%,
+        #1a2830 100%   /* bottom — recessed, in shadow */
+      );
+      transform-origin: center;
+      transform: perspective(80px) rotateX(-14deg);
+      transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+      box-shadow:
+        inset 0 2px 2px rgba(255,255,255,0.08), /* top highlight */
+        inset 0 -2px 3px rgba(0,0,0,0.5);        /* bottom shadow */
+    }
+
+    /* ON: top pressed in (dark), bottom raised (lighter) */
+    .switch-wrap.on .switch-rocker {
+      background: linear-gradient(
+        180deg,
+        #1a2830 0%,    /* top — now recessed, in shadow */
+        #2a3d4a 55%,
+        #3a5060 100%   /* bottom — now raised, catching light */
+      );
+      transform: perspective(80px) rotateX(14deg);
+      box-shadow:
+        inset 0 2px 3px rgba(0,0,0,0.5),         /* top now shadowed */
+        inset 0 -2px 2px rgba(255,255,255,0.08);  /* bottom now highlighted */
+    }
+
+    /* Subtle plate glow when on — barely perceptible */
+    .switch-wrap.on .switch-plate {
+      border-color: #2e4050;
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.7),
+        inset 0 1px 3px rgba(0,0,0,0.6),
+        0 0 8px rgba(255,195,45,0.06);
+    }
+
+    @media (min-width: 900px) {
+      .lamp-wrap { display: none; }
+    }
+
     /* ── HERO (mobile) ───────────────────────────────────────── */
     .hero {
-      padding: 40px var(--pad-mobile) 60px;
+      padding: 16px var(--pad-mobile) 60px;
     }
 
     .hero__name {
@@ -93,6 +219,13 @@
       text-transform: uppercase;
       margin-bottom: 8px;
       display: block;
+      transition: opacity 0.8s ease;
+    }
+
+    /* Only dim on mobile */
+    @media (max-width: 899px) {
+      .hero__name.dimmed { opacity: 0.15; }
+      .hero__name.lit    { opacity: 1; }
     }
 
     .hero__title {
@@ -170,7 +303,6 @@
         min-height: 100vh;
       }
 
-      /* Left column: giant name as visual element */
       .name-column {
         display: flex;
         justify-content: center;
@@ -190,13 +322,11 @@
         user-select: none;
       }
 
-      /* Right column: scrollable content */
       .content-column {
         padding: 80px var(--pad-desktop) 80px var(--pad-desktop);
         overflow-y: auto;
       }
 
-      /* Hide the mobile name, show desktop name column */
       .hero__name { display: none; }
 
       .hero {
@@ -208,7 +338,6 @@
         margin-bottom: 24px;
       }
 
-      /* Cards become solid on desktop */
       .card {
         border: none;
         background: #1e2d35;
@@ -237,23 +366,83 @@
 </head>
 <body>
 
-  <!-- PARTICLE CANVAS — sits fixed behind everything -->
-
 <canvas id="particle-canvas" aria-hidden="true"></canvas>
-
-  <!-- MOBILE: name lives inside hero. DESKTOP: name lives in left column. -->
 
   <div class="site-wrapper">
 
-<!-- LEFT COLUMN (desktop only) -->
+
 <div class="name-column" aria-hidden="true">
   <div class="name-column__text animate-in" style="transition-delay: 200ms">BENJA&shy;MIN JOYCE</div>
 </div>
 
-<!-- RIGHT COLUMN (all content on mobile; right col on desktop) -->
 <div class="content-column">
 
-  <section class="hero">
+  <!-- VP1 LAMP — mobile only -->
+  <div class="lamp-wrap" aria-hidden="true">
+    <div class="lamp-glow" id="lamp-glow"></div>
+
+    <svg class="lamp-svg" id="lamp-svg" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="dG" cx="36%" cy="28%" r="65%">
+          <stop offset="0%"   stop-color="#d9a018"/>
+          <stop offset="55%"  stop-color="#b8820a"/>
+          <stop offset="100%" stop-color="#7a5400"/>
+        </radialGradient>
+        <radialGradient id="dS" cx="30%" cy="20%" r="28%">
+          <stop offset="0%"   stop-color="#ffe878" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#ffd040" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="dU" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#fff8a0" stop-opacity="0" id="bowl-inner"/>
+          <stop offset="100%" stop-color="#3e2600" stop-opacity="1"/>
+        </radialGradient>
+        <radialGradient id="bG" cx="38%" cy="30%" r="65%">
+          <stop offset="0%"   stop-color="#c89010"/>
+          <stop offset="55%"  stop-color="#a06c06"/>
+          <stop offset="100%" stop-color="#6a4400"/>
+        </radialGradient>
+        <radialGradient id="bS" cx="34%" cy="26%" r="26%">
+          <stop offset="0%"   stop-color="#ffe060" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#ffd040" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Canopy -->
+      <ellipse cx="90" cy="12"  rx="12" ry="4.5" fill="#8a6000"/>
+      <ellipse cx="90" cy="11"  rx="11" ry="3.5" fill="#c8980e"/>
+      <ellipse cx="88" cy="10"  rx="5"  ry="1.5" fill="#ffe060" opacity="0.4"/>
+
+      <!-- Cord -->
+      <line x1="90" y1="15" x2="90" y2="36"
+            stroke="#c8980e" stroke-width="1.5" stroke-linecap="round"/>
+
+      <!-- Chrome fitting -->
+      <ellipse cx="90" cy="37" rx="5"   ry="2.5" fill="#c0c0c0"/>
+      <ellipse cx="90" cy="36" rx="3.5" ry="1.5" fill="#e8e8e8" opacity="0.7"/>
+
+      <!-- Top dome: true semicircle rx=ry=70, equator at y=104 -->
+      <path d="M 20,104 A 70,70 0 0 1 160,104 Z" fill="url(#dG)"/>
+      <path d="M 20,104 A 70,70 0 0 1 160,104 Z" fill="url(#dS)"/>
+      <ellipse cx="90" cy="104" rx="70" ry="7"   fill="#3e2600"/>
+      <ellipse cx="90" cy="104" rx="68" ry="5.5" fill="url(#dU)"/>
+
+      <!-- Seam glow -->
+      <ellipse cx="90" cy="104" rx="44" ry="4"
+               fill="rgba(255,240,100,0)" id="gap-light"/>
+
+      <!-- Bottom dome: slightly less than semicircle -->
+      <path d="M 44,104 A 46,38 0 0 0 136,104 Z" fill="url(#bG)"/>
+      <path d="M 44,104 A 46,38 0 0 0 136,104 Z" fill="url(#bS)"/>
+    </svg>
+  </div>
+
+  <section class="hero" style="position:relative;">
+    <!-- Wall switch — found near the name, like a room switch by the door -->
+    <div class="switch-wrap" id="light-switch" aria-label="Toggle lamp">
+      <div class="switch-plate">
+        <div class="switch-rocker"></div>
+      </div>
+    </div>
     <span class="hero__name animate-in" style="transition-delay: 0ms">Benjamin Joyce</span>
     <h1 class="hero__title animate-in" style="transition-delay: 120ms">Product &amp;&nbsp;Design</h1>
     <p class="hero__tagline animate-in" style="transition-delay: 240ms">Leadership, strategy, design, product management, analytics.</p>
@@ -360,12 +549,45 @@
       requestAnimationFrame(tick);
     })();
 
+    // ── VP1 LAMP TOGGLE ─────────────────────────────────────────
+    (function () {
+      const sw        = document.getElementById('light-switch');
+      const glow      = document.getElementById('lamp-glow');
+      const gapLight  = document.getElementById('gap-light');
+      const bowlInner = document.getElementById('bowl-inner');
+      const heroName  = document.querySelector('.hero__name');
+      if (!sw) return;
+      let on = false;
+
+      sw.addEventListener('click', function () {
+        on = !on;
+        sw.classList.toggle('on', on);
+        glow.classList.toggle('on', on);
+        gapLight.setAttribute('fill', on ? 'rgba(255,248,120,0.95)' : 'rgba(255,240,100,0)');
+        if (bowlInner) {
+          bowlInner.setAttribute('stop-color',   on ? '#fffcb0' : '#fff8a0');
+          bowlInner.setAttribute('stop-opacity', on ? '0.85'    : '0');
+        }
+        if (heroName) {
+          heroName.classList.toggle('dimmed', !on);
+          heroName.classList.toggle('lit', on);
+        }
+      });
+    })();
+
     // ── ENTRANCE ANIMATION ──────────────────────────────────────
     (function () {
       setTimeout(function () {
         document.querySelectorAll('.animate-in').forEach(function (el) {
           el.classList.add('visible');
         });
+        // After entrance animation completes, dim the name on mobile
+        var heroName = document.querySelector('.hero__name');
+        if (heroName && window.innerWidth < 900) {
+          setTimeout(function () {
+            heroName.classList.add('dimmed');
+          }, 750); // wait for the 0.7s entrance transition to finish
+        }
       }, 80);
     })();
   </script>
