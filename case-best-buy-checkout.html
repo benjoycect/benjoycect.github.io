@@ -315,7 +315,38 @@
       margin-top: 12px;
       transition: border-color 0.2s, color 0.2s;
     }
-    .game-won__replay:hover { border-color: var(--green); color: var(--cream); }
+    .spin-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(157,179,160,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: none;
+      transition: background 0.15s ease, border-color 0.15s ease;
+      z-index: 3;
+    }
+    .spin-btn svg {
+      width: 28px;
+      height: 28px;
+      color: #9db3a0;
+      transition: color 0.15s ease;
+      pointer-events: none;
+    }
+    .spin-btn.active {
+      background: rgba(166,84,2,0.3);
+      border-color: rgba(166,84,2,0.8);
+    }
+    .spin-btn.active svg {
+      color: #a65402;
+    }
   </style>
 
 </head>
@@ -345,6 +376,11 @@
 
   <div class="game-arena" id="ast-arena">
     <canvas id="ast-canvas"></canvas>
+    <div class="spin-btn" id="spin-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+      </svg>
+    </div>
     <p class="game-hint" id="ast-hint"></p>
   </div>
 
@@ -430,13 +466,13 @@
     'use strict';
 
     const FRICTIONS = [
-      { label: 'Unclear\nprogress',       solution: 'Added clear step indicators' },
-      { label: 'Too many\nform fields',   solution: 'Removed unnecessary fields' },
-      { label: 'Poor mobile\nergonomics', solution: 'Redesigned for thumb reach' },
-      { label: 'Hidden\nshipping costs',  solution: 'Surfaced costs earlier' },
-      { label: 'Confusing\nmembership',   solution: 'Simplified member benefits' },
-      { label: 'Guest checkout\nburied',  solution: 'Made guest path prominent' },
-      { label: 'Payment\nfriction',       solution: 'Streamlined payment entry' },
+      { label: 'Unclear\nprogress',          solution: 'Indicators for what\'s next' },
+      { label: 'Too many\nform fields',       solution: 'Moved optional out' },
+      { label: 'Autofill\nbroken',            solution: 'Audited and fixed autofill' },
+      { label: 'Unexpected\ninformation',     solution: 'Warn users earlier' },
+      { label: 'Confusing\nmembership',       solution: 'Clearer articulation of benefits' },
+      { label: 'Guest checkout\nburied',      solution: 'Made guest path prominent' },
+      { label: 'Payment\nfriction',           solution: 'Streamlined payment entry' },
     ];
 
     const canvas = document.getElementById('ast-canvas');
@@ -460,9 +496,13 @@
       asteroid: '#9db3a0', solution: '#fef0ce', orange: '#a65402',
     };
 
-    // Spin button dimensions
-    const BTN_R  = 36; // radius
-    const BTN_PAD = 20; // from bottom-left corner
+    // Tap canvas to fire
+    canvas.addEventListener('touchstart', e => {
+      e.preventDefault();
+      fire();
+    }, { passive: false });
+
+    canvas.addEventListener('mousedown', () => fire());
 
     let ship, bullets, asteroids, particles, solutions;
     let gameRunning = false;
@@ -553,13 +593,6 @@
       if (o.y > H + o.radius) o.y = -o.radius;
     }
 
-    // Is a point inside the spin button?
-    function inSpinBtn(px, py) {
-      const bx = BTN_PAD + BTN_R;
-      const by = H - BTN_PAD - BTN_R;
-      return Math.hypot(px - bx, py - by) <= BTN_R + 8;
-    }
-
     // ── KEYBOARD (desktop) ────────────────────────────────────
     const keys = {};
     window.addEventListener('keydown', e => {
@@ -569,42 +602,31 @@
     window.addEventListener('keyup', e => { keys[e.code] = false; });
 
     // ── TOUCH ─────────────────────────────────────────────────
-    let spinTouchId = null;
+    // Spin button — HTML element, not canvas
+    const spinBtn = document.getElementById('spin-btn');
 
-    canvas.addEventListener('touchstart', e => {
+    spinBtn.addEventListener('touchstart', e => {
       e.preventDefault();
-      for (const t of e.changedTouches) {
-        const rect = arena.getBoundingClientRect();
-        const px = t.clientX - rect.left;
-        const py = t.clientY - rect.top;
-        if (inSpinBtn(px, py)) {
-          spinTouchId = t.identifier;
-          spinning = true;
-        } else {
-          fire();
-        }
-      }
+      e.stopPropagation();
+      spinning = true;
+      spinBtn.classList.add('active');
     }, { passive: false });
 
-    canvas.addEventListener('touchend', e => {
-      for (const t of e.changedTouches) {
-        if (t.identifier === spinTouchId) {
-          spinTouchId = null;
-          spinning = false;
-        }
-      }
+    spinBtn.addEventListener('touchend', e => {
+      e.preventDefault();
+      spinning = false;
+      spinBtn.classList.remove('active');
     }, { passive: false });
 
-    canvas.addEventListener('touchcancel', e => {
-      spinTouchId = null; spinning = false;
-    }, { passive: false });
+    spinBtn.addEventListener('mousedown', e => {
+      e.stopPropagation();
+      spinning = true;
+      spinBtn.classList.add('active');
+    });
 
-    // Desktop click to fire
-    canvas.addEventListener('mousedown', e => {
-      const rect = arena.getBoundingClientRect();
-      const px = e.clientX - rect.left;
-      const py = e.clientY - rect.top;
-      if (!inSpinBtn(px, py)) fire();
+    window.addEventListener('mouseup', () => {
+      spinning = false;
+      spinBtn.classList.remove('active');
     });
 
     // ── UPDATE ────────────────────────────────────────────────
@@ -719,7 +741,7 @@
         ctx.fillStyle = C.solution;
         ctx.font = '600 11px Urbanist, sans-serif';
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.fillText('→ ' + s.text, s.x, s.y);
+        ctx.fillText(s.text, s.x, s.y);
       }
       ctx.globalAlpha = 1;
 
@@ -733,37 +755,6 @@
       ctx.strokeStyle = C.ship; ctx.lineWidth = 1.8; ctx.stroke();
       ctx.restore();
 
-      // Spin button
-      const bx = BTN_PAD + BTN_R;
-      const by = H - BTN_PAD - BTN_R;
-      ctx.beginPath();
-      ctx.arc(bx, by, BTN_R, 0, Math.PI * 2);
-      ctx.fillStyle = spinning
-        ? 'rgba(166,84,2,0.35)'
-        : 'rgba(255,255,255,0.05)';
-      ctx.fill();
-      ctx.strokeStyle = spinning
-        ? 'rgba(166,84,2,0.8)'
-        : 'rgba(157,179,160,0.3)';
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-      // Rotate icon
-      ctx.save();
-      ctx.translate(bx, by);
-      ctx.strokeStyle = spinning ? C.orange : C.asteroid;
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();
-      ctx.arc(0, 0, 12, -Math.PI * 0.8, Math.PI * 0.8);
-      ctx.stroke();
-      // Arrow tip
-      const tipA = Math.PI * 0.8;
-      const tx = Math.cos(tipA) * 12, ty = Math.sin(tipA) * 12;
-      ctx.beginPath();
-      ctx.moveTo(tx - 5, ty - 2);
-      ctx.lineTo(tx, ty);
-      ctx.lineTo(tx - 2, ty + 5);
-      ctx.stroke();
-      ctx.restore();
     }
 
     function loop() {
@@ -1066,7 +1057,7 @@ function draw() {
     ctx.fillStyle = C.solution;
     ctx.font = '600 11px Urbanist, sans-serif';
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.fillText('→ ' + s.text, s.x, s.y);
+    ctx.fillText(s.text, s.x, s.y);
   }
   ctx.globalAlpha = 1;
 
