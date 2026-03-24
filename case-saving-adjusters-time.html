@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saving Adjusters Time with AI and Design — Benjamin Joyce</title>
+  <title>The Pivot: Fence AI vs. Reality — Benjamin Joyce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -49,21 +48,18 @@
     }
     a:hover { opacity: 0.75; }
 
-    /* ── PAGE WRAPPER ────────────────────────────────────────── */
     .page {
       max-width: var(--max-w);
       margin: 0 auto;
       padding: 40px var(--pad) 100px;
     }
 
-    /* ── BACK LINK ───────────────────────────────────────────── */
     .back {
       display: inline-block;
       font-size: 1rem;
       margin-bottom: 40px;
     }
 
-    /* ── CASE TITLE ──────────────────────────────────────────── */
     .case-title {
       font-family: 'Urbanist', sans-serif;
       font-weight: 700;
@@ -75,7 +71,6 @@
       overflow-wrap: break-word;
     }
 
-    /* ── BODY COPY ───────────────────────────────────────────── */
     .prose p {
       font-size: 1rem;
       color: var(--green);
@@ -83,16 +78,16 @@
       line-height: 1.7;
     }
 
-    /* ── SECTION SUBHEADINGS ─────────────────────────────────── */
     .section-heading {
       font-family: 'Urbanist', sans-serif;
       font-weight: 400;
       font-size: 1rem;
       color: var(--green);
       margin: 40px 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    /* ── BOLD CALLOUT SUBHEADING ─────────────────────────────── */
     .leadership-heading {
       font-family: 'Urbanist', sans-serif;
       font-weight: 700;
@@ -101,7 +96,6 @@
       margin: 24px 0 12px;
     }
 
-    /* ── NUMBERED OVERVIEW LIST ──────────────────────────────── */
     .overview-list {
       list-style: decimal;
       margin: 20px 0 32px;
@@ -114,7 +108,6 @@
       color: var(--green);
     }
 
-    /* ── BULLET LIST ─────────────────────────────────────────── */
     .bullet-list {
       list-style: disc;
       margin: 0 0 24px 0;
@@ -127,7 +120,6 @@
       color: var(--green);
     }
 
-    /* ── PHASE OUTCOME CARD (dark, teal border) ──────────────── */
     .outcome-phase {
       border: 1.5px solid var(--blue);
       border-radius: 10px;
@@ -147,7 +139,6 @@
       margin: 0;
     }
 
-    /* ── PROJECT OUTCOME CARD (cream bg, grainy feel) ────────── */
     .outcome-project {
       background: var(--cream);
       border-radius: 10px;
@@ -156,7 +147,6 @@
       position: relative;
       overflow: hidden;
     }
-    /* Grain overlay */
     .outcome-project::after {
       content: '';
       position: absolute;
@@ -183,27 +173,6 @@
       z-index: 1;
     }
 
-    /* ── IMAGE + CAPTION ─────────────────────────────────────── */
-    .case-image {
-      margin: 32px 0 0;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #0d1519;
-    }
-    .case-image img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-    }
-    .case-image figcaption {
-      font-size: 0.85rem;
-      color: var(--green);
-      opacity: 0.75;
-      padding: 10px 0 4px;
-      line-height: 1.5;
-    }
-
-    /* ── DESKTOP ─────────────────────────────────────────────── */
     @media (min-width: 900px) {
       .page {
         padding: 60px 48px 120px;
@@ -216,87 +185,48 @@
 
   <div class="page">
 
+    <a href="index.html" class="back">← Back to home</a>
 
-<a href="index.html" class="back">← Back to home</a>
+    <h1 class="case-title">The Pivot: Fence AI vs. Reality</h1>
 
-<h1 class="case-title">Saving adjusters time with AI and design</h1>
+    <div class="prose">
 
-<div class="prose">
+      <p>Leadership wanted an AI model to identify fence damage from a photo and auto-generate a quote. I was skeptical of the full automation, but I didn't say no. I learned how to train the model and we actually ran a successful POC. We got the model to a point where it could accurately identify wood types and basic damage.</p>
 
-  <p>Led a cross-functional effort from initial request through post-launch to redesign the mobile claims experience, freeing up claim handlers' time through AI experimentation, research, and a refined product vision.</p>
+      <p>But I knew that to actually ship a product, we had to understand the field work better. I started a discovery sprint to map out the risks and assumptions.</p>
 
-  <p class="section-heading">Overview of my direction to the team</p>
+      <p class="section-heading">Overview of my actions</p>
 
-  <ol class="overview-list">
-    <li>Observe adjusters doing real work before committing to any solution</li>
-    <li>Map the end-to-end workflow to find where time was actually being lost</li>
-    <li>Design, test, and iterate toward solutions that fit into adjusters' real daily workflows</li>
-  </ol>
+      <ol class="overview-list">
+        <li>Grow my understanding of how to train specialized AI models</li>
+        <li>Plan a discovery sprint to understand the human problem</li>
+        <li>Share the risks identified with the initial solution</li>
+        <li>Lead a major product pivot</li>
+      </ol>
 
-  <p class="section-heading">What we were solving</p>
+      <p class="section-heading">Discovery</p>
 
-  <p>Leadership believed adjusters spent too much time in the field on straightforward claims. We were tasked with finding ways to reduce that time through mobile and AI solutions.</p>
+      <p>We went into the field to shadow adjusters. We learned two key lessons:</p>
 
-  <p>The project required balancing ambitious AI ideas with the reality of complex claims work, ensuring that whatever we delivered actually fit into adjusters' daily workflows.</p>
+      <ul class="bullet-list">
+        <li><strong>The "Car Office" problem:</strong> Adjusters were fast at the physical inspection. They’d walk a yard, take notes on a notepad, and be done in five minutes. The real time was spent afterward: they’d sit in their cars for 20 minutes re-typing their notes into a laptop. They were doing the work twice.</li>
+        <li><strong>Claims were more complex than assumed:</strong> A real adjustment needs more than just wood type and a photo. It needs ownership, age, and stain type. The AI couldn't see that, and the manual effort to verify those details killed any time the model saved.</li>
+      </ul>
 
-  <p class="section-heading">What made this hard</p>
+      <p class="section-heading">The Pivot</p>
 
-  <p>Even simple claims involved multiple variables. Early AI experiments didn't fully address the complexity, and many adjusters' pain points came from duplicated work rather than field time itself.</p>
+      <p>I led a small team to pivot. We kept the tech, but shifted the focus to fixing the workflow. We built a mobile app for the field that used a "photo and tag" system. Instead of a notepad, adjusters could tap through notes and categorize damage while walking.</p>
 
-  <p>Early assumptions didn't align with observed workflows, requiring a shift in product vision. The challenge was identifying real bottlenecks and focusing on high-value fixes while keeping stakeholders aligned.</p>
+      <p>We built in logic to catch follow-up questions on the spot, so they didn't have to walk back to a customer's door because they forgot a detail.</p>
 
-  <p class="section-heading">What I did</p>
+      <div class="outcome-project">
+        <p class="outcome-label">Project Outcome</p>
+        <ul class="bullet-list" style="color: #141C21; margin-bottom: 0;">
+          <li style="color: #141C21;"><strong>50% faster:</strong> We cut the time spent on claims in half by killing the "double-entry" in the car.</li>
+          <li style="color: #141C21;"><strong>High Adoption:</strong> Adjusters chose to use it because it solved their biggest daily annoyance: re-keying information.</li>
+          <li style="color: #141C21;"><strong>The Blueprint:</strong> This became the template for how we approach discovery and risk-mapping across the organization.</li>
+        </ul>
+      </div>
 
-  <p>I led the design process, managing two designers and collaborating closely with PMs, engineers, data scientists, and field adjusters. I drove user observation, journey mapping, and rapid prototyping to uncover and address real pain points.</p>
-
-  <p class="leadership-heading">Key leadership actions:</p>
-
-  <ul class="bullet-list">
-    <li>Directed observation sessions with real claims in the field</li>
-    <li>Mapped end-to-end adjuster workflows to uncover duplication issues</li>
-    <li>Designed and tested mobile-first wireframes to streamline data collection</li>
-    <li>Pivoted from the original AI-first approach to targeted process fixes once field observation revealed where time was actually being lost</li>
-  </ul>
-
-  <div class="outcome-phase">
-    <p class="outcome-label">Phase outcome</p>
-    <p>Seeing the work firsthand changed our priorities and saved us from chasing the wrong solution. The team aligned on a focused direction grounded in what adjusters actually needed.</p>
-  </div>
-
-  <p class="section-heading">How we worked</p>
-
-  <p>We applied a strong product model approach: research, prototyping, and validation at each step. Rather than relying solely on AI experiments, we focused on process simplification and reducing double entry in notes.</p>
-
-  <p>Our design principle was to observe real work before committing to assumptions — solve for actual bottlenecks, not assumed ones.</p>
-
-  <p class="leadership-heading">Some leadership decisions I made during this phase:</p>
-
-  <ul class="bullet-list">
-    <li>I pushed for field observation early, before any solutions were committed to</li>
-    <li>I made sure the team had the context behind every piece of partner feedback so we could respond to the real need, not just the surface request</li>
-    <li>I ensured we had a plan to iterate and test quickly rather than waiting for a complete solution</li>
-  </ul>
-
-  <div class="outcome-phase">
-    <p class="outcome-label">Phase outcome</p>
-    <p>The redesigned mobile experience fit naturally into adjusters' daily workflows. The team delivered something that solved real problems rather than assumed ones.</p>
-  </div>
-
-  <p class="section-heading">What happened</p>
-
-  <p>The redesigned mobile experience and process changes led to measurable time savings, wide adoption, and further investment in the mobile platform. The work strengthened organizational support for the product model.</p>
-
-  <p>The project created a scalable model for combining AI experiments with practical process design to deliver real operational gains.</p>
-
-  <div class="outcome-project">
-    <p class="outcome-label">Project outcome</p>
-    <p>Adjusters spent less time in the field on straightforward claims. The experience saw wide adoption and led to further platform investment. The work was recognized across the organization and shifted how the company approached AI and product development.</p>
-  </div>
-
-</div><!-- /prose -->
-
-
-  </div><!-- /page -->
-
-</body>
+    </div></div></body>
 </html>
