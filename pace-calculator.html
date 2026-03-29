@@ -40,6 +40,7 @@
 
 html{background:#141C21 !important;min-height:100%}
 body{min-height:100vh;background:#141C21 !important;color:var(–t1);font-family:var(–bc);overflow-x:hidden}
+button{-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent}
 .tabs,.panel{box-shadow:0 8px 48px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.4)}
 .panel{border-radius:0 0 6px 6px}
 .tabs{border-radius:6px 6px 0 0}
@@ -64,24 +65,24 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
 .hdr-r{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .glbl-lbl{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.22em;color:var(–t3);text-transform:uppercase}
 .pill{display:flex;border:1px solid var(–bb);border-radius:2px;overflow:hidden}
-.pill-btn{background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(–t2);padding:6px 15px;transition:all .18s;text-transform:uppercase}
-.pill-btn.on{background:var(–t1);color:var(–black)}
-.pill-btn:not(.on):hover{background:rgba(255,255,255,.05);color:var(–t1)}
+.pill-btn{-webkit-appearance:none;appearance:none;background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:11px;font-weight:700;letter-spacing:.1em;color:#9db3a0;padding:6px 15px;transition:all .18s;text-transform:uppercase}
+.pill-btn.on{background:#fef0ce;color:#141C21}
+.pill-btn:not(.on):hover{background:rgba(255,255,255,.05);color:#fef0ce}
 
 /* MODE TABS */
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–b);border:1px solid var(–b);border-radius:3px 3px 0 0;overflow:hidden;opacity:0;animation:up .6s ease forwards .2s}
-.tab{background:var(–panel);border:none;cursor:pointer;padding:15px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;transition:background .2s}
-.tab::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:2px;background:var(–t1);transform:scaleX(0);transition:transform .25s}
-.tab.on{background:var(–panel2)}
+.tab{-webkit-appearance:none;appearance:none;background:#1e2d35;border:none;cursor:pointer;padding:15px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;transition:background .2s}
+.tab::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:2px;background:#fef0ce;transform:scaleX(0);transition:transform .25s}
+.tab.on{background:#253540}
 .tab.on::after{transform:scaleX(1)}
 .tab:hover:not(.on){background:rgba(255,255,255,.03)}
-.tab-lbl{font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(–t3);transition:color .2s}
-.tab.on .tab-lbl{color:var(–t1)}
-.tab-eq{font-family:var(–mono);font-size:10px;color:var(–t2);transition:color .2s}
-.tab.on .tab-eq{color:var(–t1)}
+.tab-lbl{font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5a7a62;transition:color .2s}
+.tab.on .tab-lbl{color:#fef0ce}
+.tab-eq{font-family:var(–mono);font-size:10px;color:#9db3a0;transition:color .2s}
+.tab.on .tab-eq{color:#fef0ce}
 
 /* PANEL */
-.panel{background:var(–panel);border:1px solid var(–b);border-top:none;border-radius:0 0 3px 3px;padding:32px 36px 36px;opacity:0;animation:up .6s ease forwards .3s}
+.panel{background:#1e2d35;border:1px solid var(–b);border-top:none;border-radius:0 0 6px 6px;padding:32px 36px 36px;opacity:0;animation:up .6s ease forwards .3s}
 
 /* INPUT GRID */
 .igrid{display:grid;grid-template-columns:1fr 28px 1fr;align-items:start;gap:12px;margin-bottom:28px}
@@ -91,7 +92,7 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
 .ihint{font-family:var(–bc);font-size:9px;letter-spacing:.1em;color:var(–t3);opacity:.5}
 
 /* FIELD */
-.field{background:var(–well);border:1px solid var(–bb);border-radius:2px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.field{background:#0f171c;border:1px solid var(–bb);border-radius:2px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s,box-shadow .2s}
 .field:focus-within{border-color:var(–t1);box-shadow:0 0 0 1px rgba(254,240,206,.1)}
 
 /* FIELD TOP ROW */
@@ -111,19 +112,19 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
 
 /* INLINE UNIT TOGGLE */
 .iu{display:flex;flex-direction:column;gap:2px;border-left:1px solid var(–b);margin-left:9px;padding-left:9px;flex-shrink:0}
-.iu-btn{background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:var(–t3);padding:2px 7px;border-radius:1px;text-transform:uppercase;transition:all .15s;line-height:1.5}
-.iu-btn.on{background:rgba(254,240,206,.1);color:var(–t1)}
-.iu-btn:not(.on):hover{color:var(–t2);background:rgba(255,255,255,.04)}
+.iu-btn{-webkit-appearance:none;appearance:none;background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:#5a7a62;padding:2px 7px;border-radius:1px;text-transform:uppercase;transition:all .15s;line-height:1.5}
+.iu-btn.on{background:rgba(254,240,206,.1);color:#fef0ce}
+.iu-btn:not(.on):hover{color:#9db3a0;background:rgba(255,255,255,.04)}
 
 /* STATIC UNIT */
 .su{font-family:var(–bc);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(–t3);text-transform:uppercase;border-left:1px solid var(–b);margin-left:9px;padding-left:9px;flex-shrink:0}
 
 /* PRESET STRIP */
 .pstrip{display:flex;border-top:1px solid var(–b)}
-.pchip{flex:1;background:transparent;border:none;border-right:1px solid var(–b);cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:var(–t3);padding:7px 4px;text-transform:uppercase;transition:all .15s;text-align:center}
+.pchip{-webkit-appearance:none;appearance:none;flex:1;background:transparent;border:none;border-right:1px solid rgba(157,179,160,.10);cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:#5a7a62;padding:7px 4px;text-transform:uppercase;transition:all .15s;text-align:center}
 .pchip:last-child{border-right:none}
-.pchip:hover{background:rgba(254,240,206,.07);color:var(–t1)}
-.pchip.on{background:rgba(254,240,206,.10);color:var(–t1)}
+.pchip:hover{background:rgba(254,240,206,.07);color:#fef0ce}
+.pchip.on{background:rgba(254,240,206,.10);color:#fef0ce}
 
 /* DIVIDER ARROW */
 .arr{display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:36px}
@@ -134,8 +135,8 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
 
 /* CALC BTN */
 .cbrow{display:flex;justify-content:center;margin-bottom:28px}
-.cb{background:var(–gold);border:none;cursor:pointer;font-family:var(–bc);font-size:13px;font-weight:700;letter-spacing:.18em;color:var(–t1);text-transform:uppercase;padding:14px 60px;border-radius:4px;position:relative;overflow:hidden;transition:background .2s,transform .1s,box-shadow .2s}
-.cb:hover{background:var(–goldl);box-shadow:0 0 26px var(–glow)}
+.cb{-webkit-appearance:none;appearance:none;background:#a65402;border:none;cursor:pointer;font-family:var(–bc);font-size:13px;font-weight:700;letter-spacing:.18em;color:#fef0ce;text-transform:uppercase;padding:14px 60px;border-radius:4px;position:relative;overflow:hidden;transition:background .2s,transform .1s,box-shadow .2s}
+.cb:hover{background:#c8720a;box-shadow:0 0 26px rgba(166,84,2,.35)}
 .cb:active{transform:scale(.98)}
 .cb::before{content:’’;position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.13) 0%,transparent 50%)}
 
@@ -147,7 +148,7 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
 .board{border:1px solid rgba(25,145,174,.25);border-radius:4px;overflow:hidden;display:none;opacity:0;transform:translateY(8px);transition:opacity .38s ease,transform .38s ease}
 .board.vis{display:block}
 .board.rev{opacity:1;transform:translateY(0)}
-.bhdr{background:var(–well);padding:10px 20px;display:flex;align-items:center;border-bottom:1px solid var(–b)}
+.bhdr{background:#0f171c;padding:10px 20px;display:flex;align-items:center;border-bottom:1px solid var(–b)}
 .bhdrlbl{font-family:var(–bc);font-size:9px;font-weight:700;letter-spacing:.3em;color:var(–cyan);text-transform:uppercase}
 .bhdrline{flex:1;height:1px;margin-left:14px;background:linear-gradient(to right,rgba(25,145,174,.3),transparent)}
 .bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(–b)}
