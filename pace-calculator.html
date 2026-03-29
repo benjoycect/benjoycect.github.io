@@ -7,42 +7,42 @@
 <title>PACE — Running Calculator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-/* Page background: very dark warm charcoal */
-–black:#0c0c0e;
-/* Calculator card: noticeably lighter, slight cool blue-steel */
-–panel:#1a2030;
-/* Active tab / pressed state: one step lighter */
-–panel2:#1f2840;
-/* Input wells: darkest surface — punches back into depth */
-–well:#0f1219;
-/* Borders */
-–b:rgba(255,255,255,.08);
-–bb:rgba(255,255,255,.16);
-/* Gold — Omega championship warmth */
-–gold:#c9a84c;
-–goldl:#e2c47a;
-–goldd:rgba(201,168,76,.16);
-–glow:rgba(201,168,76,.32);
-/* Cyan result accent */
-–cyan:#4fc3c3;
-–cyand:rgba(79,195,195,.11);
-/* Text */
-–t1:#dde4ed;
-–t2:#7a8fa8;
-–t3:#425060;
+/* ── Portfolio palette ── */
+–black:#141C21;          /* site bg — exact match */
+–panel:#1e2d35;          /* card bg — from .card desktop */
+–panel2:#253540;         /* active tab — one step up from card */
+–well:#0f171c;           /* input wells — deeper than page */
+/* Borders — tinted with portfolio green */
+–b:rgba(157,179,160,.10);
+–bb:rgba(157,179,160,.20);
+/* Orange — primary portfolio accent */
+–gold:#a65402;
+–goldl:#c8720a;
+–goldd:rgba(166,84,2,.18);
+–glow:rgba(166,84,2,.35);
+/* Blue — portfolio link/secondary accent → result highlight */
+–cyan:#1991ae;
+–cyand:rgba(25,145,174,.12);
+/* Text — portfolio token mapping */
+–t1:#fef0ce;             /* cream — headings / primary values */
+–t2:#9db3a0;             /* green — body / secondary */
+–t3:#5a7a62;             /* green dimmed — labels / hints */
 –red:#e05555;
 –mono:‘Share Tech Mono’,monospace;
-–raj:‘Rajdhani’,sans-serif;
-–bc:‘Barlow Condensed’,sans-serif;
+–raj:‘Climate Crisis’,sans-serif;
+–bc:‘Urbanist’,sans-serif;
 }
 
-html,body{min-height:100vh;background:var(–black);color:var(–t1);font-family:var(–bc);overflow-x:hidden}
-.tabs,.panel{box-shadow:0 8px 48px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.4)}
+html{background:#141C21 !important;min-height:100%}
+body{min-height:100vh;background:#141C21 !important;color:var(–t1);font-family:var(–bc);overflow-x:hidden}
+.tabs,.panel{box-shadow:0 8px 48px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.4)}
+.panel{border-radius:0 0 6px 6px}
+.tabs{border-radius:6px 6px 0 0}
 
 body::before{
 content:’’;position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.5;
@@ -51,32 +51,32 @@ background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmln
 body::after{
 content:’’;position:fixed;top:-180px;left:50%;transform:translateX(-50%);
 width:700px;height:360px;pointer-events:none;z-index:0;
-background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
+background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
 }
 
 .app{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:48px 24px 80px}
 
 /* HEADER */
 .hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;padding-bottom:20px;border-bottom:1px solid var(–b);opacity:0;animation:up .6s ease forwards .1s}
-.logo-eye{font-family:var(–bc);font-size:10px;font-weight:500;letter-spacing:.3em;color:var(–gold);text-transform:uppercase}
-.logo{font-family:var(–raj);font-size:44px;font-weight:700;letter-spacing:.15em;color:var(–t1);line-height:1}
-.logo span{color:var(–gold)}
+.logo-eye{font-family:var(–bc);font-size:10px;font-weight:600;letter-spacing:.25em;color:var(–t2);text-transform:uppercase}
+.logo{font-family:var(–raj);font-size:44px;font-weight:400;letter-spacing:.02em;color:var(–t1);line-height:1;text-transform:uppercase}
+.logo span{color:var(–t1)}
 .hdr-r{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .glbl-lbl{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.22em;color:var(–t3);text-transform:uppercase}
 .pill{display:flex;border:1px solid var(–bb);border-radius:2px;overflow:hidden}
 .pill-btn{background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(–t2);padding:6px 15px;transition:all .18s;text-transform:uppercase}
-.pill-btn.on{background:var(–gold);color:var(–black)}
+.pill-btn.on{background:var(–t1);color:var(–black)}
 .pill-btn:not(.on):hover{background:rgba(255,255,255,.05);color:var(–t1)}
 
 /* MODE TABS */
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–b);border:1px solid var(–b);border-radius:3px 3px 0 0;overflow:hidden;opacity:0;animation:up .6s ease forwards .2s}
 .tab{background:var(–panel);border:none;cursor:pointer;padding:15px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;transition:background .2s}
-.tab::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:2px;background:var(–gold);transform:scaleX(0);transition:transform .25s}
+.tab::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:2px;background:var(–t1);transform:scaleX(0);transition:transform .25s}
 .tab.on{background:var(–panel2)}
 .tab.on::after{transform:scaleX(1)}
 .tab:hover:not(.on){background:rgba(255,255,255,.03)}
-.tab-lbl{font-family:var(–bc);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(–t3);transition:color .2s}
-.tab.on .tab-lbl{color:var(–gold)}
+.tab-lbl{font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(–t3);transition:color .2s}
+.tab.on .tab-lbl{color:var(–t1)}
 .tab-eq{font-family:var(–mono);font-size:10px;color:var(–t2);transition:color .2s}
 .tab.on .tab-eq{color:var(–t1)}
 
@@ -92,7 +92,7 @@ background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
 
 /* FIELD */
 .field{background:var(–well);border:1px solid var(–bb);border-radius:2px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s,box-shadow .2s}
-.field:focus-within{border-color:var(–gold);box-shadow:0 0 0 1px var(–goldd)}
+.field:focus-within{border-color:var(–t1);box-shadow:0 0 0 1px rgba(254,240,206,.1)}
 
 /* FIELD TOP ROW */
 .ftop{display:flex;align-items:center;padding:12px 13px}
@@ -112,7 +112,7 @@ background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
 /* INLINE UNIT TOGGLE */
 .iu{display:flex;flex-direction:column;gap:2px;border-left:1px solid var(–b);margin-left:9px;padding-left:9px;flex-shrink:0}
 .iu-btn{background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:var(–t3);padding:2px 7px;border-radius:1px;text-transform:uppercase;transition:all .15s;line-height:1.5}
-.iu-btn.on{background:var(–goldd);color:var(–gold)}
+.iu-btn.on{background:rgba(254,240,206,.1);color:var(–t1)}
 .iu-btn:not(.on):hover{color:var(–t2);background:rgba(255,255,255,.04)}
 
 /* STATIC UNIT */
@@ -122,19 +122,19 @@ background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
 .pstrip{display:flex;border-top:1px solid var(–b)}
 .pchip{flex:1;background:transparent;border:none;border-right:1px solid var(–b);cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:var(–t3);padding:7px 4px;text-transform:uppercase;transition:all .15s;text-align:center}
 .pchip:last-child{border-right:none}
-.pchip:hover{background:var(–goldd);color:var(–gold)}
-.pchip.on{background:var(–goldd);color:var(–goldl)}
+.pchip:hover{background:rgba(254,240,206,.07);color:var(–t1)}
+.pchip.on{background:rgba(254,240,206,.10);color:var(–t1)}
 
 /* DIVIDER ARROW */
 .arr{display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:36px}
 .aline{width:1px;height:16px}
-.at{background:linear-gradient(to bottom,transparent,var(–goldd))}
-.ab{background:linear-gradient(to bottom,var(–goldd),transparent)}
-.adiamond{font-size:14px;color:var(–gold);line-height:1}
+.at{background:linear-gradient(to bottom,transparent,rgba(254,240,206,.12))}
+.ab{background:linear-gradient(to bottom,rgba(254,240,206,.12),transparent)}
+.adiamond{font-size:14px;color:var(–t2);line-height:1}
 
 /* CALC BTN */
 .cbrow{display:flex;justify-content:center;margin-bottom:28px}
-.cb{background:var(–gold);border:none;cursor:pointer;font-family:var(–bc);font-size:13px;font-weight:700;letter-spacing:.28em;color:var(–black);text-transform:uppercase;padding:14px 60px;border-radius:2px;position:relative;overflow:hidden;transition:background .2s,transform .1s,box-shadow .2s}
+.cb{background:var(–gold);border:none;cursor:pointer;font-family:var(–bc);font-size:13px;font-weight:700;letter-spacing:.18em;color:var(–t1);text-transform:uppercase;padding:14px 60px;border-radius:4px;position:relative;overflow:hidden;transition:background .2s,transform .1s,box-shadow .2s}
 .cb:hover{background:var(–goldl);box-shadow:0 0 26px var(–glow)}
 .cb:active{transform:scale(.98)}
 .cb::before{content:’’;position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.13) 0%,transparent 50%)}
@@ -144,17 +144,17 @@ background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
 .err.show{display:block}
 
 /* BOARD */
-.board{border:1px solid var(–b);border-radius:2px;overflow:hidden;display:none;opacity:0;transform:translateY(8px);transition:opacity .38s ease,transform .38s ease}
+.board{border:1px solid rgba(25,145,174,.25);border-radius:4px;overflow:hidden;display:none;opacity:0;transform:translateY(8px);transition:opacity .38s ease,transform .38s ease}
 .board.vis{display:block}
 .board.rev{opacity:1;transform:translateY(0)}
 .bhdr{background:var(–well);padding:10px 20px;display:flex;align-items:center;border-bottom:1px solid var(–b)}
-.bhdrlbl{font-family:var(–bc);font-size:9px;font-weight:700;letter-spacing:.3em;color:var(–gold);text-transform:uppercase}
-.bhdrline{flex:1;height:1px;margin-left:14px;background:linear-gradient(to right,var(–goldd),transparent)}
+.bhdrlbl{font-family:var(–bc);font-size:9px;font-weight:700;letter-spacing:.3em;color:var(–cyan);text-transform:uppercase}
+.bhdrline{flex:1;height:1px;margin-left:14px;background:linear-gradient(to right,rgba(25,145,174,.3),transparent)}
 .bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(–b)}
 .bcell{background:var(–panel2);padding:18px 15px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
-.bcell::before{content:’’;position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(–goldd),transparent)}
+.bcell::before{content:’’;position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(25,145,174,.2),transparent)}
 .bclbl{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.22em;color:var(–t3);text-transform:uppercase}
-.bcval{font-family:var(–mono);font-size:19px;color:var(–t1);letter-spacing:.02em}
+.bcval{font-family:var(–mono);font-size:19px;color:var(–cyan);letter-spacing:.02em}
 .bcsub{font-family:var(–bc);font-size:10px;letter-spacing:.1em;color:var(–t3)}
 
 /* SPLITS */
@@ -166,14 +166,14 @@ background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
 .stbl td{font-family:var(–mono);font-size:12px;color:var(–t2);padding:9px 0;text-align:right;border-bottom:1px solid rgba(255,255,255,.03)}
 .stbl td:first-child{text-align:left;font-family:var(–bc);font-size:11px;letter-spacing:.08em;color:var(–t3)}
 .stbl tr:last-child td{border-bottom:none}
-.shl td{color:var(–gold)}
+.shl td{color:var(–cyan)}
 
 /* FOOTER */
 .ftr{margin-top:44px;padding-top:20px;border-top:1px solid var(–b);display:flex;justify-content:space-between;align-items:center;opacity:0;animation:up .6s ease forwards .5s}
 .fnote{font-family:var(–bc);font-size:10px;letter-spacing:.2em;color:var(–t3);text-transform:uppercase}
 .fdots{display:flex;gap:6px;align-items:center}
 .fdot{width:4px;height:4px;border-radius:50%;background:var(–bb)}
-.fdot:nth-child(2){background:var(–goldd);width:6px;height:6px}
+.fdot:nth-child(2){background:rgba(254,240,206,.15);width:6px;height:6px}
 
 @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
