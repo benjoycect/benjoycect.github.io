@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PACE — Running Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+/* Page background: very dark warm charcoal */
+–black:#0c0c0e;
+/* Calculator card: noticeably lighter, slight cool blue-steel */
+–panel:#1a2030;
+/* Active tab / pressed state: one step lighter */
+–panel2:#1f2840;
+/* Input wells: darkest surface — punches back into depth */
+–well:#0f1219;
+/* Borders */
+–b:rgba(255,255,255,.08);
+–bb:rgba(255,255,255,.16);
+/* Gold — Omega championship warmth */
+–gold:#c9a84c;
+–goldl:#e2c47a;
+–goldd:rgba(201,168,76,.16);
+–glow:rgba(201,168,76,.32);
+/* Cyan result accent */
+–cyan:#4fc3c3;
+–cyand:rgba(79,195,195,.11);
+/* Text */
+–t1:#dde4ed;
+–t2:#7a8fa8;
+–t3:#425060;
+–red:#e05555;
+–mono:‘Share Tech Mono’,monospace;
+–raj:‘Rajdhani’,sans-serif;
+–bc:‘Barlow Condensed’,sans-serif;
+}
+
+html,body{min-height:100vh;background:var(–black);color:var(–t1);font-family:var(–bc);overflow-x:hidden}
+.tabs,.panel{box-shadow:0 8px 48px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.4)}
+
+body::before{
+content:’’;position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.5;
+background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=’.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=’.045’/%3E%3C/svg%3E”);
+}
+body::after{
+content:’’;position:fixed;top:-180px;left:50%;transform:translateX(-50%);
+width:700px;height:360px;pointer-events:none;z-index:0;
+background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);
+}
+
+.app{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:48px 24px 80px}
+
+/* HEADER */
+.hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;padding-bottom:20px;border-bottom:1px solid var(–b);opacity:0;animation:up .6s ease forwards .1s}
+.logo-eye{font-family:var(–bc);font-size:10px;font-weight:500;letter-spacing:.3em;color:var(–gold);text-transform:uppercase}
+.logo{font-family:var(–raj);font-size:44px;font-weight:700;letter-spacing:.15em;color:var(–t1);line-height:1}
+.logo span{color:var(–gold)}
+.hdr-r{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.glbl-lbl{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.22em;color:var(–t3);text-transform:uppercase}
+.pill{display:flex;border:1px solid var(–bb);border-radius:2px;overflow:hidden}
+.pill-btn{background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(–t2);padding:6px 15px;transition:all .18s;text-transform:uppercase}
+.pill-btn.on{background:var(–gold);color:var(–black)}
+.pill-btn:not(.on):hover{background:rgba(255,255,255,.05);color:var(–t1)}
+
+/* MODE TABS */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–b);border:1px solid var(–b);border-radius:3px 3px 0 0;overflow:hidden;opacity:0;animation:up .6s ease forwards .2s}
+.tab{background:var(–panel);border:none;cursor:pointer;padding:15px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;transition:background .2s}
+.tab::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:2px;background:var(–gold);transform:scaleX(0);transition:transform .25s}
+.tab.on{background:var(–panel2)}
+.tab.on::after{transform:scaleX(1)}
+.tab:hover:not(.on){background:rgba(255,255,255,.03)}
+.tab-lbl{font-family:var(–bc);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(–t3);transition:color .2s}
+.tab.on .tab-lbl{color:var(–gold)}
+.tab-eq{font-family:var(–mono);font-size:10px;color:var(–t2);transition:color .2s}
+.tab.on .tab-eq{color:var(–t1)}
+
+/* PANEL */
+.panel{background:var(–panel);border:1px solid var(–b);border-top:none;border-radius:0 0 3px 3px;padding:32px 36px 36px;opacity:0;animation:up .6s ease forwards .3s}
+
+/* INPUT GRID */
+.igrid{display:grid;grid-template-columns:1fr 28px 1fr;align-items:start;gap:12px;margin-bottom:28px}
+.igrp{display:flex;flex-direction:column;gap:9px}
+.irow{display:flex;justify-content:space-between;align-items:center}
+.ilbl{font-family:var(–bc);font-size:10px;font-weight:600;letter-spacing:.25em;color:var(–t3);text-transform:uppercase}
+.ihint{font-family:var(–bc);font-size:9px;letter-spacing:.1em;color:var(–t3);opacity:.5}
+
+/* FIELD */
+.field{background:var(–well);border:1px solid var(–bb);border-radius:2px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.field:focus-within{border-color:var(–gold);box-shadow:0 0 0 1px var(–goldd)}
+
+/* FIELD TOP ROW */
+.ftop{display:flex;align-items:center;padding:12px 13px}
+
+/* NUMERIC INPUT */
+.ni{background:transparent;border:none;outline:none;font-family:var(–mono);font-size:27px;color:var(–t1);flex:1;min-width:0;text-align:center;letter-spacing:.04em;-moz-appearance:textfield}
+.ni::-webkit-outer-spin-button,.ni::-webkit-inner-spin-button{-webkit-appearance:none}
+.ni::placeholder{color:var(–t3)}
+
+/* TIME SEGMENTS */
+.trow{display:flex;align-items:center;gap:1px;flex:1;justify-content:center}
+.ts{background:transparent;border:none;outline:none;font-family:var(–mono);font-size:27px;color:var(–t1);width:42px;text-align:center;-moz-appearance:textfield}
+.ts::-webkit-outer-spin-button,.ts::-webkit-inner-spin-button{-webkit-appearance:none}
+.ts::placeholder{color:var(–t3)}
+.tc{font-family:var(–mono);font-size:24px;color:var(–t3);padding-bottom:2px;user-select:none;flex-shrink:0}
+
+/* INLINE UNIT TOGGLE */
+.iu{display:flex;flex-direction:column;gap:2px;border-left:1px solid var(–b);margin-left:9px;padding-left:9px;flex-shrink:0}
+.iu-btn{background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:var(–t3);padding:2px 7px;border-radius:1px;text-transform:uppercase;transition:all .15s;line-height:1.5}
+.iu-btn.on{background:var(–goldd);color:var(–gold)}
+.iu-btn:not(.on):hover{color:var(–t2);background:rgba(255,255,255,.04)}
+
+/* STATIC UNIT */
+.su{font-family:var(–bc);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(–t3);text-transform:uppercase;border-left:1px solid var(–b);margin-left:9px;padding-left:9px;flex-shrink:0}
+
+/* PRESET STRIP */
+.pstrip{display:flex;border-top:1px solid var(–b)}
+.pchip{flex:1;background:transparent;border:none;border-right:1px solid var(–b);cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:var(–t3);padding:7px 4px;text-transform:uppercase;transition:all .15s;text-align:center}
+.pchip:last-child{border-right:none}
+.pchip:hover{background:var(–goldd);color:var(–gold)}
+.pchip.on{background:var(–goldd);color:var(–goldl)}
+
+/* DIVIDER ARROW */
+.arr{display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:36px}
+.aline{width:1px;height:16px}
+.at{background:linear-gradient(to bottom,transparent,var(–goldd))}
+.ab{background:linear-gradient(to bottom,var(–goldd),transparent)}
+.adiamond{font-size:14px;color:var(–gold);line-height:1}
+
+/* CALC BTN */
+.cbrow{display:flex;justify-content:center;margin-bottom:28px}
+.cb{background:var(–gold);border:none;cursor:pointer;font-family:var(–bc);font-size:13px;font-weight:700;letter-spacing:.28em;color:var(–black);text-transform:uppercase;padding:14px 60px;border-radius:2px;position:relative;overflow:hidden;transition:background .2s,transform .1s,box-shadow .2s}
+.cb:hover{background:var(–goldl);box-shadow:0 0 26px var(–glow)}
+.cb:active{transform:scale(.98)}
+.cb::before{content:’’;position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.13) 0%,transparent 50%)}
+
+/* ERROR */
+.err{display:none;text-align:center;font-family:var(–bc);font-size:11px;letter-spacing:.12em;color:var(–red);margin-bottom:16px}
+.err.show{display:block}
+
+/* BOARD */
+.board{border:1px solid var(–b);border-radius:2px;overflow:hidden;display:none;opacity:0;transform:translateY(8px);transition:opacity .38s ease,transform .38s ease}
+.board.vis{display:block}
+.board.rev{opacity:1;transform:translateY(0)}
+.bhdr{background:var(–well);padding:10px 20px;display:flex;align-items:center;border-bottom:1px solid var(–b)}
+.bhdrlbl{font-family:var(–bc);font-size:9px;font-weight:700;letter-spacing:.3em;color:var(–gold);text-transform:uppercase}
+.bhdrline{flex:1;height:1px;margin-left:14px;background:linear-gradient(to right,var(–goldd),transparent)}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(–b)}
+.bcell{background:var(–panel2);padding:18px 15px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.bcell::before{content:’’;position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(–goldd),transparent)}
+.bclbl{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.22em;color:var(–t3);text-transform:uppercase}
+.bcval{font-family:var(–mono);font-size:19px;color:var(–t1);letter-spacing:.02em}
+.bcsub{font-family:var(–bc);font-size:10px;letter-spacing:.1em;color:var(–t3)}
+
+/* SPLITS */
+.splits{border-top:1px solid var(–b);padding:20px;background:var(–well)}
+.slbl{font-family:var(–bc);font-size:9px;font-weight:700;letter-spacing:.3em;color:var(–t3);text-transform:uppercase;margin-bottom:14px}
+.stbl{width:100%;border-collapse:collapse}
+.stbl th{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.2em;color:var(–t3);text-transform:uppercase;padding:0 0 8px;text-align:right;border-bottom:1px solid var(–b)}
+.stbl th:first-child{text-align:left}
+.stbl td{font-family:var(–mono);font-size:12px;color:var(–t2);padding:9px 0;text-align:right;border-bottom:1px solid rgba(255,255,255,.03)}
+.stbl td:first-child{text-align:left;font-family:var(–bc);font-size:11px;letter-spacing:.08em;color:var(–t3)}
+.stbl tr:last-child td{border-bottom:none}
+.shl td{color:var(–gold)}
+
+/* FOOTER */
+.ftr{margin-top:44px;padding-top:20px;border-top:1px solid var(–b);display:flex;justify-content:space-between;align-items:center;opacity:0;animation:up .6s ease forwards .5s}
+.fnote{font-family:var(–bc);font-size:10px;letter-spacing:.2em;color:var(–t3);text-transform:uppercase}
+.fdots{display:flex;gap:6px;align-items:center}
+.fdot{width:4px;height:4px;border-radius:50%;background:var(–bb)}
+.fdot:nth-child(2){background:var(–goldd);width:6px;height:6px}
+
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:620px){
+.app{padding:28px 16px 60px}
+.igrid{grid-template-columns:1fr}
+.arr{display:none}
+.bgrid{grid-template-columns:repeat(2,1fr)}
+.logo{font-size:34px}
+.ni,.ts{font-size:22px}
+.ts{width:36px}
+.panel{padding:20px 16px}
+}
+</style>
+
+</head>
+<body>
+<div class="app">
+
+  <!-- HEADER -->
+
+  <header class="hdr">
+    <div>
+      <div class="logo-eye">Running Calculator</div>
+      <div class="logo"><span>PACE</span></div>
+    </div>
+    <div class="hdr-r">
+      <div class="glbl-lbl">Default units</div>
+      <div class="pill">
+        <button class="pill-btn on" data-u="mi" onclick="setGlobal('mi')">Miles</button>
+        <button class="pill-btn"    data-u="km"  onclick="setGlobal('km')">KM</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- TABS -->
+
+  <div class="tabs">
+    <button class="tab on" data-m="pace" onclick="setMode('pace')">
+      <span class="tab-lbl">Pace</span>
+      <span class="tab-eq">dist + time → pace</span>
+    </button>
+    <button class="tab" data-m="time" onclick="setMode('time')">
+      <span class="tab-lbl">Finish Time</span>
+      <span class="tab-eq">pace + dist → time</span>
+    </button>
+    <button class="tab" data-m="dist" onclick="setMode('dist')">
+      <span class="tab-lbl">Distance</span>
+      <span class="tab-eq">pace + time → dist</span>
+    </button>
+  </div>
+
+  <!-- PANEL -->
+
+  <div class="panel">
+    <div class="igrid">
+      <!-- A -->
+      <div class="igrp">
+        <div class="irow">
+          <span class="ilbl" id="lblA">Distance</span>
+          <span class="ihint" id="hntA">e.g. 26.2</span>
+        </div>
+        <div class="field" id="fA"></div>
+      </div>
+      <!-- divider -->
+      <div class="arr">
+        <div class="aline at"></div>
+        <div class="adiamond">◆</div>
+        <div class="aline ab"></div>
+      </div>
+      <!-- B -->
+      <div class="igrp">
+        <div class="irow">
+          <span class="ilbl" id="lblB">Time</span>
+          <span class="ihint" id="hntB">hh : mm : ss</span>
+        </div>
+        <div class="field" id="fB"></div>
+      </div>
+    </div>
+
+
+<div class="cbrow"><button class="cb" onclick="calc()">Calculate</button></div>
+<div class="err" id="err">Please fill in all required fields</div>
+
+<!-- RESULTS -->
+<div class="board" id="board">
+  <div class="bhdr">
+    <div class="bhdrlbl">Result</div>
+    <div class="bhdrline"></div>
+  </div>
+  <div class="bgrid" id="bgrid"></div>
+  <div class="splits" id="splits" style="display:none">
+    <div class="slbl">Splits</div>
+    <table class="stbl">
+      <thead><tr>
+        <th style="text-align:left">Split</th>
+        <th>Distance</th>
+        <th>Split Time</th>
+        <th>Elapsed</th>
+      </tr></thead>
+      <tbody id="sbody"></tbody>
+    </table>
+  </div>
+</div>
+
+
+  </div>
+
+  <footer class="ftr">
+    <div class="fnote">All times calculated at even pace</div>
+    <div class="fdots">
+      <div class="fdot"></div><div class="fdot"></div><div class="fdot"></div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* ── CONSTANTS ── */
+const KPM = 1.60934; // km per mile
+
+const PRESETS = [
+  {lbl:'5K',     km:5},
+  {lbl:'10K',    km:10},
+  {lbl:'Half',   km:21.0975},
+  {lbl:'Mara',   km:42.195},
+];
+
+/* ── STATE ── */
+let gUnit = 'mi';   // global default
+let uA    = 'mi';   // field A unit
+let uB    = 'mi';   // field B unit
+let tA    = 'dist'; // field A type: 'dist'|'pace'|'time'
+let tB    = 'time'; // field B type
+let mode  = 'pace'; // 'pace'|'time'|'dist'
+
+/* ── GLOBAL UNIT ── */
+function setGlobal(u) {
+  gUnit = u;
+  document.querySelectorAll('.pill-btn').forEach(b => b.classList.toggle('on', b.dataset.u === u));
+  renderMode();
+  clearResult();
+}
+
+/* ── MODE ── */
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.m === m));
+  renderMode();
+  clearResult();
+}
+
+function renderMode() {
+  if (mode === 'pace') {
+    buildA('dist', 'e.g. 26.2', gUnit);
+    buildB('time', 'hh : mm : ss', gUnit);
+  } else if (mode === 'time') {
+    buildA('pace', 'mm : ss  /  ' + gUnit, gUnit);
+    buildB('dist', 'e.g. 26.2', gUnit);
+  } else {
+    buildA('pace', 'mm : ss  /  ' + gUnit, gUnit);
+    buildB('time', 'hh : mm : ss', gUnit);
+  }
+}
+
+/* ── BUILD FIELDS ── */
+function buildA(type, hint, unit) {
+  tA = type; uA = unit;
+  document.getElementById('lblA').textContent = cap(type);
+  document.getElementById('hntA').textContent = hint;
+  buildField('fA', type, unit, 'A');
+}
+function buildB(type, hint, unit) {
+  tB = type; uB = unit;
+  document.getElementById('lblB').textContent = cap(type);
+  document.getElementById('hntB').textContent = hint;
+  buildField('fB', type, unit, 'B');
+}
+
+function buildField(id, type, unit, side) {
+  const el = document.getElementById(id);
+  el.innerHTML = '';
+  el.className = 'field';
+
+  const top = mk('div', 'ftop');
+
+  if (type === 'dist') {
+    const inp = mkNum(id + '-v', '00.00', 0.01);
+    top.appendChild(inp);
+    top.appendChild(mkUnitToggle(unit, side));
+    el.appendChild(top);
+    el.appendChild(mkPresets(side, unit));
+
+  } else if (type === 'pace') {
+    const row = mk('div', 'trow');
+    row.appendChild(mkSeg(id + '-pm', '00', 99));
+    row.appendChild(mkColon());
+    row.appendChild(mkSeg(id + '-ps', '00', 59));
+    top.appendChild(row);
+    top.appendChild(mkUnitToggle(unit, side));
+    el.appendChild(top);
+
+  } else { // time
+    const row = mk('div', 'trow');
+    row.appendChild(mkSeg(id + '-th', '00', 99));
+    row.appendChild(mkColon());
+    row.appendChild(mkSeg(id + '-tm', '00', 59));
+    row.appendChild(mkColon());
+    row.appendChild(mkSeg(id + '-ts', '00', 59));
+    top.appendChild(row);
+    const su = mk('div', 'su'); su.textContent = 'h:m:s';
+    top.appendChild(su);
+    el.appendChild(top);
+  }
+}
+
+function mkNum(id, ph, step) {
+  const i = mk('input', 'ni');
+  i.id = id; i.type = 'number'; i.min = '0'; i.step = String(step); i.placeholder = ph;
+  i.oninput = dirty;
+  return i;
+}
+function mkSeg(id, ph, max) {
+  const i = mk('input', 'ts');
+  i.id = id; i.type = 'number'; i.min = '0'; i.max = String(max); i.placeholder = ph;
+  i.oninput = () => { clamp(i, max); dirty(); };
+  return i;
+}
+function mkColon() { const s = mk('span','tc'); s.textContent = ':'; return s; }
+
+function mkUnitToggle(active, side) {
+  const wrap = mk('div', 'iu');
+  wrap.id = 'iu-' + side;
+  ['mi','km'].forEach(u => {
+    const b = mk('button', 'iu-btn' + (u === active ? ' on' : ''));
+    b.dataset.u = u; b.textContent = u;
+    b.onclick = () => flipUnit(side, u);
+    wrap.appendChild(b);
+  });
+  return wrap;
+}
+
+function mkPresets(side, unit) {
+  const strip = mk('div', 'pstrip');
+  strip.id = 'ps-' + side;
+  PRESETS.forEach(p => {
+    const b = mk('button', 'pchip');
+    b.dataset.km = p.km; b.textContent = p.lbl;
+    b.onclick = () => applyPreset(side, p.km, b);
+    strip.appendChild(b);
+  });
+  return strip;
+}
+
+/* ── UNIT FLIP (per field) ── */
+function flipUnit(side, nu) {
+  const old  = side === 'A' ? uA : uB;
+  const type = side === 'A' ? tA : tB;
+  if (nu === old) return;
+  if (side === 'A') uA = nu; else uB = nu;
+
+  // update toggle buttons
+  document.querySelectorAll('#iu-' + side + ' .iu-btn')
+    .forEach(b => b.classList.toggle('on', b.dataset.u === nu));
+
+  const fid = 'f' + side;
+
+  if (type === 'dist') {
+    const inp = document.getElementById(fid + '-v');
+    if (inp && inp.value !== '') {
+      const v = parseFloat(inp.value);
+      if (!isNaN(v)) inp.value = r2(nu === 'km' ? v * KPM : v / KPM);
+    }
+    // deactivate preset chips whose stored km value may now show differently — just clear active
+    const strip = document.getElementById('ps-' + side);
+    if (strip) strip.querySelectorAll('.pchip').forEach(c => c.classList.remove('on'));
+
+  } else if (type === 'pace') {
+    const pm = document.getElementById(fid + '-pm');
+    const ps = document.getElementById(fid + '-ps');
+    if (pm && ps && (pm.value !== '' || ps.value !== '')) {
+      const sec = (parseFloat(pm.value)||0)*60 + (parseFloat(ps.value)||0);
+      if (sec > 0) {
+        const conv = nu === 'km' ? sec / KPM : sec * KPM;
+        pm.value = Math.floor(conv / 60);
+        ps.value = pad(Math.round(conv % 60));
+      }
+    }
+  }
+  dirty();
+}
+
+/* ── PRESETS ── */
+function applyPreset(side, kmVal, btn) {
+  const unit = side === 'A' ? uA : uB;
+  const fid  = 'f' + side;
+  const inp  = document.getElementById(fid + '-v');
+  if (!inp) return;
+  inp.value = r2(unit === 'km' ? kmVal : kmVal / KPM);
+  document.getElementById('ps-' + side)
+    .querySelectorAll('.pchip').forEach(c => c.classList.remove('on'));
+  btn.classList.add('on');
+  dirty();
+}
+
+/* ── HELPERS ── */
+function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
+function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+function pad(n) { return String(Math.floor(Math.abs(n))).padStart(2,'0'); }
+function r2(v)  { return Math.round(v * 100) / 100; }
+function clamp(el, max) {
+  let v = parseInt(el.value);
+  if (isNaN(v)) return;
+  if (v < 0) el.value = 0;
+  if (v > max) el.value = max;
+}
+function dirty() { clearResult(); }
+
+function gts(hid, mid, sid) { // get total seconds from h:m:s fields
+  return (parseFloat(document.getElementById(hid)?.value)||0)*3600
+       + (parseFloat(document.getElementById(mid)?.value)||0)*60
+       + (parseFloat(document.getElementById(sid)?.value)||0);
+}
+function gps(pmid, psid) { // get pace seconds from m:s fields
+  return (parseFloat(document.getElementById(pmid)?.value)||0)*60
+       + (parseFloat(document.getElementById(psid)?.value)||0);
+}
+function ftm(s) { // format total seconds → hh:mm:ss
+  s = Math.round(s);
+  return pad(Math.floor(s/3600))+':'+pad(Math.floor((s%3600)/60))+':'+pad(s%60);
+}
+function fpc(s) { // format seconds → mm:ss
+  s = Math.round(s);
+  return pad(Math.floor(s/60))+':'+pad(s%60);
+}
+
+/* ── CALCULATE ── */
+function calc() {
+  document.getElementById('err').classList.remove('show');
+  let distKm, totalSec, paceKm; // all math internal in km
+
+  if (mode === 'pace') {
+    const dv  = parseFloat(document.getElementById('fA-v')?.value);
+    totalSec  = gts('fB-th','fB-tm','fB-ts');
+    if (!dv || dv <= 0 || totalSec <= 0) return fail();
+    distKm  = uA === 'km' ? dv : dv * KPM;
+    paceKm  = totalSec / distKm;
+
+  } else if (mode === 'time') {
+    const rawPace = gps('fA-pm','fA-ps');
+    const dv      = parseFloat(document.getElementById('fB-v')?.value);
+    if (!rawPace || rawPace <= 0 || !dv || dv <= 0) return fail();
+    paceKm   = uA === 'km' ? rawPace : rawPace / KPM;
+    distKm   = uB === 'km' ? dv : dv * KPM;
+    totalSec = paceKm * distKm;
+
+  } else {
+    const rawPace = gps('fA-pm','fA-ps');
+    totalSec      = gts('fB-th','fB-tm','fB-ts');
+    if (!rawPace || rawPace <= 0 || totalSec <= 0) return fail();
+    paceKm = uA === 'km' ? rawPace : rawPace / KPM;
+    distKm = totalSec / paceKm;
+  }
+
+  showResult(distKm, totalSec, paceKm);
+}
+
+function fail() { document.getElementById('err').classList.add('show'); }
+
+/* ── SHOW RESULT ── */
+function showResult(distKm, totalSec, paceKm) {
+  const distMi  = distKm / KPM;
+  const paceMi  = paceKm * KPM;
+  const spdKmh  = 3600 / paceKm;
+  const spdMph  = 3600 / paceMi;
+
+  // Stat cells
+  const grid = document.getElementById('bgrid');
+  grid.innerHTML = '';
+  [
+    {lbl:'Distance',    val: distKm.toFixed(2)+' km',     sub: distMi.toFixed(2)+' mi'},
+    {lbl:'Finish Time', val: ftm(totalSec),               sub: 'hh:mm:ss'},
+    {lbl:'Pace',        val: fpc(paceKm)+' /km',          sub: fpc(paceMi)+' /mi'},
+    {lbl:'Speed',       val: spdKmh.toFixed(2)+' km/h',   sub: spdMph.toFixed(2)+' mph'},
+  ].forEach(c => {
+    const cell = mk('div','bcell');
+    cell.innerHTML = `<div class="bclbl">${c.lbl}</div><div class="bcval">${c.val}</div><div class="bcsub">${c.sub}</div>`;
+    grid.appendChild(cell);
+  });
+
+  // Splits (in km)
+  const tbody  = document.getElementById('sbody');
+  const secEl  = document.getElementById('splits');
+  tbody.innerHTML = '';
+  const kmFloor = Math.floor(distKm);
+
+  if (kmFloor >= 1) {
+    secEl.style.display = 'block';
+    let elapsed = 0;
+    for (let i = 1; i <= kmFloor; i++) {
+      elapsed += paceKm;
+      const tr = mk('tr','');
+      tr.innerHTML = `<td>KM ${i}</td><td>${i}.00 km · ${r2(i/KPM)} mi</td><td>${ftm(paceKm)}</td><td>${ftm(elapsed)}</td>`;
+      tbody.appendChild(tr);
+    }
+    const rem = distKm - kmFloor;
+    if (rem > 0.005) {
+      const remSec = paceKm * rem;
+      elapsed += remSec;
+      const tr = mk('tr','shl');
+      tr.innerHTML = `<td>Final ${rem.toFixed(2)} km</td><td>${distKm.toFixed(2)} km · ${distMi.toFixed(2)} mi</td><td>${ftm(remSec)}</td><td>${ftm(elapsed)}</td>`;
+      tbody.appendChild(tr);
+    }
+  } else {
+    secEl.style.display = 'none';
+  }
+
+  const board = document.getElementById('board');
+  board.classList.add('vis');
+  requestAnimationFrame(() => requestAnimationFrame(() => board.classList.add('rev')));
+}
+
+function clearResult() {
+  const b = document.getElementById('board');
+  b.classList.remove('rev');
+  setTimeout(() => b.classList.remove('vis'), 360);
+  document.getElementById('err').classList.remove('show');
+}
+
+/* ── INIT ── */
+renderMode();
+</script>
+
+</body>
+</html>
