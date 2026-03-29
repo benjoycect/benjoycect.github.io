@@ -7,186 +7,661 @@
 <title>PACE — Running Calculator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-:root{
-/* ── Portfolio palette ── */
-–black:#141C21;          /* site bg — exact match */
-–panel:#1e2d35;          /* card bg — from .card desktop */
-–panel2:#253540;         /* active tab — one step up from card */
-–well:#0f171c;           /* input wells — deeper than page */
-/* Borders — tinted with portfolio green */
-–b:rgba(157,179,160,.10);
-–bb:rgba(157,179,160,.20);
-/* Orange — primary portfolio accent */
-–gold:#a65402;
-–goldl:#c8720a;
-–goldd:rgba(166,84,2,.18);
-–glow:rgba(166,84,2,.35);
-/* Blue — portfolio link/secondary accent → result highlight */
-–cyan:#1991ae;
-–cyand:rgba(25,145,174,.12);
-/* Text — portfolio token mapping */
-–t1:#fef0ce;             /* cream — headings / primary values */
-–t2:#9db3a0;             /* green — body / secondary */
-–t3:#5a7a62;             /* green dimmed — labels / hints */
-–red:#e05555;
-–mono:‘Share Tech Mono’,monospace;
-–raj:‘Climate Crisis’,sans-serif;
-–bc:‘Urbanist’,sans-serif;
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── BASE ── */
+html {
+background-color: #141C21;
+min-height: 100%;
+font-size: 16px;
+}
+body {
+background-color: #141C21;
+color: #9db3a0;
+font-family: ‘Urbanist’, sans-serif;
+font-weight: 400;
+min-height: 100vh;
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased;
 }
 
-html{background:#141C21 !important;min-height:100%}
-body{min-height:100vh;background:#141C21 !important;color:var(–t1);font-family:var(–bc);overflow-x:hidden}
-button{-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent}
-.tabs,.panel{box-shadow:0 8px 48px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.4)}
-.panel{border-radius:0 0 6px 6px}
-.tabs{border-radius:6px 6px 0 0}
-
-body::before{
-content:’’;position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.5;
-background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=’.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=’.045’/%3E%3C/svg%3E”);
-}
-body::after{
-content:’’;position:fixed;top:-180px;left:50%;transform:translateX(-50%);
-width:700px;height:360px;pointer-events:none;z-index:0;
-background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
+/* ── BUTTON RESET — critical for Safari iOS ── */
+button {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+border: none;
+background: transparent;
+cursor: pointer;
+font-family: ‘Urbanist’, sans-serif;
+-webkit-tap-highlight-color: transparent;
+touch-action: manipulation;
 }
 
-.app{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:48px 24px 80px}
+/* ── INPUT RESET ── */
+input {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+border: none;
+outline: none;
+background: transparent;
+font-family: ‘Share Tech Mono’, monospace;
+color: #fef0ce;
+}
+input[type=“number”] { -moz-appearance: textfield; }
+input[type=“number”]::-webkit-outer-spin-button,
+input[type=“number”]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input::placeholder { color: #2e4a38; }
 
-/* HEADER */
-.hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;padding-bottom:20px;border-bottom:1px solid var(–b);opacity:0;animation:up .6s ease forwards .1s}
-.logo-eye{font-family:var(–bc);font-size:10px;font-weight:600;letter-spacing:.25em;color:var(–t2);text-transform:uppercase}
-.logo{font-family:var(–raj);font-size:44px;font-weight:400;letter-spacing:.02em;color:var(–t1);line-height:1;text-transform:uppercase}
-.logo span{color:var(–t1)}
-.hdr-r{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.glbl-lbl{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.22em;color:var(–t3);text-transform:uppercase}
-.pill{display:flex;border:1px solid var(–bb);border-radius:2px;overflow:hidden}
-.pill-btn{-webkit-appearance:none;appearance:none;background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:11px;font-weight:700;letter-spacing:.1em;color:#9db3a0;padding:6px 15px;transition:all .18s;text-transform:uppercase}
-.pill-btn.on{background:#fef0ce;color:#141C21}
-.pill-btn:not(.on):hover{background:rgba(255,255,255,.05);color:#fef0ce}
+/* ── LAYOUT ── */
+.app {
+position: relative;
+z-index: 1;
+max-width: 860px;
+margin: 0 auto;
+padding: 48px 24px 80px;
+}
 
-/* MODE TABS */
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–b);border:1px solid var(–b);border-radius:3px 3px 0 0;overflow:hidden;opacity:0;animation:up .6s ease forwards .2s}
-.tab{-webkit-appearance:none;appearance:none;background:#1e2d35;border:none;cursor:pointer;padding:15px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;transition:background .2s}
-.tab::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:2px;background:#fef0ce;transform:scaleX(0);transition:transform .25s}
-.tab.on{background:#253540}
-.tab.on::after{transform:scaleX(1)}
-.tab:hover:not(.on){background:rgba(255,255,255,.03)}
-.tab-lbl{font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5a7a62;transition:color .2s}
-.tab.on .tab-lbl{color:#fef0ce}
-.tab-eq{font-family:var(–mono);font-size:10px;color:#9db3a0;transition:color .2s}
-.tab.on .tab-eq{color:#fef0ce}
+/* ── HEADER ── */
+.hdr {
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: flex-end;
+align-items: flex-end;
+-webkit-justify-content: space-between;
+justify-content: space-between;
+margin-bottom: 40px;
+padding-bottom: 20px;
+border-bottom: 1px solid rgba(157, 179, 160, 0.12);
+opacity: 0;
+-webkit-animation: fadeUp 0.7s ease forwards 0.05s;
+animation: fadeUp 0.7s ease forwards 0.05s;
+}
+.logo-eye {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.22em;
+color: #9db3a0;
+text-transform: uppercase;
+margin-bottom: 4px;
+}
+.logo {
+font-family: ‘Climate Crisis’, sans-serif;
+font-size: 48px;
+color: #fef0ce;
+line-height: 0.9;
+text-transform: uppercase;
+letter-spacing: -0.01em;
+}
+.hdr-right {
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+-webkit-align-items: flex-end;
+align-items: flex-end;
+gap: 8px;
+}
+.unit-lbl {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 9px;
+font-weight: 600;
+letter-spacing: 0.22em;
+color: #4a6a52;
+text-transform: uppercase;
+}
+.pill {
+display: -webkit-flex;
+display: flex;
+border: 1px solid rgba(157, 179, 160, 0.22);
+border-radius: 3px;
+overflow: hidden;
+}
+.pill-btn {
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 0.1em;
+color: #6a8a72;
+padding: 6px 16px;
+text-transform: uppercase;
+-webkit-transition: background-color 0.18s, color 0.18s;
+transition: background-color 0.18s, color 0.18s;
+}
+.pill-btn.on {
+background-color: #fef0ce;
+color: #141C21;
+}
 
-/* PANEL */
-.panel{background:#1e2d35;border:1px solid var(–b);border-top:none;border-radius:0 0 6px 6px;padding:32px 36px 36px;opacity:0;animation:up .6s ease forwards .3s}
+/* ── MODE TABS ── */
+.tabs {
+display: -webkit-flex;
+display: flex;
+border: 1px solid rgba(157, 179, 160, 0.12);
+border-bottom: none;
+border-radius: 6px 6px 0 0;
+overflow: hidden;
+opacity: 0;
+-webkit-animation: fadeUp 0.7s ease forwards 0.15s;
+animation: fadeUp 0.7s ease forwards 0.15s;
+background-color: rgba(157, 179, 160, 0.06);
+}
+.tab {
+-webkit-flex: 1;
+flex: 1;
+padding: 14px 8px;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+-webkit-align-items: center;
+align-items: center;
+gap: 5px;
+position: relative;
+background-color: #1a2830;
+-webkit-transition: background-color 0.2s;
+transition: background-color 0.2s;
+border-right: 1px solid rgba(157, 179, 160, 0.08);
+}
+.tab:last-child { border-right: none; }
+.tab::after {
+content: ‘’;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+height: 2px;
+background-color: #fef0ce;
+-webkit-transform: scaleX(0);
+transform: scaleX(0);
+-webkit-transition: -webkit-transform 0.25s;
+transition: transform 0.25s;
+}
+.tab.on { background-color: #1e2d35; }
+.tab.on::after {
+-webkit-transform: scaleX(1);
+transform: scaleX(1);
+}
+.tab-lbl {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: #4a6a52;
+-webkit-transition: color 0.2s;
+transition: color 0.2s;
+}
+.tab.on .tab-lbl { color: #fef0ce; }
+.tab-eq {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 10px;
+color: #6a8a72;
+-webkit-transition: color 0.2s;
+transition: color 0.2s;
+}
+.tab.on .tab-eq { color: #9db3a0; }
 
-/* INPUT GRID */
-.igrid{display:grid;grid-template-columns:1fr 28px 1fr;align-items:start;gap:12px;margin-bottom:28px}
-.igrp{display:flex;flex-direction:column;gap:9px}
-.irow{display:flex;justify-content:space-between;align-items:center}
-.ilbl{font-family:var(–bc);font-size:10px;font-weight:600;letter-spacing:.25em;color:var(–t3);text-transform:uppercase}
-.ihint{font-family:var(–bc);font-size:9px;letter-spacing:.1em;color:var(–t3);opacity:.5}
+/* ── PANEL ── */
+.panel {
+background-color: #1e2d35;
+border: 1px solid rgba(157, 179, 160, 0.12);
+border-top: none;
+border-radius: 0 0 6px 6px;
+padding: 32px 32px 36px;
+-webkit-box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+opacity: 0;
+-webkit-animation: fadeUp 0.7s ease forwards 0.25s;
+animation: fadeUp 0.7s ease forwards 0.25s;
+}
 
-/* FIELD */
-.field{background:#0f171c;border:1px solid var(–bb);border-radius:2px;display:flex;flex-direction:column;overflow:hidden;transition:border-color .2s,box-shadow .2s}
-.field:focus-within{border-color:var(–t1);box-shadow:0 0 0 1px rgba(254,240,206,.1)}
+/* ── INPUT GRID ── */
+.igrid {
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: flex-start;
+align-items: flex-start;
+gap: 12px;
+margin-bottom: 28px;
+}
+.igrp {
+-webkit-flex: 1;
+flex: 1;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+gap: 8px;
+}
+.irow {
+display: -webkit-flex;
+display: flex;
+-webkit-justify-content: space-between;
+justify-content: space-between;
+-webkit-align-items: center;
+align-items: center;
+}
+.ilbl {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 0.22em;
+color: #4a6a52;
+text-transform: uppercase;
+}
+.ihint {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 9px;
+letter-spacing: 0.1em;
+color: #3a5a42;
+text-transform: uppercase;
+}
 
-/* FIELD TOP ROW */
-.ftop{display:flex;align-items:center;padding:12px 13px}
+/* ── FIELD ── */
+.field {
+background-color: #0f171c;
+border: 1px solid rgba(157, 179, 160, 0.18);
+border-radius: 4px;
+overflow: hidden;
+-webkit-transition: border-color 0.2s;
+transition: border-color 0.2s;
+}
+.field:focus-within {
+border-color: rgba(254, 240, 206, 0.4);
+}
+.ftop {
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+padding: 12px 14px;
+}
 
-/* NUMERIC INPUT */
-.ni{background:transparent;border:none;outline:none;font-family:var(–mono);font-size:27px;color:var(–t1);flex:1;min-width:0;text-align:center;letter-spacing:.04em;-moz-appearance:textfield}
-.ni::-webkit-outer-spin-button,.ni::-webkit-inner-spin-button{-webkit-appearance:none}
-.ni::placeholder{color:var(–t3)}
+/* ── NUMBER INPUT ── */
+.ni {
+-webkit-flex: 1;
+flex: 1;
+min-width: 0;
+font-size: 28px;
+color: #fef0ce;
+text-align: center;
+letter-spacing: 0.04em;
+background: transparent;
+border: none;
+outline: none;
+-webkit-appearance: none;
+-moz-appearance: textfield;
+}
+.ni::-webkit-outer-spin-button,
+.ni::-webkit-inner-spin-button { -webkit-appearance: none; }
+.ni::placeholder { color: #2a3e30; }
 
-/* TIME SEGMENTS */
-.trow{display:flex;align-items:center;gap:1px;flex:1;justify-content:center}
-.ts{background:transparent;border:none;outline:none;font-family:var(–mono);font-size:27px;color:var(–t1);width:42px;text-align:center;-moz-appearance:textfield}
-.ts::-webkit-outer-spin-button,.ts::-webkit-inner-spin-button{-webkit-appearance:none}
-.ts::placeholder{color:var(–t3)}
-.tc{font-family:var(–mono);font-size:24px;color:var(–t3);padding-bottom:2px;user-select:none;flex-shrink:0}
+/* ── TIME SEGMENTS ── */
+.trow {
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+-webkit-flex: 1;
+flex: 1;
+-webkit-justify-content: center;
+justify-content: center;
+}
+.ts {
+width: 40px;
+font-size: 28px;
+color: #fef0ce;
+text-align: center;
+background: transparent;
+border: none;
+outline: none;
+-webkit-appearance: none;
+-moz-appearance: textfield;
+}
+.ts::-webkit-outer-spin-button,
+.ts::-webkit-inner-spin-button { -webkit-appearance: none; }
+.ts::placeholder { color: #2a3e30; }
+.tc {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 22px;
+color: #3a5a42;
+padding-bottom: 2px;
+-webkit-user-select: none;
+user-select: none;
+padding-left: 1px;
+padding-right: 1px;
+}
 
-/* INLINE UNIT TOGGLE */
-.iu{display:flex;flex-direction:column;gap:2px;border-left:1px solid var(–b);margin-left:9px;padding-left:9px;flex-shrink:0}
-.iu-btn{-webkit-appearance:none;appearance:none;background:transparent;border:none;cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:#5a7a62;padding:2px 7px;border-radius:1px;text-transform:uppercase;transition:all .15s;line-height:1.5}
-.iu-btn.on{background:rgba(254,240,206,.1);color:#fef0ce}
-.iu-btn:not(.on):hover{color:#9db3a0;background:rgba(255,255,255,.04)}
+/* ── INLINE UNIT TOGGLE ── */
+.iu {
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+gap: 2px;
+border-left: 1px solid rgba(157, 179, 160, 0.12);
+margin-left: 10px;
+padding-left: 10px;
+-webkit-flex-shrink: 0;
+flex-shrink: 0;
+}
+.iu-btn {
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.09em;
+color: #4a6a52;
+padding: 3px 8px;
+border-radius: 2px;
+text-transform: uppercase;
+-webkit-transition: background-color 0.15s, color 0.15s;
+transition: background-color 0.15s, color 0.15s;
+line-height: 1.4;
+}
+.iu-btn.on {
+background-color: rgba(254, 240, 206, 0.1);
+color: #fef0ce;
+}
 
-/* STATIC UNIT */
-.su{font-family:var(–bc);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(–t3);text-transform:uppercase;border-left:1px solid var(–b);margin-left:9px;padding-left:9px;flex-shrink:0}
+/* ── STATIC UNIT LABEL ── */
+.su {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.1em;
+color: #4a6a52;
+text-transform: uppercase;
+border-left: 1px solid rgba(157, 179, 160, 0.12);
+margin-left: 10px;
+padding-left: 10px;
+-webkit-flex-shrink: 0;
+flex-shrink: 0;
+}
 
-/* PRESET STRIP */
-.pstrip{display:flex;border-top:1px solid var(–b)}
-.pchip{-webkit-appearance:none;appearance:none;flex:1;background:transparent;border:none;border-right:1px solid rgba(157,179,160,.10);cursor:pointer;font-family:var(–bc);font-size:10px;font-weight:700;letter-spacing:.09em;color:#5a7a62;padding:7px 4px;text-transform:uppercase;transition:all .15s;text-align:center}
-.pchip:last-child{border-right:none}
-.pchip:hover{background:rgba(254,240,206,.07);color:#fef0ce}
-.pchip.on{background:rgba(254,240,206,.10);color:#fef0ce}
+/* ── PRESET STRIP ── */
+.pstrip {
+display: -webkit-flex;
+display: flex;
+border-top: 1px solid rgba(157, 179, 160, 0.1);
+}
+.pchip {
+-webkit-flex: 1;
+flex: 1;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.1em;
+color: #4a6a52;
+padding: 8px 4px;
+text-transform: uppercase;
+text-align: center;
+border-right: 1px solid rgba(157, 179, 160, 0.1);
+-webkit-transition: background-color 0.15s, color 0.15s;
+transition: background-color 0.15s, color 0.15s;
+}
+.pchip:last-child { border-right: none; }
+.pchip.on {
+background-color: rgba(254, 240, 206, 0.08);
+color: #fef0ce;
+}
 
-/* DIVIDER ARROW */
-.arr{display:flex;flex-direction:column;align-items:center;gap:3px;padding-top:36px}
-.aline{width:1px;height:16px}
-.at{background:linear-gradient(to bottom,transparent,rgba(254,240,206,.12))}
-.ab{background:linear-gradient(to bottom,rgba(254,240,206,.12),transparent)}
-.adiamond{font-size:14px;color:var(–t2);line-height:1}
+/* ── DIVIDER ARROW ── */
+.arr {
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+-webkit-align-items: center;
+align-items: center;
+gap: 4px;
+padding-top: 34px;
+width: 28px;
+-webkit-flex-shrink: 0;
+flex-shrink: 0;
+}
+.aline {
+width: 1px;
+height: 16px;
+}
+.at { background: -webkit-linear-gradient(top, transparent, rgba(157, 179, 160, 0.15)); background: linear-gradient(to bottom, transparent, rgba(157, 179, 160, 0.15)); }
+.ab { background: -webkit-linear-gradient(top, rgba(157, 179, 160, 0.15), transparent); background: linear-gradient(to bottom, rgba(157, 179, 160, 0.15), transparent); }
+.adiamond { font-size: 12px; color: #4a6a52; line-height: 1; }
 
-/* CALC BTN */
-.cbrow{display:flex;justify-content:center;margin-bottom:28px}
-.cb{-webkit-appearance:none;appearance:none;background:#a65402;border:none;cursor:pointer;font-family:var(–bc);font-size:13px;font-weight:700;letter-spacing:.18em;color:#fef0ce;text-transform:uppercase;padding:14px 60px;border-radius:4px;position:relative;overflow:hidden;transition:background .2s,transform .1s,box-shadow .2s}
-.cb:hover{background:#c8720a;box-shadow:0 0 26px rgba(166,84,2,.35)}
-.cb:active{transform:scale(.98)}
-.cb::before{content:’’;position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.13) 0%,transparent 50%)}
+/* ── CALCULATE BUTTON ── */
+.cbrow {
+display: -webkit-flex;
+display: flex;
+-webkit-justify-content: center;
+justify-content: center;
+margin-bottom: 24px;
+}
+.cb {
+background-color: #a65402;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 0.2em;
+color: #fef0ce;
+text-transform: uppercase;
+padding: 14px 64px;
+border-radius: 6px;
+position: relative;
+overflow: hidden;
+-webkit-transition: background-color 0.2s, -webkit-transform 0.1s;
+transition: background-color 0.2s, transform 0.1s;
+}
+.cb:active { -webkit-transform: scale(0.97); transform: scale(0.97); }
 
-/* ERROR */
-.err{display:none;text-align:center;font-family:var(–bc);font-size:11px;letter-spacing:.12em;color:var(–red);margin-bottom:16px}
-.err.show{display:block}
+/* ── ERROR ── */
+.err {
+display: none;
+text-align: center;
+font-family: ‘Urbanist’, sans-serif;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.12em;
+color: #e05555;
+text-transform: uppercase;
+margin-bottom: 16px;
+}
+.err.show { display: block; }
 
-/* BOARD */
-.board{border:1px solid rgba(25,145,174,.25);border-radius:4px;overflow:hidden;display:none;opacity:0;transform:translateY(8px);transition:opacity .38s ease,transform .38s ease}
-.board.vis{display:block}
-.board.rev{opacity:1;transform:translateY(0)}
-.bhdr{background:#0f171c;padding:10px 20px;display:flex;align-items:center;border-bottom:1px solid var(–b)}
-.bhdrlbl{font-family:var(–bc);font-size:9px;font-weight:700;letter-spacing:.3em;color:var(–cyan);text-transform:uppercase}
-.bhdrline{flex:1;height:1px;margin-left:14px;background:linear-gradient(to right,rgba(25,145,174,.3),transparent)}
-.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(–b)}
-.bcell{background:var(–panel2);padding:18px 15px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
-.bcell::before{content:’’;position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(25,145,174,.2),transparent)}
-.bclbl{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.22em;color:var(–t3);text-transform:uppercase}
-.bcval{font-family:var(–mono);font-size:19px;color:var(–cyan);letter-spacing:.02em}
-.bcsub{font-family:var(–bc);font-size:10px;letter-spacing:.1em;color:var(–t3)}
+/* ── RESULTS BOARD ── */
+.board {
+border: 1px solid rgba(25, 145, 174, 0.25);
+border-radius: 6px;
+overflow: hidden;
+display: none;
+opacity: 0;
+-webkit-transform: translateY(8px);
+transform: translateY(8px);
+-webkit-transition: opacity 0.38s ease, -webkit-transform 0.38s ease;
+transition: opacity 0.38s ease, transform 0.38s ease;
+}
+.board.vis { display: block; }
+.board.rev { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
 
-/* SPLITS */
-.splits{border-top:1px solid var(–b);padding:20px;background:var(–well)}
-.slbl{font-family:var(–bc);font-size:9px;font-weight:700;letter-spacing:.3em;color:var(–t3);text-transform:uppercase;margin-bottom:14px}
-.stbl{width:100%;border-collapse:collapse}
-.stbl th{font-family:var(–bc);font-size:9px;font-weight:600;letter-spacing:.2em;color:var(–t3);text-transform:uppercase;padding:0 0 8px;text-align:right;border-bottom:1px solid var(–b)}
-.stbl th:first-child{text-align:left}
-.stbl td{font-family:var(–mono);font-size:12px;color:var(–t2);padding:9px 0;text-align:right;border-bottom:1px solid rgba(255,255,255,.03)}
-.stbl td:first-child{text-align:left;font-family:var(–bc);font-size:11px;letter-spacing:.08em;color:var(–t3)}
-.stbl tr:last-child td{border-bottom:none}
-.shl td{color:var(–cyan)}
+.bhdr {
+background-color: #0f171c;
+padding: 10px 20px;
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+border-bottom: 1px solid rgba(157, 179, 160, 0.1);
+}
+.bhdrlbl {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 9px;
+font-weight: 700;
+letter-spacing: 0.3em;
+color: #1991ae;
+text-transform: uppercase;
+}
+.bhdrline {
+-webkit-flex: 1;
+flex: 1;
+height: 1px;
+margin-left: 14px;
+background: -webkit-linear-gradient(left, rgba(25, 145, 174, 0.3), transparent);
+background: linear-gradient(to right, rgba(25, 145, 174, 0.3), transparent);
+}
+.bgrid {
+display: -webkit-flex;
+display: flex;
+-webkit-flex-wrap: wrap;
+flex-wrap: wrap;
+gap: 1px;
+background-color: rgba(157, 179, 160, 0.08);
+}
+.bcell {
+background-color: #253540;
+padding: 18px 16px;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-direction: column;
+flex-direction: column;
+gap: 6px;
+width: calc(25% - 1px);
+min-width: 0;
+}
+.bclbl {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 9px;
+font-weight: 600;
+letter-spacing: 0.22em;
+color: #4a6a52;
+text-transform: uppercase;
+}
+.bcval {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 18px;
+color: #1991ae;
+letter-spacing: 0.02em;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.bcsub {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 10px;
+letter-spacing: 0.1em;
+color: #4a6a52;
+}
 
-/* FOOTER */
-.ftr{margin-top:44px;padding-top:20px;border-top:1px solid var(–b);display:flex;justify-content:space-between;align-items:center;opacity:0;animation:up .6s ease forwards .5s}
-.fnote{font-family:var(–bc);font-size:10px;letter-spacing:.2em;color:var(–t3);text-transform:uppercase}
-.fdots{display:flex;gap:6px;align-items:center}
-.fdot{width:4px;height:4px;border-radius:50%;background:var(–bb)}
-.fdot:nth-child(2){background:rgba(254,240,206,.15);width:6px;height:6px}
+/* ── SPLITS ── */
+.splits {
+border-top: 1px solid rgba(157, 179, 160, 0.1);
+padding: 20px;
+background-color: #0f171c;
+}
+.slbl {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 9px;
+font-weight: 700;
+letter-spacing: 0.3em;
+color: #4a6a52;
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+.stbl { width: 100%; border-collapse: collapse; }
+.stbl th {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 9px;
+font-weight: 600;
+letter-spacing: 0.18em;
+color: #4a6a52;
+text-transform: uppercase;
+padding: 0 0 8px;
+text-align: right;
+border-bottom: 1px solid rgba(157, 179, 160, 0.1);
+}
+.stbl th:first-child { text-align: left; }
+.stbl td {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 12px;
+color: #6a8a72;
+padding: 9px 0;
+text-align: right;
+border-bottom: 1px solid rgba(157, 179, 160, 0.05);
+}
+.stbl td:first-child {
+text-align: left;
+font-family: ‘Urbanist’, sans-serif;
+font-size: 11px;
+letter-spacing: 0.08em;
+color: #4a6a52;
+}
+.stbl tr:last-child td { border-bottom: none; }
+.shl td { color: #1991ae; }
 
-@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* ── FOOTER ── */
+.ftr {
+margin-top: 40px;
+padding-top: 20px;
+border-top: 1px solid rgba(157, 179, 160, 0.1);
+display: -webkit-flex;
+display: flex;
+-webkit-justify-content: space-between;
+justify-content: space-between;
+-webkit-align-items: center;
+align-items: center;
+opacity: 0;
+-webkit-animation: fadeUp 0.7s ease forwards 0.45s;
+animation: fadeUp 0.7s ease forwards 0.45s;
+}
+.fnote {
+font-family: ‘Urbanist’, sans-serif;
+font-size: 10px;
+letter-spacing: 0.2em;
+color: #3a5a42;
+text-transform: uppercase;
+}
+.fdots {
+display: -webkit-flex;
+display: flex;
+gap: 6px;
+-webkit-align-items: center;
+align-items: center;
+}
+.fdot {
+width: 4px;
+height: 4px;
+border-radius: 50%;
+background-color: rgba(157, 179, 160, 0.2);
+}
+.fdot:nth-child(2) {
+width: 6px;
+height: 6px;
+background-color: rgba(254, 240, 206, 0.12);
+}
 
-@media(max-width:620px){
-.app{padding:28px 16px 60px}
-.igrid{grid-template-columns:1fr}
-.arr{display:none}
-.bgrid{grid-template-columns:repeat(2,1fr)}
-.logo{font-size:34px}
-.ni,.ts{font-size:22px}
-.ts{width:36px}
-.panel{padding:20px 16px}
+/* ── ANIMATIONS ── */
+@-webkit-keyframes fadeUp {
+from { opacity: 0; -webkit-transform: translateY(10px); transform: translateY(10px); }
+to   { opacity: 1; -webkit-transform: translateY(0);    transform: translateY(0); }
+}
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(10px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+.app { padding: 28px 16px 60px; }
+.igrid { -webkit-flex-direction: column; flex-direction: column; }
+.arr { display: none; }
+.igrp { width: 100%; }
+.bgrid { }
+.bcell { width: calc(50% - 1px); }
+.logo { font-size: 36px; }
+.ni, .ts { font-size: 22px; }
+.ts { width: 34px; }
+.panel { padding: 20px 16px; }
+.cb { padding: 14px 40px; width: 100%; }
 }
 </style>
 
@@ -199,10 +674,10 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
   <header class="hdr">
     <div>
       <div class="logo-eye">Running Calculator</div>
-      <div class="logo">PA<span>CE</span></div>
+      <div class="logo">PACE</div>
     </div>
-    <div class="hdr-r">
-      <div class="glbl-lbl">Default units</div>
+    <div class="hdr-right">
+      <div class="unit-lbl">Default units</div>
       <div class="pill">
         <button class="pill-btn on" data-u="mi" onclick="setGlobal('mi')">Miles</button>
         <button class="pill-btn"    data-u="km"  onclick="setGlobal('km')">KM</button>
@@ -256,7 +731,9 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
     </div>
 
 ```
-<div class="cbrow"><button class="cb" onclick="calc()">Calculate</button></div>
+<div class="cbrow">
+  <button class="cb" onclick="calc()">Calculate</button>
+</div>
 <div class="err" id="err">Please fill in all required fields</div>
 
 <!-- RESULTS -->
@@ -269,12 +746,14 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
   <div class="splits" id="splits" style="display:none">
     <div class="slbl">Splits</div>
     <table class="stbl">
-      <thead><tr>
-        <th style="text-align:left">Split</th>
-        <th>Distance</th>
-        <th>Split Time</th>
-        <th>Elapsed</th>
-      </tr></thead>
+      <thead>
+        <tr>
+          <th style="text-align:left">Split</th>
+          <th>Distance</th>
+          <th>Split Time</th>
+          <th>Elapsed</th>
+        </tr>
+      </thead>
       <tbody id="sbody"></tbody>
     </table>
   </div>
@@ -286,35 +765,38 @@ background:radial-gradient(ellipse,rgba(166,84,2,.05) 0%,transparent 70%);
   <footer class="ftr">
     <div class="fnote">All times calculated at even pace</div>
     <div class="fdots">
-      <div class="fdot"></div><div class="fdot"></div><div class="fdot"></div>
+      <div class="fdot"></div>
+      <div class="fdot"></div>
+      <div class="fdot"></div>
     </div>
   </footer>
 
-</div>
+</div><!-- /app -->
 
 <script>
-/* ── CONSTANTS ── */
-const KPM = 1.60934; // km per mile
+var KPM = 1.60934;
 
-const PRESETS = [
-  {lbl:'5K',     km:5},
-  {lbl:'10K',    km:10},
-  {lbl:'Half',   km:21.0975},
-  {lbl:'Mara',   km:42.195},
+var PRESETS = [
+  { lbl: '5K',   km: 5 },
+  { lbl: '10K',  km: 10 },
+  { lbl: 'Half', km: 21.0975 },
+  { lbl: 'Mara', km: 42.195 },
 ];
 
-/* ── STATE ── */
-let gUnit = 'mi';   // global default
-let uA    = 'mi';   // field A unit
-let uB    = 'mi';   // field B unit
-let tA    = 'dist'; // field A type: 'dist'|'pace'|'time'
-let tB    = 'time'; // field B type
-let mode  = 'pace'; // 'pace'|'time'|'dist'
+var gUnit = 'mi';
+var uA    = 'mi';
+var uB    = 'mi';
+var tA    = 'dist';
+var tB    = 'time';
+var mode  = 'pace';
 
 /* ── GLOBAL UNIT ── */
 function setGlobal(u) {
   gUnit = u;
-  document.querySelectorAll('.pill-btn').forEach(b => b.classList.toggle('on', b.dataset.u === u));
+  var btns = document.querySelectorAll('.pill-btn');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.toggle('on', btns[i].getAttribute('data-u') === u);
+  }
   renderMode();
   clearResult();
 }
@@ -322,7 +804,10 @@ function setGlobal(u) {
 /* ── MODE ── */
 function setMode(m) {
   mode = m;
-  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.m === m));
+  var tabs = document.querySelectorAll('.tab');
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.toggle('on', tabs[i].getAttribute('data-m') === m);
+  }
   renderMode();
   clearResult();
 }
@@ -332,10 +817,10 @@ function renderMode() {
     buildA('dist', 'e.g. 26.2', gUnit);
     buildB('time', 'hh : mm : ss', gUnit);
   } else if (mode === 'time') {
-    buildA('pace', 'mm : ss  /  ' + gUnit, gUnit);
+    buildA('pace', 'mm:ss / ' + gUnit, gUnit);
     buildB('dist', 'e.g. 26.2', gUnit);
   } else {
-    buildA('pace', 'mm : ss  /  ' + gUnit, gUnit);
+    buildA('pace', 'mm:ss / ' + gUnit, gUnit);
     buildB('time', 'hh : mm : ss', gUnit);
   }
 }
@@ -355,21 +840,20 @@ function buildB(type, hint, unit) {
 }
 
 function buildField(id, type, unit, side) {
-  const el = document.getElementById(id);
+  var el = document.getElementById(id);
   el.innerHTML = '';
   el.className = 'field';
 
-  const top = mk('div', 'ftop');
+  var top = mk('div', 'ftop');
 
   if (type === 'dist') {
-    const inp = mkNum(id + '-v', '00.00', 0.01);
-    top.appendChild(inp);
+    top.appendChild(mkNum(id + '-v', '00.00'));
     top.appendChild(mkUnitToggle(unit, side));
     el.appendChild(top);
     el.appendChild(mkPresets(side, unit));
 
   } else if (type === 'pace') {
-    const row = mk('div', 'trow');
+    var row = mk('div', 'trow');
     row.appendChild(mkSeg(id + '-pm', '00', 99));
     row.appendChild(mkColon());
     row.appendChild(mkSeg(id + '-ps', '00', 59));
@@ -377,88 +861,118 @@ function buildField(id, type, unit, side) {
     top.appendChild(mkUnitToggle(unit, side));
     el.appendChild(top);
 
-  } else { // time
-    const row = mk('div', 'trow');
+  } else {
+    var row = mk('div', 'trow');
     row.appendChild(mkSeg(id + '-th', '00', 99));
     row.appendChild(mkColon());
     row.appendChild(mkSeg(id + '-tm', '00', 59));
     row.appendChild(mkColon());
     row.appendChild(mkSeg(id + '-ts', '00', 59));
     top.appendChild(row);
-    const su = mk('div', 'su'); su.textContent = 'h:m:s';
+    var su = mk('div', 'su');
+    su.textContent = 'h:m:s';
     top.appendChild(su);
     el.appendChild(top);
   }
 }
 
-function mkNum(id, ph, step) {
-  const i = mk('input', 'ni');
-  i.id = id; i.type = 'number'; i.min = '0'; i.step = String(step); i.placeholder = ph;
-  i.oninput = dirty;
+function mk(tag, cls) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  return e;
+}
+
+function mkNum(id, ph) {
+  var i = mk('input', 'ni');
+  i.id = id;
+  i.type = 'number';
+  i.min = '0';
+  i.step = '0.01';
+  i.placeholder = ph;
+  i.addEventListener('input', dirty);
   return i;
 }
+
 function mkSeg(id, ph, max) {
-  const i = mk('input', 'ts');
-  i.id = id; i.type = 'number'; i.min = '0'; i.max = String(max); i.placeholder = ph;
-  i.oninput = () => { clamp(i, max); dirty(); };
+  var i = mk('input', 'ts');
+  i.id = id;
+  i.type = 'number';
+  i.min = '0';
+  i.max = String(max);
+  i.placeholder = ph;
+  i.addEventListener('input', function() { clamp(i, max); dirty(); });
   return i;
 }
-function mkColon() { const s = mk('span','tc'); s.textContent = ':'; return s; }
+
+function mkColon() {
+  var s = mk('span', 'tc');
+  s.textContent = ':';
+  return s;
+}
 
 function mkUnitToggle(active, side) {
-  const wrap = mk('div', 'iu');
+  var wrap = mk('div', 'iu');
   wrap.id = 'iu-' + side;
-  ['mi','km'].forEach(u => {
-    const b = mk('button', 'iu-btn' + (u === active ? ' on' : ''));
-    b.dataset.u = u; b.textContent = u;
-    b.onclick = () => flipUnit(side, u);
-    wrap.appendChild(b);
-  });
+  var units = ['mi', 'km'];
+  for (var i = 0; i < units.length; i++) {
+    (function(u) {
+      var b = mk('button', 'iu-btn' + (u === active ? ' on' : ''));
+      b.setAttribute('data-u', u);
+      b.textContent = u;
+      b.addEventListener('click', function() { flipUnit(side, u); });
+      wrap.appendChild(b);
+    })(units[i]);
+  }
   return wrap;
 }
 
 function mkPresets(side, unit) {
-  const strip = mk('div', 'pstrip');
+  var strip = mk('div', 'pstrip');
   strip.id = 'ps-' + side;
-  PRESETS.forEach(p => {
-    const b = mk('button', 'pchip');
-    b.dataset.km = p.km; b.textContent = p.lbl;
-    b.onclick = () => applyPreset(side, p.km, b);
-    strip.appendChild(b);
-  });
+  for (var i = 0; i < PRESETS.length; i++) {
+    (function(p) {
+      var b = mk('button', 'pchip');
+      b.setAttribute('data-km', p.km);
+      b.textContent = p.lbl;
+      b.addEventListener('click', function() { applyPreset(side, p.km, b); });
+      strip.appendChild(b);
+    })(PRESETS[i]);
+  }
   return strip;
 }
 
-/* ── UNIT FLIP (per field) ── */
+/* ── UNIT FLIP ── */
 function flipUnit(side, nu) {
-  const old  = side === 'A' ? uA : uB;
-  const type = side === 'A' ? tA : tB;
+  var old  = side === 'A' ? uA : uB;
+  var type = side === 'A' ? tA : tB;
   if (nu === old) return;
-  if (side === 'A') uA = nu; else uB = nu;
+  if (side === 'A') { uA = nu; } else { uB = nu; }
 
-  // update toggle buttons
-  document.querySelectorAll('#iu-' + side + ' .iu-btn')
-    .forEach(b => b.classList.toggle('on', b.dataset.u === nu));
+  var btns = document.querySelectorAll('#iu-' + side + ' .iu-btn');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].classList.toggle('on', btns[i].getAttribute('data-u') === nu);
+  }
 
-  const fid = 'f' + side;
+  var fid = 'f' + side;
 
   if (type === 'dist') {
-    const inp = document.getElementById(fid + '-v');
+    var inp = document.getElementById(fid + '-v');
     if (inp && inp.value !== '') {
-      const v = parseFloat(inp.value);
+      var v = parseFloat(inp.value);
       if (!isNaN(v)) inp.value = r2(nu === 'km' ? v * KPM : v / KPM);
     }
-    // deactivate preset chips whose stored km value may now show differently — just clear active
-    const strip = document.getElementById('ps-' + side);
-    if (strip) strip.querySelectorAll('.pchip').forEach(c => c.classList.remove('on'));
-
+    var strip = document.getElementById('ps-' + side);
+    if (strip) {
+      var chips = strip.querySelectorAll('.pchip');
+      for (var i = 0; i < chips.length; i++) chips[i].classList.remove('on');
+    }
   } else if (type === 'pace') {
-    const pm = document.getElementById(fid + '-pm');
-    const ps = document.getElementById(fid + '-ps');
+    var pm = document.getElementById(fid + '-pm');
+    var ps = document.getElementById(fid + '-ps');
     if (pm && ps && (pm.value !== '' || ps.value !== '')) {
-      const sec = (parseFloat(pm.value)||0)*60 + (parseFloat(ps.value)||0);
+      var sec = (parseFloat(pm.value) || 0) * 60 + (parseFloat(ps.value) || 0);
       if (sec > 0) {
-        const conv = nu === 'km' ? sec / KPM : sec * KPM;
+        var conv = nu === 'km' ? sec / KPM : sec * KPM;
         pm.value = Math.floor(conv / 60);
         ps.value = pad(Math.round(conv % 60));
       }
@@ -469,71 +983,75 @@ function flipUnit(side, nu) {
 
 /* ── PRESETS ── */
 function applyPreset(side, kmVal, btn) {
-  const unit = side === 'A' ? uA : uB;
-  const fid  = 'f' + side;
-  const inp  = document.getElementById(fid + '-v');
+  var unit = side === 'A' ? uA : uB;
+  var inp  = document.getElementById('f' + side + '-v');
   if (!inp) return;
   inp.value = r2(unit === 'km' ? kmVal : kmVal / KPM);
-  document.getElementById('ps-' + side)
-    .querySelectorAll('.pchip').forEach(c => c.classList.remove('on'));
+  var chips = document.getElementById('ps-' + side).querySelectorAll('.pchip');
+  for (var i = 0; i < chips.length; i++) chips[i].classList.remove('on');
   btn.classList.add('on');
   dirty();
 }
 
 /* ── HELPERS ── */
-function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-function pad(n) { return String(Math.floor(Math.abs(n))).padStart(2,'0'); }
+function pad(n) { return String(Math.floor(Math.abs(n))).padStart('0', 2); }
 function r2(v)  { return Math.round(v * 100) / 100; }
 function clamp(el, max) {
-  let v = parseInt(el.value);
+  var v = parseInt(el.value, 10);
   if (isNaN(v)) return;
   if (v < 0) el.value = 0;
   if (v > max) el.value = max;
 }
 function dirty() { clearResult(); }
 
-function gts(hid, mid, sid) { // get total seconds from h:m:s fields
-  return (parseFloat(document.getElementById(hid)?.value)||0)*3600
-       + (parseFloat(document.getElementById(mid)?.value)||0)*60
-       + (parseFloat(document.getElementById(sid)?.value)||0);
+function gts(hid, mid, sid) {
+  var h = document.getElementById(hid);
+  var m = document.getElementById(mid);
+  var s = document.getElementById(sid);
+  return (h ? parseFloat(h.value) || 0 : 0) * 3600
+       + (m ? parseFloat(m.value) || 0 : 0) * 60
+       + (s ? parseFloat(s.value) || 0 : 0);
 }
-function gps(pmid, psid) { // get pace seconds from m:s fields
-  return (parseFloat(document.getElementById(pmid)?.value)||0)*60
-       + (parseFloat(document.getElementById(psid)?.value)||0);
+function gps(pmid, psid) {
+  var pm = document.getElementById(pmid);
+  var ps = document.getElementById(psid);
+  return (pm ? parseFloat(pm.value) || 0 : 0) * 60
+       + (ps ? parseFloat(ps.value) || 0 : 0);
 }
-function ftm(s) { // format total seconds → hh:mm:ss
+function ftm(s) {
   s = Math.round(s);
-  return pad(Math.floor(s/3600))+':'+pad(Math.floor((s%3600)/60))+':'+pad(s%60);
+  return zp(Math.floor(s / 3600)) + ':' + zp(Math.floor((s % 3600) / 60)) + ':' + zp(s % 60);
 }
-function fpc(s) { // format seconds → mm:ss
+function fpc(s) {
   s = Math.round(s);
-  return pad(Math.floor(s/60))+':'+pad(s%60);
+  return zp(Math.floor(s / 60)) + ':' + zp(s % 60);
 }
+function zp(n) { return n < 10 ? '0' + n : String(n); }
 
 /* ── CALCULATE ── */
 function calc() {
   document.getElementById('err').classList.remove('show');
-  let distKm, totalSec, paceKm; // all math internal in km
+  var distKm, totalSec, paceKm;
 
   if (mode === 'pace') {
-    const dv  = parseFloat(document.getElementById('fA-v')?.value);
-    totalSec  = gts('fB-th','fB-tm','fB-ts');
+    var dv = parseFloat((document.getElementById('fA-v') || {}).value);
+    totalSec = gts('fB-th', 'fB-tm', 'fB-ts');
     if (!dv || dv <= 0 || totalSec <= 0) return fail();
-    distKm  = uA === 'km' ? dv : dv * KPM;
-    paceKm  = totalSec / distKm;
+    distKm = uA === 'km' ? dv : dv * KPM;
+    paceKm = totalSec / distKm;
 
   } else if (mode === 'time') {
-    const rawPace = gps('fA-pm','fA-ps');
-    const dv      = parseFloat(document.getElementById('fB-v')?.value);
+    var rawPace = gps('fA-pm', 'fA-ps');
+    var dv = parseFloat((document.getElementById('fB-v') || {}).value);
     if (!rawPace || rawPace <= 0 || !dv || dv <= 0) return fail();
     paceKm   = uA === 'km' ? rawPace : rawPace / KPM;
     distKm   = uB === 'km' ? dv : dv * KPM;
     totalSec = paceKm * distKm;
 
   } else {
-    const rawPace = gps('fA-pm','fA-ps');
-    totalSec      = gts('fB-th','fB-tm','fB-ts');
+    var rawPace = gps('fA-pm', 'fA-ps');
+    totalSec = gts('fB-th', 'fB-tm', 'fB-ts');
     if (!rawPace || rawPace <= 0 || totalSec <= 0) return fail();
     paceKm = uA === 'km' ? rawPace : rawPace / KPM;
     distKm = totalSec / paceKm;
@@ -546,61 +1064,73 @@ function fail() { document.getElementById('err').classList.add('show'); }
 
 /* ── SHOW RESULT ── */
 function showResult(distKm, totalSec, paceKm) {
-  const distMi  = distKm / KPM;
-  const paceMi  = paceKm * KPM;
-  const spdKmh  = 3600 / paceKm;
-  const spdMph  = 3600 / paceMi;
+  var distMi = distKm / KPM;
+  var paceMi = paceKm * KPM;
+  var spdKmh = 3600 / paceKm;
+  var spdMph = 3600 / paceMi;
 
-  // Stat cells
-  const grid = document.getElementById('bgrid');
+  var grid = document.getElementById('bgrid');
   grid.innerHTML = '';
-  [
-    {lbl:'Distance',    val: distKm.toFixed(2)+' km',     sub: distMi.toFixed(2)+' mi'},
-    {lbl:'Finish Time', val: ftm(totalSec),               sub: 'hh:mm:ss'},
-    {lbl:'Pace',        val: fpc(paceKm)+' /km',          sub: fpc(paceMi)+' /mi'},
-    {lbl:'Speed',       val: spdKmh.toFixed(2)+' km/h',   sub: spdMph.toFixed(2)+' mph'},
-  ].forEach(c => {
-    const cell = mk('div','bcell');
-    cell.innerHTML = `<div class="bclbl">${c.lbl}</div><div class="bcval">${c.val}</div><div class="bcsub">${c.sub}</div>`;
+
+  var cells = [
+    { lbl: 'Distance',    val: distKm.toFixed(2) + ' km', sub: distMi.toFixed(2) + ' mi' },
+    { lbl: 'Finish Time', val: ftm(totalSec),              sub: 'hh:mm:ss' },
+    { lbl: 'Pace',        val: fpc(paceKm) + ' /km',       sub: fpc(paceMi) + ' /mi' },
+    { lbl: 'Speed',       val: spdKmh.toFixed(2) + ' km/h',sub: spdMph.toFixed(2) + ' mph' },
+  ];
+
+  for (var i = 0; i < cells.length; i++) {
+    var c    = cells[i];
+    var cell = mk('div', 'bcell');
+    var lbl  = mk('div', 'bclbl'); lbl.textContent = c.lbl;
+    var val  = mk('div', 'bcval'); val.textContent = c.val;
+    var sub  = mk('div', 'bcsub'); sub.textContent = c.sub;
+    cell.appendChild(lbl);
+    cell.appendChild(val);
+    cell.appendChild(sub);
     grid.appendChild(cell);
-  });
+  }
 
-  // Splits (in km)
-  const tbody  = document.getElementById('sbody');
-  const secEl  = document.getElementById('splits');
+  var tbody   = document.getElementById('sbody');
+  var splitsEl = document.getElementById('splits');
   tbody.innerHTML = '';
-  const kmFloor = Math.floor(distKm);
 
+  var kmFloor = Math.floor(distKm);
   if (kmFloor >= 1) {
-    secEl.style.display = 'block';
-    let elapsed = 0;
-    for (let i = 1; i <= kmFloor; i++) {
+    splitsEl.style.display = 'block';
+    var elapsed = 0;
+    for (var i = 1; i <= kmFloor; i++) {
       elapsed += paceKm;
-      const tr = mk('tr','');
-      tr.innerHTML = `<td>KM ${i}</td><td>${i}.00 km · ${r2(i/KPM)} mi</td><td>${ftm(paceKm)}</td><td>${ftm(elapsed)}</td>`;
+      var tr = mk('tr', '');
+      tr.innerHTML = '<td>KM ' + i + '</td><td>' + i + '.00 km · ' + r2(i / KPM) + ' mi</td><td>' + ftm(paceKm) + '</td><td>' + ftm(elapsed) + '</td>';
       tbody.appendChild(tr);
     }
-    const rem = distKm - kmFloor;
+    var rem = distKm - kmFloor;
     if (rem > 0.005) {
-      const remSec = paceKm * rem;
+      var remSec = paceKm * rem;
       elapsed += remSec;
-      const tr = mk('tr','shl');
-      tr.innerHTML = `<td>Final ${rem.toFixed(2)} km</td><td>${distKm.toFixed(2)} km · ${distMi.toFixed(2)} mi</td><td>${ftm(remSec)}</td><td>${ftm(elapsed)}</td>`;
+      var tr = mk('tr', 'shl');
+      tr.innerHTML = '<td>Final ' + rem.toFixed(2) + ' km</td><td>' + distKm.toFixed(2) + ' km · ' + distMi.toFixed(2) + ' mi</td><td>' + ftm(remSec) + '</td><td>' + ftm(elapsed) + '</td>';
       tbody.appendChild(tr);
     }
   } else {
-    secEl.style.display = 'none';
+    splitsEl.style.display = 'none';
   }
 
-  const board = document.getElementById('board');
+  var board = document.getElementById('board');
   board.classList.add('vis');
-  requestAnimationFrame(() => requestAnimationFrame(() => board.classList.add('rev')));
+  // double rAF — reliable way to trigger CSS transition after display:block on all browsers
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      board.classList.add('rev');
+    });
+  });
 }
 
 function clearResult() {
-  const b = document.getElementById('board');
-  b.classList.remove('rev');
-  setTimeout(() => b.classList.remove('vis'), 360);
+  var board = document.getElementById('board');
+  board.classList.remove('rev');
+  setTimeout(function() { board.classList.remove('vis'); }, 360);
   document.getElementById('err').classList.remove('show');
 }
 
