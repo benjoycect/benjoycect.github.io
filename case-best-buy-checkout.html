@@ -374,7 +374,7 @@
     <button class="game-block__btn" id="ast-start">Play</button>
   </div>
 
-  <div class="game-arena" id="ast-arena">
+  <div class="game-arena active" id="ast-arena">
     <canvas id="ast-canvas"></canvas>
     <div class="spin-btn" id="spin-btn">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -773,7 +773,7 @@
       loop();
     }
 
-    document.getElementById('ast-start').addEventListener('click', startGame);
+    startGame();
     document.getElementById('ast-replay').addEventListener('click', () => {
       document.getElementById('ast-won').classList.remove('active');
       arena.classList.add('active');
