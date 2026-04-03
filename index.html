@@ -7,10 +7,9 @@
   <title>Benjamin Joyce — Product & Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── TOKENS ─────────────────────────────────────────────── */
     :root {
       --bg:       #141C21;
       --orange:   #a65402;
@@ -22,7 +21,6 @@
       --pad-desktop: 48px;
     }
 
-    /* ── RESET ───────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
@@ -50,7 +48,6 @@
     }
     a:hover { opacity: 0.75; }
 
-    /* ── PARTICLE CANVAS ─────────────────────────────────────── */
     #particle-canvas {
       position: fixed;
       inset: 0;
@@ -60,7 +57,6 @@
       z-index: 0;
     }
 
-    /* ── ENTRANCE ANIMATION ──────────────────────────────────── */
     .animate-in {
       opacity: 0;
       transform: translateY(18px);
@@ -71,14 +67,13 @@
       transform: translateY(0);
     }
 
-    /* ── LAYOUT ──────────────────────────────────────────────── */
     .site-wrapper {
       position: relative;
       z-index: 1;
       min-height: 100vh;
     }
 
-    /* ── VP1 LAMP (mobile only) ──────────────────────────────── */
+    /* ── LAMP (mobile) ── */
     .lamp-wrap {
       display: flex;
       justify-content: center;
@@ -86,54 +81,38 @@
       position: relative;
       z-index: 2;
     }
-
-    /* Cord from ceiling to canopy */
     .lamp-wrap::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 50%;
+      top: 0; left: 50%;
       transform: translateX(-50%);
-      width: 1.5px;
-      height: 24px;
+      width: 1.5px; height: 24px;
       background: linear-gradient(180deg, rgba(200,152,14,0.15) 0%, rgba(200,152,14,0.5) 100%);
       z-index: 2;
     }
-
     .lamp-glow {
       position: absolute;
-      top: -20px;
-      left: 50%;
+      top: -20px; left: 50%;
       transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       pointer-events: none;
       background: transparent;
       transition: background 0.6s ease;
       z-index: 1;
     }
     .lamp-glow.on {
-      background: radial-gradient(
-        ellipse 90% 75% at 50% 28%,
-        rgba(255,195,45,0.00) 0%,
-        rgba(255,195,45,0.10) 12%,
-        rgba(255,178,28,0.14) 22%,
-        rgba(255,165,15,0.08) 45%,
-        rgba(255,150,10,0.02) 65%,
-        rgba(255,150,10,0.00) 80%
-      );
+      background: radial-gradient(ellipse 90% 75% at 50% 28%,
+        rgba(255,195,45,0.00) 0%, rgba(255,195,45,0.10) 12%,
+        rgba(255,178,28,0.14) 22%, rgba(255,165,15,0.08) 45%,
+        rgba(255,150,10,0.02) 65%, rgba(255,150,10,0.00) 80%);
     }
-
     svg.lamp-svg {
-      width: 160px;
-      cursor: default;
-      overflow: visible;
-      position: relative;
-      z-index: 2;
+      width: 160px; cursor: default; overflow: visible;
+      position: relative; z-index: 2;
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* ── WALL SWITCH ─────────────────────────────────────────── */
+    /* ── SWITCH ── */
     .switch-wrap {
       position: absolute;
       right: var(--pad-mobile);
@@ -142,75 +121,43 @@
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
     }
-
-    /* Outer housing — recessed into the wall */
     .switch-plate {
-      width: 30px;
-      height: 50px;
+      width: 30px; height: 50px;
       background: #16232a;
       border: 1.5px solid #253340;
       border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       padding: 5px 4px;
-      box-shadow:
-        0 2px 6px rgba(0,0,0,0.7),
-        inset 0 1px 3px rgba(0,0,0,0.6);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.7), inset 0 1px 3px rgba(0,0,0,0.6);
     }
-
-    /* Rocker paddle — tilts on center axis, light/shadow only */
     .switch-rocker {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       border-radius: 2px;
-      /* OFF: top catches light, bottom in shadow = top lighter */
-      background: linear-gradient(
-        180deg,
-        #3a5060 0%,    /* top — raised, catching light */
-        #2a3d4a 45%,
-        #1a2830 100%   /* bottom — recessed, in shadow */
-      );
+      background: linear-gradient(180deg, #3a5060 0%, #2a3d4a 45%, #1a2830 100%);
       transform-origin: center;
       transform: perspective(80px) rotateX(-14deg);
       transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
-      box-shadow:
-        inset 0 2px 2px rgba(255,255,255,0.08), /* top highlight */
-        inset 0 -2px 3px rgba(0,0,0,0.5);        /* bottom shadow */
+      box-shadow: inset 0 2px 2px rgba(255,255,255,0.08), inset 0 -2px 3px rgba(0,0,0,0.5);
     }
-
-    /* ON: top pressed in (dark), bottom raised (lighter) */
     .switch-wrap.on .switch-rocker {
-      background: linear-gradient(
-        180deg,
-        #1a2830 0%,    /* top — now recessed, in shadow */
-        #2a3d4a 55%,
-        #3a5060 100%   /* bottom — now raised, catching light */
-      );
+      background: linear-gradient(180deg, #1a2830 0%, #2a3d4a 55%, #3a5060 100%);
       transform: perspective(80px) rotateX(14deg);
-      box-shadow:
-        inset 0 2px 3px rgba(0,0,0,0.5),         /* top now shadowed */
-        inset 0 -2px 2px rgba(255,255,255,0.08);  /* bottom now highlighted */
+      box-shadow: inset 0 2px 3px rgba(0,0,0,0.5), inset 0 -2px 2px rgba(255,255,255,0.08);
     }
-
-    /* Subtle plate glow when on — barely perceptible */
     .switch-wrap.on .switch-plate {
       border-color: #2e4050;
-      box-shadow:
-        0 2px 6px rgba(0,0,0,0.7),
-        inset 0 1px 3px rgba(0,0,0,0.6),
-        0 0 8px rgba(255,195,45,0.06);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.7), inset 0 1px 3px rgba(0,0,0,0.6), 0 0 8px rgba(255,195,45,0.06);
     }
 
     @media (min-width: 900px) {
       .lamp-wrap { display: none; }
+      .switch-wrap { display: none; }
     }
 
-    /* ── HERO (mobile) ───────────────────────────────────────── */
+    /* ── HERO ── */
     .hero {
       padding: 16px var(--pad-mobile) 60px;
     }
-
     .hero__name {
       font-family: 'Climate Crisis', sans-serif;
       font-size: clamp(0.9rem, 4vw, 1.1rem);
@@ -219,15 +166,83 @@
       text-transform: uppercase;
       margin-bottom: 8px;
       display: block;
-      transition: opacity 0.8s ease;
+      transition: color 0.35s ease, text-shadow 0.35s ease, opacity 0.35s ease;
     }
-
-    /* Only dim on mobile */
     @media (max-width: 899px) {
-      .hero__name.dimmed { opacity: 0.15; }
-      .hero__name.lit    { opacity: 1; }
+      /* lights off */
+      .lights-off .hero__title {
+        color: #c8f0a0;
+        text-shadow:
+          0 0 12px rgba(160, 240, 100, 0.35),
+          0 0 30px rgba(160, 240, 100, 0.12);
+        transition: color 0.35s ease, text-shadow 0.35s ease;
+      }
+      .lights-off .hero__tagline,
+      .lights-off .hero__resume {
+        opacity: 0.4;
+        transition: opacity 0.35s ease;
+      }
+      .lights-off .hero__name {
+        opacity: 0.2;
+        transition: opacity 0.35s ease;
+      }
+      /* featured card title — cream, gets the glow */
+      .lights-off .card--featured .card__title {
+        color: #c8f0a0;
+        text-shadow:
+          0 0 12px rgba(160, 240, 100, 0.35),
+          0 0 30px rgba(160, 240, 100, 0.12);
+        transition: color 0.35s ease, text-shadow 0.35s ease;
+      }
+      /* featured card border */
+      .lights-off .card--featured {
+        border-color: rgba(157, 179, 160, 0.2);
+        transition: border-color 0.35s ease;
+      }
+      /* everything else — slightly dimmed */
+      .lights-off .section-label,
+      .lights-off .card--secondary .card__title,
+      .lights-off .card__desc,
+      .lights-off .util-card__title,
+      .lights-off .util-card__desc,
+      .lights-off .util-card__icon {
+        opacity: 0.4;
+        transition: opacity 0.35s ease;
+      }
+      .lights-off .card--secondary,
+      .lights-off .card--featured + .card--secondary,
+      .lights-off .util-card {
+        border-color: rgba(157, 179, 160, 0.08);
+        transition: border-color 0.35s ease;
+      }
+      /* lights on — normal transitions */
+      .hero__title {
+        transition: color 0.35s ease, text-shadow 0.35s ease;
+      }
+      .hero__name,
+      .hero__tagline,
+      .hero__resume {
+        transition: opacity 0.35s ease;
+      }
+      .card--featured .card__title {
+        transition: color 0.35s ease, text-shadow 0.35s ease;
+      }
+      .card--featured {
+        transition: border-color 0.35s ease;
+      }
+      .section-label,
+      .card--secondary .card__title,
+      .card__desc,
+      .util-card__title,
+      .util-card__desc,
+      .util-card__icon {
+        transition: opacity 0.35s ease;
+      }
+      .card--secondary,
+      .util-card {
+        transition: border-color 0.35s ease;
+      }
     }
-
     .hero__title {
       font-family: 'Climate Crisis', sans-serif;
       font-size: clamp(2rem, 2.75rem, 4rem);
@@ -240,19 +255,28 @@
       word-break: break-word;
       max-width: 100%;
     }
-
     .hero__tagline {
       color: var(--green);
       font-size: 1rem;
       margin-bottom: 20px;
     }
+    .hero__links {
+      display: flex;
+      gap: 20px;
+    }
 
-    /* ── CASE STUDIES (mobile) ───────────────────────────────── */
+    /* ── CASE STUDIES ── */
     .case-studies {
+      padding: 0 var(--pad-mobile) 64px;
+    }
+
+    /* ── UTILITIES ── */
+    .utilities {
       padding: 0 var(--pad-mobile) 80px;
     }
 
-    .case-studies__label {
+    /* shared label style */
+    .section-label {
       font-family: 'Urbanist', sans-serif;
       font-weight: 600;
       font-size: 0.75rem;
@@ -262,13 +286,13 @@
       margin-bottom: 24px;
     }
 
+    /* ── CARDS (base) ── */
     .card {
-      border: 1.5px dashed var(--green);
-      border-radius: 6px;
-      padding: 24px;
-      margin-bottom: 16px;
+      display: block;
+      text-decoration: none;
+      transition: opacity 0.2s;
     }
-
+    .card:hover { opacity: 0.75; }
     .card__title {
       font-family: 'Urbanist', sans-serif;
       font-weight: 600;
@@ -277,39 +301,103 @@
       margin-bottom: 10px;
       line-height: 1.4;
     }
-
     .card__desc {
       font-size: 1rem;
       color: var(--green);
-      margin-bottom: 16px;
+      margin-bottom: 0;
       line-height: 1.6;
     }
 
-    .card__link {
-      font-size: 1rem;
+    /* ── FEATURED CARD ── */
+    .card--featured {
+      border: 1.5px dashed var(--green);
+      border-radius: 6px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+    }
+    .card--featured .card__title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
 
-    /* ── LEFT NAME COLUMN (desktop only) ────────────────────── */
+    /* ── SECONDARY CARDS ── */
+    .card--secondary {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(157, 179, 160, 0.15);
+    }
+    .card--featured + .card--secondary {
+      border-top: 1px solid rgba(157, 179, 160, 0.15);
+    }
+    .card--secondary .card__title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 0;
+    }
+
+    /* ── UTILITY CARD ── */
+    .util-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(157, 179, 160, 0.15);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .util-card:hover { opacity: 0.75; }
+    .section-label + .util-card {
+      border-top: 1px solid rgba(157, 179, 160, 0.15);
+    }
+    .util-card__icon {
+      color: var(--green);
+      opacity: 0.5;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .util-card__body {
+      flex: 1;
+      min-width: 0;
+    }
+    .util-card__title {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--green);
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+    .util-card__desc {
+      font-size: 1rem;
+      color: var(--green);
+      opacity: 0.5;
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+
+    /* ── NAME COLUMN (desktop) ── */
     .name-column {
       display: none;
     }
 
-    /* ── DESKTOP ─────────────────────────────────────────────── */
+    /* ── DESKTOP ── */
     @media (min-width: 900px) {
-
       .site-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
         min-height: 100vh;
       }
-
       .name-column {
         display: flex;
         justify-content: center;
         overflow: hidden;
         padding: var(--pad-desktop);
       }
-
       .name-column__text {
         font-family: 'Climate Crisis', sans-serif;
         font-size: clamp(7rem, 12vw, 14rem);
@@ -321,38 +409,41 @@
         hyphens: none;
         user-select: none;
       }
-
       .content-column {
         padding: 80px var(--pad-desktop) 80px var(--pad-desktop);
         overflow-y: auto;
       }
-
       .hero__name { display: none; }
-
       .hero {
         padding: 0 0 60px 0;
       }
-
       .hero__title {
         font-size: clamp(3.5rem, 5vw, 5.5rem);
         margin-bottom: 24px;
       }
 
-      .card {
+      /* Featured card: solid dark on desktop */
+      .card--featured {
         border: none;
         background: #1e2d35;
         border-radius: 8px;
-        padding: 28px;
+        padding: 36px;
+        margin-bottom: 8px;
       }
-      .card::before,
-      .card::after { display: none; }
+      /* Secondary cards: borderless on desktop, keep the rule treatment */
+      .card--secondary {
+        padding: 16px 0;
+        background: transparent;
+        border-radius: 0;
+      }
+      .card--featured + .card--secondary {
+        border-top: 1px solid rgba(157, 179, 160, 0.15);
+      }
 
-      .case-studies {
-        padding: 0;
-      }
+      .case-studies { padding: 0 0 64px 0; }
+      .utilities    { padding: 0 0 80px 0; }
     }
 
-    /* ── VERY WIDE: name bleeds as bg texture ────────────────── */
     @media (min-width: 1400px) {
       .name-column__text {
         font-size: clamp(12rem, 16vw, 22rem);
@@ -368,229 +459,210 @@
 
 <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
-  <div class="site-wrapper">
+<div class="site-wrapper">
 
-
-<div class="name-column" aria-hidden="true">
-  <div class="name-column__text animate-in" style="transition-delay: 200ms">BENJA&shy;MIN JOYCE</div>
-</div>
-
-<div class="content-column">
-
-  <!-- VP1 LAMP — mobile only -->
-  <div class="lamp-wrap" aria-hidden="true">
-    <div class="lamp-glow" id="lamp-glow"></div>
-
-    <svg class="lamp-svg" id="lamp-svg" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="dG" cx="36%" cy="28%" r="65%">
-          <stop offset="0%"   stop-color="#d9a018"/>
-          <stop offset="55%"  stop-color="#b8820a"/>
-          <stop offset="100%" stop-color="#7a5400"/>
-        </radialGradient>
-        <radialGradient id="dS" cx="30%" cy="20%" r="28%">
-          <stop offset="0%"   stop-color="#ffe878" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#ffd040" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="dU" cx="50%" cy="50%" r="50%">
-          <stop offset="0%"   stop-color="#fff8a0" stop-opacity="0" id="bowl-inner"/>
-          <stop offset="100%" stop-color="#3e2600" stop-opacity="1"/>
-        </radialGradient>
-        <radialGradient id="bG" cx="38%" cy="30%" r="65%">
-          <stop offset="0%"   stop-color="#c89010"/>
-          <stop offset="55%"  stop-color="#a06c06"/>
-          <stop offset="100%" stop-color="#6a4400"/>
-        </radialGradient>
-        <radialGradient id="bS" cx="34%" cy="26%" r="26%">
-          <stop offset="0%"   stop-color="#ffe060" stop-opacity="0.45"/>
-          <stop offset="100%" stop-color="#ffd040" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-
-      <!-- Canopy -->
-      <ellipse cx="90" cy="12"  rx="12" ry="4.5" fill="#8a6000"/>
-      <ellipse cx="90" cy="11"  rx="11" ry="3.5" fill="#c8980e"/>
-      <ellipse cx="88" cy="10"  rx="5"  ry="1.5" fill="#ffe060" opacity="0.4"/>
-
-      <!-- Cord -->
-      <line x1="90" y1="15" x2="90" y2="36"
-            stroke="#c8980e" stroke-width="1.5" stroke-linecap="round"/>
-
-      <!-- Chrome fitting -->
-      <ellipse cx="90" cy="37" rx="5"   ry="2.5" fill="#c0c0c0"/>
-      <ellipse cx="90" cy="36" rx="3.5" ry="1.5" fill="#e8e8e8" opacity="0.7"/>
-
-      <!-- Top dome: true semicircle rx=ry=70, equator at y=104 -->
-      <path d="M 20,104 A 70,70 0 0 1 160,104 Z" fill="url(#dG)"/>
-      <path d="M 20,104 A 70,70 0 0 1 160,104 Z" fill="url(#dS)"/>
-      <ellipse cx="90" cy="104" rx="70" ry="7"   fill="#3e2600"/>
-      <ellipse cx="90" cy="104" rx="68" ry="5.5" fill="url(#dU)"/>
-
-      <!-- Seam glow -->
-      <ellipse cx="90" cy="104" rx="44" ry="4"
-               fill="rgba(255,240,100,0)" id="gap-light"/>
-
-      <!-- Bottom dome: slightly less than semicircle -->
-      <path d="M 44,104 A 46,38 0 0 0 136,104 Z" fill="url(#bG)"/>
-      <path d="M 44,104 A 46,38 0 0 0 136,104 Z" fill="url(#bS)"/>
-    </svg>
+  <div class="name-column" aria-hidden="true">
+    <div class="name-column__text animate-in" style="transition-delay: 200ms">BENJA&shy;MIN JOYCE</div>
   </div>
 
-  <section class="hero" style="position:relative;">
-    <!-- Wall switch — found near the name, like a room switch by the door -->
-    <div class="switch-wrap" id="light-switch" aria-label="Toggle lamp">
-      <div class="switch-plate">
-        <div class="switch-rocker"></div>
-      </div>
+  <div class="content-column">
+
+
+<!-- Lamp (mobile) -->
+<div class="lamp-wrap" aria-hidden="true">
+  <div class="lamp-glow" id="lamp-glow"></div>
+  <svg class="lamp-svg" id="lamp-svg" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="dG" cx="36%" cy="28%" r="65%">
+        <stop offset="0%"   stop-color="#d9a018"/>
+        <stop offset="55%"  stop-color="#b8820a"/>
+        <stop offset="100%" stop-color="#7a5400"/>
+      </radialGradient>
+      <radialGradient id="dS" cx="30%" cy="20%" r="28%">
+        <stop offset="0%"   stop-color="#ffe878" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#ffd040" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="dU" cx="50%" cy="50%" r="50%">
+        <stop offset="0%"   stop-color="#fff8a0" stop-opacity="0" id="bowl-inner"/>
+        <stop offset="100%" stop-color="#3e2600" stop-opacity="1"/>
+      </radialGradient>
+      <radialGradient id="bG" cx="38%" cy="30%" r="65%">
+        <stop offset="0%"   stop-color="#c89010"/>
+        <stop offset="55%"  stop-color="#a06c06"/>
+        <stop offset="100%" stop-color="#6a4400"/>
+      </radialGradient>
+      <radialGradient id="bS" cx="34%" cy="26%" r="26%">
+        <stop offset="0%"   stop-color="#ffe060" stop-opacity="0.45"/>
+        <stop offset="100%" stop-color="#ffd040" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <ellipse cx="90" cy="12"  rx="12" ry="4.5" fill="#8a6000"/>
+    <ellipse cx="90" cy="11"  rx="11" ry="3.5" fill="#c8980e"/>
+    <ellipse cx="88" cy="10"  rx="5"  ry="1.5" fill="#ffe060" opacity="0.4"/>
+    <line x1="90" y1="15" x2="90" y2="36" stroke="#c8980e" stroke-width="1.5" stroke-linecap="round"/>
+    <ellipse cx="90" cy="37" rx="5"   ry="2.5" fill="#c0c0c0"/>
+    <ellipse cx="90" cy="36" rx="3.5" ry="1.5" fill="#e8e8e8" opacity="0.7"/>
+    <path d="M 20,104 A 70,70 0 0 1 160,104 Z" fill="url(#dG)"/>
+    <path d="M 20,104 A 70,70 0 0 1 160,104 Z" fill="url(#dS)"/>
+    <ellipse cx="90" cy="104" rx="70" ry="7"   fill="#3e2600"/>
+    <ellipse cx="90" cy="104" rx="68" ry="5.5" fill="url(#dU)"/>
+    <ellipse cx="90" cy="104" rx="44" ry="4"   fill="rgba(255,240,100,0)" id="gap-light"/>
+    <path d="M 44,104 A 46,38 0 0 0 136,104 Z" fill="url(#bG)"/>
+    <path d="M 44,104 A 46,38 0 0 0 136,104 Z" fill="url(#bS)"/>
+  </svg>
+</div>
+
+<!-- Hero -->
+<section class="hero" style="position:relative;">
+  <div class="switch-wrap" id="light-switch" aria-label="Toggle lamp">
+    <div class="switch-plate">
+      <div class="switch-rocker"></div>
     </div>
-    <span class="hero__name animate-in" style="transition-delay: 0ms">Benjamin Joyce</span>
-    <h1 class="hero__title animate-in" style="transition-delay: 120ms">Product &amp;&nbsp;Design</h1>
-    <p class="hero__tagline animate-in" style="transition-delay: 240ms">I’m a product design manager who still loves the work and loves coaching people through it.</p>
-    <a href="https://www.benjoyce.cv" class="hero__resume animate-in" style="transition-delay: 360ms">Resume</a>
-  </section>
+  </div>
+  <span class="hero__name animate-in" style="transition-delay: 0ms">Benjamin Joyce</span>
+  <h1 class="hero__title animate-in" style="transition-delay: 120ms">Product &amp;&nbsp;Design</h1>
+  <p class="hero__tagline animate-in" style="transition-delay: 240ms">I'm a product design manager who still loves the work and loves coaching people through it.</p>
+  <div class="hero__links animate-in" style="transition-delay: 360ms">
+    <a href="https://www.benjoyce.cv" class="hero__resume">Resume</a>
+    <a href="https://www.linkedin.com/in/ben-joyce-2728952b" class="hero__resume">LinkedIn</a>
+  </div>
+</section>
 
-  <section class="case-studies">
-    <p class="case-studies__label animate-in" style="transition-delay: 480ms">Case Studies</p>
+<!-- Case Studies -->
+<section class="case-studies">
+  <p class="section-label animate-in" style="transition-delay: 480ms">Case Studies</p>
 
-    <article class="card animate-in" style="transition-delay: 560ms">
-      <h2 class="card__title">Building Best Buy's third-party marketplace from the ground up</h2>
-      <p class="card__desc">0 to 1 is never easy. Luckily, I had a strong team and a great foundation. Read to learn how I led the team to design third-party offerings without losing customer trust.</p>
-      <a href="case-3p-marketplace.html" class="card__link">Read case</a>
-    </article>
+  <a href="case-best-buy-checkout.html" class="card card--featured animate-in" style="transition-delay: 560ms">
+    <h2 class="card__title">Redesigning Best Buy's checkout through deliberate design decisions.</h2>
+    <p class="card__desc">Significant conversion gains. The kind we can't publish.</p>
+  </a>
 
-    <article class="card animate-in" style="transition-delay: 640ms">
-      <h2 class="card__title">Best Buy checkout redesign</h2>
-      <p class="card__desc">Led the creation and execution of a research-backed roadmap to reduce customer friction and increase conversion in Best Buy's cart and checkout. Delivered measurable conversion gains and improved customer sentiment, influencing future e-commerce strategy.</p>
-      <a href="case-best-buy-checkout.html" class="card__link">Read case</a>
-    </article>
+  <a href="case-3p-marketplace.html" class="card card--secondary animate-in" style="transition-delay: 640ms">
+    <h2 class="card__title">Building Best Buy's third-party marketplace from the ground up</h2>
+  </a>
 
-    <article class="card animate-in" style="transition-delay: 720ms">
-      <h2 class="card__title">AI, discovery, and a big pivot</h2>
-      <p class="card__desc">Led a cross-functional team to redesign the mobile claims experience, using real-world observations and rapid prototyping to save adjusters time and shift the company's approach to AI and product development.</p>
-      <a href="case-saving-adjusters-time.html" class="card__link">Read case</a>
-    </article>
+  <a href="case-saving-adjusters-time.html" class="card card--secondary animate-in" style="transition-delay: 700ms">
+    <h2 class="card__title">Saving adjusters time with AI and design</h2>
+  </a>
+</section>
 
-  </section>
+<!-- Utilities -->
+<section class="utilities">
+  <p class="section-label animate-in" style="transition-delay: 800ms">Things I've built for fun</p>
 
-</div><!-- /content-column -->
+  <a href="/pace-calculator" class="util-card animate-in" style="transition-delay: 860ms">
+    <div class="util-card__icon">
+      <!-- heroicons: clock (outline) -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </div>
+    <div class="util-card__body">
+      <div class="util-card__title">Pace Calculator</div>
+      <div class="util-card__desc">Calculate pace, finish time, or distance for any run. Includes per-km splits and unit switching.</div>
+    </div>
+  </a>
+
+</section>
 
 
-  </div><!-- /site-wrapper -->
+  </div><!-- /content-column -->
+</div><!-- /site-wrapper -->
 
-  <script>
-    // ── PARTICLE FIELD ──────────────────────────────────────────
-    (function () {
-      const canvas = document.getElementById('particle-canvas');
-      const ctx    = canvas.getContext('2d');
-
-      const COLORS = [
-        'rgba(254, 240, 206, 0.18)',
-        'rgba(254, 240, 206, 0.09)',
-        'rgba(25,  145, 174, 0.14)',
-        'rgba(25,  145, 174, 0.07)',
-      ];
-
-      const COUNT = 55;
-      let particles = [];
-      let W, H;
-
-      function resize() {
-        W = canvas.width  = window.innerWidth;
-        H = canvas.height = window.innerHeight;
+<script>
+  // ── PARTICLES ──
+  var setParticlesOff;
+  (function () {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx    = canvas.getContext('2d');
+    const COLORS_ON = [
+      'rgba(254, 240, 206, 0.18)', 'rgba(254, 240, 206, 0.09)',
+      'rgba(25,  145, 174, 0.14)', 'rgba(25,  145, 174, 0.07)',
+    ];
+    const COLORS_OFF = [
+      'rgba(254, 240, 206, 0.32)', 'rgba(254, 240, 206, 0.18)',
+      'rgba(25,  145, 174, 0.24)', 'rgba(25,  145, 174, 0.14)',
+    ];
+    let activeColors = COLORS_ON;
+    const COUNT = 55;
+    let particles = [], W, H;
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    function rand(a, b) { return a + Math.random() * (b - a); }
+    function makeParticle() {
+      return { x: rand(0,W), y: rand(0,H), r: rand(0.5,2.0),
+        color: activeColors[Math.floor(Math.random()*activeColors.length)],
+        vx: rand(-0.10,0.10), vy: rand(-0.08,0.08),
+        phase: rand(0,Math.PI*2), phaseSpeed: rand(0.005,0.014) };
+    }
+    function init() { resize(); particles = Array.from({length:COUNT}, makeParticle); }
+    function tick() {
+      ctx.clearRect(0,0,W,H);
+      for (const p of particles) {
+        p.phase += p.phaseSpeed;
+        const r = Math.max(0.2, p.r + Math.sin(p.phase)*0.35);
+        ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2);
+        ctx.fillStyle = p.color; ctx.fill();
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -4) p.x = W+4; if (p.x > W+4) p.x = -4;
+        if (p.y < -4) p.y = H+4; if (p.y > H+4) p.y = -4;
       }
-
-      function rand(a, b) { return a + Math.random() * (b - a); }
-
-      function makeParticle() {
-        return {
-          x:          rand(0, W),
-          y:          rand(0, H),
-          r:          rand(0.5, 2.0),
-          color:      COLORS[Math.floor(Math.random() * COLORS.length)],
-          vx:         rand(-0.10, 0.10),
-          vy:         rand(-0.08, 0.08),
-          phase:      rand(0, Math.PI * 2),
-          phaseSpeed: rand(0.005, 0.014),
-        };
-      }
-
-      function init() {
-        resize();
-        particles = Array.from({ length: COUNT }, makeParticle);
-      }
-
-      function tick() {
-        ctx.clearRect(0, 0, W, H);
-
-        for (const p of particles) {
-          p.phase += p.phaseSpeed;
-          const r = Math.max(0.2, p.r + Math.sin(p.phase) * 0.35);
-
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.fill();
-
-          p.x += p.vx;
-          p.y += p.vy;
-
-          if (p.x < -4)    p.x = W + 4;
-          if (p.x > W + 4) p.x = -4;
-          if (p.y < -4)    p.y = H + 4;
-          if (p.y > H + 4) p.y = -4;
-        }
-
-        requestAnimationFrame(tick);
-      }
-
-      window.addEventListener('resize', resize, { passive: true });
-
-      init();
       requestAnimationFrame(tick);
-    })();
+    }
+    // gradually reassign particle colors so the shift feels soft
+    setParticlesOff = function(off) {
+      activeColors = off ? COLORS_OFF : COLORS_ON;
+      var i = 0;
+      var interval = setInterval(function() {
+        if (i >= particles.length) { clearInterval(interval); return; }
+        particles[i].color = activeColors[Math.floor(Math.random()*activeColors.length)];
+        i++;
+      }, 18);
+    };
+    window.addEventListener('resize', resize, { passive: true });
+    init(); requestAnimationFrame(tick);
+  })();
 
-    // ── VP1 LAMP TOGGLE ─────────────────────────────────────────
-    (function () {
-      const sw        = document.getElementById('light-switch');
-      const glow      = document.getElementById('lamp-glow');
-      const gapLight  = document.getElementById('gap-light');
-      const bowlInner = document.getElementById('bowl-inner');
-      const heroName  = document.querySelector('.hero__name');
-      if (!sw) return;
-      let on = false;
+  // ── LAMP ──
+  (function () {
+    const sw = document.getElementById('light-switch');
+    const glow = document.getElementById('lamp-glow');
+    const gapLight = document.getElementById('gap-light');
+    const bowlInner = document.getElementById('bowl-inner');
+    const heroName = document.querySelector('.hero__name');
+    if (!sw) return;
+    let on = true;
+    sw.classList.add('on');
+    glow.classList.add('on');
+    gapLight.setAttribute('fill', 'rgba(255,248,120,0.95)');
+    if (bowlInner) {
+      bowlInner.setAttribute('stop-color', '#fffcb0');
+      bowlInner.setAttribute('stop-opacity', '0.85');
+    }
 
-      sw.addEventListener('click', function () {
-        on = !on;
-        sw.classList.toggle('on', on);
-        glow.classList.toggle('on', on);
-        gapLight.setAttribute('fill', on ? 'rgba(255,248,120,0.95)' : 'rgba(255,240,100,0)');
-        if (bowlInner) {
-          bowlInner.setAttribute('stop-color',   on ? '#fffcb0' : '#fff8a0');
-          bowlInner.setAttribute('stop-opacity', on ? '0.85'    : '0');
-        }
-        if (heroName) {
-          heroName.classList.toggle('dimmed', !on);
-          heroName.classList.toggle('lit', on);
-        }
+    sw.addEventListener('click', function () {
+      on = !on;
+      sw.classList.toggle('on', on);
+      glow.classList.toggle('on', on);
+      gapLight.setAttribute('fill', on ? 'rgba(255,248,120,0.95)' : 'rgba(255,240,100,0)');
+      if (bowlInner) {
+        bowlInner.setAttribute('stop-color',   on ? '#fffcb0' : '#fff8a0');
+        bowlInner.setAttribute('stop-opacity', on ? '0.85'    : '0');
+      }
+      var container = document.querySelector('.content-column');
+      if (container) container.classList.toggle('lights-off', !on);
+      if (setParticlesOff) setParticlesOff(!on);
+    });
+  })();
+
+  // ── ENTRANCE ──
+  (function () {
+    setTimeout(function () {
+      document.querySelectorAll('.animate-in').forEach(function (el) {
+        el.classList.add('visible');
       });
-    })();
-
-    // ── ENTRANCE ANIMATION ──────────────────────────────────────
-    (function () {
-      setTimeout(function () {
-        document.querySelectorAll('.animate-in').forEach(function (el) {
-          el.classList.add('visible');
-        });
-        // After entrance animation completes, dim the name on mobile
-        var heroName = document.querySelector('.hero__name');
-        if (heroName && window.innerWidth < 900) {
-          setTimeout(function () {
-            heroName.classList.add('dimmed');
-          }, 750); // wait for the 0.7s entrance transition to finish
-        }
-      }, 80);
-    })();
-  </script>
+    }, 80);
+  })();
+</script>
 
 </body>
 </html>
