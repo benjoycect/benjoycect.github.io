@@ -86,7 +86,7 @@
     /* ── SECTION SUBHEADINGS ─────────────────────────────────── */
     .section-heading {
       font-family: 'Urbanist', sans-serif;
-      font-weight: 400;
+      font-weight: 700;
       font-size: 1rem;
       color: var(--green);
       margin: 40px 0 16px;
@@ -195,6 +195,19 @@
       display: block;
       border-radius: 10px;
     }
+    .case-product-link {
+      margin: 32px 0;
+      padding: 24px;
+      border: 1px solid #2a3d4a;
+      border-radius: 10px;
+      background: #0d1519;
+    }
+    .case-product-link p {
+      margin-bottom: 12px;
+    }
+    .case-product-link a {
+      font-weight: 700;
+    }
     .case-image figcaption {
       font-size: 0.85rem;
       color: var(--green);
@@ -215,41 +228,17 @@
       margin-bottom: 56px;
     }
 
-    .trivia__intro {
-      margin-bottom: 28px;
-    }
-    .trivia__label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 10px;
-    }
-    .trivia__intro-body {
+    .trivia__preamble {
       font-size: 1rem;
-      color: var(--green);
+      font-weight: 700;
+      color: #c8f0a0;
+      text-shadow:
+        0 0 12px rgba(160, 240, 100, 0.35),
+        0 0 30px rgba(160, 240, 100, 0.12);
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin: 0 0 20px;
     }
-    .trivia__btn {
-      display: inline-block;
-      background: var(--orange);
-      color: var(--cream);
-      font-family: 'Urbanist', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 12px 28px;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      transition: opacity 0.2s ease;
-      text-decoration: none;
-    }
-    .trivia__btn:hover { opacity: 0.85; color: var(--cream); }
+    .trivia__preamble a { color: inherit; }
 
     /* Game area */
     .trivia__game { display: none; }
@@ -390,33 +379,30 @@
     .trivia__back .trivia__num { color: var(--cream);  opacity: 0.06; }
 
     .trivia__next {
-      display: block;
-      width: 100%;
-      background: transparent;
-      color: var(--green);
+      display: inline-block;
+      align-self: flex-end;
+      background: var(--orange);
+      color: var(--cream);
       font-family: 'Urbanist', sans-serif;
       font-weight: 600;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 11px 20px;
+      padding: 12px 28px;
       border-radius: 4px;
-      border: 1.5px solid #2a3d4a;
+      border: none;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
-      transition: border-color 0.2s, color 0.2s, opacity 0.2s;
+      transition: opacity 0.2s;
       opacity: 0;
       pointer-events: none;
-      margin-top: 4px;
+      margin-top: auto;
     }
+    .trivia__back .trivia__next { pointer-events: auto; }
     .trivia__next.visible {
       opacity: 1;
-      pointer-events: auto;
     }
-    .trivia__next:hover {
-      border-color: var(--green);
-      color: var(--cream);
-    }
+    .trivia__next:hover { opacity: 0.85; }
 
     /* End state — game collapses, case flows */
     .trivia__end {
@@ -452,15 +438,10 @@
 <!-- ── TRIVIA ─────────────────────────────────────────────── -->
 <div class="trivia">
 
-  <!-- Intro -->
-  <div class="trivia__intro" id="t-intro">
-    <p class="trivia__label">Before you read</p>
-    <p class="trivia__intro-body">Five questions from a real project. There's no wrong answer, but I made specific choices. If you'd do it differently, I genuinely want to <a href="https://www.linkedin.com/in/ben-joyce-2728952b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">hear why</a>. Tap a card to see what I did.</p>
-    <button class="trivia__btn" id="t-start">Let's go</button>
-  </div>
+  <p class="trivia__preamble">Five questions from a real project. There's no wrong answer, but I made specific choices. If you'd do it differently, I genuinely want to <a href="https://www.linkedin.com/in/ben-joyce-2728952b?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=ios_app">hear why</a>. Tap a card to see what I did.</p>
 
   <!-- Game -->
-  <div class="trivia__game" id="t-game">
+  <div class="trivia__game active" id="t-game">
     <div class="trivia__progress" id="t-progress">
       <div class="trivia__dot active"></div>
       <div class="trivia__dot"></div>
@@ -481,11 +462,10 @@
           <div class="trivia__num" id="t-bnum">1</div>
           <p class="trivia__eyebrow">What I did</p>
           <p class="trivia__a" id="t-a"></p>
+          <button class="trivia__next" id="t-next">Next question →</button>
         </div>
       </div>
     </div>
-
-    <button class="trivia__next" id="t-next">Next question →</button>
   </div>
 
   <!-- End -->
@@ -518,11 +498,6 @@
     <li>I delegated additional objectives and study specifics to my employee and a research partner</li>
     <li>I completely trusted our research partners with the research methodology</li>
   </ul>
-
-  <figure class="case-image">
-    <img src="images/dscout-session.png" alt="A generated illustration of a DScout video interview session" />
-    <figcaption>Caption: A generated illustration of a DScout video interview session. We used moderated (like this example) and un-moderated studies to collect feedback.</figcaption>
-  </figure>
 
   <div class="outcome-phase">
     <p class="outcome-label">Phase outcome</p>
@@ -566,13 +541,9 @@
     <li>I shared the results of every test iteration with our partners</li>
   </ul>
 
-  <figure class="case-image">
-    <img src="images/cart-screenshot.png" alt="Screenshot of Best Buy cart showing a third-party marketplace item" />
-  </figure>
-
-  <div class="outcome-phase">
-    <p class="outcome-label">Phase outcome</p>
-    <p>Every round of testing showed improvement. We knew that customers felt more confident in 3P purchases and understood key details like return policies and pricing differences.</p>
+  <div class="case-product-link">
+    <p>See an example of a third-party marketplace product:</p>
+    <a href="https://www.bestbuy.com/product/funko-pop-star-trek-first-contact-locutus-of-borg-multicolor/J3ZK3X7P3Z" target="_blank" rel="noopener noreferrer">View a 3p marketplace product on Best Buy</a>
   </div>
 
   <div class="outcome-project">
@@ -612,7 +583,6 @@
     let current = 0;
     let flipped = false;
 
-    const tIntro = document.getElementById('t-intro');
     const tGame  = document.getElementById('t-game');
     const tEnd   = document.getElementById('t-end');
     const tCard  = document.getElementById('t-card');
@@ -643,12 +613,6 @@
       });
     }
 
-    document.getElementById('t-start').addEventListener('click', () => {
-      tIntro.style.display = 'none';
-      tGame.classList.add('active');
-      loadCard(0);
-    });
-
     tCard.addEventListener('click', () => {
       if (flipped) return;
       flipped = true;
@@ -666,7 +630,8 @@
       }, 220);
     });
 
-    tNext.addEventListener('click', () => {
+    tNext.addEventListener('click', event => {
+      event.stopPropagation();
       current++;
       if (current >= CARDS.length) {
         tGame.classList.remove('active');
@@ -676,12 +641,7 @@
       }
     });
 
-    // Init
-    tQ.textContent    = CARDS[0].q;
-    tA.textContent    = CARDS[0].a;
-    tQNum.textContent = 1;
-    tFNum.textContent = 1;
-    tBNum.textContent = 1;
+    loadCard(0);
   </script>
 
 </body>
