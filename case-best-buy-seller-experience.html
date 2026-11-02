@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steering Best Buy's seller experience — Benjamin Joyce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Urbanist:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #141C21;
+      --cream: #fef0ce;
+      --blue: #1991ae;
+      --green: #9db3a0;
+      --pad: 24px;
+      --max-w: 680px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      overflow-x: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--green);
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    a:hover { opacity: 0.75; }
+
+    .page {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 40px var(--pad) 100px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .case-title {
+      max-width: 100%;
+      margin-bottom: 32px;
+      color: var(--cream);
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      overflow-wrap: break-word;
+    }
+
+    .prose p {
+      margin-bottom: 20px;
+      color: var(--green);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .section-heading {
+      margin: 40px 0 16px;
+      color: var(--green);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .leadership-heading {
+      margin: 24px 0 12px;
+      color: var(--cream);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .overview-list {
+      margin: 20px 0 32px;
+      padding-left: 24px;
+      list-style: decimal;
+    }
+    .overview-list li,
+    .bullet-list li {
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .bullet-list {
+      margin: 0 0 24px;
+      padding-left: 24px;
+      list-style: disc;
+    }
+
+    .case-image {
+      margin: 32px 0;
+    }
+    .case-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .case-image figcaption {
+      margin-top: 10px;
+      color: var(--green);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      opacity: 0.75;
+    }
+
+    .outcome-phase {
+      margin: 32px 0;
+      padding: 24px;
+      border: 1.5px solid var(--blue);
+      border-radius: 10px;
+    }
+    .outcome-phase .outcome-label {
+      margin-bottom: 12px;
+      color: var(--cream);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .outcome-phase p {
+      margin: 0;
+      color: var(--green);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .outcome-project {
+      position: relative;
+      overflow: hidden;
+      margin: 32px 0;
+      padding: 24px;
+      border-radius: 10px;
+      background: var(--cream);
+    }
+    .outcome-project::after {
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+      background-size: 150px 150px;
+      content: '';
+      pointer-events: none;
+    }
+    .outcome-project .outcome-label,
+    .outcome-project p {
+      position: relative;
+      z-index: 1;
+      color: var(--bg);
+    }
+    .outcome-project .outcome-label {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .outcome-project p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    @media (min-width: 900px) {
+      .page { padding: 60px 48px 120px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="index.html" class="back">← Back to home</a>
+
+    <h1 class="case-title">Steering Best Buy's seller experience</h1>
+
+    <div class="prose">
+      <p>“It's all a game.” Feedback from marketplace sellers large and small was clear. They knew that in order to win, they had to play. That's why, when I took on rethinking the Best Buy Marketplace seller experience, I led through the perspective of game design. This approach allowed us to think of novel ways to motivate sellers to take actions that were good for customers and their businesses.</p>
+
+      <p class="section-heading">Overview of my direction to the team</p>
+
+      <ol class="overview-list">
+        <li>Understand the business needs and customer expectations</li>
+        <li>Explore options for different ways to address the need</li>
+        <li>Evaluate and iterate</li>
+      </ol>
+
+      <figure class="case-image">
+        <img src="images/seller-experience-roadmap.png" alt="Seller experience game-design framework mapping acquisition, onboarding, listing, promotion, warehousing, guidance, support, and reward-system problems to models" />
+        <figcaption>My outline for how we could approach discovery and build out solutions across the whole experience.</figcaption>
+      </figure>
+
+      <p class="section-heading">Initiating research</p>
+
+      <p>Best Buy is lucky enough to have dedicated researchers within Experience Design. While that's awesome and I love that team, it means we have to be thoughtful about giving our research partners time, clear briefs, and context.</p>
+
+      <p>We organized the discovery work into near- and far-future priorities, while keeping related initiatives and completed work visible. This gave the team a shared view of the opportunities across the seller experience.</p>
+
+      <figure class="case-image">
+        <img src="images/seller-discovery-initiatives.png" alt="Seller-experience discovery initiatives organized into near-future, far-future, related, and completed work" />
+        <figcaption>Discovery initiatives organized by horizon, with related work and completed efforts tracked alongside.</figcaption>
+      </figure>
+
+      <p class="leadership-heading">Some leadership decisions I made during this phase:</p>
+
+      <ul class="bullet-list">
+        <li>I gave direction on the broad research objectives</li>
+        <li>I delegated additional objectives and study specifics to my employee and a research partner</li>
+        <li>I completely trusted our research partners with the research methodology</li>
+      </ul>
+
+      <p class="section-heading">Exploring options</p>
+
+      <p>We used an opportunity tree to connect the desired outcome—increasing the number of active sellers who maintain competitive offers—to the needs and problems sellers experience along the way.</p>
+
+      <p>The tree helped the team explore how to improve seller profitability, operational efficiency, and growth; help sellers get the right products in front of likely customers; and protect their businesses from fraud, counterfeit products, and unfair competition.</p>
+
+      <figure class="case-image">
+        <img src="images/seller-opportunity-tree.png" alt="Marketplace seller opportunity tree connecting the goal of more active competitive sellers to seller needs and problems" />
+        <figcaption>The seller opportunity tree connects business outcomes to seller needs and the problems the experience can address.</figcaption>
+      </figure>
+
+      <figure class="case-image">
+        <img src="images/best-buy-marketplace-lead-form.png" alt="Best Buy Marketplace seller lead form beginning with contact information" />
+        <figcaption>Best Buy Marketplace lead form we designed to motivate sellers to convert.</figcaption>
+      </figure>
+
+      <div class="outcome-project">
+        <p class="outcome-label">Project outcome</p>
+        <p>Senior leadership bought in completely to our vision. They saw the thinking and prototype and invested in a new engineering team to bring it to life.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
