@@ -80,6 +80,25 @@
       font-weight: 700;
     }
 
+    .overview-heading {
+      margin: 40px 0 20px;
+      color: #c8f0a0;
+      font-size: 1.5rem;
+      text-shadow:
+        0 0 12px rgba(160, 240, 100, 0.35),
+        0 0 30px rgba(160, 240, 100, 0.12);
+    }
+
+    .overview-section .spotlight-word {
+      transition: color 100ms linear;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .overview-section .spotlight-word {
+        transition: none;
+      }
+    }
+
     .leadership-heading {
       margin: 24px 0 12px;
       color: var(--cream);
@@ -190,29 +209,21 @@
     <div class="prose">
       <p>“It's all a game.” Feedback from marketplace sellers large and small was clear. They knew that in order to win, they had to play. That's why, when I took on rethinking the Best Buy Marketplace seller experience, I led through the perspective of game design. This approach allowed us to think of novel ways to motivate sellers to take actions that were good for customers and their businesses.</p>
 
-      <p class="section-heading">Overview of my direction to the team</p>
+      <section class="overview-section">
+        <h2 class="overview-heading">Overview of my direction to the team</h2>
 
-      <ol class="overview-list">
-        <li>Understand the business needs and customer expectations</li>
-        <li>Explore options for different ways to address the need</li>
-        <li>Evaluate and iterate</li>
-      </ol>
-
-      <figure class="case-image">
-        <img src="images/seller-experience-roadmap.png" alt="Seller experience game-design framework mapping acquisition, onboarding, listing, promotion, warehousing, guidance, support, and reward-system problems to models" />
-        <figcaption>My outline for how we could approach discovery and build out solutions across the whole experience.</figcaption>
-      </figure>
+        <ol class="overview-list">
+          <li>Understand Best Buy's target third-party seller. I wanted them to know what kind of companies we wanted on our platform.</li>
+          <li>Explore design options that would best serve that target. The sellers we wanted to attract and retain had unique operational needs. We needed to find a way to serve them while thinking about how to scale for other segments.</li>
+          <li>Evaluate and iterate with actual sellers. Best Buy hadn't done business-to-business experience research. I had to work with stakeholders to get us access to sellers so we could evaluate the solutions.</li>
+        </ol>
+      </section>
 
       <p class="section-heading">Initiating research</p>
 
       <p>Best Buy is lucky enough to have dedicated researchers within Experience Design. While that's awesome and I love that team, it means we have to be thoughtful about giving our research partners time, clear briefs, and context.</p>
 
       <p>We organized the discovery work into near- and far-future priorities, while keeping related initiatives and completed work visible. This gave the team a shared view of the opportunities across the seller experience.</p>
-
-      <figure class="case-image">
-        <img src="images/seller-discovery-initiatives.png" alt="Seller-experience discovery initiatives organized into near-future, far-future, related, and completed work" />
-        <figcaption>Discovery initiatives organized by horizon, with related work and completed efforts tracked alongside.</figcaption>
-      </figure>
 
       <p class="leadership-heading">Some leadership decisions I made during this phase:</p>
 
@@ -229,11 +240,6 @@
       <p>The tree helped the team explore how to improve seller profitability, operational efficiency, and growth; help sellers get the right products in front of likely customers; and protect their businesses from fraud, counterfeit products, and unfair competition.</p>
 
       <figure class="case-image">
-        <img src="images/seller-opportunity-tree.png" alt="Marketplace seller opportunity tree connecting the goal of more active competitive sellers to seller needs and problems" />
-        <figcaption>The seller opportunity tree connects business outcomes to seller needs and the problems the experience can address.</figcaption>
-      </figure>
-
-      <figure class="case-image">
         <img src="images/best-buy-marketplace-lead-form.png" alt="Best Buy Marketplace seller lead form beginning with contact information" />
         <figcaption>Best Buy Marketplace lead form we designed to motivate sellers to convert.</figcaption>
       </figure>
@@ -244,5 +250,76 @@
       </div>
     </div>
   </main>
+  <script>
+    (() => {
+      const section = document.querySelector('.overview-section');
+      if (!section || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+      const walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      for (const textNode of textNodes) {
+        const fragment = document.createDocumentFragment();
+        for (const part of textNode.textContent.split(/(\s+)/)) {
+          if (!part) continue;
+          if (/^\s+$/.test(part)) {
+            fragment.append(document.createTextNode(part));
+          } else {
+            const word = document.createElement('span');
+            word.className = 'spotlight-word';
+            word.textContent = part;
+            fragment.append(word);
+          }
+        }
+        textNode.replaceWith(fragment);
+      }
+
+      const words = section.querySelectorAll('.spotlight-word');
+      const baseColor = getComputedStyle(section).color.match(/\d+/g).slice(0, 3).map(Number);
+      const radius = 120;
+      let pointerX = -Infinity;
+      let pointerY = -Infinity;
+      let frame = 0;
+
+      function updateWords() {
+        frame = 0;
+        for (const word of words) {
+          const bounds = word.getBoundingClientRect();
+          const dx = Math.max(bounds.left - pointerX, 0, pointerX - bounds.right);
+          const dy = Math.max(bounds.top - pointerY, 0, pointerY - bounds.bottom);
+          const intensity = Math.max(0, 1 - Math.hypot(dx, dy) / radius);
+
+          if (intensity === 0) {
+            word.style.removeProperty('color');
+          } else {
+            const color = baseColor.map(channel =>
+              Math.round(channel + (255 - channel) * intensity)
+            );
+            word.style.color = `rgb(${color.join(', ')})`;
+          }
+        }
+      }
+
+      function scheduleUpdate() {
+        if (!frame) frame = requestAnimationFrame(updateWords);
+      }
+
+      section.addEventListener('pointermove', event => {
+        if (event.pointerType !== 'mouse') return;
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        scheduleUpdate();
+      });
+
+      section.addEventListener('pointerleave', () => {
+        pointerX = -Infinity;
+        pointerY = -Infinity;
+        if (frame) cancelAnimationFrame(frame);
+        frame = 0;
+        for (const word of words) word.style.removeProperty('color');
+      });
+    })();
+  </script>
 </body>
 </html>
